@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 PI=np.pi
 SIN=np.sin
 COS=np.cos
-DESIRED=np.array([0,1])
+DESIRED=np.array([1,1])
 l0=1 #hardcode lengths of arms
 l1=1
 
@@ -40,17 +40,26 @@ def inverse_kinematics_2d(e, theta, desired_pos, tolerance, maxiter, J): #uses a
         correction_step = -np.linalg.pinv(J) @ residual 
 
         error = norm(residual)
-        theta = old_theta + correction_step
+        theta = old_theta + correction_step #NOTE: we can mult corr step by damping
 
-    return error
+    xerror = residual[0]
+    yerror = residual[1]
+    return error, xerror, yerror
 
 def errorchart(e, desired, tolerance, maxiter, J):
+    '''
+    This function plots total error, x error, y error.
+    Create a linear space of values of theta between -pi and pi,
+    and for each pair of theta values, compute the jacobian and try to converge to desired pos. 
+    Then, plot the error for each pair of theta values.
+    '''
     # make a linspace and meshgrid for ranges of q0 and q1
     n = 100  #resolution
     q_range = np.linspace(-PI, PI, n )
     Q0, Q1 = np.meshgrid(q_range, q_range) 
-    Error = np.zeros_like(Q0)
-
+    TotalError = np.zeros_like(Q0)
+    XError = np.zeros_like(Q0)
+    YError = np.zeros_like(Q0)
     # double loop thru q0 and q1, compute inverse kinematics at that starting point and compute the error
     for i in range(n):
         for j in range(n):
@@ -60,17 +69,38 @@ def errorchart(e, desired, tolerance, maxiter, J):
                         [-l0 * SIN(q0) - l1 * SIN(q0 + q1), -l1 * SIN(q0 + q1)],
                         [ l0 * COS(q0) + l1 * COS(q0 + q1),  l1 * COS(q0 + q1)]
                         ]);
-            Error[i,j] = inverse_kinematics_2d(e, np.array([q0,q1]), desired, tolerance, maxiter, J) #calculate the error of this particular q0 and q1 and find the inverse kinematics
+            TotalError[i,j], XError[i,j], YError[i,j] = inverse_kinematics_2d(e, np.array([q0,q1]), desired, tolerance, maxiter, J) #calculate the error of this particular q0 and q1 and find the inverse kinematics
 
-    #Plot the Error Surface ---
-    fig = plt.figure()
-    ax = fig.add_subplot(111, projection='3d')
-    ax.plot_surface(Q0, Q1, Error, cmap='plasma')
+    #Plot the Error Surface 
+    fig = plt.figure(figsize=(18, 6))
 
-    ax.set_xlabel("q0 (rad)")
-    ax.set_ylabel("q1 (rad)")
-    ax.set_zlabel("Position Error")
+    # First plot: total error
+    ax1 = fig.add_subplot(1, 3, 1, projection='3d')
+    ax1.plot_surface(Q0, Q1, TotalError, cmap='plasma')
+    ax1.set_xlabel("q0 (rad)")
+    ax1.set_ylabel("q1 (rad)")
+    ax1.set_zlabel("Total Position Error")
+    ax1.set_title("Total Error Surface")
+
+    # Second plot: x error
+    ax2 = fig.add_subplot(1, 3, 2, projection='3d')
+    ax2.plot_surface(Q0, Q1, XError, cmap='plasma')
+    ax2.set_xlabel("q0 (rad)")
+    ax2.set_ylabel("q1 (rad)")
+    ax2.set_zlabel("X Position Error")
+    ax2.set_title("X Error Surface")
+
+    # Third plot: y error
+    ax3 = fig.add_subplot(1, 3, 3, projection='3d')
+    ax3.plot_surface(Q0, Q1, YError, cmap='plasma')
+    ax3.set_xlabel("q0 (rad)")
+    ax3.set_ylabel("q1 (rad)")
+    ax3.set_zlabel("Y Position Error")
+    ax3.set_title("Y Error Surface")
+
+    plt.tight_layout()
     plt.show()
+
 
 def main():
     q0=1 #hardcode test angles for now
@@ -101,11 +131,28 @@ def main():
     errorchart(e2, DESIRED, tolerance, maxiter, J)
 
 def testing():
-    #see where the angle extends from
-    theta = np.array([PI/2,-PI/2])
-    e2 = rtb.ET.Rz() * rtb.ET.tx(l0) * rtb.ET.Rz() * rtb.ET.tx(l1) #each arm is 1m long.
-    T= e2.eval(theta)
-    print(T)
+    n=100;
+    quad_range=np.linspace(0,50,n)
+    Q0, Q1 = np.meshgrid(quad_range, quad_range) 
+    Z = np.zeros_like(Q0)
+    for i in range (n):
+        for j in range(n):
+            Z[i,j] = i*i
+
+    #Plot the Error Surface 
+    fig = plt.figure(figsize=(6,6))
+
+    # First plot: total error
+    ax1 = fig.add_subplot(1, 1, 1, projection='3d')
+    ax1.plot_surface(Q0, Q1, Z, cmap='plasma')
+    ax1.set_xlabel("x")
+    ax1.set_ylabel("y")
+    ax1.set_zlabel("Z")
+    ax1.set_title("testy test")
+
+    plt.show()
+    
+
 
 
 #testing();
