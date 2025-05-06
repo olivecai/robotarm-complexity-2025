@@ -1,0 +1,14 @@
+'''
+May 2025
+2D, 2DOF robot arm simulation: find where the robot converges when Jacobian is constant.
+'''
+import numpy as np
+print(np.__version__)
+'''
+from spatialmath import SE3
+from spatialmath.base import sym
+from roboticstoolbox import ETS2 as E2
+
+e2 = E2.r() * E2.tx(1) * E2.r() * E2.tx(1) #each arm is 1m long.
+
+e2.eval([90,-90,2])'''
