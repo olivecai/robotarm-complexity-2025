@@ -16,8 +16,15 @@ from spatialmath.base import e2h, h2e
 import machinevisiontoolbox as mvtb
 from machinevisiontoolbox import CentralCamera
 import roboticstoolbox as rtb
+import matplotlib.pyplot as plt
 PI=np.pi
 TOLERANCE=1e-5
+MAXITER=50;
+#ROBOT PARAMS
+l0=1
+l1=1
+QR0=PI/2
+QR1=-PI/2
 
 def fkin3D(e, theta):
     ''' NOTE: idxing x and y coords is for SE3 translation/rotation matrix, not 2D!!!'''
@@ -46,7 +53,7 @@ def vs_fkin(e,theta, camera: CentralCamera):
     returns the position of the projection of the EE.  
     '''
     posR = fkin3D(e,theta)
-    print("Real point: ", posR)
+    #print("Real point: ", posR)
     posP = camera.project_point(posR)
     posPx = posP[0][0]
     posPy = posP[1][0]
@@ -70,7 +77,7 @@ def uncalibrated_vs(currQ, desiredP, camera: CentralCamera, e: rtb.Robot.ets):
     errorP=desiredP-currP
     error=np.linalg.norm(errorP)
     if error < TOLERANCE:
-        return (i, error, currP, currQ) # our ready pose IS the desired pose
+        return (i, error, errorP[0], errorP[1], currP, currQ) # our ready pose IS the desired pose
 
     epsilon=math.radians(0.15)
     alpha=0.5
@@ -90,41 +97,95 @@ def uncalibrated_vs(currQ, desiredP, camera: CentralCamera, e: rtb.Robot.ets):
     I=np.identity(p)
     for i in range(p): #i is a specific robot param
         #the jacobian is first initialized with central differences. 
-        print("currQ: ")
+        '''print("currQ: ")
         print(currQ)
         print(I[i])
-        print(vs_fkin(e, currQ+epsilon*I[i], camera))
+        print(vs_fkin(e, currQ+epsilon*I[i], camera))'''
 
-        currJT[i] = ((vs_fkin(e, currQ+epsilon*I[i], camera))-(vs_fkin(e, currQ-epsilon*I[i], camera)))/2*epsilon
+        currJT[i] = ((vs_fkin(e, currQ+epsilon*I[i], camera))-(vs_fkin(e, currQ-epsilon*I[i], camera)))/(2*epsilon)
     currJ=currJT.T
-    print("currJ:")
-    print(currJ)
     # NOTE: advised to make f: actual theta -> result image position. double check if mine is OK! :>
     ###now that we have a Jacobian estimate, we can solve for the correction amt in Q.
     corrQ = np.linalg.pinv(currJ) @ errorP
     currQ=currQ+corrQ
     ###after solvign for the new theta, we move there and check the error.
     currP=vs_fkin(e, currQ, camera)
-    errorP=desiredP-currP
+    errorP=desiredP-currP #error is measured from projection img
     error=np.linalg.norm(errorP)
     i+=1
 
     ### after the initial setup and estimating J, we begin the iterations: 
-    maxiter=100;
-    while i< maxiter and error>TOLERANCE:
+    while i< MAXITER and error>TOLERANCE:
         #update J using Broyden's method:
         currJ = currJ + alpha* ((errorP.T - currJ@corrQ)@corrQ.T)/(corrQ.T@corrQ)
-        print("currJ:")
-        print(currJ) 
+
         corrQ = np.linalg.pinv(currJ) @ errorP #calculate the change in theta needed
         currQ=currQ+corrQ #update the current theta 
         #use the current theta to find our new position and error:
         currP=vs_fkin(e, currQ, camera)
         errorP=desiredP-currP
+        Xerror=errorP[0]
+        Yerror=errorP[1]
         error=np.linalg.norm(errorP)
         i+=1;
     ### return i, error, pos
-    return i, error, currP, currQ      
+    return i, error, Xerror, Yerror, currP, currQ      
+
+def plot_error(e, desiredPP, tolerance, camera, mode):
+    '''
+    This function plots total error, x error, y error.
+    Create a linear space of values of theta between -pi and pi,
+    and for each pair of theta values, compute the jacobian and try to converge to desired pos. 
+    Then, plot the error for each pair of theta values.
+    '''
+    # make a linspace and meshgrid for ranges of q0 and q1
+    n = 100  #resolution
+    q_range = np.linspace(-PI, PI, n )
+    Q0, Q1 = np.meshgrid(q_range, q_range) 
+    TotalError = np.zeros_like(Q0)
+    XError = np.zeros_like(Q0)
+    YError = np.zeros_like(Q0)
+    # double loop thru q0 and q1, compute inverse kinematics at that starting point and compute the error
+    for i in range(n):
+        for j in range(n):
+            q0 = Q0[i, j]
+            q1 = Q1[i, j]
+            if mode==1:
+                iterations, TotalError[i,j], XError[i,j], YError[i,j], position, theta = uncalibrated_vs(np.array([q0,q1]), desiredPP, camera, e) 
+
+    #Plot the Error Surface 
+    fig = plt.figure(figsize=(12, 4))
+
+    # First plot: total error
+    ax1 = fig.add_subplot(1, 3, 1, projection='3d')
+    ax1.plot_surface(Q0, Q1, TotalError, cmap='plasma')
+    ax1.set_xlabel("q0 (rad)")
+    ax1.set_ylabel("q1 (rad)")
+    ax1.set_zlabel("Total Position Error")
+    ax1.set_title("Total Error Surface")
+
+    # Second plot: x error
+    ax2 = fig.add_subplot(1, 3, 2, projection='3d')
+    ax2.plot_surface(Q0, Q1, XError, cmap='plasma')
+    ax2.set_xlabel("q0 (rad)")
+    ax2.set_ylabel("q1 (rad)")
+    ax2.set_zlabel("X Position Error")
+    ax2.set_title("X Error Surface")
+
+    # Third plot: y error
+    ax3 = fig.add_subplot(1, 3, 3, projection='3d')
+    ax3.plot_surface(Q0, Q1, YError, cmap='plasma')
+    ax3.set_xlabel("q0 (rad)")
+    ax3.set_ylabel("q1 (rad)")
+    ax3.set_zlabel("Y Position Error")
+    ax3.set_title("Y Error Surface")
+
+    if mode==1:
+        plt.suptitle("Mode 1: Measure error after visual servoing from q0,q1 for desired pos of 1,1,3. Constant depth")
+    if mode==2:
+        plt.suptitle("Mode 2: Measure error directly from q0,q1")
+    plt.tight_layout()
+    plt.show()
 
 def main():
     #CAMERA PARAMS
@@ -133,23 +194,24 @@ def main():
     u0 = 500       # principal point, horizontal coordinate
     v0 = 500       # principal point, vertical coordinate
 
-    #ROBOT PARAMS
-    l0=1
-    l1=1
+    teeny=1e-1
 
     camera : CentralCamera = init_camera(f, rho, u0, v0, 1000)
 
-    initialQ = np.array([PI/2, -PI/2]) #ready position of the robot
-    desiredRP = np.array([0,2,3])
+    initialQ = np.array([QR0+teeny, QR1+teeny]) #ready position of the robot
+    desiredRP = np.array([1,1,3])
     desiredPP = proj_point(desiredRP, camera)
 
     #just use ets. but if we want to use a robot, we can simply transform the robot into an ets
     ets = rtb.ET.Rz() * rtb.ET.tx(l0) * rtb.ET.Rz() * rtb.ET.tx(l1) #each arm is 1m long.
 
-    iterations, error, position, theta = uncalibrated_vs(initialQ, desiredPP, camera, ets)
+    iterations, error, Xerror, Yerror, position, theta = uncalibrated_vs(initialQ, desiredPP, camera, ets)
     print("iterations:", iterations,"error:", error, "resulting projected position:", position)
     print("real pos of the resultant projection:",fkin3D(ets, theta))
     print("desired real pos:", desiredRP, "desired projected pos:", desiredPP)
+
+    print("Creating plot of q0 vs q1 vs position error, for visual servoing.")
+    plot_error(ets, desiredPP, TOLERANCE, camera, 1)
 
 main()
 
