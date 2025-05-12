@@ -22,23 +22,12 @@ import plotly.graph_objects as go
 
 PI=np.pi
 TOLERANCE=1e-5
-MAXITER=20;
+MAXITER=30;
 #ROBOT PARAMS
 l0=1
 l1=1
-l2=1
 QR0=0
-QR1=0
-QR2=0
-
-#CAMERA PARAMS
-f = 8*1e-3     # focal length in metres
-rho = 10*1e-6  # pixel side length in metres
-u0 = 500       # principal point, horizontal coordinate
-v0 = 500       # principal point, vertical coordinate
-
-teeny=1e-6
-initialQ = np.array([QR0+teeny, QR1+teeny, QR2+teeny]) #ready position of the robot
+QR1=PI/2
 
 desiredRP = np.array([1,0,1])
 
@@ -102,7 +91,7 @@ def uncalibrated_vs(currQ, desiredP, camera: CentralCamera, e: rtb.Robot.ets):
         return (i, error, errorP[0], errorP[1], currP, currQ) # our ready pose IS the desired pose
 
     epsilon=math.radians(0.15)
-    alpha=0.1
+    alpha=0.05
 
     ###sanity check for our dimensions: 
     # let p=robot params, k=datapts for overdet system. 
@@ -123,7 +112,7 @@ def uncalibrated_vs(currQ, desiredP, camera: CentralCamera, e: rtb.Robot.ets):
         print(currQ)
         print(I[i])
         print(vs_fkin(e, currQ+epsilon*I[i], camera))'''
-
+        
         currJT[i] = ((vs_fkin(e, currQ+epsilon*I[i], camera))-(vs_fkin(e, currQ-epsilon*I[i], camera)))/(2*epsilon)
     currJ=currJT.T
     # NOTE: advised to make f: actual theta -> result image position. double check if mine is OK! :>
@@ -138,23 +127,31 @@ def uncalibrated_vs(currQ, desiredP, camera: CentralCamera, e: rtb.Robot.ets):
 
     ### after the initial setup and estimating J, we begin the iterations: 
     while i< MAXITER and error>TOLERANCE:
-        #update J using Broyden's method:
+        '''
         print("errorP:")
-        print (errorP)
+        print (errorP, errorP.shape)
         print("errorP@errorP")
         print(errorP@errorP)
         print("currJ:")
-        print(currJ)
+        print(currJ, currJ.shape)
         print("corrQ")
-        print(corrQ)
+        print(corrQ, corrQ.shape)
         print("corrQ.T")
-        print(corrQ.T)
+        print(corrQ.T, corrQ.T.shape)
         print("(errorP.T - currJ@corrQ):")
         print((errorP.T - currJ@corrQ))
-        #currJ = currJ + alpha* ((errorP.T - currJ@corrQ.T)@corrQ)/(corrQ@corrQ)
         delta_e = errorP - currJ @ corrQ
+        print(delta_e, delta_e.shape)
+        print("(errorP.T - currJ@corrQ)@corrQ.T")
+        print((errorP.T - currJ@corrQ)@corrQ.T, ((errorP.T - currJ@corrQ)@corrQ.T).shape)
+        print("np.outer(delta_e, corrQ)")
+        print(np.outer(delta_e, corrQ), np.outer(delta_e, corrQ).shape)
+        print(np.outer(delta_e, corrQ)/(corrQ@corrQ)) #the smaller the error the bigger the step
+        '''
+        #update J using Broyden's method:
+        #currJ = currJ + alpha* ((errorP.T - currJ@corrQ)@corrQ.T)/(corrQ@corrQ) #old broken 
+        delta_e = errorP - currJ @ corrQ #new, should work?
         currJ += alpha * np.outer(delta_e, corrQ) / (corrQ @ corrQ)
-
 
         corrQ = np.linalg.pinv(currJ) @ errorP #calculate the change in theta needed
         currQ=currQ+alpha*corrQ #update the current theta 
@@ -181,10 +178,8 @@ def plot_error(e, desiredPP, tolerance, camera, mode):
     '''
     # make a linspace and meshgrid for ranges of q0 and q1
     n = 100  #resolution
-    q1_range = np.linspace(-PI, PI, n )
-    q2_range = np.linspace(-PI/2,PI/2,n)
-    q3_range = np.linspace(-PI/2, PI/2, n)
-    Q0, Q1, Q2 = np.meshgrid(q1_range, q2_range, q3_range) 
+    q_range = np.linspace(-PI, PI, n )
+    Q0, Q1 = np.meshgrid(q_range, q_range) 
     TotalError = np.zeros_like(Q0)
     XError = np.zeros_like(Q0)
     YError = np.zeros_like(Q0)
@@ -193,35 +188,17 @@ def plot_error(e, desiredPP, tolerance, camera, mode):
         for j in range(n):
             q0 = Q0[i, j]
             q1 = Q1[i, j]
-            q2 = Q2[i, j]
-            Q=np.array([q0,q1,q2])
             if mode==1:
-                iterations, TotalError[i,j], XError[i,j], YError[i,j], position, theta = uncalibrated_vs(Q, desiredPP, camera, e)
+                iterations, TotalError[i,j], XError[i,j], YError[i,j], position, theta = uncalibrated_vs(np.array([q0,q1]), desiredPP, camera, e) 
             if mode==2: 
                 realPos = fkin3D(e, np.array([q0,q1]))
                 TotalError[i,j] = np.linalg.norm(desiredRP-realPos)
                 XError[i,j] = (desiredRP-realPos)[0]
                 YError[i,j] = (desiredRP-realPos)[1]
 
-    x=Q0.flatten()
-    y=Q1.flatten()
-    z=Q2.flatten()
-    errors=TotalError.flatten()
+    #Plot the Error Surface 
+    fig = plt.figure(figsize=(12, 4))
 
-    scatter = go.Scatter3d(x=x,y=y,z=z,mode='markers', marker=dict(size=2,color=errors, colorscale='plasma', colorbar=dict(title='Total Error Non-Normalized'), opacity=0.3))
-    layout = go.Layout(
-        scene=dict(
-            xaxis_title='q0',
-            yaxis_title='q1',
-            zaxis_title='q2'
-        ),
-        title='Joint Space Error in 3D',
-        margin=dict(l=0,r=0,b=0,t=50)
-    )
-
-    fig=go.Figure(data=[scatter], layout=layout)
-    fig.show()
-    '''
     # First plot: total error
     ax1 = fig.add_subplot(1, 3, 1, projection='3d')
     ax1.plot_surface(Q0, Q1, TotalError, cmap='plasma')
@@ -229,7 +206,7 @@ def plot_error(e, desiredPP, tolerance, camera, mode):
     ax1.set_ylabel("q1 (rad)")
     ax1.set_zlabel("Total Position Error")
     ax1.set_title("Total Error Surface")
-    
+
     # Second plot: x error
     ax2 = fig.add_subplot(1, 3, 2, projection='3d')
     ax2.plot_surface(Q0, Q1, XError, cmap='plasma')
@@ -245,7 +222,6 @@ def plot_error(e, desiredPP, tolerance, camera, mode):
     ax3.set_ylabel("q1 (rad)")
     ax3.set_zlabel("Y Position Error")
     ax3.set_title("Y Error Surface")
-    '''
 
     if mode==1:
         plt.suptitle("Mode 1: Measure error after visual servoing from q0,q1 for desired pos of 1,0,1. Dynamically calculated depth.")
@@ -255,16 +231,24 @@ def plot_error(e, desiredPP, tolerance, camera, mode):
     plt.show()
 
 def main():
+    #CAMERA PARAMS
+    f = 8*1e-3     # focal length in metres
+    rho = 10*1e-6  # pixel side length in metres
+    u0 = 500       # principal point, horizontal coordinate
+    v0 = 500       # principal point, vertical coordinate
+
+    teeny=1e-6
+
     camera : CentralCamera = init_camera(f, rho, u0, v0, 1000)
 
-    #NOTE: desiredRP is a global variable
+    initialQ = np.array([QR0+teeny, QR1+teeny]) #ready position of the robot
+    #desiredRP is a global variable
     desiredPP = proj_point(desiredRP, camera)
 
     #just use ets. but if we want to use a robot, we can simply transform the robot into an ets
     ets0 = rtb.ET.Rz() * rtb.ET.tx(l0) * rtb.ET.Rz() * rtb.ET.tx(l1) #2DOF, x-y plane, very simple. 
     ets1 = rtb.ET.Rz() * rtb.ET.tx(l0) * rtb.ET.Rx() * rtb.ET.tz(l1) #z-axis revolute and another y-axis revolute jnt (DEPTH TESTER)
-    ets2= rtb.ET.Rz() * rtb.ET.tx(l0) * rtb.ET.Rx() * rtb.ET.tz(l1) * rtb.ET.Rx() * rtb.ET.tz(l2)
-    ets=ets2
+    ets=ets1
     '''
     ee_world = fkin3D(ets, initialQ) # Position in real world coords: (0.88, 1.19, 0)
     print("TEST WORLD POINT", ee_world)
@@ -279,18 +263,17 @@ def main():
     projected_desired_point = proj_point(desiredRP, camera)
     print("DESIRED PROJ P", projected_desired_point)
     '''
-    
+
     iterations, error, Xerror, Yerror, position, theta = uncalibrated_vs(initialQ, desiredPP, camera, ets)
     print("iterations:", iterations,"error:", error, "resulting projected position:", position)
     print("real pos of the resultant projection:",fkin3D(ets, theta))
     print("desired real pos:", desiredRP, "desired projected pos:", desiredPP)
-    
+
     robot=rtb.Robot(ets)
-    q=np.array([0, 0,0])
+    q=np.array(theta)
     robot.plot(q,block=True)
 
-    #print("Creating plot of q0 vs q1 vs position error, for visual servoing.")
-    #plot_error(ets, desiredPP, TOLERANCE, camera, 1)
+    print("Creating plot of q0 vs q1 vs position error, for visual servoing.")
+    plot_error(ets, desiredPP, TOLERANCE, camera, 1)
 
 main()
-
