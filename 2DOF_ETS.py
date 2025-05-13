@@ -27,8 +27,10 @@ def get_pos(e, theta):
 def norm(v):
         return np.linalg.norm(v)
 
-def inverse_kinematics_2d(e, theta, desired_pos, tolerance, maxiter, J): #uses a constant Jacobian. So, do this step for every q0 q1 in our meshgrid?
-
+def inverse_kinematics_2d(e, theta, desired_pos, tolerance, maxiter, J): #uses a constant Jacobian. So, do this step for every q0 q1 in our meshgrid.
+    '''
+    CONSTANT JACOBIAN
+    '''
     old_pos=get_pos(e, theta)
     error = norm(old_pos - desired_pos)
 

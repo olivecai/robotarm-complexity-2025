@@ -85,6 +85,7 @@ def uncalibrated_vs(currQ, desiredP, camera: CentralCamera, e: rtb.Robot.ets):
     currP=vs_fkin(e, currQ, camera) #projection of that real point through the camera
    # print("first projected point:", currP)
     #print("this is the desired projected point:", desiredP)
+    print("currQ:", currQ)
     errorP=desiredP-currP
     error=np.linalg.norm(errorP)
     if error < TOLERANCE:
@@ -119,6 +120,8 @@ def uncalibrated_vs(currQ, desiredP, camera: CentralCamera, e: rtb.Robot.ets):
     ###now that we have a Jacobian estimate, we can solve for the correction amt in Q.
     corrQ = np.linalg.pinv(currJ) @ errorP
     currQ=currQ+corrQ
+    print("currQ:", currQ)
+    print("currJ:", currJ)
     ###after solvign for the new theta, we move there and check the error.
     currP=vs_fkin(e, currQ, camera)
     errorP=desiredP-currP #error is measured from projection img
@@ -148,14 +151,17 @@ def uncalibrated_vs(currQ, desiredP, camera: CentralCamera, e: rtb.Robot.ets):
         print(np.outer(delta_e, corrQ), np.outer(delta_e, corrQ).shape)
         print(np.outer(delta_e, corrQ)/(corrQ@corrQ)) #the smaller the error the bigger the step
         '''
+        
         #update J using Broyden's method:
         #currJ = currJ + alpha* ((errorP.T - currJ@corrQ)@corrQ.T)/(corrQ@corrQ) #old broken 
         delta_e = errorP - currJ @ corrQ #new, should work?
         currJ += alpha * np.outer(delta_e, corrQ) / (corrQ @ corrQ)
+        print("currJ:", currJ)
 
         corrQ = np.linalg.pinv(currJ) @ errorP #calculate the change in theta needed
         currQ=currQ+alpha*corrQ #update the current theta 
         #use the current theta to find our new position and error:
+        print("currQ:", currQ)
         currP=vs_fkin(e, currQ, camera)
         errorP=desiredP-currP
         Xerror=errorP[0]
@@ -273,7 +279,7 @@ def main():
     q=np.array(theta)
     robot.plot(q,block=True)
 
-    print("Creating plot of q0 vs q1 vs position error, for visual servoing.")
-    plot_error(ets, desiredPP, TOLERANCE, camera, 1)
+    #print("Creating plot of q0 vs q1 vs position error, for visual servoing.")
+    #plot_error(ets, desiredPP, TOLERANCE, camera, 1)
 
 main()
