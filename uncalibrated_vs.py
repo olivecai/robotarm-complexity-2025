@@ -329,12 +329,12 @@ def main():
     '''
 
 
-    '''
+    
     iterations, error, Xerror, Yerror, position, theta = uncalibrated_vs(initialQ, desiredPP, camera, ets)
     print("iterations:", iterations,"error:", error)
     print("DESIRED projected pos:", desiredPP, "RESULT projected position:", position)
     print("DESIRED real pos:", desiredRP, "RESULT real position:",fkin3D(ets, theta))
-    
+    '''
     robot=rtb.Robot(ets)
     q=theta
     print(q)
