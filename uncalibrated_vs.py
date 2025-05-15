@@ -245,9 +245,15 @@ def plot_error(e, desiredPP, tolerance, camera, mode):
     Create a linear space of values of theta between -pi and pi,
     and for each pair of theta values, compute the jacobian and try to converge to desired pos. 
     Then, plot the error for each pair of theta values.
+
+
+    mode > 10: show slices
+    if mode==1 or 11, inverse kinematics
+    if mode ==2 or 12, just error from wherever we started
+    if mode==3 or 13, then do constant jacobian
     '''
     # make a linspace and meshgrid for ranges of q0 and q1
-    n = 15  #resolution
+    n = 10  #resolution
     q1_range = np.linspace(-PI, PI, n )
     q2_range = np.linspace(-PI,PI,n)
     q3_range = np.linspace(-PI, PI, n)
@@ -264,14 +270,18 @@ def plot_error(e, desiredPP, tolerance, camera, mode):
                 q2 = Q2[i, j, k]
             
                 Q=np.array([q0,q1,q2])
-                if mode==1: #use uncalibrated visual servoing inverse kinematics, init J central diff, update w Broyden's
+                if mode>10: #get the slices
+                    slices=1
+                else:
+                    slices=0
+                if (mode//10)==1: #use uncalibrated visual servoing inverse kinematics, init J central diff, update w Broyden's
                     iterations, TotalError[i,j,k], XError[i,j,k], YError[i,j,k], position, theta = uncalibrated_vs(Q, desiredPP, camera, e)
-                if mode==2: #directly measure error from q0 and q1
+                if (mode//10)==2: #directly measure error from q0 and q1
                     realPos = fkin3D(e, Q)
                     TotalError[i,j,k] = np.linalg.norm(desiredRP-realPos)
                     XError[i,j,k] = (desiredRP-realPos)[0]
                     YError[i,j,k] = (desiredRP-realPos)[1]
-                if mode==3: #use a constant jacobian
+                if (mode//10)==3: #use a constant jacobian
                     iterations, TotalError[i,j,k], XError[i,j,k], YError[i,j,k], position, theta = constjac_3dof(Q, desiredPP, camera, e)
 
 
@@ -281,26 +291,100 @@ def plot_error(e, desiredPP, tolerance, camera, mode):
     z=Q2.flatten()
     TotErrors=TotalError.flatten()
 
-    scatter = go.Scatter3d(x=x,y=y,z=z,mode='markers', marker=dict(size=6,color=TotErrors, colorscale='plasma', colorbar=dict(title='Total Error Non-Normalized'), opacity=0.2))
-    layout = go.Layout(
-        scene=dict(
-            xaxis_title='q0',
-            yaxis_title='q1',
-            zaxis_title='q2'
-        ),
-        title='Joint Space Error in 3D',
-        margin=dict(l=0,r=0,b=0,t=50)
-    )
+    if slices==1:
+        print("SLICES")
+        # animation to iter through q0 slices!
+        unique_z_vals = np.unique(np.round(z, 3)) #round the z TotErrors in the flattened space to 3 decimals, and then get each unique val. basically same thing as z, but make it more compact
+        slice_thickness = 0.01
+        frames = []
 
-    fig=go.Figure(data=[scatter], layout=layout)
+
+        for z_val in unique_z_vals:
+            indices = np.where(np.isclose(z, z_val, atol=slice_thickness))[0] 
+            if len(indices) == 0:
+                continue
+            frames.append(go.Frame(
+                data=[
+                    go.Scatter(
+                        x=x[indices],
+                        y=y[indices],
+                        mode='markers',
+                        marker=dict(
+                            size=15,
+                            color=TotErrors[indices],
+                            colorscale='plasma',
+                            cmin=min(TotErrors),
+                            cmax=max(TotErrors),
+                            colorbar=dict(title='Error'),
+                            opacity=0.8
+                        )
+                    )
+                ],
+                name=str(z_val)
+            ))
+
+        # Set initial frame
+        initial_indices = np.where(np.isclose(z, unique_z_vals[0], atol=slice_thickness))[0]
+
+        # Main figure layout
+        fig = go.Figure( #this is the first frame
+            data=[
+                go.Scatter( 
+                    x=x[initial_indices],
+                    y=y[initial_indices],
+                    mode='markers',
+                    marker=dict(
+                        size=15, 
+                        color=TotErrors[initial_indices],
+                        colorscale='plasma',
+                        cmin=min(TotErrors),
+                        cmax=max(TotErrors),
+                        colorbar=dict(title='Error'),
+                        opacity=0.8
+                    )
+                )
+            ],
+            layout=go.Layout(
+                title='Z-Slice Viewer (q2 slice)',
+                xaxis_title='q0',
+                yaxis_title='q1',
+                width=700,
+                height=600,
+                updatemenus=[dict(
+                    type='buttons',
+                    showactive=False,
+                    buttons=[dict(label='Play', method='animate', args=[None])]
+                )],
+                sliders=[dict(
+                    steps=[dict(method='animate',
+                                args=[[str(zv)], dict(mode='immediate', frame=dict(duration=0), transition=dict(duration=0))],
+                                label=f"{zv:.2f}") for zv in unique_z_vals],
+                    active=0,
+                    transition=dict(duration=0),
+                    x=0.1,
+                    xanchor="left",
+                    y=0,
+                    yanchor="top"
+                )]
+            ),
+            frames=frames
+        )
+    
+    else: #not slices
+        print("3D PLOT")
+        scatter = go.Scatter3d(x=x,y=y,z=z,mode='markers', marker=dict(size=15,color=TotErrors, colorscale='plasma', colorbar=dict(title='Total Error Non-Normalized'), opacity=0.2))
+        layout = go.Layout(
+            scene=dict(
+                xaxis_title='q0',
+                yaxis_title='q1',
+                zaxis_title='q2'
+            ),
+            title='Joint Space Error in 3D',
+            margin=dict(l=0,r=0,b=0,t=50)
+        )
+        fig=go.Figure(data=[scatter], layout=layout)
+
     fig.show()
-
-    #if mode==1:
-    #    plt.suptitle("Mode 1: Measure error after visual servoing from q0,q1 for desired pos of 1,0,1. Dynamically calculated depth.")
-    #if mode==2:
-    #    plt.suptitle("Mode 2: Measure error directly from q0,q1")
-    #plt.tight_layout()
-    #plt.show()
 
 def main():
     camera : CentralCamera = init_camera(f, rho, u0, v0, 1000)
@@ -341,7 +425,7 @@ def main():
     robot.plot(q,block=True)'''
 
     print("Creating plot of q0 vs q1 vs position error, for visual servoing.")
-    plot_error(ets, desiredPP, TOLERANCE, camera, 2)
+    plot_error(ets, desiredPP, TOLERANCE, camera, 11)
 
 main()
 
