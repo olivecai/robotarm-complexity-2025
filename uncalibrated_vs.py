@@ -254,41 +254,45 @@ def plot_error(e, desiredPP, tolerance, camera, mode):
     '''
     # make a linspace and meshgrid for ranges of q0 and q1
     n = 10  #resolution
-    q1_range = np.linspace(-PI, PI, n )
-    q2_range = np.linspace(-PI,PI,n)
-    q3_range = np.linspace(-PI, PI, n)
-    Q0, Q1, Q2 = np.meshgrid(q1_range, q2_range, q3_range) 
-    TotalError = np.zeros_like(Q0)
-    XError = np.zeros_like(Q0)
-    YError = np.zeros_like(Q0)
+    dof = e.n
+
+    # Step 1: Create linspaces and meshgrid
+    joint_ranges = [np.linspace(-PI, PI, n) for _ in range(dof)]
+    mesh = np.meshgrid(*joint_ranges, indexing='ij')  # ij indexing keeps dimensions aligned
+
+    # Step 2: Stack all grids to create a dof x n x n x ... array
+    Q_grid = np.stack(mesh, axis=-1)  # shape: (n, n, ..., n, dof)
+
+    # Step 3: Preallocate error arrays (same shape as grid without dof)
+    error_shape = Q_grid.shape[:-1]
+    TotalError = np.zeros(error_shape)
+    XError = np.zeros(error_shape)
+    YError = np.zeros(error_shape)
+
     # double loop thru q0 and q1, compute inverse kinematics at that starting point and compute the error
-    for i in range(n):
-        for j in range(n):
-            for k in range(n):
-                q0 = Q0[i, j, k]
-                q1 = Q1[i, j, k]
-                q2 = Q2[i, j, k]
-            
-                Q=np.array([q0,q1,q2])
+
+    for idx in np.ndindex(error_shape):
+                Q =Q_grid[idx]
                 if mode>10: #get the slices
                     slices=1
                 else:
                     slices=0
                 if (mode//10)==1: #use uncalibrated visual servoing inverse kinematics, init J central diff, update w Broyden's
-                    iterations, TotalError[i,j,k], XError[i,j,k], YError[i,j,k], position, theta = uncalibrated_vs(Q, desiredPP, camera, e)
+                    iterations, TotalError[idx], XError[idx], YError[idx], position, theta = uncalibrated_vs(Q, desiredPP, camera, e)
                 if (mode//10)==2: #directly measure error from q0 and q1
                     realPos = fkin3D(e, Q)
-                    TotalError[i,j,k] = np.linalg.norm(desiredRP-realPos)
-                    XError[i,j,k] = (desiredRP-realPos)[0]
-                    YError[i,j,k] = (desiredRP-realPos)[1]
+                    TotalError[idx] = np.linalg.norm(desiredRP-realPos)
+                    XError[idx] = (desiredRP-realPos)[0]
+                    YError[idx] = (desiredRP-realPos)[1]
                 if (mode//10)==3: #use a constant jacobian
-                    iterations, TotalError[i,j,k], XError[i,j,k], YError[i,j,k], position, theta = constjac_3dof(Q, desiredPP, camera, e)
+                    iterations, TotalError[idx], XError[idx], YError[idx], position, theta = constjac_3dof(Q, desiredPP, camera, e)
 
-
+    
     print("datapoints collected. plotting...")
-    x=Q0.flatten()
-    y=Q1.flatten()
-    z=Q2.flatten()
+    Q_flat = Q_grid.reshape(-1, dof)  # shape: (N, dof)
+    x=Q_flat[:,0]
+    y=Q_flat[:,1]
+    z=Q_flat[:,2]
     TotErrors=TotalError.flatten()
 
     if slices==1:
