@@ -81,21 +81,27 @@ class DelaunayMesh:
         self.robot = robot
         self.camera = camera #for now we wont use the camera. TODO: camera unused
         self.iterations=0 # incremented every time another point is plotted into our mesh
+        self.nodes = [] #for one item in the list we have: xa1, xa2, ..., xan, position in real world (the last index may be modified)
+        if robot.ets().n > 2: #number of joints/parameters the robot has
+            self.shape = Tetrahedron #tuple of four np arrays. each np array is n-dimensional.
+        else:
+            self.shape = Triangle #tuple of three np arrays. each np array is 2 dimensional. pretty limited here. TODO: user choose triangle or tetrahedral?  
         if mode==1: #all axis are joint parameters, and number of meshing indicates how complex the change in parameters becomes at that region.
-            if robot.ets().n > 2: #number of joints/parameters the robot has
-                self.shape = Tetrahedron #tuple of four np arrays. each np array is n-dimensional.
-            else:
-                self.shape = Triangle #tuple of three np arrays. each np array is 2 dimensional. pretty limited here. TODO: user choose triangle or tetrahedral?  
+            pass #TODO: will this method even work? think on it
         if mode==2:
             #plot the joint parameters and the position we end up in. TODO: need to make an x,y,z subplot to show individual position 
-            pass # , everything comes to
+            self.error
+
         self.sparse_step = sparse_step #initial grid size: how many datapoints for EACH q range? this is essentially the step size in the linear space 
     def plotmesh(self):
         #plot in real time or at the end? for now plot at end. TODO: implement plot
         pass
     def recursive_add_point(self, parent: Triangle):
-        #calculate the centroid
-        parent
+        '''
+        update iterations and nodes for each point that is added to the mesh '''
+        #calculate the centroid. compare centroid to the real point at the specified angles.
+        centroid = parent.centroid
+
 
     
 
