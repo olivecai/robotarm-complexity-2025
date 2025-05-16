@@ -212,3 +212,12 @@ TODO: make a very sparse grid and go through each triangle and see if you need t
 2. make a linspace and get the position value for certain datapoints (seperate x and y plots, each plot is q0 by q1)
 3. get the overall position error for each triangle: if overall error is greater than tolerance, we should SUBDIVIDE. We know the actual function (for now) since we can just compute the forward kinematics. Should this method be recursive? For each segment, subdivide until error is lower than RESTOL
 
+Here are the recursive steps:
+1. For a very sparse linspace of params (ie q0,q1 for now) plot the position PERCIEVED (so if we are in visual servoing, just plot the perceived position.) 
+2. The recurrence step occurs for each triangle: move to (? where/how should we subdivide the triangle?) and measure the error between that specific point and the actual function. if error is > RESTOL, then create a point to add to the triangles mesh there. 
+3. I think it's best if the triangluated point is in the centroid of the triangle (it will form weirdly if we take the border lines), though it's certainly a lot of recursions. Formula for the centroid, G, of a triangle in R-n is G = ( xa1+xa2+xa3 / 3, xb1+xb2+xb3 /3, ... xn1+xn2+xn3/3) So it's generalizable to higher deg DOF
+
+This is fine, but how can we make a piecewise linear approximation WITHOUT referencing the actual function? 
+In other words, we can't use the idea of error. Can we use the error of our own approximation? 
+
+TODO afterwards: successive mesh refinement may not work for a robot to find in real time, since it is both innefficient and not always feasible that we can nump around everywhere. What if instead we try somethign like successive mesh refinement?
