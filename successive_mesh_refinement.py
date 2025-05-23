@@ -68,16 +68,22 @@ def forward_kin(q, ets: rtb.ETS):
 
 def newpoint(Shape, ith, adjustedcentroid):
     '''
+    this function creates a new SHAPE and the last index is the new POINT
+
     adjustedcentroid is the new point which we would like to make a new shape with. 
     ith is the point of the parent shape which we exclude (and swap for adjustedcentroid). 
     creates and returns np.array, shape (ddim,).'''
-    ret = np.zeros(Shape.ddim)
+    ret = []
+    print(ret)
     j=0
     for i in range(Shape.ddim):
+        print("THIS IS i:", i)
         if i!=ith:
-            ret[j]= (Shape.structure[i])
+            print(Shape.structure[i])
+            ret.append(Shape.structure[i])
             j+=1;
-    ret[j] = adjustedcentroid
+        print(ret)
+    ret.append(adjustedcentroid)
     return ret
 
 class Triangle:
@@ -105,7 +111,7 @@ class Tetrahedron:
         self.centroid = calculate_centroid(self)
 
 class DelaunayMesh:
-    def __init__(self, restol: float, robot: rtb.ERobot, camera: CentralCamera, sparse_step: int, mode: int , X: int, jointlimits=list ): #using robots defined by ETS
+    def __init__(self, restol: float, robot: rtb.ERobot, camera: CentralCamera, sparse_step: int, shape_vertices_count: int , X: int, jointlimits=list ): #using robots defined by ETS
         self.restol = restol
         self.robot = robot
         self.q_count= robot.ets().n
@@ -113,16 +119,9 @@ class DelaunayMesh:
         self.camera = camera #for now we wont use the camera. TODO: camera unused
         self.iterations=0 # incremented every time another point is plotted into our mesh
         self.nodes = [] #ordered list of the nodes we currently have in the mesh. for one item in the list we have: xa1, xa2, ..., xan, position in real world (the last index may be modified, TBD)
-        if self.q_count > 2: #number of joints/parameters the robot has
-            self.shape = Tetrahedron #tuple of four np arrays. each np array is n-dimensional.
-        else:
-            self.shape = Triangle #the resulting plot would be q0,q1,posx OR posy 
-        self.mode=mode
+        self.shape_vertices_count=shape_vertices_count #if ==3, make triangles. if ==4, make tetrahdrons.
         self.X = X #X=0 is x, X=1 is y, X=2 is z. 
         self.sparse_step = sparse_step #initial grid size: how many datapoints for EACH q range? this is essentially the step size in the linear space 
-    def plotmesh(self):
-        #plot in real time/steps or at the end? for now plot at end of iterations. TODO: implement plot
-        pass
 
 def recursive_add_triangles(mesh: DelaunayMesh, parent: Triangle):
     '''
@@ -136,11 +135,13 @@ def recursive_add_triangles(mesh: DelaunayMesh, parent: Triangle):
     #TODO: FOR NOW, JUST LOOK AT the Xth dimension, which will be a global constant FOR NOW!!!!!!!!!!
     residual = np.linalg.norm(posR - posMesh) #using np linalg norm since we might want to expand later.
     if residual > mesh.restol: #then we should mesh again at the centroid and recurse on each child. for triangles, 3 children are created; tetrahedrons, 4.
-        for i in parent.structure: #ie for i in range(parent.ddim)
-            centroid[mesh.q_count] = posR #if the residual is larger than restol, we should refine there.
-            newpnt= newpoint(parent, i, centroid)
-            mesh.iterations+=1
-            mesh.nodes.append(newpnt) #just keeping track of things :-) 
+        for i in range(parent.ddim): #the number of vertices correspond to the number of new shapes created internally.
+            print("THIS IS ith:", i)
+            centroid[mesh.q_count] = posR #if the residual is larger than restol, we should refine the mesh at this local point.
+            
+            newpnt= newpoint(parent, i, centroid) #newpoint is actually generating three points for us here.
+            mesh.iterations+=1 #bookkeeping
+            mesh.nodes.append(newpnt[2]) #bookkeeping
             child=Triangle(newpnt[0], newpnt[1], newpnt[2])  
             return recursive_add_triangles(mesh, child)    
     else:
@@ -163,7 +164,7 @@ def recursive_add_tetrahedrons(mesh: DelaunayMesh, parent: Triangle):
             centroid[mesh.q_count] = posR
             newpnt= newpoint(parent, i, centroid)
             mesh.iterations+=1
-            mesh.nodes.append(newpnt) #just keeping track of things :-) 
+            mesh.nodes.append(newpnt[3]) #just keeping track of things :-) 
             child=Tetrahedron(newpnt[0], newpnt[1], newpnt[2], newpnt[3])  
             return recursive_add_tetrahedrons(mesh, child)    
     else:
@@ -171,6 +172,7 @@ def recursive_add_tetrahedrons(mesh: DelaunayMesh, parent: Triangle):
     
 def create_sparsespace(Mesh: DelaunayMesh):
     '''
+    this is where we decide actions.
     1. generate linspace for each dof
     2. create a meshgrid and plot our points.
     3. if tetrahedrons: for every four points make shape & call recursive_add_tetrahedrons
@@ -180,7 +182,7 @@ def create_sparsespace(Mesh: DelaunayMesh):
     6. pass this list into scipy delaunay mesh.
     7. NOTE: as we recurse, we create the notion of triangles/tetrahedrals in order to find the centroid. 
         However, it is not for CERTAIN (as far as i currently know) that scipy will create mesh with the same triangles; 
-        ie a better mesh may be available after obtaining all points. This is fine. 
+        ie a better mesh may be available after obtaining all points. This is fine for now;
         We simply keep the notion of triangles in order to find the centroid.
     '''
     n = Mesh.sparse_step #resolution. NOTE: should be very low, maybe n=2
@@ -195,20 +197,84 @@ def create_sparsespace(Mesh: DelaunayMesh):
     error_shape = Q_grid.shape[:-1]
     TotalError = np.zeros(error_shape)
 
-    for idx in np.ndindex(error_shape):
+    i=0;
+    for idx in np.ndindex(error_shape): #iter over every permut over linspace of q0...qn 
+                '''
+                This for loop iterates over every pair/permutation in the linear spaces of our parameters:
+                Example: if, for our 2DOF arm, joint_limits = [(-pi/2, pi/2), (-pi/2, pi/2)] and sparse_step=3, 
+                iter 0 : idx = (0, 0) Q = [-1.57079633 -1.57079633] meshpoint = [-1.57079633 -1.57079633 -1.        ]
+                iter 1 : idx = (0, 1) Q = [-1.57079633  0.        ] meshpoint = [-1.57079633e+00  0.00000000e+00  1.22464680e-16]
+                iter 2 : idx = (0, 2) Q = [-1.57079633  1.57079633] meshpoint = [-1.57079633  1.57079633  1.        ]
+                iter 3 : idx = (1, 0) Q = [ 0.         -1.57079633] meshpoint = [ 0.         -1.57079633  1.        ]
+                iter 4 : idx = (1, 1) Q = [0. 0.] meshpoint = [0. 0. 2.]
+                iter 5 : idx = (1, 2) Q = [0.         1.57079633] meshpoint = [0.         1.57079633 1.        ]
+                iter 6 : idx = (2, 0) Q = [ 1.57079633 -1.57079633] meshpoint = [ 1.57079633 -1.57079633  1.        ]
+                iter 7 : idx = (2, 1) Q = [1.57079633 0.        ] meshpoint = [1.57079633e+00 0.00000000e+00 1.22464680e-16]
+                iter 8 : idx = (2, 2) Q = [1.57079633 1.57079633] meshpoint = [ 1.57079633  1.57079633 -1.        ]
+
+                number of iterations = sparse_step raised to the DOF (sparse_step ** DOF)
+                meshpoint simply is Q, but with an extra entry, being the position coord. 
+                    Here, X=0, so we index the real world position vector (solved from forward kinematics) at index 0, getting the x coordinate.
+                '''
                 Q = Q_grid[idx] 
                 meshpoint = np.zeros(Q.shape[0] + 1)
                 posR = forward_kin(q=Q, ets= Mesh.robot.ets())
                 meshpoint[: Q.shape[0]] = Q
                 meshpoint[Q.shape[0]] = posR[mesh.X]
-                print(meshpoint)
 
+                #print("iter",i,": idx =",idx, "Q =",Q, "meshpoint =",meshpoint)
                 mesh.nodes.append(meshpoint)
+                i+=1;
     
-    TODO: for every n nodes, create a shape and perform recursion 
-    ie if tetrahedron: create tetrahedron for every four successive nodes and then exchange first node for the next to repeat
-    all we really need to do is pass it to recursive function and keep updating the mesh.nodes list and then at the end of it all, run delaunay meshing and view
-    how can we get a good idea of whats going on in higher dof?
+    '''
+    At this point we have created our sparse grid and it is now time to iterate over that grid and perform recursion on non-overlapping triangles/tetrahedrons.
+    '''
+    #call recursive add triangle (or tetrahedron) for every collection of consecutive 3 (or 4) points:
+    initmeshpoints=np.copy(mesh.nodes) #copy over the initializing nodes so that we can iterate over them. the mesh.nodes list is going to be modified concrrently.
+    i=0;
+    if Mesh.shape_vertices_count == 3: #triangles
+        while i+2 < (Mesh.sparse_step ** Mesh.q_count):
+            triangle = Triangle(initmeshpoints[i], initmeshpoints[i+1], initmeshpoints[i+2])
+            recursive_add_triangles(Mesh, triangle)
+            i+=1;
+    if Mesh.shape_vertices_count ==4: #tetrahedrons
+        while i+3 < (Mesh.sparse_step ** Mesh.q_count):
+            tetrahedron = Tetrahedron(initmeshpoints[i], initmeshpoints[i+1], initmeshpoints[i+2], initmeshpoints[i+3])
+            recursive_add_tetrahedrons(Mesh, tetrahedron)
+            i+=1;
+
+    '''
+    At this point we have finished recursion and mesh.nodes should be populated. Now we run Delaunay Meshing.'''
+
+def create_delaunaymesh(Mesh: DelaunayMesh):
+    print("Creating Delaunay Mesh...")
+    print("Collection of nodes to mesh over:",Mesh.nodes)
+    dmesh = Delaunay(Mesh.nodes)
+
+    print("dmesh:", dmesh)
+
+    fig = plt.figure()
+    ax = plt.axes(projection='3d')
+    plot_tri_simple(ax, dmesh)
+    plt.show()
+
+def plot_tri_simple(ax, dela):
+    print("dela.simplices count:", len(dela.simplices))
+    for tr in dela.simplices:
+        pts = dela.points[tr, :]
+        ax.plot3D(pts[[0,1],0], pts[[0,1],1], pts[[0,1],2], color='g', lw='0.1')
+        ax.plot3D(pts[[0,2],0], pts[[0,2],1], pts[[0,2],2], color='g', lw='0.1')
+        ax.plot3D(pts[[0,3],0], pts[[0,3],1], pts[[0,3],2], color='g', lw='0.1')
+        ax.plot3D(pts[[1,2],0], pts[[1,2],1], pts[[1,2],2], color='g', lw='0.1')
+        ax.plot3D(pts[[1,3],0], pts[[1,3],1], pts[[1,3],2], color='g', lw='0.1')
+        ax.plot3D(pts[[2,3],0], pts[[2,3],1], pts[[2,3],2], color='g', lw='0.1')
+
+    ax.scatter(dela.points[:,0], dela.points[:,1], dela.points[:,2], color='b')
+    ax.set_xlabel('q0')
+    ax.set_ylabel('q1')
+    ax.set_zlabel('X coordinate')
+
+
 
     
 
@@ -221,9 +287,10 @@ mytet = Tetrahedron(np.array([1,2,3]),np.array([4,5,6]),np.array([7,8,9]),np.arr
 print(mytet.centroid[:2])
 
 
-joint_limits = [(-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2)]  # example for 3 DOF
-mesh = DelaunayMesh(1e-4, robot, camera, sparse_step=3, mode=2,  X=0, jointlimits=joint_limits)
+joint_limits = [(-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2)]  # example for 2 DOF
+mesh = DelaunayMesh(1e-4, robot, camera, sparse_step=5, shape_vertices_count=3,  X=0, jointlimits=joint_limits)
 
 create_sparsespace(mesh)
 
+create_delaunaymesh(mesh)
 
