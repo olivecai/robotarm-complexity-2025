@@ -251,13 +251,14 @@ def plot_error(e, desiredPP, tolerance, camera, mode):
     if mode==1 or 11, inverse kinematics
     if mode ==2 or 12, just error from wherever we started
     if mode==3 or 13, then do constant jacobian
+    if mode==4 or 14, then simply give position from the set parameters at that point
     '''
-    # make a linspace and meshgrid for ranges of q0 and q1
+    # make a linspace and meshgrid for ranges of q0...qn
     n = 10  #resolution
     dof = e.n
 
     # Step 1: Create linspaces and meshgrid
-    joint_ranges = [np.linspace(-PI, PI, n) for _ in range(dof)]
+    joint_ranges = [np.linspace(-PI/2, PI/2, n) for _ in range(dof)]
     mesh = np.meshgrid(*joint_ranges, indexing='ij')  # ij indexing keeps dimensions aligned
 
     # Step 2: Stack all grids to create a dof x n x n x ... array
@@ -277,15 +278,19 @@ def plot_error(e, desiredPP, tolerance, camera, mode):
                     slices=1
                 else:
                     slices=0
-                if (mode//10)==1: #use uncalibrated visual servoing inverse kinematics, init J central diff, update w Broyden's
+                if (mode-10)==1 or mode==1: #use uncalibrated visual servoing inverse kinematics, init J central diff, update w Broyden's
                     iterations, TotalError[idx], XError[idx], YError[idx], position, theta = uncalibrated_vs(Q, desiredPP, camera, e)
-                if (mode//10)==2: #directly measure error from q0 and q1
+                if (mode-10)==2 or mode==2: #directly measure error from q0 and q1
                     realPos = fkin3D(e, Q)
                     TotalError[idx] = np.linalg.norm(desiredRP-realPos)
                     XError[idx] = (desiredRP-realPos)[0]
                     YError[idx] = (desiredRP-realPos)[1]
-                if (mode//10)==3: #use a constant jacobian
+                if (mode-10)==3 or mode==3: #use a constant jacobian
                     iterations, TotalError[idx], XError[idx], YError[idx], position, theta = constjac_3dof(Q, desiredPP, camera, e)
+                if (mode-10)==4 or mode==4:
+                    TotalError[idx]=fkin3D(e, Q)[1]
+                    print(fkin3D(e, Q))
+                    print(TotalError[idx])
 
     
     print("datapoints collected. plotting...")
@@ -429,7 +434,7 @@ def main():
     robot.plot(q,block=True)'''
 
     print("Creating plot of q0 vs q1 vs position error, for visual servoing.")
-    plot_error(ets, desiredPP, TOLERANCE, camera, 11)
+    plot_error(ets, desiredPP, TOLERANCE, camera, 13)
 
 main()
 
