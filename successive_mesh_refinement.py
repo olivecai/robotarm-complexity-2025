@@ -130,10 +130,10 @@ def recursive_add_triangles(mesh: DelaunayMesh, parent: Triangle):
     update iterations and nodes for each point that is added to the mesh '''
     #calculate the centroid. compare centroid to the real point at the specified angles.
     centroid = parent.centroid 
-    q = centroid[:mesh.q_count] #extract q, since the remaining elements in the array may be position coords
+    q = centroid[:mesh.q_count] #extract q, since the remaining elements in the array will be position coords
     posMesh = centroid[mesh.q_count:] #[x, y, z]
     posR = (forward_kin(q, mesh.robot.ets()))
-    residual = np.linalg.norm(posR - posMesh) #using np linalg norm since we might want to expand later.
+    residual = np.linalg.norm(posR - posMesh) #calculate the residual
     if residual > mesh.restol: #then we should mesh again at the centroid and recurse on each child. for triangles, 3 children are created; tetrahedrons, 4.
         for i in range(parent.ddim): #the number of vertices correspond to the number of new shapes created internally.
             print("THIS IS ith:", i)
@@ -160,8 +160,8 @@ def recursive_add_tetrahedrons(mesh: DelaunayMesh, parent: Triangle):
     residual = np.linalg.norm(posR - posMesh) #using np linalg norm since we might want to expand later.
 
     if residual > mesh.restol: #then we should mesh again with the centroid q and pos as the real pos and recurse on each child. for triangles, 3 children are created; tetrahedrons, 4.
-        for i in parent.structure: #ie for i in range(parent.ddim)
-            centroid[mesh.q_count] = posR
+        for i in range(parent.ddim): #ie for i in range(parent.ddim)
+            centroid[mesh.q_count:] = posR
             ith_newshape= newshape(parent, i, centroid)
             mesh.iterations+=1 #bookkeepgin
             mesh.nodes.append(ith_newshape[3]) #bookkeeping, last point is new point
@@ -173,7 +173,7 @@ def recursive_add_tetrahedrons(mesh: DelaunayMesh, parent: Triangle):
     
 def create_sparsespace(Mesh: DelaunayMesh):
     '''
-    this is where we decide actions.
+    this is where we initialize the mesh using a constant grid and also call our recursive functions.
     1. generate linspace for each dof
     2. create a meshgrid and plot our points.
     3. if tetrahedrons: for every four points make shape & call recursive_add_tetrahedrons
@@ -195,11 +195,11 @@ def create_sparsespace(Mesh: DelaunayMesh):
     Q_grid = np.stack(grid, axis=-1)  # shape: (n, n, ..., n, dof)
 
     # preallocate error arrays (same shape as grid, but without dof)
-    error_shape = Q_grid.shape[:-1]
-    TotalError = np.zeros(error_shape)
+    permuts_over_linspaces_shape = Q_grid.shape[:-1]
+    permuts_over_linspaces = np.zeros(permuts_over_linspaces_shape)
 
     i=0;
-    for idx in np.ndindex(error_shape): #iter over every permut over linspace of q0...qn 
+    for idx in np.ndindex(permuts_over_linspaces_shape): #iter over every permut over linspace of q0...qn 
                 '''
                 This for loop iterates over every pair/permutation in the linear spaces of our parameters:
                 Example: if, for our 2DOF arm, joint_limits = [(-pi/2, pi/2), (-pi/2, pi/2)] and sparse_step=3, 
@@ -224,8 +224,8 @@ def create_sparsespace(Mesh: DelaunayMesh):
                 meshpoint[Q.shape[0]:] = posR
 
                 print("iter",i,": idx =",idx, "Q =",Q, "meshpoint =",meshpoint)
-                mesh.nodes.append(meshpoint)
-                mesh.plotnodes.append(Q)
+                Mesh.nodes.append(meshpoint)
+                Mesh.plotnodes.append(Q)
                 i+=1;
     
     '''
@@ -233,7 +233,7 @@ def create_sparsespace(Mesh: DelaunayMesh):
     '''
 
     #call recursive add triangle (or tetrahedron) for every collection of consecutive 3 (or 4) points:
-    initmeshpoints=np.copy(mesh.nodes) #copy over the initializing nodes so that we can iterate over them. the mesh.nodes list is going to be modified concrrently.
+    initmeshpoints=np.copy(Mesh.nodes) #copy over the initializing nodes so that we can iterate over them. the mesh.nodes list is going to be modified concrrently.
     i=0;
     if Mesh.shape_vertices_count == 3: #triangles
         while i+2 < (Mesh.sparse_step ** Mesh.q_count):
@@ -250,7 +250,44 @@ def create_sparsespace(Mesh: DelaunayMesh):
     At this point we have finished recursion and mesh.nodes should be populated. Now we run Delaunay Meshing on the nodes. 
     When plotting, create a copy of the list of nodes we have and erase their last three dims to only see DOF.'''
 
-def create_delaunaymesh(Mesh: DelaunayMesh, mode: int):
+def create_delaunaymesh_1DOF(Mesh: DelaunayMesh, mode: int):
+    '''
+    Plot Delaunay Mesh for 1 DOF arm.
+    mode==1: display 'flattened' 1D graph
+    mode==2: display 3D graph, with x as q0, y and z as x and y cartesian coord
+    '''
+    plotnodes=np.array(Mesh.plotnodes) #convert list of np arrays into a double nested np array
+    nodes=np.array(Mesh.nodes)
+    posnodes=np.array([np.delete(sub_arr, Mesh.q_count+2) for sub_arr in nodes])
+    print("POSNODES:" , posnodes)
+    dela = Delaunay(posnodes)  
+    plt.figure()
+    ax = plt.axes(projection='3d')
+    print("dela.simplices count:", len(dela.simplices))
+    for tr in dela.simplices:
+        pts = dela.points[tr, :]
+        ax.plot3D(pts[[0,1],0], pts[[0,1],1], pts[[0,1],2], color='g', lw='0.1')
+        ax.plot3D(pts[[0,2],0], pts[[0,2],1], pts[[0,2],2], color='g', lw='0.1')
+        ax.plot3D(pts[[0,3],0], pts[[0,3],1], pts[[0,3],2], color='g', lw='0.1')
+        ax.plot3D(pts[[1,2],0], pts[[1,2],1], pts[[1,2],2], color='g', lw='0.1')
+        ax.plot3D(pts[[1,3],0], pts[[1,3],1], pts[[1,3],2], color='g', lw='0.1')
+        ax.plot3D(pts[[2,3],0], pts[[2,3],1], pts[[2,3],2], color='g', lw='0.1')
+
+    ax.scatter(dela.points[:,0], dela.points[:,1], dela.points[:,2], color='b')
+    ax.set_xlabel('q0')
+    ax.set_ylabel('X coord')
+    ax.set_zlabel('Y coord')
+    plt.show()
+    
+
+def create_delaunaymesh_2DOF(Mesh: DelaunayMesh, mode: int):
+    '''
+    Create and plot a Delaunay Mesh for a 2DOF arm.
+    mode==1: display 'flattened' 2D graph
+    mode==2: display 3D graph with z-axis as X-pos
+    mode==3: display 3D graph with z-axis as Y-pos
+    mode==4: display 3D graph with z-axis as Z-pos
+    '''
 
     print("Creating Delaunay Mesh...")
     
@@ -274,14 +311,14 @@ def create_delaunaymesh(Mesh: DelaunayMesh, mode: int):
             plt.triplot(plotnodes[:,0], plotnodes[:,1], dmesh.simplices)
             plt.plot(plotnodes[:,0], plotnodes[:,1], 'o')
             plt.show()
-        if mode >= 2: 
+        if mode >= 2: #use a 3D plot 
             dmesh = Delaunay(posnodes)  
             plt.figure()
             ax = plt.axes(projection='3d')
-            plot_tri_simple(ax, dmesh, mode)
+            plot_mesh_2DOF(ax, dmesh, mode)
             plt.show()
 
-def plot_tri_simple(ax, dela, mode):
+def plot_mesh_2DOF(ax, dela, mode):
     print("dela.simplices count:", len(dela.simplices))
     for tr in dela.simplices:
         pts = dela.points[tr, :]
@@ -303,18 +340,55 @@ def plot_tri_simple(ax, dela, mode):
         label=='Z'
     ax.set_zlabel(label+'coordinate')
 
+def plot_mesh_3DOF(ax, dela):
+    print("dela.simplices count:", len(dela.simplices))
+    for tr in dela.simplices:
+        pts = dela.points[tr, :]
+        ax.plot3D(pts[[0,1],0], pts[[0,1],1], pts[[0,1],2], color='g', lw='0.1')
+        ax.plot3D(pts[[0,2],0], pts[[0,2],1], pts[[0,2],2], color='g', lw='0.1')
+        ax.plot3D(pts[[0,3],0], pts[[0,3],1], pts[[0,3],2], color='g', lw='0.1')
+        ax.plot3D(pts[[1,2],0], pts[[1,2],1], pts[[1,2],2], color='g', lw='0.1')
+        ax.plot3D(pts[[1,3],0], pts[[1,3],1], pts[[1,3],2], color='g', lw='0.1')
+        ax.plot3D(pts[[2,3],0], pts[[2,3],1], pts[[2,3],2], color='g', lw='0.1')
 
+    ax.scatter(dela.points[:,0], dela.points[:,1], dela.points[:,2], color='b')
+    ax.set_xlabel('q0')
+    ax.set_ylabel('q1')
+    ax.set_zlabel('q2')
 
+def create_delaunaymesh_3DOF(Mesh: DelaunayMesh):
+    plotnodes=np.array(Mesh.plotnodes) #convert list of np arrays into a double nested np array
+    nodes=np.array(Mesh.nodes)
+    dmesh = Delaunay(plotnodes)
+    plt.figure()
+    ax = plt.axes(projection='3d')
+    plot_mesh_3DOF(ax, dmesh)
+    plt.show()
     
+def main():
+    l0=1;l1=1;l2=1;
 
-ets = rtb.ET.Rz() * rtb.ET.tx(1) * rtb.ET.Rz() * rtb.ET.tx(1)
-camera = CentralCamera()
-robot = rtb.Robot(ets)
+    ets1dof = rtb.ET.Rz() * rtb.ET.tx(l0)
+    joint_limits1dof = [(-np.pi/2, np.pi/2)]
 
-joint_limits = [(-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2)]  # example for 2 DOF
-mesh = DelaunayMesh(1e-4, robot, camera, sparse_step=10, jointlimits=joint_limits)
+    ets2dof = rtb.ET.Rz() * rtb.ET.tx(l0) * rtb.ET.Rz() * rtb.ET.tx(l1) 
+    joint_limits2dof = [(-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2)]  # example for 2 DOF
 
-create_sparsespace(mesh)
+    ets3dof = rtb.ET.Rz() * rtb.ET.tx(l0) * rtb.ET.Rx() * rtb.ET.tz(l1) * rtb.ET.Rx() * rtb.ET.tz(l2)
+    joint_limits3dof = [(-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2) , (-np.pi/2, np.pi/2)]  # example for 2 DOF
 
-create_delaunaymesh(mesh, 2)
+    joint_limits = joint_limits2dof
+    ets=ets2dof 
 
+    camera = CentralCamera()
+    robot = rtb.Robot(ets)
+
+    mesh = DelaunayMesh(1e-8, robot, camera, sparse_step=2, jointlimits=joint_limits)
+
+    create_sparsespace(mesh)
+
+    #create_delaunaymesh_1DOF(mesh, 2)
+    create_delaunaymesh_2DOF(mesh,1)
+
+if __name__ == '__main__':
+    main()

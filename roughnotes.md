@@ -221,3 +221,34 @@ This is fine, but how can we make a piecewise linear approximation WITHOUT refer
 In other words, we can't use the idea of error. Can we use the error of our own approximation? 
 
 TODO afterwards: successive mesh refinement may not work for a robot to find in real time, since it is both innefficient and not always feasible that we can nump around everywhere. What if instead we try somethign like successive mesh refinement?
+
+# May 23 2025
+
+Is there a way to count the number of points in a region, kind of like taking the integral of our linear model, to quantify how linear different segments are? Would we have to count triangles instead?
+
+# May 26 2025
+
+We are successfully plotting the meshes of the n-DOF robot arm positions. Now we can try to quantify the nonlinearity by counting the number of points in each concentrated region..... OR what if we make a note of areas that experience lots of recursion? 
+
+We have a few problems:
+
+- Is the linear mesh correct? it looks correct for the 1DOF and 2DOF, but is there a way to validate for higher DOF? Answer: look into Hessian
+- Is there an algorithmic/smart way we can quantify areas of nonlinearity? Ie, we know we want to count the number of points in a region, but how can we algorithmically find those regions? Should we keep track of these regions through recursion instead?
+
+After we identify these nonlinear regions, can we create a 'smart' inverse kin method that only updates the Jacobian as needed? Ie, give certain regions a 'rank' which corresponds to how nonlinear it is, and if our inverse kin method is entering that region, we can update?
+
+*What can we do with this linear mesh?*
+1. Make a program that, given our linear piecewise function, creates 'regions of linearity' such that moving from region A to B corresponds with a Jacobian update, since the two regions are associated with different linearity. 
+2. Experiment with different kinds of Jacobian updates: Broyden's, Secant, Central Diff, etc
+
+We are using an offline approach to create the global function. Can we use an online approach to create the global function? 
+
+Make a mesh that knows its nonlinear points: 
+
+Inverse kin: update real EE and move into a new spot. If prev position was in region A and new position is in region B, then update the Jacobian. If successful convergence, then return 1. If fail, ret 0.
+
+Right now there is a certain trouble in creating regions to indicate a Broyden update is needed, since we are dealing with a discrete mesh, we may need to repeatedly take each point and compare it to the mesh to see which region our point lies in...
+
+
+
+
