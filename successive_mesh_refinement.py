@@ -118,6 +118,7 @@ class DelaunayMesh:
         self.iterations=0 # incremented every time another point is plotted into our mesh
         self.nodes = [] #ordered list of the nodes we currently have in the mesh. for one item in the list we have: xa1, xa2, ..., xan, position in real world (the last index may be modified, TBD)
         self.plotnodes= [] #clone of .nodes, but without the world dimensions
+        self.mesh=None
         if self.q_count <= 2: #2DOF use triangles.
             self.shape_vertices_count=3 
         else:
@@ -235,6 +236,7 @@ def create_sparsespace(Mesh: DelaunayMesh):
     #call recursive add triangle (or tetrahedron) for every collection of consecutive 3 (or 4) points:
     initmeshpoints=np.copy(Mesh.nodes) #copy over the initializing nodes so that we can iterate over them. the mesh.nodes list is going to be modified concrrently.
     i=0;
+    
     if Mesh.shape_vertices_count == 3: #triangles
         while i+2 < (Mesh.sparse_step ** Mesh.q_count):
             triangle = Triangle(initmeshpoints[i], initmeshpoints[i+1], initmeshpoints[i+2])
@@ -245,10 +247,31 @@ def create_sparsespace(Mesh: DelaunayMesh):
             tetrahedron = Tetrahedron(initmeshpoints[i], initmeshpoints[i+1], initmeshpoints[i+2], initmeshpoints[i+3])
             recursive_add_tetrahedrons(Mesh, tetrahedron)
             i+=1;
+    
+    Mesh.plotnodes = np.array(Mesh.plotnodes) #the sole reason we do this is to reformat the nodes into a nice np array
+    Mesh.nodes = np.array(Mesh.nodes) #this too; simply reformatting. 
 
     '''
     At this point we have finished recursion and mesh.nodes should be populated. Now we run Delaunay Meshing on the nodes. 
     When plotting, create a copy of the list of nodes we have and erase their last three dims to only see DOF.'''
+
+def calculate_simplices(Mesh: DelaunayMesh):
+    '''
+    Use scipy.spatial.Delaunay to calculate the DelaunayMesh of just parameter configurations, no position element, for any arbitrary DOF. 
+    For modularity's sake we will not plot it out, since each DOF requires a different shape of plot:
+        Examples:
+            a 1 DOF plot is a 1D plot of simply a line, x-axis=q0 joint ranges. Simplices are lines.
+            a 2 DOF plot is a 2D plot of triangles, x-axis=q0 and y-axis=q1, simplices are triangles.
+            a 3 DOF plot is a 3D plot of tetrahedrons, x-axis=q0 and y-axis=q1 and z-axis=q3, simplices tetrahedrons.
+            a 4 DOF plot is a 4D plot of 4D tetrahedrons, each axis being each parameter, simplices are our 4-D tetrahedrons.
+    
+    The incentive in computing simply the mesh is that we assign our Mesh object its Mesh.mesh, which can later be used 
+    in the inverse kinematics optimization problem, where we use a constant Jacobian but when we recognize we are in a new linear segment
+    (by checking whether our current end-effector point is in a simplex) we can recallibrate the Jacobian using central differences.
+    '''
+    Mesh.mesh = Delaunay(Mesh.plotnodes)
+    #print("INDICES OF SIMPLICES:", Mesh.mesh.simplices)
+    #print("POINTS CREATING OUR SIMPLICES:", Mesh.plotnodes[Mesh.mesh.simplices])
 
 def create_delaunaymesh_1DOF(Mesh: DelaunayMesh, mode: int):
     '''
@@ -261,7 +284,8 @@ def create_delaunaymesh_1DOF(Mesh: DelaunayMesh, mode: int):
     posnodes=np.array([np.delete(sub_arr, Mesh.q_count+2) for sub_arr in nodes])
     if mode==1:
         print("POSNODES:" , posnodes)
-        dela = Delaunay(posnodes)  
+        dela = Delaunay(posnodes) 
+        Mesh.mesh=dela 
         plt.figure()
         ax = plt.axes(projection='3d')
         print("dela.simplices count:", len(dela.simplices))
@@ -328,11 +352,13 @@ def create_delaunaymesh_2DOF(Mesh: DelaunayMesh, mode: int):
     if Mesh.shape_vertices_count == 3:
         if mode==1: #2D plot
             dmesh = Delaunay(plotnodes)
+            Mesh.mesh=dmesh
             plt.triplot(plotnodes[:,0], plotnodes[:,1], dmesh.simplices)
             plt.plot(plotnodes[:,0], plotnodes[:,1], 'o')
             plt.show()
         if mode >= 2: #use a 3D plot 
             dmesh = Delaunay(posnodes)  
+            Mesh.mesh=dmesh
             plt.figure()
             ax = plt.axes(projection='3d')
             plot_mesh_2DOF(ax, dmesh, mode)
@@ -380,11 +406,25 @@ def create_delaunaymesh_3DOF(Mesh: DelaunayMesh):
     plotnodes=np.array(Mesh.plotnodes) #convert list of np arrays into a double nested np array
     nodes=np.array(Mesh.nodes)
     dmesh = Delaunay(plotnodes)
+    Mesh.mesh=dmesh
     plt.figure()
     ax = plt.axes(projection='3d')
     plot_mesh_3DOF(ax, dmesh)
     plt.show()
     
+def find_simplex(p, Mesh: DelaunayMesh):
+    '''
+    Scipy.spatial.Delaunay can tell us if a point is in a simplex or not.
+    '''
+    tri=Mesh.mesh
+    simplex_idx=tri.find_simplex(p)
+    '''
+    print("FOUND SIMPLEX idx:", simplex_idx)
+    print("THIS IS THE SINPLEX:", tri.simplices[tri.find_simplex(p)])
+    print(Mesh.plotnodes[tri.simplices[tri.find_simplex(p)]])
+    '''
+    return simplex_idx
+
 def main():
     l0=1;l1=1;l2=1;
 
@@ -397,17 +437,18 @@ def main():
     ets3dof = rtb.ET.Rz() * rtb.ET.tx(l0) * rtb.ET.Rx() * rtb.ET.tz(l1) * rtb.ET.Rx() * rtb.ET.tz(l2)
     joint_limits3dof = [(-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2) , (-np.pi/2, np.pi/2)]  # example for 2 DOF
 
-    joint_limits = joint_limits1dof
-    ets=ets1dof 
+    joint_limits = joint_limits3dof
+    ets=ets3dof 
 
     camera = CentralCamera()
     robot = rtb.Robot(ets)
 
-    mesh = DelaunayMesh(1e-1, robot, camera, sparse_step=3, jointlimits=joint_limits)
+    mesh = DelaunayMesh(1e-1, robot, camera, sparse_step=2, jointlimits=joint_limits)
 
     create_sparsespace(mesh)
+    calculate_simplices(mesh) #calculate_simplices is a very important function... 'squashes' the position elements and meshes with parameters as the only axis... this way when we are computing inverse kinematics, we can query: which simplex are we in, based on our joint configs...?
 
-    create_delaunaymesh_1DOF(mesh, 2)
+    #create_delaunaymesh_1DOF(mesh, 1)
     #create_delaunaymesh_2DOF(mesh,1)
 
 if __name__ == '__main__':

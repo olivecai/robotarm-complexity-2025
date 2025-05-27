@@ -15,44 +15,12 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.graph_objects as go
 from scipy.spatial import Delaunay
-import successive_mesh_refinement as SMR
+import successive_mesh_refinement as smr
 
-TOLERANCE = 1e-5
-MAXITER = 50
+TOLERANCE = 1e-3
+MAXITER = 200
 
 PI = np.pi
-
-def new_linear_piece(currQ, SMR.Mesh)
-
-def inside_triangle(A, B, C, P):
-    ''' 
-    use barycentric coordinates and normal vectors of faces to divine whether or not a point in inside a triangle!
-     
-    triangle solution from geeksforgeeks: https://www.geeksforgeeks.org/check-whether-a-given-point-lies-inside-a-triangle-or-not/
-     
-    '''
-    v0 = B - A
-    v1 = C - A
-    v2 = P - A
-
-    # Stack as columns: shape (n, 2)
-    M = np.column_stack((v0, v1))  # Basis matrix
-
-    # Solve M @ [u, v] = v2
-    try:
-        uv, residuals, rank, s = np.linalg.lstsq(M, v2, rcond=None)
-        u, v = uv
-    except np.linalg.LinAlgError:
-        return "Degenerate"
-
-    a = 1 - u - v
-    b = u
-    c = v
-
-    if a >= 0 and b >= 0 and c >= 0:
-        return 1
-    else:
-        return 0
 
 
 def fkin(q, ets: rtb.ETS):
@@ -97,9 +65,8 @@ def centraldiff_jacobian(currQ, desiredP, e: rtb.Robot.ets):
     currJ=currJT.T
     return currJ
 
-
 #inverse kinematics with constant jacobian: terminates when error is low enough, or when n=10
-def constjac(currQ, desiredP, e : rtb.Robot.ets): #uses a constant Jacobian.
+def constjac(currQ, desiredP, e : rtb.Robot.ets, mesh: smr.DelaunayMesh): #uses a constant Jacobian.
     '''
     CONSTANT JACOBIAN for inverse kinematics. No camera involved yet. Returns resulting position when restol satisfied OR when n=MAXITER
 
@@ -109,15 +76,17 @@ def constjac(currQ, desiredP, e : rtb.Robot.ets): #uses a constant Jacobian.
 
     '''
     i = 0
-    j=0
+
     currP=fkin(currQ, e) #projection of that real point through the camera
     errorP=desiredP-currP 
     error=np.linalg.norm(errorP)
     if error < TOLERANCE:
         return (currP) # return without any invkin, our ready pose IS the desired pose
 
-    alpha=0.1
+    alpha=1e-1
 
+    print("currQ", currQ)
+    curr_simplex = smr.find_simplex(currQ, mesh) #find which linear piece we are currently in
     J=centraldiff_jacobian(currQ, desiredP, e)
 
     corrQ =np.linalg.pinv(J) @ errorP #solve for change in theta 
@@ -127,17 +96,18 @@ def constjac(currQ, desiredP, e : rtb.Robot.ets): #uses a constant Jacobian.
     currP=fkin(currQ, e)
     errorP=desiredP-currP #error is measured from projection img
     error=np.linalg.norm(errorP)
+
     i+=1
-    j+=1
-
     while i< MAXITER and error>TOLERANCE:
-
-        if new_linear_piece(currQ, ): #every nth move, recalibrate the jacobian
+        
+        next_simplex= smr.find_simplex(currQ, mesh) #find which linear piece we are currently in\\
+        print("iteration:",i,"simplexes:",curr_simplex, "VS", next_simplex)
+        if curr_simplex!=next_simplex: #then we are in a new linear segement
             print("RECALIBRATE JACOBIAN.")
             print("J before:", J)
             J=centraldiff_jacobian(currQ, desiredP, e)
             print("J after:", J)
-            j=0; #reset
+            curr_simplex=next_simplex #update curr_simplex   '''     
             
         currP  =  fkin(currQ, e) #get the current point...
 
@@ -148,15 +118,12 @@ def constjac(currQ, desiredP, e : rtb.Robot.ets): #uses a constant Jacobian.
 
         currQ = currQ + corrQ*alpha
         i += 1  # update iteration variable
-        j+=1
 
     return currP
 
-def plotting(e, jointlimits: list, desiredP):
-    '''
-    
-    '''
-    n = 50
+def plotting(e, jointlimits: list, desiredP, mesh: smr.DelaunayMesh):
+
+    n = 3
 
     joint_ranges = [np.linspace(low, high, n) for (low, high) in jointlimits]
     grid = np.meshgrid(*joint_ranges, indexing='ij')  # ij indexing keeps dimensions aligned
@@ -175,7 +142,7 @@ def plotting(e, jointlimits: list, desiredP):
                 and returns the resulting point. 
                 '''
                 Q = Q_grid[idx] 
-                resultP = constjac(currQ=Q, desiredP=desiredP, e=e)
+                resultP = constjac(currQ=Q, desiredP=desiredP, e=e, mesh=mesh)
                 error=np.linalg.norm(desiredP - resultP) 
                 permuts_over_linspaces[idx] = error
 
@@ -183,8 +150,26 @@ def plotting(e, jointlimits: list, desiredP):
                 i+=1;
     
     permuts_over_linspaces=permuts_over_linspaces.flatten()
+    # Flatten Q_grid to get all [q0, q1, ..., qN] configs
+    Q_flat = Q_grid.reshape(-1, Q_grid.shape[-1])
+    x, y, z = Q_flat[:, 0], Q_flat[:, 1], permuts_over_linspaces
+
 
     print(permuts_over_linspaces)
+    print("3D PLOT")
+    scatter = go.Scatter3d(x=x,y=y,z=z,mode='markers', marker=dict(size=15,color=permuts_over_linspaces, colorscale='plasma', colorbar=dict(title='Total Error Non-Normalized'), opacity=0.2))
+    layout = go.Layout(
+        scene=dict(
+            xaxis_title='q0',
+            yaxis_title='q1',
+            zaxis_title='error'
+        ),
+        title='Joint Space Error in 3D',
+        margin=dict(l=0,r=0,b=0,t=50)
+    )
+    fig=go.Figure(data=[scatter], layout=layout)
+
+    fig.show()
 
     if len(jointlimits) == 1: #1 DOF
         plt.plot(permuts_over_linspaces, 'o')
@@ -204,23 +189,19 @@ def main():
     ets3dof = rtb.ET.Rz() * rtb.ET.tx(l0) * rtb.ET.Rx() * rtb.ET.tz(l1) * rtb.ET.Rx() * rtb.ET.tz(l2)
     joint_limits3dof = [(-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2) , (-np.pi/2, np.pi/2)]  # example for 2 DOF
 
-    joint_limits = joint_limits1dof
-    ets=ets1dof 
+    joint_limits = joint_limits2dof
+    ets=ets2dof 
 
-    #plotting(ets, joint_limits, np.array([1,0,0]))
+    camera = CentralCamera()
+    robot = rtb.Robot(ets)
 
-    # Driver Code
-    A = np.array([0, 0])
-    B = np.array([10, 30])
-    C = np.array([20, 0])
-    P = np.array([10,10])
+    mesh = smr.DelaunayMesh(1e-1, robot, camera, sparse_step=2, jointlimits=joint_limits)
 
-    # Call the isInsideTriangle function with
-    # the given inputs
-    result = inside_triangle(A, B, C, P)
+    smr.create_sparsespace(mesh)
+    smr.calculate_simplices(mesh) 
+    smr.create_delaunaymesh_2DOF(mesh, 1)
 
-    # Print the result
-    print(result)
+    plotting(ets, joint_limits, np.array([1,1,0]), mesh)
 
 
 if __name__ == '__main__':

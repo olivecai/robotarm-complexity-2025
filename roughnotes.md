@@ -260,5 +260,7 @@ Firstly, WHICH triangles?
 
 Secondly, how can we KEEP TRACK of our current triangle and update it? Answer: iterate through every triangle, save the points of the triangle as A, B, and C, and then keep VALIDATING (not iterating) and then when validate==False, THEN we can iterate/query for whichever new triangle/tetrahedron we are in....
 
+It turns out that scipy.spatial.Delaunay has something called 'calculate simplex
 
+use '
 
