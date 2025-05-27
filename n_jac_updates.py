@@ -15,11 +15,44 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.graph_objects as go
 from scipy.spatial import Delaunay
+import successive_mesh_refinement as SMR
 
-TOLERANCE = 1e-1
-MAXITER = 100
+TOLERANCE = 1e-5
+MAXITER = 50
+
 PI = np.pi
 
+def new_linear_piece(currQ, SMR.Mesh)
+
+def inside_triangle(A, B, C, P):
+    ''' 
+    use barycentric coordinates and normal vectors of faces to divine whether or not a point in inside a triangle!
+     
+    triangle solution from geeksforgeeks: https://www.geeksforgeeks.org/check-whether-a-given-point-lies-inside-a-triangle-or-not/
+     
+    '''
+    v0 = B - A
+    v1 = C - A
+    v2 = P - A
+
+    # Stack as columns: shape (n, 2)
+    M = np.column_stack((v0, v1))  # Basis matrix
+
+    # Solve M @ [u, v] = v2
+    try:
+        uv, residuals, rank, s = np.linalg.lstsq(M, v2, rcond=None)
+        u, v = uv
+    except np.linalg.LinAlgError:
+        return "Degenerate"
+
+    a = 1 - u - v
+    b = u
+    c = v
+
+    if a >= 0 and b >= 0 and c >= 0:
+        return 1
+    else:
+        return 0
 
 
 def fkin(q, ets: rtb.ETS):
@@ -78,7 +111,7 @@ def constjac(currQ, desiredP, e : rtb.Robot.ets): #uses a constant Jacobian.
     i = 0
     j=0
     currP=fkin(currQ, e) #projection of that real point through the camera
-    errorP=desiredP-currP
+    errorP=desiredP-currP 
     error=np.linalg.norm(errorP)
     if error < TOLERANCE:
         return (currP) # return without any invkin, our ready pose IS the desired pose
@@ -87,9 +120,9 @@ def constjac(currQ, desiredP, e : rtb.Robot.ets): #uses a constant Jacobian.
 
     J=centraldiff_jacobian(currQ, desiredP, e)
 
-    corrQ = np.linalg.pinv(J) @ errorP
+    corrQ =np.linalg.pinv(J) @ errorP #solve for change in theta 
     #print("corrQ:",corrQ)
-    currQ=currQ+corrQ*alpha
+    currQ=currQ+corrQ*alpha #alpha is our dampening factor
     ###after solvign for the new theta, we move there and check the error.
     currP=fkin(currQ, e)
     errorP=desiredP-currP #error is measured from projection img
@@ -99,21 +132,20 @@ def constjac(currQ, desiredP, e : rtb.Robot.ets): #uses a constant Jacobian.
 
     while i< MAXITER and error>TOLERANCE:
 
-        if j==200:
-            
+        if new_linear_piece(currQ, ): #every nth move, recalibrate the jacobian
             print("RECALIBRATE JACOBIAN.")
             print("J before:", J)
             J=centraldiff_jacobian(currQ, desiredP, e)
             print("J after:", J)
             j=0; #reset
             
-            
-        currP=fkin(currQ, e)
+        currP  =  fkin(currQ, e) #get the current point...
 
-        errorP = desiredP - currP
-        corrQ = -np.linalg.pinv(J) @ errorP 
+        errorP = (desiredP - currP) #see our position error (vector)
+        error = np.linalg.norm(errorP) #get the total error (scalar)
 
-        error = np.linalg.norm(errorP)
+        corrQ = np.linalg.pinv(J) @ errorP #use the constant Jac and our current error to solve for corrQ
+
         currQ = currQ + corrQ*alpha
         i += 1  # update iteration variable
         j+=1
@@ -124,7 +156,7 @@ def plotting(e, jointlimits: list, desiredP):
     '''
     
     '''
-    n = 20
+    n = 50
 
     joint_ranges = [np.linspace(low, high, n) for (low, high) in jointlimits]
     grid = np.meshgrid(*joint_ranges, indexing='ij')  # ij indexing keeps dimensions aligned
@@ -175,8 +207,20 @@ def main():
     joint_limits = joint_limits1dof
     ets=ets1dof 
 
-    plotting(ets, joint_limits, np.array([1,0,0]))
+    #plotting(ets, joint_limits, np.array([1,0,0]))
 
+    # Driver Code
+    A = np.array([0, 0])
+    B = np.array([10, 30])
+    C = np.array([20, 0])
+    P = np.array([10,10])
+
+    # Call the isInsideTriangle function with
+    # the given inputs
+    result = inside_triangle(A, B, C, P)
+
+    # Print the result
+    print(result)
 
 
 if __name__ == '__main__':

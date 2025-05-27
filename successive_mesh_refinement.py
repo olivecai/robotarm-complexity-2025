@@ -259,24 +259,44 @@ def create_delaunaymesh_1DOF(Mesh: DelaunayMesh, mode: int):
     plotnodes=np.array(Mesh.plotnodes) #convert list of np arrays into a double nested np array
     nodes=np.array(Mesh.nodes)
     posnodes=np.array([np.delete(sub_arr, Mesh.q_count+2) for sub_arr in nodes])
-    print("POSNODES:" , posnodes)
-    dela = Delaunay(posnodes)  
-    plt.figure()
-    ax = plt.axes(projection='3d')
-    print("dela.simplices count:", len(dela.simplices))
-    for tr in dela.simplices:
-        pts = dela.points[tr, :]
-        ax.plot3D(pts[[0,1],0], pts[[0,1],1], pts[[0,1],2], color='g', lw='0.1')
-        ax.plot3D(pts[[0,2],0], pts[[0,2],1], pts[[0,2],2], color='g', lw='0.1')
-        ax.plot3D(pts[[0,3],0], pts[[0,3],1], pts[[0,3],2], color='g', lw='0.1')
-        ax.plot3D(pts[[1,2],0], pts[[1,2],1], pts[[1,2],2], color='g', lw='0.1')
-        ax.plot3D(pts[[1,3],0], pts[[1,3],1], pts[[1,3],2], color='g', lw='0.1')
-        ax.plot3D(pts[[2,3],0], pts[[2,3],1], pts[[2,3],2], color='g', lw='0.1')
+    if mode==1:
+        print("POSNODES:" , posnodes)
+        dela = Delaunay(posnodes)  
+        plt.figure()
+        ax = plt.axes(projection='3d')
+        print("dela.simplices count:", len(dela.simplices))
+        for tr in dela.simplices:
+            pts = dela.points[tr, :]
+            ax.plot3D(pts[[0,1],0], pts[[0,1],1], pts[[0,1],2], color='g', lw='0.1')
+            ax.plot3D(pts[[0,2],0], pts[[0,2],1], pts[[0,2],2], color='g', lw='0.1')
+            ax.plot3D(pts[[0,3],0], pts[[0,3],1], pts[[0,3],2], color='g', lw='0.1')
+            ax.plot3D(pts[[1,2],0], pts[[1,2],1], pts[[1,2],2], color='g', lw='0.1')
+            ax.plot3D(pts[[1,3],0], pts[[1,3],1], pts[[1,3],2], color='g', lw='0.1')
+            ax.plot3D(pts[[2,3],0], pts[[2,3],1], pts[[2,3],2], color='g', lw='0.1')
 
-    ax.scatter(dela.points[:,0], dela.points[:,1], dela.points[:,2], color='b')
-    ax.set_xlabel('q0')
-    ax.set_ylabel('X coord')
-    ax.set_zlabel('Y coord')
+        ax.scatter(dela.points[:,0], dela.points[:,1], dela.points[:,2], color='b')
+        ax.set_xlabel('q0')
+        ax.set_ylabel('X coord')
+        ax.set_zlabel('Y coord')
+    if mode==2:
+        print("PLOTNODES:", plotnodes)
+        
+        # Create a figure and an axes object
+        fig, ax = plt.subplots(figsize=(8, 1))  # Adjust figure size as needed
+
+        # Plot the points
+        ax.plot(plotnodes, np.zeros_like(plotnodes), 'o', markersize=8) # 'o' for circle markers
+
+        # Customize the plot
+        ax.set_yticks([])  # Remove y-axis ticks and labels
+        ax.set_xlabel("q0")
+        ax.set_title("1DOF mesh ")
+
+        # Remove spines (borders) for a cleaner look
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+        ax.spines['left'].set_visible(False)
+
     plt.show()
     
 
@@ -369,7 +389,7 @@ def main():
     l0=1;l1=1;l2=1;
 
     ets1dof = rtb.ET.Rz() * rtb.ET.tx(l0)
-    joint_limits1dof = [(-np.pi/2, np.pi/2)]
+    joint_limits1dof = [(-np.pi, np.pi)]
 
     ets2dof = rtb.ET.Rz() * rtb.ET.tx(l0) * rtb.ET.Rz() * rtb.ET.tx(l1) 
     joint_limits2dof = [(-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2)]  # example for 2 DOF
@@ -377,18 +397,18 @@ def main():
     ets3dof = rtb.ET.Rz() * rtb.ET.tx(l0) * rtb.ET.Rx() * rtb.ET.tz(l1) * rtb.ET.Rx() * rtb.ET.tz(l2)
     joint_limits3dof = [(-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2) , (-np.pi/2, np.pi/2)]  # example for 2 DOF
 
-    joint_limits = joint_limits2dof
-    ets=ets2dof 
+    joint_limits = joint_limits1dof
+    ets=ets1dof 
 
     camera = CentralCamera()
     robot = rtb.Robot(ets)
 
-    mesh = DelaunayMesh(1e-8, robot, camera, sparse_step=2, jointlimits=joint_limits)
+    mesh = DelaunayMesh(1e-1, robot, camera, sparse_step=3, jointlimits=joint_limits)
 
     create_sparsespace(mesh)
 
-    #create_delaunaymesh_1DOF(mesh, 2)
-    create_delaunaymesh_2DOF(mesh,1)
+    create_delaunaymesh_1DOF(mesh, 2)
+    #create_delaunaymesh_2DOF(mesh,1)
 
 if __name__ == '__main__':
     main()

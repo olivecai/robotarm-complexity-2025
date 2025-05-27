@@ -249,6 +249,16 @@ Inverse kin: update real EE and move into a new spot. If prev position was in re
 
 Right now there is a certain trouble in creating regions to indicate a Broyden update is needed, since we are dealing with a discrete mesh, we may need to repeatedly take each point and compare it to the mesh to see which region our point lies in...
 
+# May 27 2025
+
+Use barycentric coordinates to calculate whether or not a point is inside our shape. 
+
+*How can we keep track of which triangle we are currently in?*
+
+Firstly, WHICH triangles?
+- The manually calculated ones for the centroid, OR the delaunay mesh triangles? PROS: the manually calculated ones already exist AFAIK but how can i access and query triangles/tetrahedrons created by the delaunay mesh?.... There are some complications in the fact that TOO MANY shapes are being formed right now. Figure out how to REDUCE and ACCESS the number of triangles/tetrahedrons in the Delaunay mesh.
+
+Secondly, how can we KEEP TRACK of our current triangle and update it? Answer: iterate through every triangle, save the points of the triangle as A, B, and C, and then keep VALIDATING (not iterating) and then when validate==False, THEN we can iterate/query for whichever new triangle/tetrahedron we are in....
 
 
 

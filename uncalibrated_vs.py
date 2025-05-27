@@ -149,7 +149,7 @@ def constjac_3dof(currQ, desiredP, camera: CentralCamera, e : rtb.Robot.ets): #u
         currP=vs_fkin(e, currQ, camera)
 
         errorP = desiredP - currP
-        corrQ = -np.linalg.pinv(J) @ errorP 
+        corrQ = np.linalg.pinv(J) @ errorP #NOTE: May 27 realized I put an erroneous negative sign here and deleted it.
 
         error = np.linalg.norm(errorP)
         currQ = currQ + corrQ*alpha #NOTE: we can mult corr step by damping with alpha
