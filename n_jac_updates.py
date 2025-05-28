@@ -17,8 +17,7 @@ import plotly.graph_objects as go
 from scipy.spatial import Delaunay
 import successive_mesh_refinement as smr
 
-TOLERANCE = 1e-3
-MAXITER = 200
+
 
 PI = np.pi
 
@@ -66,7 +65,7 @@ def centraldiff_jacobian(currQ, desiredP, e: rtb.Robot.ets):
     return currJ
 
 #inverse kinematics with constant jacobian: terminates when error is low enough, or when n=10
-def constjac(currQ, desiredP, e : rtb.Robot.ets, mesh: smr.DelaunayMesh): #uses a constant Jacobian.
+def constjac(currQ, desiredP, e : rtb.Robot.ets, mesh: smr.DelaunayMesh, simplex_mode=0): #uses a constant Jacobian.
     '''
     CONSTANT JACOBIAN for inverse kinematics. No camera involved yet. Returns resulting position when restol satisfied OR when n=MAXITER
 
@@ -83,7 +82,7 @@ def constjac(currQ, desiredP, e : rtb.Robot.ets, mesh: smr.DelaunayMesh): #uses 
     if error < TOLERANCE:
         return (currP) # return without any invkin, our ready pose IS the desired pose
 
-    alpha=1e-1
+    alpha=0.1
 
     print("currQ", currQ)
     curr_simplex = smr.find_simplex(currQ, mesh) #find which linear piece we are currently in
@@ -100,14 +99,16 @@ def constjac(currQ, desiredP, e : rtb.Robot.ets, mesh: smr.DelaunayMesh): #uses 
     i+=1
     while i< MAXITER and error>TOLERANCE:
         
-        next_simplex= smr.find_simplex(currQ, mesh) #find which linear piece we are currently in\\
-        print("iteration:",i,"simplexes:",curr_simplex, "VS", next_simplex)
-        if curr_simplex!=next_simplex: #then we are in a new linear segement
-            print("RECALIBRATE JACOBIAN.")
-            print("J before:", J)
-            J=centraldiff_jacobian(currQ, desiredP, e)
-            print("J after:", J)
-            curr_simplex=next_simplex #update curr_simplex   '''     
+        if simplex_mode:
+            next_simplex= smr.find_simplex(currQ, mesh) #find which linear piece we are currently in\\
+            print("currQ to be in next simplex:", currQ)
+            print("iteration:",i,"simplexes:",curr_simplex, "VS", next_simplex)
+            if curr_simplex!=next_simplex: #then we are in a new linear segement
+                print("RECALIBRATE JACOBIAN.")
+                print("J before:", J)
+                J=centraldiff_jacobian(currQ, desiredP, e)
+                print("J after:", J)
+                curr_simplex=next_simplex #update curr_simplex   '''     
             
         currP  =  fkin(currQ, e) #get the current point...
 
@@ -121,9 +122,7 @@ def constjac(currQ, desiredP, e : rtb.Robot.ets, mesh: smr.DelaunayMesh): #uses 
 
     return currP
 
-def plotting(e, jointlimits: list, desiredP, mesh: smr.DelaunayMesh):
-
-    n = 3
+def plotting(n, e, jointlimits: list, desiredP, mesh: smr.DelaunayMesh, simplex_mode:int):
 
     joint_ranges = [np.linspace(low, high, n) for (low, high) in jointlimits]
     grid = np.meshgrid(*joint_ranges, indexing='ij')  # ij indexing keeps dimensions aligned
@@ -135,6 +134,8 @@ def plotting(e, jointlimits: list, desiredP, mesh: smr.DelaunayMesh):
     permuts_over_linspaces_shape = Q_grid.shape[:-1]
     permuts_over_linspaces = np.zeros(permuts_over_linspaces_shape)
 
+    sum_error=0;
+
     i=0;
     for idx in np.ndindex(permuts_over_linspaces_shape): #iter over every permut over linspace of q0...qn 
                 '''
@@ -142,8 +143,9 @@ def plotting(e, jointlimits: list, desiredP, mesh: smr.DelaunayMesh):
                 and returns the resulting point. 
                 '''
                 Q = Q_grid[idx] 
-                resultP = constjac(currQ=Q, desiredP=desiredP, e=e, mesh=mesh)
+                resultP = constjac(currQ=Q, desiredP=desiredP, e=e, mesh=mesh, simplex_mode=simplex_mode)
                 error=np.linalg.norm(desiredP - resultP) 
+                sum_error+=error
                 permuts_over_linspaces[idx] = error
 
                 print("i:", i, "initial Q:",Q, "resultP:", resultP, "error:", error)
@@ -156,7 +158,8 @@ def plotting(e, jointlimits: list, desiredP, mesh: smr.DelaunayMesh):
 
 
     print(permuts_over_linspaces)
-    print("3D PLOT")
+    print("Generating Plot...")
+    print("Sum of error: ", sum_error)
     scatter = go.Scatter3d(x=x,y=y,z=z,mode='markers', marker=dict(size=15,color=permuts_over_linspaces, colorscale='plasma', colorbar=dict(title='Total Error Non-Normalized'), opacity=0.2))
     layout = go.Layout(
         scene=dict(
@@ -176,32 +179,38 @@ def plotting(e, jointlimits: list, desiredP, mesh: smr.DelaunayMesh):
         plt.show()
 
 
-
+TOLERANCE = 1e-3
+MAXITER = 100
 def main():
     l0=1;l1=1;l2=1;
 
     ets1dof = rtb.ET.Rz() * rtb.ET.tx(l0)
     joint_limits1dof = [(-np.pi/2, np.pi/2)]
+    joint_limits1dof_full = [(-2*np.pi, 2*np.pi)]
 
     ets2dof = rtb.ET.Rz() * rtb.ET.tx(l0) * rtb.ET.Rz() * rtb.ET.tx(l1) 
     joint_limits2dof = [(-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2)]  # example for 2 DOF
+    joint_limits2dof_full = [(-2*np.pi, 2*np.pi), (-2*np.pi, 2*np.pi)]
 
     ets3dof = rtb.ET.Rz() * rtb.ET.tx(l0) * rtb.ET.Rx() * rtb.ET.tz(l1) * rtb.ET.Rx() * rtb.ET.tz(l2)
     joint_limits3dof = [(-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2) , (-np.pi/2, np.pi/2)]  # example for 2 DOF
 
     joint_limits = joint_limits2dof
+    joint_limits_full = joint_limits2dof_full
     ets=ets2dof 
 
     camera = CentralCamera()
     robot = rtb.Robot(ets)
 
-    mesh = smr.DelaunayMesh(1e-1, robot, camera, sparse_step=2, jointlimits=joint_limits)
+    mesh = smr.DelaunayMesh(1e-1, robot, camera, sparse_step=5, jointlimits=joint_limits_full)
 
-    smr.create_sparsespace(mesh)
-    smr.calculate_simplices(mesh) 
+    smr.create_sparsespace_chebyshev(mesh)
     smr.create_delaunaymesh_2DOF(mesh, 1)
+    smr.calculate_simplices(mesh) 
 
-    plotting(ets, joint_limits, np.array([1,1,0]), mesh)
+    n=50
+    simplex_mode=0
+    plotting(n, ets, joint_limits, np.array([1,1,0]), mesh, simplex_mode)
 
 
 if __name__ == '__main__':

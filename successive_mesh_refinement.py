@@ -44,10 +44,10 @@ def calculate_centroid(points):
     '''
     d= points.ddim
     n= points.ndim
-    print(n)
-    print(d)
+    #print(n)
+    #print(d)
     centroid = np.zeros(n)
-    print(centroid)
+    #print(centroid)
     for i in range(n):
         for j in range(d):
             centroid[i] += points.structure[j][i]
@@ -72,7 +72,7 @@ def newshape(Shape, ith, adjustedcentroid):
     ith is the point of the parent shape which we exclude (and swap for adjustedcentroid). 
     creates and returns np.array, shape (ddim,).'''
     ret = []
-    print(ret)
+    #print(ret)
     j=0
     for i in range(Shape.ddim):
         print("THIS IS i:", i)
@@ -80,7 +80,7 @@ def newshape(Shape, ith, adjustedcentroid):
             print(Shape.structure[i])
             ret.append(Shape.structure[i])
             j+=1;
-        print(ret)
+        #print(ret)
     ret.append(adjustedcentroid)
     return ret
 
@@ -137,7 +137,7 @@ def recursive_add_triangles(mesh: DelaunayMesh, parent: Triangle):
     residual = np.linalg.norm(posR - posMesh) #calculate the residual
     if residual > mesh.restol: #then we should mesh again at the centroid and recurse on each child. for triangles, 3 children are created; tetrahedrons, 4.
         for i in range(parent.ddim): #the number of vertices correspond to the number of new shapes created internally.
-            print("THIS IS ith:", i)
+            #print("THIS IS ith:", i)
             centroid[mesh.q_count:] = posR #if the residual is larger than restol, we should refine the mesh at this local point.
             
             ith_newshape= newshape(parent, i, centroid) #newshape is generating three points for us here.
@@ -224,7 +224,7 @@ def create_sparsespace(Mesh: DelaunayMesh):
                 meshpoint[: Q.shape[0]] = Q
                 meshpoint[Q.shape[0]:] = posR
 
-                print("iter",i,": idx =",idx, "Q =",Q, "meshpoint =",meshpoint)
+                #print("iter",i,": idx =",idx, "Q =",Q, "meshpoint =",meshpoint)
                 Mesh.nodes.append(meshpoint)
                 Mesh.plotnodes.append(Q)
                 i+=1;
@@ -255,6 +255,52 @@ def create_sparsespace(Mesh: DelaunayMesh):
     At this point we have finished recursion and mesh.nodes should be populated. Now we run Delaunay Meshing on the nodes. 
     When plotting, create a copy of the list of nodes we have and erase their last three dims to only see DOF.'''
 
+def chebyshev_nodes(n, a, b):
+    """
+    Generate n Chebyshev nodes of the first kind in the interval [a, b].
+    """
+    i = np.arange(n)
+    x = np.cos((2*i + 1) * np.pi / (2*n))  # Chebyshev nodes in [-1, 1]
+    return 0.5 * (a + b) + 0.5 * (b - a) * x  # mapped to [a, b]
+
+def create_sparsespace_chebyshev(Mesh):
+    n = Mesh.sparse_step
+    joint_ranges = [chebyshev_nodes(n, low, high) for (low, high) in Mesh.jointlimits]
+    grid = np.meshgrid(*joint_ranges, indexing='ij')
+    Q_grid = np.stack(grid, axis=-1)
+
+    shape = Q_grid.shape[:-1]
+    i = 0
+
+    for idx in np.ndindex(shape):
+        Q = Q_grid[idx]
+        meshpoint = np.zeros(Q.shape[0] + 3)
+        posR = forward_kin(q=Q, ets=Mesh.robot.ets())
+        meshpoint[:Q.shape[0]] = Q
+        meshpoint[Q.shape[0]:] = posR
+
+        Mesh.nodes.append(meshpoint)
+        Mesh.plotnodes.append(Q)
+        i += 1
+
+    initmeshpoints = np.copy(Mesh.nodes)
+    i = 0
+    count = Mesh.sparse_step ** Mesh.q_count
+
+    if Mesh.shape_vertices_count == 3:
+        while i + 2 < count:
+            triangle = Triangle(initmeshpoints[i], initmeshpoints[i+1], initmeshpoints[i+2])
+            recursive_add_triangles(Mesh, triangle)
+            i += 1
+    elif Mesh.shape_vertices_count == 4:
+        while i + 3 < count:
+            tetra = Tetrahedron(initmeshpoints[i], initmeshpoints[i+1], initmeshpoints[i+2], initmeshpoints[i+3])
+            recursive_add_tetrahedrons(Mesh, tetra)
+            i += 1
+
+    Mesh.plotnodes = np.array(Mesh.plotnodes)
+    Mesh.nodes = np.array(Mesh.nodes)
+
 def calculate_simplices(Mesh: DelaunayMesh):
     '''
     Use scipy.spatial.Delaunay to calculate the DelaunayMesh of just parameter configurations, no position element, for any arbitrary DOF. 
@@ -271,7 +317,10 @@ def calculate_simplices(Mesh: DelaunayMesh):
     '''
     Mesh.mesh = Delaunay(Mesh.plotnodes)
     #print("INDICES OF SIMPLICES:", Mesh.mesh.simplices)
-    #print("POINTS CREATING OUR SIMPLICES:", Mesh.plotnodes[Mesh.mesh.simplices])
+    print("POINTS CREATING OUR SIMPLICES:\n", Mesh.plotnodes[Mesh.mesh.simplices])
+
+    for triangle in Mesh.plotnodes[Mesh.mesh.simplices]:
+        print("(", triangle[0][0],",",triangle[0][1],"), (", triangle[1][0],",",triangle[1][1],"), (", triangle[2][0],",",triangle[2][1],")", end=",")
 
 def create_delaunaymesh_1DOF(Mesh: DelaunayMesh, mode: int):
     '''
@@ -283,12 +332,12 @@ def create_delaunaymesh_1DOF(Mesh: DelaunayMesh, mode: int):
     nodes=np.array(Mesh.nodes)
     posnodes=np.array([np.delete(sub_arr, Mesh.q_count+2) for sub_arr in nodes])
     if mode==1:
-        print("POSNODES:" , posnodes)
+        #print("POSNODES:" , posnodes)
         dela = Delaunay(posnodes) 
         Mesh.mesh=dela 
         plt.figure()
         ax = plt.axes(projection='3d')
-        print("dela.simplices count:", len(dela.simplices))
+        #print("dela.simplices count:", len(dela.simplices))
         for tr in dela.simplices:
             pts = dela.points[tr, :]
             ax.plot3D(pts[[0,1],0], pts[[0,1],1], pts[[0,1],2], color='g', lw='0.1')
@@ -437,19 +486,20 @@ def main():
     ets3dof = rtb.ET.Rz() * rtb.ET.tx(l0) * rtb.ET.Rx() * rtb.ET.tz(l1) * rtb.ET.Rx() * rtb.ET.tz(l2)
     joint_limits3dof = [(-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2) , (-np.pi/2, np.pi/2)]  # example for 2 DOF
 
-    joint_limits = joint_limits3dof
-    ets=ets3dof 
+    joint_limits = joint_limits2dof
+    ets=ets2dof 
 
     camera = CentralCamera()
     robot = rtb.Robot(ets)
 
-    mesh = DelaunayMesh(1e-1, robot, camera, sparse_step=2, jointlimits=joint_limits)
+    mesh = DelaunayMesh(1e-1, robot, camera, sparse_step=10, jointlimits=joint_limits)
 
     create_sparsespace(mesh)
     calculate_simplices(mesh) #calculate_simplices is a very important function... 'squashes' the position elements and meshes with parameters as the only axis... this way when we are computing inverse kinematics, we can query: which simplex are we in, based on our joint configs...?
 
     #create_delaunaymesh_1DOF(mesh, 1)
-    #create_delaunaymesh_2DOF(mesh,1)
+    create_delaunaymesh_2DOF(mesh,1)
+    #create_delaunaymesh_3DOF(mesh)
 
 if __name__ == '__main__':
     main()

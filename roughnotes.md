@@ -260,7 +260,81 @@ Firstly, WHICH triangles?
 
 Secondly, how can we KEEP TRACK of our current triangle and update it? Answer: iterate through every triangle, save the points of the triangle as A, B, and C, and then keep VALIDATING (not iterating) and then when validate==False, THEN we can iterate/query for whichever new triangle/tetrahedron we are in....
 
-It turns out that scipy.spatial.Delaunay has something called 'calculate simplex
+It turns out that scipy.spatial.Delaunay has something called 'calculate simplex'.
+Yay!
 
-use '
+TODO:
+- debug: why does find simplex ret -1 for many of our points? This should not be the case, so something is mysterious and WRONG...
 
+newtons method - have some point, take the tangent and intersect the point with x acis and that is new location. . problem when tangent slope=0
+
+# May 28
+
+### Notes from Dylan:
+do same computationw ith analytic jac and compare.
+
+analyze analytic jac and given its properties, will we converge? rate of convergence
+
+newtons method,
+geometric multiplicity - convergence rate is linear instead of quadratic
+in general case, error for each point is QUADRATIC
+when geo mult, error is linear (constant) 
+higher order error convergence is better than linear - you want error to drop faster
+
+look up newton method - heith, 
+
+e-vals of jac and they are same, 
+
+if largest e-val is below 1, then CONVERGES. (spectral radius fixed point method)
+
+how singular? 1 very large eval and 1 small - transofrming in just one direction 
+
+veer away from numeric
+
+if we have the equations, we have a lot of info - most of the stuff is known - we may not know exact cam params, but we know robot jac, fkin, etc. parts of it - camera that we dont know 
+space is alr ish well known - onyl certain things unknown
+
+select init points in grid: uniform grid - other strategies for meshing: 
+- Chebyshev points, Runge's  (maybe make more sense, since circular)
+
+lean on sym lang 
+
+### Notes:
+
+Chebyshev nodes - nodes for polynomial interpolation and numerical integration- projection of a set of equispaced points on unit circle onto its diameter.
+
+When using polynomial 
+
+Witch of Agnesi
+
+### Chebychev's Nodes:
+
+
+
+### Runge's Phenomenon:
+
+When we interpolate a function with equidistant nodes, the resulting interpolation oscillates toward the end of the interval, because of two things:
+- the magnitude of nth order derivatives grow quickly when n increases
+- equidistance b/n points leads to a Lebesgue const that increases quickly when n increases
+
+### Lagrange polynomial:
+
+unique polynomial of LOWEST degree that interpolates a given set of data
+
+susceptible to Runge's phenomenon of large oscillation
+
+### Unconstrained Optimization Strategies
+https://www.sciencedirect.com/science/article/pii/S0096300308005985#:~:text=They%20have%20been%20intensively%20studied,to%20find%20a%20step%20length%20:
+
+- line search
+- trust region
+- interval of uncertainty 
+
+- new robust line search technique based on Chebyshev polynomials 
+> Newton’s iteration converges q-quadratically to alpha under certain assumptions.
+
+*So, how can I sample my mesh at Chebyshev points instead?*
+
+TODO:
+
+- download symbolic toolkit and analyze Jacobian, look into eigenvalues, probably should read other papers
