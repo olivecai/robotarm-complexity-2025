@@ -338,3 +338,35 @@ https://www.sciencedirect.com/science/article/pii/S0096300308005985#:~:text=They
 TODO:
 
 - download symbolic toolkit and analyze Jacobian, look into eigenvalues, probably should read other papers
+
+# May 29
+
+So far, simplices update beats non-simplices everytime, reducing total error.
+It seems the equidistant mesh beats chebyshev often, especially when maxiter <= 100.
+
+So, when we plot the trajectory, we can see how nonlinear it is: the number of nonlinear segments should hopefully correlate with the number of Jacobian updates we do (??? is this true?) 
+
+We need to understand better what the trajectory path means!
+
+### Notes from Dylan:
+
+SE3 point - we know EE in RW, we know camera proj of 3D point to 2D,
+
+calib - includes camera position in 3D space (external), focal len & center, etc (internal)
+
+routines to calib
+
+value in uncalib - just put any camera anywhere, more robust
+
+TODO: 
+1. analytic jacobian - compare trajectories and see how our simplices method compares
+2. plot the arm - oscilates?
+3. for each simplex, can we designate a predetermined Jacobian? This will save us time later so that we don't need to do central differences with the real robot :3
+4. higher DOF
+5. camera 
+
+Note: to follow up on 3., we can do this relatively easily by perhaps calculating the analytic Jacobian for the centroid of each simplex, and assigning that Jacobian as an index of a list: so whichever simplex we are in, query our Jacobian dictionary to use :D
+
+REMEMBER:
+- number of iters: RW application, 300 is large...... 30-100 is reasonable
+- dont want to overshoot with robot - dampenign must be small

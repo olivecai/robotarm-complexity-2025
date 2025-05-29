@@ -75,9 +75,7 @@ def newshape(Shape, ith, adjustedcentroid):
     #print(ret)
     j=0
     for i in range(Shape.ddim):
-        print("THIS IS i:", i)
         if i!=ith:
-            print(Shape.structure[i])
             ret.append(Shape.structure[i])
             j+=1;
         #print(ret)
@@ -124,6 +122,21 @@ class DelaunayMesh:
         else:
             self.shape_vertices_count=4
         self.sparse_step = sparse_step #initial grid size: how many datapoints for EACH q range? this is essentially the step size in the linear space 
+        self.mesh_jacobians=None
+
+def create_mesh_jacobians(Mesh: DelaunayMesh, q: np.ndarray, ets: rtb.ETS, jacobian_calculation_function):
+    '''
+    This function allows you to assign each piece of the mesh its own Jacobian!
+    How does it work?
+        1. Well, each simplex is given an index by the Delaunay meshing. So, create a parallel list situation to pair with the Jacobians.
+        2. 
+    '''
+    for simplex in (Mesh.plotnodes[Mesh.mesh.simplices]):
+        TODO: pick up from here!
+        # calculate centroid
+        # calculate that jacobian using the jacobian claculation function specified!
+        # add to the jacobians array
+    # dont forget to assign the completed array to the Mesh object.    
 
 def recursive_add_triangles(mesh: DelaunayMesh, parent: Triangle):
     '''
@@ -316,11 +329,14 @@ def calculate_simplices(Mesh: DelaunayMesh):
     (by checking whether our current end-effector point is in a simplex) we can recallibrate the Jacobian using central differences.
     '''
     Mesh.mesh = Delaunay(Mesh.plotnodes)
+    print("Number of Simplices:", len(Mesh.mesh.simplices))
     #print("INDICES OF SIMPLICES:", Mesh.mesh.simplices)
-    print("POINTS CREATING OUR SIMPLICES:\n", Mesh.plotnodes[Mesh.mesh.simplices])
+    #print("POINTS CREATING OUR SIMPLICES:\n", Mesh.plotnodes[Mesh.mesh.simplices])
 
-    for triangle in Mesh.plotnodes[Mesh.mesh.simplices]:
-        print("(", triangle[0][0],",",triangle[0][1],"), (", triangle[1][0],",",triangle[1][1],"), (", triangle[2][0],",",triangle[2][1],")", end=",")
+    # to plot all the nodes of the mesh in Desmos, you can copy and paste the output from the lines below. 
+    # (it's formatted for 2DOF)
+    #for triangle in Mesh.plotnodes[Mesh.mesh.simplices]:
+    #    print("(", triangle[0][0],",",triangle[0][1],"), (", triangle[1][0],",",triangle[1][1],"), (", triangle[2][0],",",triangle[2][1],")", end=",")
 
 def create_delaunaymesh_1DOF(Mesh: DelaunayMesh, mode: int):
     '''
@@ -381,8 +397,6 @@ def create_delaunaymesh_2DOF(Mesh: DelaunayMesh, mode: int):
     mode==3: display 3D graph with z-axis as Y-pos
     mode==4: display 3D graph with z-axis as Z-pos
     '''
-
-    print("Creating Delaunay Mesh...")
     
     #print("Collection of nodes to mesh over:",Mesh.plotnodes)
 

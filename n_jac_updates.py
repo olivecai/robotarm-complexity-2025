@@ -17,8 +17,6 @@ import plotly.graph_objects as go
 from scipy.spatial import Delaunay
 import successive_mesh_refinement as smr
 
-
-
 PI = np.pi
 
 
@@ -32,7 +30,7 @@ def fkin(q, ets: rtb.ETS):
     z=T[2][3];
     return np.array([x,y,z]);
 
-def centraldiff_jacobian(currQ, desiredP, e: rtb.Robot.ets):
+def centraldiff_jacobian(currQ, e: rtb.Robot.ets):
     '''
     Initialize and return a Jacobian through central differences, without use of a camera.'''
     epsilon=PI/16
@@ -64,67 +62,73 @@ def centraldiff_jacobian(currQ, desiredP, e: rtb.Robot.ets):
     currJ=currJT.T
     return currJ
 
+def analytic_jacobian(q: np.ndarray, ets: rtb.ETS) -> np.ndarray:
+    '''
+    Computes the analytic Jacobian of a robot defined by an ETS at specific configuration q.
+
+    Returns:
+        np.ndarray: The Jacobian matrix (6 x N), where N is the number of joints.
+    '''
+    robot = rtb.Robot(ets)
+    return robot.jacobe(q)[:3, :]
+
 #inverse kinematics with constant jacobian: terminates when error is low enough, or when n=10
-def constjac(currQ, desiredP, e : rtb.Robot.ets, mesh: smr.DelaunayMesh, simplex_mode=0): #uses a constant Jacobian.
+def invkin_constjac(tolerance:int, maxiter: int, currQ, desiredP, e : rtb.Robot.ets, mesh: smr.DelaunayMesh, jacobian_method, simplex_mode, plot_traj=0): #uses a constant Jacobian.
     '''
     CONSTANT JACOBIAN for inverse kinematics. No camera involved yet. Returns resulting position when restol satisfied OR when n=MAXITER
-
-    Steps:
-    1. Project the currRP of the EE into the camera and use central differences to initialize the Jacobian. (initialization here and in uncalibrated_vs func are the same!)
-    2. 
-
     '''
-    i = 0
+    
+    trajectory = []
+    jac_updates=0;
 
-    currP=fkin(currQ, e) #projection of that real point through the camera
-    errorP=desiredP-currP 
-    error=np.linalg.norm(errorP)
-    if error < TOLERANCE:
-        return (currP) # return without any invkin, our ready pose IS the desired pose
+    alpha = 0.05  #dampening factor
+    if jacobian_method==1:
+        J = centraldiff_jacobian(currQ, e)
+    if jacobian_method==2 or jacobian_method==3:
+        J=analytic_jacobian(currQ, e)
 
-    alpha=0.1
+    curr_simplex = smr.find_simplex(currQ, mesh)
 
-    print("currQ", currQ)
-    curr_simplex = smr.find_simplex(currQ, mesh) #find which linear piece we are currently in
-    J=centraldiff_jacobian(currQ, desiredP, e)
+    for i in range(maxiter):
+        currP = fkin(currQ, e)
+        errorP = desiredP - currP
+        error = np.linalg.norm(errorP)
 
-    corrQ =np.linalg.pinv(J) @ errorP #solve for change in theta 
-    #print("corrQ:",corrQ)
-    currQ=currQ+corrQ*alpha #alpha is our dampening factor
-    ###after solvign for the new theta, we move there and check the error.
-    currP=fkin(currQ, e)
-    errorP=desiredP-currP #error is measured from projection img
-    error=np.linalg.norm(errorP)
+        trajectory.append(currQ.copy())
 
-    i+=1
-    while i< MAXITER and error>TOLERANCE:
-        
-        if simplex_mode:
-            next_simplex= smr.find_simplex(currQ, mesh) #find which linear piece we are currently in\\
-            print("currQ to be in next simplex:", currQ)
-            print("iteration:",i,"simplexes:",curr_simplex, "VS", next_simplex)
-            if curr_simplex!=next_simplex: #then we are in a new linear segement
-                print("RECALIBRATE JACOBIAN.")
-                print("J before:", J)
-                J=centraldiff_jacobian(currQ, desiredP, e)
-                print("J after:", J)
-                curr_simplex=next_simplex #update curr_simplex   '''     
-            
-        currP  =  fkin(currQ, e) #get the current point...
+        if error < tolerance:
+            break
 
-        errorP = (desiredP - currP) #see our position error (vector)
-        error = np.linalg.norm(errorP) #get the total error (scalar)
+        if jacobian_method==3:
+            J=analytic_jacobian(currQ, e)
+            jac_updates+=1;
 
-        corrQ = np.linalg.pinv(J) @ errorP #use the constant Jac and our current error to solve for corrQ
+        if simplex_mode: #if not simplex mode then just use a constant jacobian the entire time
+            next_simplex = smr.find_simplex(currQ, mesh)
+            if next_simplex != curr_simplex:
+                print("jacobian update at iteration", i)
+                jac_updates+=1;
+                if jacobian_method==1:
+                    J = centraldiff_jacobian(currQ, e)
+                if jacobian_method==2:
+                    J=analytic_jacobian(currQ, e)
+                curr_simplex = next_simplex
 
-        currQ = currQ + corrQ*alpha
-        i += 1  # update iteration variable
+        corrQ = np.linalg.pinv(J) @ errorP
+        #currQ=currQ.copy() #comment to modify currQ directly, uncomment to create a copy each time !!!!!
+        currQ += alpha * corrQ
 
-    return currP
+    if plot_traj: #animate trajectory, very fast
+        e.plot(np.array(trajectory), block=False)
+        plt.close('all')
+        slider_robot_trajectory(np.array(trajectory))
 
-def plotting(n, e, jointlimits: list, desiredP, mesh: smr.DelaunayMesh, simplex_mode:int):
+    return currP, i, jac_updates
 
-    joint_ranges = [np.linspace(low, high, n) for (low, high) in jointlimits]
+def calculate_error(tolerance, maxiter, resolution, e, jointlimits: list, desiredP, mesh: smr.DelaunayMesh, jacobian_method, simplex_mode, plot_traj, plot_error):
+
+    joint_ranges = [np.linspace(low, high, resolution) for (low, high) in jointlimits]
+
     grid = np.meshgrid(*joint_ranges, indexing='ij')  # ij indexing keeps dimensions aligned
 
     # stack all grids to create a dof x n x n x ... array
@@ -142,45 +146,97 @@ def plotting(n, e, jointlimits: list, desiredP, mesh: smr.DelaunayMesh, simplex_
                 This for loop iterates over every pair/permutation in the linear spaces of our parameters,
                 and returns the resulting point. 
                 '''
-                Q = Q_grid[idx] 
-                resultP = constjac(currQ=Q, desiredP=desiredP, e=e, mesh=mesh, simplex_mode=simplex_mode)
+                Q = Q_grid[idx].copy()
+                resultP, iterations, jac_updates = invkin_constjac(tolerance=tolerance, maxiter=maxiter, currQ=Q, desiredP=desiredP, e=e, mesh=mesh, jacobian_method=jacobian_method, simplex_mode=simplex_mode)
                 error=np.linalg.norm(desiredP - resultP) 
                 sum_error+=error
                 permuts_over_linspaces[idx] = error
 
-                print("i:", i, "initial Q:",Q, "resultP:", resultP, "error:", error)
+                print("i:", i, "init Q: ", Q_grid[idx], "fin Q:", Q, "result P:", resultP, "error:", error, "jac updates:", jac_updates)
                 i+=1;
     
-    permuts_over_linspaces=permuts_over_linspaces.flatten()
-    # Flatten Q_grid to get all [q0, q1, ..., qN] configs
-    Q_flat = Q_grid.reshape(-1, Q_grid.shape[-1])
-    x, y, z = Q_flat[:, 0], Q_flat[:, 1], permuts_over_linspaces
-
-
-    print(permuts_over_linspaces)
-    print("Generating Plot...")
     print("Sum of error: ", sum_error)
-    scatter = go.Scatter3d(x=x,y=y,z=z,mode='markers', marker=dict(size=15,color=permuts_over_linspaces, colorscale='plasma', colorbar=dict(title='Total Error Non-Normalized'), opacity=0.2))
+
+    if plot_error:
+        permuts_over_linspaces=permuts_over_linspaces.flatten()
+        # Flatten Q_grid to get all [q0, q1, ..., qN] configs
+        Q_flat = Q_grid.reshape(-1, Q_grid.shape[-1])
+        x, y, z = Q_flat[:, 0], Q_flat[:, 1], permuts_over_linspaces
+
+        print("Generating Plot...")
+        scatter = go.Scatter3d(x=x,y=y,z=z,mode='markers', marker=dict(size=15,color=permuts_over_linspaces, colorscale='plasma', colorbar=dict(title='Total Error Non-Normalized'), opacity=0.2))
+        layout = go.Layout(
+            scene=dict(
+                xaxis_title='q0',
+                yaxis_title='q1',
+                zaxis_title='error'
+            ),
+            title='Joint Space Error in 3D',
+            margin=dict(l=0,r=0,b=0,t=50)
+        )
+        fig=go.Figure(data=[scatter], layout=layout)
+
+        fig.show()
+
+        if len(jointlimits) == 1: #1 DOF
+            plt.plot(permuts_over_linspaces, 'o')
+            plt.show()
+
+def plot_robot_trajectory(tolerance, maxiter, Q, desiredP, ets, mesh, jacobian_method, simplex_mode, plot_traj_mode):
+    robot=rtb.Robot(ets)
+    initQ=Q.copy()
+    resultP, iterations, jac_update_count = invkin_constjac(tolerance=tolerance, maxiter=maxiter, currQ=Q, desiredP=desiredP, e=ets, mesh=mesh, jacobian_method=jacobian_method, simplex_mode=simplex_mode, plot_traj=plot_traj_mode)
+    error=np.linalg.norm(desiredP - resultP) 
+    print("Plot Trajectory:\ninitial Q: ", initQ, "result Q:", Q, "resultP:", resultP, "error:", error, "jacobian updates:" ,jac_update_count)
+
+def slider_robot_trajectory(traj):
+    x, y = traj[:, 0], traj[:, 1]
+
+    # Create frames: one per timestep
+    frames = [
+        go.Frame(
+            data=[
+                go.Scatter(x=x[:k+1], y=y[:k+1], mode='lines+markers',
+                           line=dict(color='blue'), marker=dict(size=6))
+            ],
+            name=str(k)
+        )
+        for k in range(len(x))
+    ]
+
     layout = go.Layout(
-        scene=dict(
-            xaxis_title='q0',
-            yaxis_title='q1',
-            zaxis_title='error'
-        ),
-        title='Joint Space Error in 3D',
-        margin=dict(l=0,r=0,b=0,t=50)
+        title="Joint Trajectory (q0 vs q1)",
+        xaxis=dict(title="q0"),
+        yaxis=dict(title="q1"),
+        updatemenus=[dict(
+            type="buttons",
+            showactive=False,
+            buttons=[
+                dict(label="Play", method="animate", args=[None, {"frame": {"duration": 300}, "fromcurrent": True}]),
+                dict(label="Pause", method="animate", args=[[None], {"frame": {"duration": 0}, "mode": "immediate"}])
+            ]
+        )],
+        sliders=[{
+            "steps": [{
+                "args": [[f.name], {"frame": {"duration": 0, "redraw": True},
+                                    "mode": "immediate"}],
+                "label": f.name,
+                "method": "animate"
+            } for f in frames],
+            "transition": {"duration": 0},
+            "x": 0, "y": -0.1,
+            "currentvalue": {"prefix": "Iteration: "}
+        }],
     )
-    fig=go.Figure(data=[scatter], layout=layout)
+
+    fig = go.Figure(
+        data=[go.Scatter(x=[x[0]], y=[y[0]], mode="lines+markers")],
+        layout=layout,
+        frames=frames
+    )
 
     fig.show()
 
-    if len(jointlimits) == 1: #1 DOF
-        plt.plot(permuts_over_linspaces, 'o')
-        plt.show()
-
-
-TOLERANCE = 1e-3
-MAXITER = 100
 def main():
     l0=1;l1=1;l2=1;
 
@@ -190,7 +246,7 @@ def main():
 
     ets2dof = rtb.ET.Rz() * rtb.ET.tx(l0) * rtb.ET.Rz() * rtb.ET.tx(l1) 
     joint_limits2dof = [(-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2)]  # example for 2 DOF
-    joint_limits2dof_full = [(-2*np.pi, 2*np.pi), (-2*np.pi, 2*np.pi)]
+    joint_limits2dof_full = [(-3*np.pi, 3*np.pi), (-3*np.pi, 3*np.pi)]
 
     ets3dof = rtb.ET.Rz() * rtb.ET.tx(l0) * rtb.ET.Rx() * rtb.ET.tz(l1) * rtb.ET.Rx() * rtb.ET.tz(l2)
     joint_limits3dof = [(-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2) , (-np.pi/2, np.pi/2)]  # example for 2 DOF
@@ -202,15 +258,42 @@ def main():
     camera = CentralCamera()
     robot = rtb.Robot(ets)
 
-    mesh = smr.DelaunayMesh(1e-1, robot, camera, sparse_step=5, jointlimits=joint_limits_full)
+    mesh = smr.DelaunayMesh(1e-1, robot, camera, sparse_step=8, jointlimits=joint_limits_full)
 
-    smr.create_sparsespace_chebyshev(mesh)
-    smr.create_delaunaymesh_2DOF(mesh, 1)
+    tolerance = 1e-3
+    maxiter = 300
+    resolution=15
+    desiredP = np.array([1,1,0])
+    chebyshev = 0 #chebyshev seems to consistently result in a tiny bit more error than equidistant...
+    Q = np.array([float(0.8973979), float(0)])
+    plot_certain_trajectory=1
+    simplex_mode=1
+    jacobian_method=3 #1 central diff, 2 analytic simplex, 3 analytic every update (best possible) 
+   
+    #dont touch below
+    if jacobian_method==2:
+        simplex_mode=1
+    if jacobian_method==3:
+        simplex_mode=0
+
+    print("Creating Delaunay Mesh...")
+    if chebyshev:
+        smr.create_sparsespace_chebyshev(mesh)
+    else: 
+        smr.create_sparsespace(mesh)
+    #smr.create_delaunaymesh_2DOF(mesh, 1) #NOTE: this line is NOT necessary for computations, it is simply to show the viewer our plot.
     smr.calculate_simplices(mesh) 
 
-    n=50
-    simplex_mode=0
-    plotting(n, ets, joint_limits, np.array([1,1,0]), mesh, simplex_mode)
+    if not plot_certain_trajectory:
+        print("Plotting error...")
+        calculate_error(tolerance, maxiter, resolution, ets, joint_limits, desiredP, mesh, jacobian_method, simplex_mode, 0, 1)
+    else:
+        plot_robot_trajectory(tolerance, maxiter, Q.copy(), desiredP, ets, mesh, jacobian_method, simplex_mode, 1)
+
+    print(Q)
+    print("ANALYTIC JAC:\n", analytic_jacobian(Q.copy(), ets))
+    print(Q)
+    print("CENTRAL DIFF JAC:\n", centraldiff_jacobian(Q.copy(), ets))
 
 
 if __name__ == '__main__':
