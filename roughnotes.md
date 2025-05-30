@@ -380,3 +380,24 @@ Now we have some questions:
 - What range should we make the mesh over, especially considering that the robot movement joints can extend past that range?
 - How can we use a camera with this?
 
+Current problem is that we are oscillating between the same simplices, which defeats the purpose of designating counts of jacobian updates, since we can infer that the bheaviour will simply oscillate continually until MAXITER.
+
+Something I wanted to do was assign certain regions number of Jacobian updates needed, because perhaps that would tell us important information about the nonlinearity of the function, but this oscillating is a problem. What if we try adding the simplices we have already entered into a list so that we avoid re-entering the same simplex? Will this only interfere with the convergence?
+
+It would also be nice to present something for the lab during the Thursday sessions, but I don't know what yet. 
+
+Currently implementing visual servoing feature. Should the mesh refinement be using the camera points or the real world points to create its mesh? In a real world application, we would like to make the mesh beforehand, and its certainly not practical to create the mesh with the actual robot, so I feel that the mesh should be made in simulation beforehand.
+
+
+
+Mesh jacobians live in R3
+but to be effrective for th ecamera, we still need the projected camera points :-(
+
+do in sim just fkin, but in RW we know fkin so not useful
+
+calibration phase beforehand for 5 min - once you have it you have it
+^ if you do this you mgiht as well do camera claibration
+
+focus on vs
+^ fkin part of the problem
+

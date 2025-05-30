@@ -315,7 +315,7 @@ def calculate_simplices(Mesh: DelaunayMesh):
     # to plot all the nodes of the mesh in Desmos, you can copy and paste the output from the lines below. 
     # (it's formatted for 2DOF)
     #for triangle in Mesh.plotnodes[Mesh.mesh.simplices]:
-    #    print("(", triangle[0][0],",",triangle[0][1],"), (", triangle[1][0],",",triangle[1][1],"), (", triangle[2][0],",",triangle[2][1],")", end=",")
+    #    print("(", triangle[0][0],",",triangle[0][1],"), (", triangle[1][0],",",triangle[1][1],"), (", triangle[2][0],",",triangle[2][1],")", end="\n")
 
 def create_delaunaymesh_1DOF(Mesh: DelaunayMesh, mode: int):
     '''
@@ -480,7 +480,7 @@ def create_mesh_jacobians(Mesh: DelaunayMesh, ets: rtb.ETS, mode: int):
         if Mesh.shape_vertices_count==3:
             curr_simplex = Triangle(simplex[0], simplex[1], simplex[2])
         if Mesh.shape_vertices_count==4:
-            curr_simplex = Triangle(simplex[0], simplex[1], simplex[2], simplex[3])
+            curr_simplex = Tetrahedron(simplex[0], simplex[1], simplex[2], simplex[3])
         # calculate that jacobian , mode == 1 for central diff, mode == 2 for analytic
         if mode ==1: #central diff
             jac=centraldiff_jacobian(curr_simplex.centroid, ets)

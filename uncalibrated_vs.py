@@ -162,7 +162,7 @@ def constjac_3dof(currQ, desiredP, camera: CentralCamera, e : rtb.Robot.ets): #u
 def uncalibrated_vs(currQ, desiredP, camera: CentralCamera, e: rtb.Robot.ets):
     '''
     1. Setup: camera and arm in ready pose exist in R3. Use the real points for desired and EE initially to project them into the camera. After that, we will only access the camera.
-    2. Initialization: Let errorP = currP-desiredP
+    2. Initialization: Let errorP = desiredP-currP
     3. Use an overdetermined system and central differences to estimate the Jacobian.
     4. After initializing the Jacobian, use the Jacobian and errorP to estimate the best change to currQ. (pinv(J)@errorP = dQ)
     5. Update theta values: currQ=currQ+dQ
