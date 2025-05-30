@@ -30,6 +30,8 @@ import plotly.express as px
 import plotly.graph_objects as go
 from scipy.spatial import Delaunay
 
+from common_robot_calculations import fkin, centraldiff_jacobian, analytic_jacobian
+
 def calculate_centroid(points):
     '''
     calculates the centroid of any shape.
@@ -53,16 +55,6 @@ def calculate_centroid(points):
             centroid[i] += points.structure[j][i]
         centroid[i] /= d
     return centroid
-
-def forward_kin(q, ets: rtb.ETS):
-    '''
-    return the real world/actual position in R3 of the end effector based on the specified joint parameters, q (np array).
-    '''
-    T = ets.eval(q)       
-    x=T[0][3];
-    y=T[1][3];
-    z=T[2][3];
-    return np.array([x,y,z]);
 
 def newshape(Shape, ith, adjustedcentroid):
     '''
@@ -124,19 +116,6 @@ class DelaunayMesh:
         self.sparse_step = sparse_step #initial grid size: how many datapoints for EACH q range? this is essentially the step size in the linear space 
         self.mesh_jacobians=None
 
-def create_mesh_jacobians(Mesh: DelaunayMesh, q: np.ndarray, ets: rtb.ETS, jacobian_calculation_function):
-    '''
-    This function allows you to assign each piece of the mesh its own Jacobian!
-    How does it work?
-        1. Well, each simplex is given an index by the Delaunay meshing. So, create a parallel list situation to pair with the Jacobians.
-        2. 
-    '''
-    for simplex in (Mesh.plotnodes[Mesh.mesh.simplices]):
-        TODO: pick up from here!
-        # calculate centroid
-        # calculate that jacobian using the jacobian claculation function specified!
-        # add to the jacobians array
-    # dont forget to assign the completed array to the Mesh object.    
 
 def recursive_add_triangles(mesh: DelaunayMesh, parent: Triangle):
     '''
@@ -146,7 +125,7 @@ def recursive_add_triangles(mesh: DelaunayMesh, parent: Triangle):
     centroid = parent.centroid 
     q = centroid[:mesh.q_count] #extract q, since the remaining elements in the array will be position coords
     posMesh = centroid[mesh.q_count:] #[x, y, z]
-    posR = (forward_kin(q, mesh.robot.ets()))
+    posR = (fkin(q, mesh.robot.ets()))
     residual = np.linalg.norm(posR - posMesh) #calculate the residual
     if residual > mesh.restol: #then we should mesh again at the centroid and recurse on each child. for triangles, 3 children are created; tetrahedrons, 4.
         for i in range(parent.ddim): #the number of vertices correspond to the number of new shapes created internally.
@@ -170,7 +149,7 @@ def recursive_add_tetrahedrons(mesh: DelaunayMesh, parent: Triangle):
     centroid = parent.centroid 
     q = centroid[:mesh.q_count] #extract q, since the remaining elements in the array may be position coords
     posMesh = centroid[mesh.q_count:] 
-    posR = (forward_kin(q, mesh.robot.ets()))
+    posR = (fkin(q, mesh.robot.ets()))
     residual = np.linalg.norm(posR - posMesh) #using np linalg norm since we might want to expand later.
 
     if residual > mesh.restol: #then we should mesh again with the centroid q and pos as the real pos and recurse on each child. for triangles, 3 children are created; tetrahedrons, 4.
@@ -233,7 +212,7 @@ def create_sparsespace(Mesh: DelaunayMesh):
                 '''
                 Q = Q_grid[idx] 
                 meshpoint = np.zeros(Q.shape[0] + 3) #add three, for the world dimensions.
-                posR = forward_kin(q=Q, ets= Mesh.robot.ets())
+                posR = fkin(q=Q, ets= Mesh.robot.ets())
                 meshpoint[: Q.shape[0]] = Q
                 meshpoint[Q.shape[0]:] = posR
 
@@ -288,7 +267,7 @@ def create_sparsespace_chebyshev(Mesh):
     for idx in np.ndindex(shape):
         Q = Q_grid[idx]
         meshpoint = np.zeros(Q.shape[0] + 3)
-        posR = forward_kin(q=Q, ets=Mesh.robot.ets())
+        posR = fkin(q=Q, ets=Mesh.robot.ets())
         meshpoint[:Q.shape[0]] = Q
         meshpoint[Q.shape[0]:] = posR
 
@@ -488,6 +467,30 @@ def find_simplex(p, Mesh: DelaunayMesh):
     '''
     return simplex_idx
 
+def create_mesh_jacobians(Mesh: DelaunayMesh, ets: rtb.ETS, mode: int):
+    '''
+    This function allows you to assign each piece of the mesh its own Jacobian!
+    How does it work?
+        1. Well, each simplex is given an index by the Delaunay meshing. So, create a parallel list, to pair with each unique Jacobian generated for that simplex.
+        2. Calculate the centroid of that simplex and use either mode 1, central differences, or mode 2, analytic, to generate the Jacobian.
+    '''
+    jacobians=[]
+    print("Generating a unique Jacobian for each simplex...")
+    for simplex in (Mesh.plotnodes[Mesh.mesh.simplices]):
+        if Mesh.shape_vertices_count==3:
+            curr_simplex = Triangle(simplex[0], simplex[1], simplex[2])
+        if Mesh.shape_vertices_count==4:
+            curr_simplex = Triangle(simplex[0], simplex[1], simplex[2], simplex[3])
+        # calculate that jacobian , mode == 1 for central diff, mode == 2 for analytic
+        if mode ==1: #central diff
+            jac=centraldiff_jacobian(curr_simplex.centroid, ets)
+        if mode ==2: #analyic
+            jac=analytic_jacobian(curr_simplex.centroid, ets)
+        # add to the jacobians array
+        jacobians.append(jac)
+    # assign the completed array to the Mesh object:
+    Mesh.mesh_jacobians = np.array(jacobians)   
+
 def main():
     l0=1;l1=1;l2=1;
 
@@ -506,10 +509,12 @@ def main():
     camera = CentralCamera()
     robot = rtb.Robot(ets)
 
-    mesh = DelaunayMesh(1e-1, robot, camera, sparse_step=10, jointlimits=joint_limits)
+    mesh = DelaunayMesh(1e-1, robot, camera, sparse_step=3, jointlimits=joint_limits)
 
     create_sparsespace(mesh)
     calculate_simplices(mesh) #calculate_simplices is a very important function... 'squashes' the position elements and meshes with parameters as the only axis... this way when we are computing inverse kinematics, we can query: which simplex are we in, based on our joint configs...?
+
+    create_mesh_jacobians(mesh, ets, 1)
 
     #create_delaunaymesh_1DOF(mesh, 1)
     create_delaunaymesh_2DOF(mesh,1)
@@ -517,3 +522,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+

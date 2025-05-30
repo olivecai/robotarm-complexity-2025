@@ -370,3 +370,13 @@ Note: to follow up on 3., we can do this relatively easily by perhaps calculatin
 REMEMBER:
 - number of iters: RW application, 300 is large...... 30-100 is reasonable
 - dont want to overshoot with robot - dampenign must be small
+
+# May 30
+
+Today I fxied a bug in the analytic Jacobian calculation which cleared up many question marks. I also added the pre-calculated Jacobian for each simplex (done so by either computing the central differences OR analytic JAcobian for the centroid of each simplex) and that method, when combined witht he simplex update (of coursE) works quite well! To compare, our method of updating the Jacobian using cnetral differences everytime we enter a new simplex gave us a total error of 60.597, while this new method of using the mesh jacobians (as we will refer to them now) gave us an erro ro f 9.1435.... And as our best possible model, the analytic Jacobian with an update at every single iteration gave us an error of 2.16902. All of these tests were done with maxiter=100 on our 2DOf robot.
+
+Now we have some questions:
+- Optimal number of simplices
+- What range should we make the mesh over, especially considering that the robot movement joints can extend past that range?
+- How can we use a camera with this?
+

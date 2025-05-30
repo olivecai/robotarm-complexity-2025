@@ -16,61 +16,9 @@ import plotly.express as px
 import plotly.graph_objects as go
 from scipy.spatial import Delaunay
 import successive_mesh_refinement as smr
+from common_robot_calculations import fkin, centraldiff_jacobian, analytic_jacobian
 
 PI = np.pi
-
-
-def fkin(q, ets: rtb.ETS):
-    '''
-    return the real world/actual position in R3 of the end effector based on the specified joint parameters, q (np array).
-    '''
-    T = ets.eval(q)       
-    x=T[0][3];
-    y=T[1][3];
-    z=T[2][3];
-    return np.array([x,y,z]);
-
-def centraldiff_jacobian(currQ, e: rtb.Robot.ets):
-    '''
-    Initialize and return a Jacobian through central differences, without use of a camera.'''
-    epsilon=PI/16
-     ###sanity check for our dimensions: 
-    # let p=robot params, k=datapts for overdet system. 
-    # each dP=1xd, each dQ=1xp. after generating overdet sys, 
-    # DP=kxd, DQ=kxp, currJ.T=pxd... so currJ=dxp. 
-    # Also, I is pxp
-    # in this case, p=3, d=2
-    p=currQ.shape[0]
-    d=3 #d is world dimensions
-    k=1 #for now its not overdetermined. NOTE: find out if Dylan's paper used overdet.
-    currJT = np.zeros((p,d)) 
-    I=np.identity(p)
-    for i in range(p): #i is a specific robot param
-        #the jacobian is first initialized with central differences. 
-        '''print("INIT JAC: currQ: ")
-        print(currQ)
-        print(I[i])
-        print("positive perturb", vs_fkin(e, currQ+epsilon*I[i], camera))
-        print("negative perturb", vs_fkin(e, currQ-epsilon*I[i], camera))
-        print("perturb diff",  (vs_fkin(e, currQ+epsilon*I[i], camera)) - (vs_fkin(e, currQ-epsilon*I[i], camera)))'''
-        currJT[i] = (
-                    (fkin(currQ+epsilon*I[i], e)) -
-                    (fkin(currQ-epsilon*I[i], e))
-                ) / (2*epsilon)
-        #print("currJT i column", currJT[i])
-
-    currJ=currJT.T
-    return currJ
-
-def analytic_jacobian(q: np.ndarray, ets: rtb.ETS) -> np.ndarray:
-    '''
-    Computes the analytic Jacobian of a robot defined by an ETS at specific configuration q.
-
-    Returns:
-        np.ndarray: The Jacobian matrix (6 x N), where N is the number of joints.
-    '''
-    robot = rtb.Robot(ets)
-    return robot.jacobe(q)[:3, :]
 
 #inverse kinematics with constant jacobian: terminates when error is low enough, or when n=10
 def invkin_constjac(tolerance:int, maxiter: int, currQ, desiredP, e : rtb.Robot.ets, mesh: smr.DelaunayMesh, jacobian_method, simplex_mode, plot_traj=0): #uses a constant Jacobian.
@@ -86,6 +34,8 @@ def invkin_constjac(tolerance:int, maxiter: int, currQ, desiredP, e : rtb.Robot.
         J = centraldiff_jacobian(currQ, e)
     if jacobian_method==2 or jacobian_method==3:
         J=analytic_jacobian(currQ, e)
+    if jacobian_method==4 or jacobian_method==5:
+        J=mesh.mesh_jacobians[smr.find_simplex(currQ,mesh)]
 
     curr_simplex = smr.find_simplex(currQ, mesh)
 
@@ -106,12 +56,15 @@ def invkin_constjac(tolerance:int, maxiter: int, currQ, desiredP, e : rtb.Robot.
         if simplex_mode: #if not simplex mode then just use a constant jacobian the entire time
             next_simplex = smr.find_simplex(currQ, mesh)
             if next_simplex != curr_simplex:
-                print("jacobian update at iteration", i)
+                print("jac update at iter", i, "into simplex", next_simplex)
                 jac_updates+=1;
                 if jacobian_method==1:
                     J = centraldiff_jacobian(currQ, e)
                 if jacobian_method==2:
                     J=analytic_jacobian(currQ, e)
+                if jacobian_method==4 or jacobian_method==5:
+                    J=mesh.mesh_jacobians[smr.find_simplex(currQ,mesh)]
+
                 curr_simplex = next_simplex
 
         corrQ = np.linalg.pinv(J) @ errorP
@@ -246,7 +199,7 @@ def main():
 
     ets2dof = rtb.ET.Rz() * rtb.ET.tx(l0) * rtb.ET.Rz() * rtb.ET.tx(l1) 
     joint_limits2dof = [(-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2)]  # example for 2 DOF
-    joint_limits2dof_full = [(-3*np.pi, 3*np.pi), (-3*np.pi, 3*np.pi)]
+    joint_limits2dof_full = [(-np.pi, np.pi), (-np.pi, np.pi)]
 
     ets3dof = rtb.ET.Rz() * rtb.ET.tx(l0) * rtb.ET.Rx() * rtb.ET.tz(l1) * rtb.ET.Rx() * rtb.ET.tz(l2)
     joint_limits3dof = [(-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2) , (-np.pi/2, np.pi/2)]  # example for 2 DOF
@@ -258,31 +211,40 @@ def main():
     camera = CentralCamera()
     robot = rtb.Robot(ets)
 
-    mesh = smr.DelaunayMesh(1e-1, robot, camera, sparse_step=8, jointlimits=joint_limits_full)
+    mesh = smr.DelaunayMesh(1e-1, robot, camera, sparse_step=2, jointlimits=joint_limits_full)
 
+    ########  toggle buttons #######
     tolerance = 1e-3
-    maxiter = 300
+    maxiter = 100
     resolution=15
     desiredP = np.array([1,1,0])
     chebyshev = 0 #chebyshev seems to consistently result in a tiny bit more error than equidistant...
     Q = np.array([float(0.8973979), float(0)])
-    plot_certain_trajectory=1
+    plot_certain_trajectory=0
     simplex_mode=1
-    jacobian_method=3 #1 central diff, 2 analytic simplex, 3 analytic every update (best possible) 
-   
-    #dont touch below
-    if jacobian_method==2:
-        simplex_mode=1
-    if jacobian_method==3:
-        simplex_mode=0
+    #JACOBIAN METHODS:
+    # 1 central diff, 2 analytic simplex, 3 analytic every update (best possible)
+    # 4 central differences assigned to each simplex, 5 analytic assigned to each simplex. 
+    jacobian_method=1
+
 
     print("Creating Delaunay Mesh...")
     if chebyshev:
         smr.create_sparsespace_chebyshev(mesh)
     else: 
         smr.create_sparsespace(mesh)
-    #smr.create_delaunaymesh_2DOF(mesh, 1) #NOTE: this line is NOT necessary for computations, it is simply to show the viewer our plot.
-    smr.calculate_simplices(mesh) 
+    smr.create_delaunaymesh_2DOF(mesh, 1) #NOTE: this line is NOT necessary for computations, it is simply to show the viewer our plot.
+    smr.calculate_simplices(mesh) #this actually calculates the simplices we need.
+
+    #dont toggle below
+    if jacobian_method==2:
+        simplex_mode=1
+    if jacobian_method==3:
+        simplex_mode=0
+    if jacobian_method==4:
+        smr.create_mesh_jacobians(mesh, ets, 1)
+    if jacobian_method==5:
+        smr.create_mesh_jacobians(mesh,ets,2)
 
     if not plot_certain_trajectory:
         print("Plotting error...")
@@ -290,11 +252,7 @@ def main():
     else:
         plot_robot_trajectory(tolerance, maxiter, Q.copy(), desiredP, ets, mesh, jacobian_method, simplex_mode, 1)
 
-    print(Q)
-    print("ANALYTIC JAC:\n", analytic_jacobian(Q.copy(), ets))
-    print(Q)
-    print("CENTRAL DIFF JAC:\n", centraldiff_jacobian(Q.copy(), ets))
-
 
 if __name__ == '__main__':
     main()
+  
