@@ -117,36 +117,87 @@ class DelaunayMesh:
         self.mesh_jacobians=None
 
 
+
+def triangle_is_degenerate(p1, p2, p3):
+    mat = np.vstack([p2 - p1, p3 - p1])
+    
+    tol=1e-2
+    a = p2 - p1
+    b = p3 - p1
+    aa = np.dot(a, a)
+    bb = np.dot(b, b)
+    ab = np.dot(a, b)
+    area_squared = aa * bb - ab * ab
+    area = 0.5 * np.sqrt(max(area_squared, 0))
+
+    return (np.linalg.matrix_rank(mat) < 2) or area<tol
+
+def tetrahedron_is_degenerate(p1, p2, p3, p4):
+    mat = np.vstack([p2 - p1, p3 - p1, p4 - p1])
+
+    tol=0.1
+    a = p2 - p1
+    b = p3 - p1
+    c = p4 - p1
+    M = np.vstack([a, b, c])
+    G = M @ M.T  # 3x3 Gram matrix
+    vol_squared = np.linalg.det(G)
+    volume = (1.0 / 6.0) * np.sqrt(max(vol_squared, 0))
+
+    return (np.linalg.matrix_rank(mat) < 3) or volume<tol
+
+
 def recursive_add_triangles(mesh: DelaunayMesh, parent: Triangle):
     '''
+    Assume the triangle we recv is a valid, non-degenerate triangle.
+
     TRIANGLES
     update iterations and nodes for each point that is added to the mesh '''
     #calculate the centroid. compare centroid to the real point at the specified angles.
     centroid = parent.centroid 
+    #print("(", parent.point1[0],",",parent.point1[1],"), (", parent.point2[0],",",parent.point2[1],"), (", parent.point3[0],",",parent.point3[1],")", end=",")
+    #print("Recursive add triangle on parent", parent.point1, parent.point2, parent.point3)
+    #print("For this parent, the centroid is:", centroid)
     q = centroid[:mesh.q_count] #extract q, since the remaining elements in the array will be position coords
     posMesh = centroid[mesh.q_count:] #[x, y, z]
     posR = (fkin(q, mesh.robot.ets()))
     residual = np.linalg.norm(posR - posMesh) #calculate the residual
+
+    #print("posR:",posR,"posMesh:", posMesh)
+    #print("residual",residual)
+
     if residual > mesh.restol: #then we should mesh again at the centroid and recurse on each child. for triangles, 3 children are created; tetrahedrons, 4.
         for i in range(parent.ddim): #the number of vertices correspond to the number of new shapes created internally.
-            #print("THIS IS ith:", i)
-            centroid[mesh.q_count:] = posR #if the residual is larger than restol, we should refine the mesh at this local point.
             
-            ith_newshape= newshape(parent, i, centroid) #newshape is generating three points for us here.
-            mesh.iterations+=1 #bookkeeping
-            mesh.nodes.append(ith_newshape[2]) #bookkeeping, last point is always the new point
-            mesh.plotnodes.append(ith_newshape[2][:mesh.q_count])
-            child=Triangle(ith_newshape[0], ith_newshape[1], ith_newshape[2])  
-            return recursive_add_triangles(mesh, child)    
+
+            newnode=centroid.copy()
+            newnode[mesh.q_count:] = posR #if the residual is larger than restol, we should refine the mesh at this local point.
+            
+            ith_newshape= newshape(parent, i, newnode) #newshape is generating three points for us here.
+
+            degenerate= triangle_is_degenerate(
+                ith_newshape[0][:mesh.q_count], 
+                ith_newshape[1][:mesh.q_count], 
+                ith_newshape[2][:mesh.q_count]
+                )
+            
+            if not degenerate:
+                child=Triangle(ith_newshape[0], ith_newshape[1], ith_newshape[2])  
+                mesh.iterations+=1 #bookkeeping
+                mesh.nodes.append(ith_newshape[2]) #bookkeeping, last point is always the new point
+                mesh.plotnodes.append(ith_newshape[2][:mesh.q_count])
+
+                recursive_add_triangles(mesh, child)    
     else:
         return 
     
 def recursive_add_tetrahedrons(mesh: DelaunayMesh, parent: Triangle):
+    print("Recursive add tetrahedron on parent", parent)
     '''
     TETRAHEDRONS
     update iterations and nodes for each point that is added to the mesh '''
     #calculate the centroid. compare centroid to the real point at the specified angles.
-    centroid = parent.centroid 
+    centroid = parent.centroid
     q = centroid[:mesh.q_count] #extract q, since the remaining elements in the array may be position coords
     posMesh = centroid[mesh.q_count:] 
     posR = (fkin(q, mesh.robot.ets()))
@@ -154,13 +205,19 @@ def recursive_add_tetrahedrons(mesh: DelaunayMesh, parent: Triangle):
 
     if residual > mesh.restol: #then we should mesh again with the centroid q and pos as the real pos and recurse on each child. for triangles, 3 children are created; tetrahedrons, 4.
         for i in range(parent.ddim): #ie for i in range(parent.ddim)
-            centroid[mesh.q_count:] = posR
-            ith_newshape= newshape(parent, i, centroid)
-            mesh.iterations+=1 #bookkeepgin
-            mesh.nodes.append(ith_newshape[3]) #bookkeeping, last point is new point
-            mesh.plotnodes.append(ith_newshape[3][:mesh.q_count])
-            child=Tetrahedron(ith_newshape[0], ith_newshape[1], ith_newshape[2], ith_newshape[3])  
-            return recursive_add_tetrahedrons(mesh, child)    
+            new_point=centroid.copy()
+            new_point[mesh.q_count:] = posR
+            ith_newshape= newshape(parent, i, new_point)
+
+            degenerate= triangle_is_degenerate(ith_newshape[0][:mesh.q_count], ith_newshape[1][:mesh.q_count], ith_newshape[2][:mesh.q_count], ith_newshape[3][:mesh.q_count]) 
+            if degenerate:
+                return
+            else:
+                child=Tetrahedron(ith_newshape[0], ith_newshape[1], ith_newshape[2], ith_newshape[3])  
+                mesh.iterations+=1 #bookkeepgin
+                mesh.nodes.append(ith_newshape[3]) #bookkeeping, last point is new point
+                mesh.plotnodes.append(ith_newshape[3][:mesh.q_count])
+                return recursive_add_tetrahedrons(mesh, child)    
     else:
         return 
     
@@ -227,18 +284,54 @@ def create_sparsespace(Mesh: DelaunayMesh):
 
     #call recursive add triangle (or tetrahedron) for every collection of consecutive 3 (or 4) points:
     initmeshpoints=np.copy(Mesh.nodes) #copy over the initializing nodes so that we can iterate over them. the mesh.nodes list is going to be modified concrrently.
+    initplotnodes=np.copy(Mesh.plotnodes)
+
+
+    initmesh=Delaunay(initplotnodes)
+    print(initmesh.simplices)
+
+    #for triangle in initmeshpoints[initmesh.simplices]:
+    #    print("(", triangle[0][0],",",triangle[0][1],"), (", triangle[1][0],",",triangle[1][1],"), (", triangle[2][0],",",triangle[2][1],")", end="\n")
+
+    #TODO PICK UP HERE
+
+    if Mesh.shape_vertices_count == 3:  # Triangular meshing
+        for simplex in initmesh.simplices:
+            p0 = initmeshpoints[simplex[0]]
+            p1 = initmeshpoints[simplex[1]]
+            p2 = initmeshpoints[simplex[2]]
+
+            if triangle_is_degenerate(p0[:Mesh.q_count], p1[:Mesh.q_count], p2[:Mesh.q_count]):
+                continue
+
+            triangle = Triangle(p0, p1, p2)
+            recursive_add_triangles(Mesh, triangle)
+
+    '''
     i=0;
     
     if Mesh.shape_vertices_count == 3: #triangles
         while i+2 < (Mesh.sparse_step ** Mesh.q_count):
-            triangle = Triangle(initmeshpoints[i], initmeshpoints[i+1], initmeshpoints[i+2])
-            recursive_add_triangles(Mesh, triangle)
+            #print(initmeshpoints[i][:Mesh.q_count], initmeshpoints[i+1][:Mesh.q_count], initmeshpoints[i+2][:Mesh.q_count])
+            degenerate= triangle_is_degenerate(initmeshpoints[i][:Mesh.q_count], initmeshpoints[i+1][:Mesh.q_count], initmeshpoints[i+2][:Mesh.q_count])
+            #print("Degenerate status:", degenerate)
+            if degenerate:
+                pass
+            else:
+                triangle = Triangle(initmeshpoints[i], initmeshpoints[i+1], initmeshpoints[i+2])
+                #print("(", initmeshpoints[i][:Mesh.q_count][0],",", initmeshpoints[i][:Mesh.q_count][1],"), (", initmeshpoints[i+1][:Mesh.q_count][0],",",initmeshpoints[i+1][:Mesh.q_count][1],"), (",  initmeshpoints[i+2][:Mesh.q_count][0],",", initmeshpoints[i+2][:Mesh.q_count][1],")", end=",")
+                # recursive_add_triangles(Mesh, triangle)
             i+=1;
     if Mesh.shape_vertices_count ==4: #tetrahedrons
         while i+3 < (Mesh.sparse_step ** Mesh.q_count):
-            tetrahedron = Tetrahedron(initmeshpoints[i], initmeshpoints[i+1], initmeshpoints[i+2], initmeshpoints[i+3])
-            recursive_add_tetrahedrons(Mesh, tetrahedron)
+            degenerate = triangle_is_degenerate(initmeshpoints[i][:Mesh.q_count], initmeshpoints[i+1][:Mesh.q_count], initmeshpoints[i+2][:Mesh.q_count], initmeshpoints[i+3][:Mesh.q_count])
+            if tetrahedron_is_degenerate(initmeshpoints[i], initmeshpoints[i+1], initmeshpoints[i+2], initmeshpoints[i+3]):
+                pass
+            else:
+                tetrahedron = Tetrahedron(initmeshpoints[i], initmeshpoints[i+1], initmeshpoints[i+2], initmeshpoints[i+3])
+                recursive_add_tetrahedrons(Mesh, tetrahedron)
             i+=1;
+            '''
     
     Mesh.plotnodes = np.array(Mesh.plotnodes) #the sole reason we do this is to reformat the nodes into a nice np array
     Mesh.nodes = np.array(Mesh.nodes) #this too; simply reformatting. 
@@ -278,17 +371,24 @@ def create_sparsespace_chebyshev(Mesh):
     initmeshpoints = np.copy(Mesh.nodes)
     i = 0
     count = Mesh.sparse_step ** Mesh.q_count
-
-    if Mesh.shape_vertices_count == 3:
-        while i + 2 < count:
-            triangle = Triangle(initmeshpoints[i], initmeshpoints[i+1], initmeshpoints[i+2])
-            recursive_add_triangles(Mesh, triangle)
-            i += 1
-    elif Mesh.shape_vertices_count == 4:
-        while i + 3 < count:
-            tetra = Tetrahedron(initmeshpoints[i], initmeshpoints[i+1], initmeshpoints[i+2], initmeshpoints[i+3])
-            recursive_add_tetrahedrons(Mesh, tetra)
-            i += 1
+        
+    if Mesh.shape_vertices_count == 3: #triangles
+        while i+2 < (Mesh.sparse_step ** Mesh.q_count):
+            print(initmeshpoints[i][:Mesh.q_count], initmeshpoints[i+1][:Mesh.q_count], initmeshpoints[i+2][:Mesh.q_count])
+            if triangle_is_degenerate(initmeshpoints[i][:Mesh.q_count], initmeshpoints[i+1][:Mesh.q_count], initmeshpoints[i+2][:Mesh.q_count]):
+                pass
+            else:
+                triangle = Triangle(initmeshpoints[i], initmeshpoints[i+1], initmeshpoints[i+2])
+                recursive_add_triangles(Mesh, triangle)
+            i+=1;
+    if Mesh.shape_vertices_count ==4: #tetrahedrons
+        while i+3 < (Mesh.sparse_step ** Mesh.q_count):
+            if tetrahedron_is_degenerate(initmeshpoints[i], initmeshpoints[i+1], initmeshpoints[i+2], initmeshpoints[i+3]):
+                pass
+            else:
+                tetrahedron = Tetrahedron(initmeshpoints[i], initmeshpoints[i+1], initmeshpoints[i+2], initmeshpoints[i+3])
+                recursive_add_tetrahedrons(Mesh, tetrahedron)
+            i+=1;
 
     Mesh.plotnodes = np.array(Mesh.plotnodes)
     Mesh.nodes = np.array(Mesh.nodes)
@@ -366,8 +466,7 @@ def create_delaunaymesh_1DOF(Mesh: DelaunayMesh, mode: int):
         ax.spines['left'].set_visible(False)
 
     plt.show()
-    
-
+ 
 def create_delaunaymesh_2DOF(Mesh: DelaunayMesh, mode: int):
     '''
     Create and plot a Delaunay Mesh for a 2DOF arm.
@@ -509,7 +608,7 @@ def main():
     camera = CentralCamera()
     robot = rtb.Robot(ets)
 
-    mesh = DelaunayMesh(1e-1, robot, camera, sparse_step=3, jointlimits=joint_limits)
+    mesh = DelaunayMesh(0.4, robot, camera, sparse_step=4, jointlimits=joint_limits)
 
     create_sparsespace(mesh)
     calculate_simplices(mesh) #calculate_simplices is a very important function... 'squashes' the position elements and meshes with parameters as the only axis... this way when we are computing inverse kinematics, we can query: which simplex are we in, based on our joint configs...?

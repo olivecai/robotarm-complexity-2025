@@ -42,16 +42,16 @@ def vs_invkin(camera: mvtb.CentralCamera, tolerance:int, maxiter: int, currQ, de
 
     alpha = 0.05 #dampening factor
 
+
     if jacobian_method==1:
         J = vs_centraldiff_jacobian(currQ, e, camera) #modified for vs 
-    if jacobian_method==2 or jacobian_method==3:
-        J=analytic_jacobian(currQ, e)
     if jacobian_method==4 or jacobian_method==5:
         J=mesh.mesh_jacobians[smr.find_simplex(currQ,mesh)]
 
     curr_simplex = smr.find_simplex(currQ, mesh)
 
     for i in range(maxiter):
+
         currPP = vs_fkin(e, currQ, camera)
         errorP = desiredPP - currPP
         error = np.linalg.norm(errorP)
@@ -72,12 +72,12 @@ def vs_invkin(camera: mvtb.CentralCamera, tolerance:int, maxiter: int, currQ, de
                 jac_updates+=1;
                 if jacobian_method==1:
                     J = vs_centraldiff_jacobian(currQ, e, camera) #modified for vs 
-                if jacobian_method==2:
-                    J=analytic_jacobian(currQ, e)
                 if jacobian_method==4 or jacobian_method==5:
                     J=mesh.mesh_jacobians[smr.find_simplex(currQ,mesh)]
 
                 curr_simplex = next_simplex
+        
+        J
 
         corrQ = np.linalg.pinv(J) @ errorP
         #currQ=currQ.copy() #comment to modify currQ directly, uncomment to create a copy each time !!!!!
@@ -106,7 +106,7 @@ def invkin(tolerance:int, maxiter: int, currQ, desiredP, e : rtb.Robot.ets, mesh
     Inverse kinematics for constant Jacobian, simplices update, or every update, and supports simplices updates.
     No camera involved yet. Returns resulting position when restol satisfied OR when n=MAXITER
     '''
-    
+    simplices_visited=[]
     trajectory = []
     jac_updates=0;
 
@@ -119,6 +119,7 @@ def invkin(tolerance:int, maxiter: int, currQ, desiredP, e : rtb.Robot.ets, mesh
         J=mesh.mesh_jacobians[smr.find_simplex(currQ,mesh)]
 
     curr_simplex = smr.find_simplex(currQ, mesh)
+    simplices_visited.append(curr_simplex)
 
     for i in range(maxiter):
         currP = fkin(currQ, e)
@@ -146,8 +147,22 @@ def invkin(tolerance:int, maxiter: int, currQ, desiredP, e : rtb.Robot.ets, mesh
                 if jacobian_method==4 or jacobian_method==5:
                     J=mesh.mesh_jacobians[smr.find_simplex(currQ,mesh)]
 
-                curr_simplex = next_simplex
+                '''
+                dynamic dampening:
+                if we realize oscillatory motion is occuring, decrease alpha.
+                '''
+                if next_simplex in simplices_visited: #if we have seen this path before. Only applies in the case where we revisit one linear region: repeatedly iterating in the same simplex is unaffected.
+                    alpha*=1
 
+                    print("dampening coeff is now", alpha)
+
+                curr_simplex = next_simplex
+                simplices_visited.append(curr_simplex)
+
+        print("Jacobian")
+        print(J)
+        print("errorP")
+        print(errorP)
         corrQ = np.linalg.pinv(J) @ errorP
         #currQ=currQ.copy() #comment to modify currQ directly, uncomment to create a copy each time !!!!!
         currQ += alpha * corrQ
@@ -319,8 +334,8 @@ def main():
 
     #MESH PARAMS
     tolerance = 1e-3
-    maxiter = 300
-    resolution=2
+    maxiter = 50
+    resolution=1
     chebyshev = 0 #chebyshev seems to consistently result in a tiny bit more error than equidistant...
 
     #PLOTTING PARAMS
@@ -331,12 +346,12 @@ def main():
     #### JACOBIAN METHODS ####
     # 1 central diff, 2 analytic simplex, 3 analytic every update (best possible)
     # 4 central differences assigned to each simplex, 5 analytic assigned to each simplex. 
-    jacobian_method=4
+    jacobian_method=1
     #####################################################################
 
     #meshing should perhaps not use the camera at all.
     #TODO: Ask about camera in mesh.
-    mesh = smr.DelaunayMesh(1e-1, robot, camera, sparse_step=4, jointlimits=joint_limits_full)
+    mesh = smr.DelaunayMesh(1e-1, robot, camera, sparse_step=2, jointlimits=joint_limits_full)
 
     print("Creating Delaunay Mesh...")
     if chebyshev:
@@ -357,7 +372,7 @@ def main():
         smr.create_mesh_jacobians(mesh,ets,2)
 
     if not plot_certain_trajectory:
-        calculate_error(camera, tolerance, maxiter, resolution, ets, joint_limits, desiredP, mesh, jacobian_method, simplex_mode, 0, 0)
+        calculate_error(camera, tolerance, maxiter, resolution, ets, joint_limits, desiredP, mesh, jacobian_method, simplex_mode, 0, 1)
     else:
         plot_robot_trajectory(camera, tolerance, maxiter, Q.copy(), desiredP, ets, mesh, jacobian_method, simplex_mode, 1)
 
