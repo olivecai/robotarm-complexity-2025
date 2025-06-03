@@ -401,3 +401,43 @@ calibration phase beforehand for 5 min - once you have it you have it
 focus on vs
 ^ fkin part of the problem
 
+# June 3
+
+The mesh seems to be fixed and working now, but there is a consistent symmetry that seems a bit concerning: surely it shouldn't be exactly symmetrical?
+
+Maybe we could test it on a non-symmetrical known function, but for now let's focus on analyzing in some other way.
+
+Perhaps we could look at the eigenvectors, or the singular Jacobian.
+
+Notes on the Jacobian:
+https://motion.cs.illinois.edu/RoboticSystems/InverseKinematics.html
+
+- Error propagation: how much does perturbing one joint relate to error in the workspace?
+
+> In general, in  nR planar robots, the  i'th column of the Jacobian is simply the vector from the  ith joint to the end effector, rotated by  90∘ CCW. ... if the end effector is farther from revolute joint i than joint j, then the magnitude of the i'th column is greater than the magnitude of the j'th column.
+
+To employ IK:
+> The robot's kinematic structure is known. The coordinates of the tool center point are known. The coordinate frame of the end effector link is known. A rotation matrix defining the desired orientation of the end effector link is known. All coordinates are given with respect to the assumed reference frame (and units) of the solver.
+
+There are ways to navigate singularities and ways to identify them:
+
+if we can make the mesh and generate some Jacobians and recognize that they are singular, we can strategically avoid them, right?
+
+
+spectral radius is equivalent to the abs val first derivative in higher dims !!! DOUBLE CHECK!!!!!!!
+
+Heith 5.6
+
+start with newtons method and work in the analytic form - use a symbolic language 
+
+look at the closed form jacobian, hessian 
+
+- spectral radius
+- singularities
+
+hessian 
+
+eigenvalues can be negative ==> eigenvalues are by convention always positive
+
+
+

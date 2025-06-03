@@ -30,7 +30,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 from scipy.spatial import Delaunay
 
-from common_robot_calculations import fkin, centraldiff_jacobian, analytic_jacobian
+from common_robot_calculations import *
 
 def calculate_centroid(points):
     '''
@@ -121,7 +121,7 @@ class DelaunayMesh:
 def triangle_is_degenerate(p1, p2, p3):
     mat = np.vstack([p2 - p1, p3 - p1])
     
-    tol=1e-1
+    tol=5e-1
     a = p2 - p1
     b = p3 - p1
     aa = np.dot(a, a)
@@ -211,7 +211,7 @@ def recursive_add_tetrahedrons(mesh: DelaunayMesh, parent: Triangle):
             new_point[mesh.q_count:] = posR
             ith_newshape= newshape(parent, i, new_point)
 
-            degenerate= triangle_is_degenerate(ith_newshape[0][:mesh.q_count], ith_newshape[1][:mesh.q_count], ith_newshape[2][:mesh.q_count], ith_newshape[3][:mesh.q_count]) 
+            degenerate= tetrahedron_is_degenerate(ith_newshape[0][:mesh.q_count], ith_newshape[1][:mesh.q_count], ith_newshape[2][:mesh.q_count], ith_newshape[3][:mesh.q_count]) 
             if degenerate:
                 return
             else:
@@ -304,31 +304,18 @@ def create_sparsespace(Mesh: DelaunayMesh):
             triangle = Triangle(p0, p1, p2)
             recursive_add_triangles(Mesh, triangle)
 
-    '''
-    i=0;
-    
-    if Mesh.shape_vertices_count == 3: #triangles
-        while i+2 < (Mesh.sparse_step ** Mesh.q_count):
-            #print(initmeshpoints[i][:Mesh.q_count], initmeshpoints[i+1][:Mesh.q_count], initmeshpoints[i+2][:Mesh.q_count])
-            degenerate= triangle_is_degenerate(initmeshpoints[i][:Mesh.q_count], initmeshpoints[i+1][:Mesh.q_count], initmeshpoints[i+2][:Mesh.q_count])
-            #print("Degenerate status:", degenerate)
-            if degenerate:
-                pass
-            else:
-                triangle = Triangle(initmeshpoints[i], initmeshpoints[i+1], initmeshpoints[i+2])
-                #print("(", initmeshpoints[i][:Mesh.q_count][0],",", initmeshpoints[i][:Mesh.q_count][1],"), (", initmeshpoints[i+1][:Mesh.q_count][0],",",initmeshpoints[i+1][:Mesh.q_count][1],"), (",  initmeshpoints[i+2][:Mesh.q_count][0],",", initmeshpoints[i+2][:Mesh.q_count][1],")", end=",")
-                # recursive_add_triangles(Mesh, triangle)
-            i+=1;
-    if Mesh.shape_vertices_count ==4: #tetrahedrons
-        while i+3 < (Mesh.sparse_step ** Mesh.q_count):
-            degenerate = triangle_is_degenerate(initmeshpoints[i][:Mesh.q_count], initmeshpoints[i+1][:Mesh.q_count], initmeshpoints[i+2][:Mesh.q_count], initmeshpoints[i+3][:Mesh.q_count])
-            if tetrahedron_is_degenerate(initmeshpoints[i], initmeshpoints[i+1], initmeshpoints[i+2], initmeshpoints[i+3]):
-                pass
-            else:
-                tetrahedron = Tetrahedron(initmeshpoints[i], initmeshpoints[i+1], initmeshpoints[i+2], initmeshpoints[i+3])
-                recursive_add_tetrahedrons(Mesh, tetrahedron)
-            i+=1;
-            '''
+    if Mesh.shape_vertices_count == 4:  # Tetrahedron meshing
+        for simplex in initmesh.simplices:
+            p0 = initmeshpoints[simplex[0]]
+            p1 = initmeshpoints[simplex[1]]
+            p2 = initmeshpoints[simplex[2]]
+            p3 = initmeshpoints[simplex[3]]
+
+            if tetrahedron_is_degenerate(p0[:Mesh.q_count], p1[:Mesh.q_count], p2[:Mesh.q_count], p3[:Mesh.q_count]):
+                continue
+
+            tetrahedron = Tetrahedron(p0, p1, p2, p3)
+            recursive_add_tetrahedrons(Mesh, tetrahedron)
     
     Mesh.plotnodes = np.array(Mesh.plotnodes) #the sole reason we do this is to reformat the nodes into a nice np array
     Mesh.nodes = np.array(Mesh.nodes) #this too; simply reformatting. 
@@ -365,30 +352,41 @@ def create_sparsespace_chebyshev(Mesh):
         Mesh.plotnodes.append(Q)
         i += 1
 
-    initmeshpoints = np.copy(Mesh.nodes)
-    i = 0
-    count = Mesh.sparse_step ** Mesh.q_count
-        
-    if Mesh.shape_vertices_count == 3: #triangles
-        while i+2 < (Mesh.sparse_step ** Mesh.q_count):
-            print(initmeshpoints[i][:Mesh.q_count], initmeshpoints[i+1][:Mesh.q_count], initmeshpoints[i+2][:Mesh.q_count])
-            if triangle_is_degenerate(initmeshpoints[i][:Mesh.q_count], initmeshpoints[i+1][:Mesh.q_count], initmeshpoints[i+2][:Mesh.q_count]):
-                pass
-            else:
-                triangle = Triangle(initmeshpoints[i], initmeshpoints[i+1], initmeshpoints[i+2])
-                recursive_add_triangles(Mesh, triangle)
-            i+=1;
-    if Mesh.shape_vertices_count ==4: #tetrahedrons
-        while i+3 < (Mesh.sparse_step ** Mesh.q_count):
-            if tetrahedron_is_degenerate(initmeshpoints[i], initmeshpoints[i+1], initmeshpoints[i+2], initmeshpoints[i+3]):
-                pass
-            else:
-                tetrahedron = Tetrahedron(initmeshpoints[i], initmeshpoints[i+1], initmeshpoints[i+2], initmeshpoints[i+3])
-                recursive_add_tetrahedrons(Mesh, tetrahedron)
-            i+=1;
+      #call recursive add triangle (or tetrahedron) for every collection of consecutive 3 (or 4) points:
+    initmeshpoints=np.copy(Mesh.nodes) #copy over the initializing nodes so that we can iterate over them. the mesh.nodes list is going to be modified concrrently.
+    initplotnodes=np.copy(Mesh.plotnodes)
+    initmesh=Delaunay(initplotnodes)
 
-    Mesh.plotnodes = np.array(Mesh.plotnodes)
-    Mesh.nodes = np.array(Mesh.nodes)
+    #for triangle in initmeshpoints[initmesh.simplices]:
+    #    print("(", triangle[0][0],",",triangle[0][1],"), (", triangle[1][0],",",triangle[1][1],"), (", triangle[2][0],",",triangle[2][1],")", end="\n")
+
+    if Mesh.shape_vertices_count == 3:  # Triangular meshing
+        for simplex in initmesh.simplices:
+            p0 = initmeshpoints[simplex[0]]
+            p1 = initmeshpoints[simplex[1]]
+            p2 = initmeshpoints[simplex[2]]
+
+            if triangle_is_degenerate(p0[:Mesh.q_count], p1[:Mesh.q_count], p2[:Mesh.q_count]):
+                continue
+
+            triangle = Triangle(p0, p1, p2)
+            recursive_add_triangles(Mesh, triangle)
+
+    if Mesh.shape_vertices_count == 4:  # Tetrahedron meshing
+        for simplex in initmesh.simplices:
+            p0 = initmeshpoints[simplex[0]]
+            p1 = initmeshpoints[simplex[1]]
+            p2 = initmeshpoints[simplex[2]]
+            p3 = initmeshpoints[simplex[3]]
+
+            if tetrahedron_is_degenerate(p0[:Mesh.q_count], p1[:Mesh.q_count], p2[:Mesh.q_count], p3[:Mesh.q_count]):
+                continue
+
+            tetrahedron = Tetrahedron(p0, p1, p2, p3)
+            recursive_add_tetrahedrons(Mesh, tetrahedron)
+    
+    Mesh.plotnodes = np.array(Mesh.plotnodes) #the sole reason we do this is to reformat the nodes into a nice np array
+    Mesh.nodes = np.array(Mesh.nodes) #this too; simply reformatting. 
 
 def calculate_simplices(Mesh: DelaunayMesh):
     '''
@@ -594,7 +592,7 @@ def main():
     joint_limits1dof = [(-np.pi, np.pi)]
 
     ets2dof = rtb.ET.Rz() * rtb.ET.tx(l0) * rtb.ET.Rz() * rtb.ET.tx(l1) 
-    joint_limits2dof = [(-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2)]  # example for 2 DOF
+    joint_limits2dof = [(0, 2*np.pi), (0, 2*np.pi)]  # example for 2 DOF
 
     ets3dof = rtb.ET.Rz() * rtb.ET.tx(l0) * rtb.ET.Rx() * rtb.ET.tz(l1) * rtb.ET.Rx() * rtb.ET.tz(l2)
     joint_limits3dof = [(-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2) , (-np.pi/2, np.pi/2)]  # example for 2 DOF
@@ -605,7 +603,7 @@ def main():
     camera = CentralCamera()
     robot = rtb.Robot(ets)
 
-    mesh = DelaunayMesh(1e-2, robot, camera, sparse_step=3, jointlimits=joint_limits)
+    mesh = DelaunayMesh(1e-1, robot, camera, sparse_step=3, jointlimits=joint_limits)
 
     create_sparsespace(mesh)
     calculate_simplices(mesh) #calculate_simplices is a very important function... 'squashes' the position elements and meshes with parameters as the only axis... this way when we are computing inverse kinematics, we can query: which simplex are we in, based on our joint configs...?
