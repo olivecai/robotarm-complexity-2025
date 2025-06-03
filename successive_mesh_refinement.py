@@ -121,7 +121,7 @@ class DelaunayMesh:
 def triangle_is_degenerate(p1, p2, p3):
     mat = np.vstack([p2 - p1, p3 - p1])
     
-    tol=1e-2
+    tol=1e-1
     a = p2 - p1
     b = p3 - p1
     aa = np.dot(a, a)
@@ -132,7 +132,7 @@ def triangle_is_degenerate(p1, p2, p3):
 
     return (np.linalg.matrix_rank(mat) < 2) or area<tol
 
-def tetrahedron_is_degenerate(p1, p2, p3, p4):
+def tetrahedron_is_degenerate(p1, p2, p3, p4): 
     mat = np.vstack([p2 - p1, p3 - p1, p4 - p1])
 
     tol=0.1
@@ -155,7 +155,7 @@ def recursive_add_triangles(mesh: DelaunayMesh, parent: Triangle):
     update iterations and nodes for each point that is added to the mesh '''
     #calculate the centroid. compare centroid to the real point at the specified angles.
     centroid = parent.centroid 
-    #print("(", parent.point1[0],",",parent.point1[1],"), (", parent.point2[0],",",parent.point2[1],"), (", parent.point3[0],",",parent.point3[1],")", end=",")
+    print("(", parent.point1[0],",",parent.point1[1],"), (", parent.point2[0],",",parent.point2[1],"), (", parent.point3[0],",",parent.point3[1],")", end="\n")
     #print("Recursive add triangle on parent", parent.point1, parent.point2, parent.point3)
     #print("For this parent, the centroid is:", centroid)
     q = centroid[:mesh.q_count] #extract q, since the remaining elements in the array will be position coords
@@ -169,6 +169,7 @@ def recursive_add_triangles(mesh: DelaunayMesh, parent: Triangle):
     if residual > mesh.restol: #then we should mesh again at the centroid and recurse on each child. for triangles, 3 children are created; tetrahedrons, 4.
         for i in range(parent.ddim): #the number of vertices correspond to the number of new shapes created internally.
             
+            print("This is child ", i )
 
             newnode=centroid.copy()
             newnode[mesh.q_count:] = posR #if the residual is larger than restol, we should refine the mesh at this local point.
@@ -189,6 +190,7 @@ def recursive_add_triangles(mesh: DelaunayMesh, parent: Triangle):
 
                 recursive_add_triangles(mesh, child)    
     else:
+        print("end of recursion")
         return 
     
 def recursive_add_tetrahedrons(mesh: DelaunayMesh, parent: Triangle):
@@ -285,15 +287,10 @@ def create_sparsespace(Mesh: DelaunayMesh):
     #call recursive add triangle (or tetrahedron) for every collection of consecutive 3 (or 4) points:
     initmeshpoints=np.copy(Mesh.nodes) #copy over the initializing nodes so that we can iterate over them. the mesh.nodes list is going to be modified concrrently.
     initplotnodes=np.copy(Mesh.plotnodes)
-
-
     initmesh=Delaunay(initplotnodes)
-    print(initmesh.simplices)
 
     #for triangle in initmeshpoints[initmesh.simplices]:
     #    print("(", triangle[0][0],",",triangle[0][1],"), (", triangle[1][0],",",triangle[1][1],"), (", triangle[2][0],",",triangle[2][1],")", end="\n")
-
-    #TODO PICK UP HERE
 
     if Mesh.shape_vertices_count == 3:  # Triangular meshing
         for simplex in initmesh.simplices:
@@ -608,7 +605,7 @@ def main():
     camera = CentralCamera()
     robot = rtb.Robot(ets)
 
-    mesh = DelaunayMesh(0.4, robot, camera, sparse_step=4, jointlimits=joint_limits)
+    mesh = DelaunayMesh(1e-2, robot, camera, sparse_step=3, jointlimits=joint_limits)
 
     create_sparsespace(mesh)
     calculate_simplices(mesh) #calculate_simplices is a very important function... 'squashes' the position elements and meshes with parameters as the only axis... this way when we are computing inverse kinematics, we can query: which simplex are we in, based on our joint configs...?
