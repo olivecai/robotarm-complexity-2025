@@ -155,7 +155,7 @@ def recursive_add_triangles(mesh: DelaunayMesh, parent: Triangle):
     update iterations and nodes for each point that is added to the mesh '''
     #calculate the centroid. compare centroid to the real point at the specified angles.
     centroid = parent.centroid 
-    print("(", parent.point1[0],",",parent.point1[1],"), (", parent.point2[0],",",parent.point2[1],"), (", parent.point3[0],",",parent.point3[1],")", end="\n")
+    #print("(", parent.point1[0],",",parent.point1[1],"), (", parent.point2[0],",",parent.point2[1],"), (", parent.point3[0],",",parent.point3[1],")", end="\n")
     #print("Recursive add triangle on parent", parent.point1, parent.point2, parent.point3)
     #print("For this parent, the centroid is:", centroid)
     q = centroid[:mesh.q_count] #extract q, since the remaining elements in the array will be position coords
@@ -169,7 +169,7 @@ def recursive_add_triangles(mesh: DelaunayMesh, parent: Triangle):
     if residual > mesh.restol: #then we should mesh again at the centroid and recurse on each child. for triangles, 3 children are created; tetrahedrons, 4.
         for i in range(parent.ddim): #the number of vertices correspond to the number of new shapes created internally.
             
-            print("This is child ", i )
+            #print("This is child ", i )
 
             newnode=centroid.copy()
             newnode[mesh.q_count:] = posR #if the residual is larger than restol, we should refine the mesh at this local point.
@@ -190,11 +190,11 @@ def recursive_add_triangles(mesh: DelaunayMesh, parent: Triangle):
 
                 recursive_add_triangles(mesh, child)    
     else:
-        print("end of recursion")
+        ##print("end of recursion")
         return 
     
 def recursive_add_tetrahedrons(mesh: DelaunayMesh, parent: Triangle):
-    print("Recursive add tetrahedron on parent", parent)
+    #print("Recursive add tetrahedron on parent", parent)
     '''
     TETRAHEDRONS
     update iterations and nodes for each point that is added to the mesh '''
@@ -403,7 +403,7 @@ def calculate_simplices(Mesh: DelaunayMesh):
     (by checking whether our current end-effector point is in a simplex) we can recallibrate the Jacobian using central differences.
     '''
     Mesh.mesh = Delaunay(Mesh.plotnodes)
-    print("Number of Simplices:", len(Mesh.mesh.simplices))
+    #print("Number of Simplices:", len(Mesh.mesh.simplices))
     #print("INDICES OF SIMPLICES:", Mesh.mesh.simplices)
     #print("POINTS CREATING OUR SIMPLICES:\n", Mesh.plotnodes[Mesh.mesh.simplices])
 
@@ -556,7 +556,7 @@ def find_simplex(p, Mesh: DelaunayMesh):
     simplex_idx=tri.find_simplex(p)
     '''
     print("FOUND SIMPLEX idx:", simplex_idx)
-    print("THIS IS THE SINPLEX:", tri.simplices[tri.find_simplex(p)])
+    print("THIS IS THE SIMPLEX:", tri.simplices[tri.find_simplex(p)])
     print(Mesh.plotnodes[tri.simplices[tri.find_simplex(p)]])
     '''
     return simplex_idx
@@ -611,8 +611,24 @@ def main():
     create_mesh_jacobians(mesh, ets, 1)
 
     #create_delaunaymesh_1DOF(mesh, 1)
-    create_delaunaymesh_2DOF(mesh,1)
+    #create_delaunaymesh_2DOF(mesh,1)
     #create_delaunaymesh_3DOF(mesh)
+
+    point = [PI,PI/2]
+    idx=find_simplex(point, mesh)
+
+    print(idx)
+
+    i=0
+    for simplex in (mesh.plotnodes[mesh.mesh.simplices]):
+        if i==idx:
+            print(simplex)
+        i+=1;
+
+
+
+
+    
 
 if __name__ == '__main__':
     main()

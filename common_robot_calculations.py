@@ -104,4 +104,3 @@ def analytic_jacobian(q: np.ndarray, ets: rtb.ETS) -> np.ndarray:
     '''
     robot = rtb.ERobot(ets)
     return robot.jacob0(q)[:3, :]
-

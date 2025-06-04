@@ -439,5 +439,25 @@ hessian
 
 eigenvalues can be negative ==> eigenvalues are by convention always positive
 
+# June 4
+
+Today I made my spectral_radius.py program, to see the spectral radius of different Jacobians for different startign positions.
+
+Found out two major things:
+- The intial Jacobian that we start off with in the assigned-simplex-Jacobian method is always QUITE different than the analytic Jacobian, but it still lets us converge in most cases (though there is admittedly more oscillating)
+- The spectral radius was quite low for many of the cases wehere we never ended up converging. So, what else could be causign our arm to diverge? 
+
+TODO:
+- Clarify the cases where low spectral radius and successful convergence can truly be correlated, since it seems there can be exceptions both ways.
+- Run experiments over the entire space and see if convergence overall correlates with a lower spectral radius.
+
+The spectral radius problem is mainly interesting in visual servoing: in regular inverse kinematics, the forward kinematics is known, but in visual servoing, the frward inematics must be approximated by central differences. 
+
+I wish I had a clicky clacky keyboard.
+
+TODO: Make a plot ove the space ewith the spectral radius,
+
+Figure out the nuances
+
 
 

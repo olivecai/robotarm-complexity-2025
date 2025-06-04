@@ -81,7 +81,7 @@ def vs_invkin(camera: mvtb.CentralCamera, tolerance:int, maxiter: int, currQ, de
         currQ += alpha * corrQ
 
         #wrap around, ensure currQ is always between -pi and pi.
-        #'''
+        '''
         for i in range(len(currQ)): 
             while currQ[i] > 2*PI:
                 currQ[i]-=2*PI
@@ -125,6 +125,7 @@ def invkin(tolerance:int, maxiter: int, currQ, desiredP, e : rtb.Robot.ets, mesh
 
         trajectory.append(currQ.copy())
 
+        print(J,"\n")
         if error < tolerance:
             break
 
@@ -331,24 +332,24 @@ def main():
 
     #MESH PARAMS
     tolerance = 1e-3
-    maxiter = 50
+    maxiter = 1000
     resolution=15
     chebyshev = 0 #chebyshev seems to consistently result in a tiny bit more error than equidistant...
 
     #PLOTTING PARAMS
     desiredP = np.array([1,1,0])
-    Q = np.array([0.0,0.0])
-    plot_certain_trajectory=0
+    Q = np.array([-1.570796, 0.6731984])
+    plot_certain_trajectory=1
     simplex_mode=1
     #### JACOBIAN METHODS ####
     # 1 central diff, 2 analytic simplex, 3 analytic every update (best possible)
     # 4 central differences assigned to each simplex, 5 analytic assigned to each simplex. 
-    jacobian_method=3
+    jacobian_method=4
     #####################################################################
 
     #meshing should perhaps not use the camera at all.
     #TODO: Ask about camera in mesh.
-    mesh = smr.DelaunayMesh(1e-1, robot, camera, sparse_step=2, jointlimits=joint_limits_full)
+    mesh = smr.DelaunayMesh(1e-1, robot, camera, sparse_step=10, jointlimits=joint_limits_full)
 
     print("Creating Delaunay Mesh...")
     if chebyshev:
