@@ -21,7 +21,7 @@ from roboticstoolbox.models.DH import Puma560
 
 PI = np.pi
 
-def vs_invkin(camera: mvtb.CentralCamera, tolerance:int, maxiter: int, currQ, desiredP, e : rtb.Robot.ets, mesh: smr.DelaunayMesh, jacobian_method, simplex_mode, plot_traj=0): #uses a constant Jacobian.):
+def vs_invkin(camera: mvtb.CentralCamera, tolerance:int, maxiter: int, currQ, desiredP, e : rtb.Robot.ets, jointlimits: list, mesh: smr.DelaunayMesh, jacobian_method, simplex_mode, plot_traj=0): #uses a constant Jacobian.):
     '''
     Uses a camera with inverse kinematics.
 
@@ -87,6 +87,11 @@ def vs_invkin(camera: mvtb.CentralCamera, tolerance:int, maxiter: int, currQ, de
                 currQ[i]-=2*PI
             while currQ[i] < -2*PI:
                 currQ[i]+=2*PI #'''
+        
+        #if surpass joint limits, break
+        for i in range(len(currQ)): 
+            if currQ[i] > jointlimits[i][1] or currQ[i] < jointlimits[i][0]:
+                return 0, currP, i, jac_updates
 
     if plot_traj: #animate trajectory, very fast
         e.plot(np.array(trajectory), block=False)
@@ -95,10 +100,10 @@ def vs_invkin(camera: mvtb.CentralCamera, tolerance:int, maxiter: int, currQ, de
 
     #return the real world point we end up with:
     currP = fkin(currQ, e)
-    return currP, i, jac_updates
+    return 1, currP, i, jac_updates
 
 #inverse kinematics with constant jacobian: terminates when error is low enough, or when n=10
-def invkin(tolerance:int, maxiter: int, currQ, desiredP, e : rtb.Robot.ets, mesh: smr.DelaunayMesh, jacobian_method, simplex_mode, plot_traj=0): #uses a constant Jacobian.
+def invkin(tolerance:int, maxiter: int, currQ, desiredP, e : rtb.Robot.ets, jointlimits : list, mesh: smr.DelaunayMesh, jacobian_method, simplex_mode, plot_traj=0): #uses a constant Jacobian.
     '''
     Inverse kinematics for constant Jacobian, simplices update, or every update, and supports simplices updates.
     No camera involved yet. Returns resulting position when restol satisfied OR when n=MAXITER
@@ -107,7 +112,7 @@ def invkin(tolerance:int, maxiter: int, currQ, desiredP, e : rtb.Robot.ets, mesh
     trajectory = []
     jac_updates=0;
 
-    alpha = 0.05 #dampening factor
+    alpha = 1 #dampening factor
     if jacobian_method==1:
         J = centraldiff_jacobian(currQ, e)
     if jacobian_method==2 or jacobian_method==3:
@@ -161,24 +166,25 @@ def invkin(tolerance:int, maxiter: int, currQ, desiredP, e : rtb.Robot.ets, mesh
         print(J)
         print("errorP")
         print(errorP)
+        #TODO: JUST TESTING SOMETHING OUT
         corrQ = np.linalg.pinv(J) @ errorP
         #currQ=currQ.copy() #comment to modify currQ directly, uncomment to create a copy each time !!!!!
         currQ += alpha * corrQ
 
-        #wrap around, ensure currQ is always between -pi and pi.
-        #'''
+        #corrQ = np.linalg.pinv(J) @ desiredP
+        #currQ -=alpha * corrQ
+
+
         for i in range(len(currQ)): 
-            while currQ[i] > 2*PI:
-                currQ[i]-=2*PI
-            while currQ[i] < -2*PI:
-                currQ[i]+=2*PI #'''
+            if currQ[i] > jointlimits[i][1] or currQ[i] < jointlimits[i][0]:
+               pass # return 0, currP, i, jac_updates #'''
 
     if plot_traj: #animate trajectory, very fast
         e.plot(np.array(trajectory), block=False)
         plt.close('all')
         slider_robot_trajectory(np.array(trajectory))
 
-    return currP, i, jac_updates
+    return 1, currP, i, jac_updates
 
 def calculate_error(camera: mvtb.CentralCamera, tolerance, maxiter, resolution, e, jointlimits: list, desiredP, mesh: smr.DelaunayMesh, jacobian_method, simplex_mode, plot_traj, plot_error):
 
@@ -203,12 +209,14 @@ def calculate_error(camera: mvtb.CentralCamera, tolerance, maxiter, resolution, 
                 '''
                 Q = Q_grid[idx].copy()
                 if camera:
-                    resultP, iterations, jac_updates = vs_invkin(camera, tolerance=tolerance, maxiter=maxiter, currQ=Q, desiredP=desiredP, e=e, mesh=mesh, jacobian_method=jacobian_method, simplex_mode=simplex_mode)
+                    success, resultP, iterations, jac_updates = vs_invkin(camera, tolerance=tolerance, maxiter=maxiter, currQ=Q, desiredP=desiredP, e=e, jointlimits=jointlimits, mesh=mesh, jacobian_method=jacobian_method, simplex_mode=simplex_mode)
                 else:
-                    resultP, iterations, jac_updates = invkin(tolerance=tolerance, maxiter=maxiter, currQ=Q, desiredP=desiredP, e=e, mesh=mesh, jacobian_method=jacobian_method, simplex_mode=simplex_mode)
+                    success, resultP, iterations, jac_updates = invkin(tolerance=tolerance, maxiter=maxiter, currQ=Q, desiredP=desiredP, e=e, jointlimits=jointlimits, mesh=mesh, jacobian_method=jacobian_method, simplex_mode=simplex_mode)
                 error=np.linalg.norm(desiredP - resultP) 
                 sum_error+=error
                 permuts_over_linspaces[idx] = error
+                if not success and error>tolerance:
+                    permuts_over_linspaces[idx] = None
 
                 print("i:", i, "init Q: ", Q_grid[idx], "fin Q:", Q, "result P:", resultP, "error:", error, "jac updates:", jac_updates)
                 i+=1;
@@ -222,7 +230,7 @@ def calculate_error(camera: mvtb.CentralCamera, tolerance, maxiter, resolution, 
         x, y, z = Q_flat[:, 0], Q_flat[:, 1], permuts_over_linspaces
 
         print("Generating Plot...")
-        scatter = go.Scatter3d(x=x,y=y,z=z,mode='markers', marker=dict(size=15,color=permuts_over_linspaces, colorscale='plasma', colorbar=dict(title='Total Error Non-Normalized'), opacity=0.2))
+        scatter = go.Scatter3d(x=x,y=y,z=z,mode='markers', marker=dict(size=8,color=permuts_over_linspaces, colorscale='plasma', colorbar=dict(title='Total Error Non-Normalized'), opacity=0.6))
         layout = go.Layout(
             scene=dict(
                 xaxis_title='q0',
@@ -236,13 +244,13 @@ def calculate_error(camera: mvtb.CentralCamera, tolerance, maxiter, resolution, 
 
         fig.show()
 
-def plot_robot_trajectory(camera, tolerance, maxiter, Q, desiredP, ets, mesh, jacobian_method, simplex_mode, plot_traj_mode):
+def plot_robot_trajectory(camera, tolerance, maxiter, Q, desiredP, ets, jointlimits, mesh, jacobian_method, simplex_mode, plot_traj_mode):
     robot=rtb.Robot(ets)
     initQ=Q.copy()
     if camera:
-         resultP, iterations, jac_update_count = vs_invkin(camera=camera, tolerance=tolerance, maxiter=maxiter, currQ=Q, desiredP=desiredP, e=ets, mesh=mesh, jacobian_method=jacobian_method, simplex_mode=simplex_mode, plot_traj=plot_traj_mode)
+        success, resultP, iterations, jac_update_count = vs_invkin(camera=camera, tolerance=tolerance, maxiter=maxiter, currQ=Q, desiredP=desiredP, e=ets, jointlimits=jointlimits, mesh=mesh, jacobian_method=jacobian_method, simplex_mode=simplex_mode, plot_traj=plot_traj_mode)
     else:
-        resultP, iterations, jac_update_count = invkin(tolerance=tolerance, maxiter=maxiter, currQ=Q, desiredP=desiredP, e=ets, mesh=mesh, jacobian_method=jacobian_method, simplex_mode=simplex_mode, plot_traj=plot_traj_mode)
+        success, resultP, iterations, jac_update_count = invkin(tolerance=tolerance, maxiter=maxiter, currQ=Q, desiredP=desiredP, e=ets, jointlimits=jointlimits, mesh=mesh, jacobian_method=jacobian_method, simplex_mode=simplex_mode, plot_traj=plot_traj_mode)
     error=np.linalg.norm(desiredP - resultP) 
     print("Plot Trajectory:\ninitial Q: ", initQ, "result Q:", Q, "resultP:", resultP, "error:", error, "jacobian updates:" ,jac_update_count)
 
@@ -302,7 +310,7 @@ def main():
     joint_limits1dof_full = [(-2*np.pi, 2*np.pi)]
 
     ets2dof = rtb.ET.Rz() * rtb.ET.tx(l0) * rtb.ET.Rz() * rtb.ET.tx(l1) 
-    joint_limits2dof = [(-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2)]  # example for 2 DOF
+    joint_limits2dof = [(0, np.pi), (-np.pi, np.pi)]  # example for 2 DOF
     joint_limits2dof_full = [(-2*np.pi, 2*np.pi), (-2*np.pi, 2*np.pi)]
 
     ets3dof = rtb.ET.Rz() * rtb.ET.tx(l0) * rtb.ET.Rx() * rtb.ET.tz(l1) * rtb.ET.Rx() * rtb.ET.tz(l2)
@@ -332,19 +340,19 @@ def main():
 
     #MESH PARAMS
     tolerance = 1e-3
-    maxiter = 1000
-    resolution=15
+    maxiter = 100
+    resolution=20
     chebyshev = 0 #chebyshev seems to consistently result in a tiny bit more error than equidistant...
 
     #PLOTTING PARAMS
     desiredP = np.array([1,1,0])
-    Q = np.array([-1.570796, 0.6731984])
+    Q = np.array([0, np.pi/2])
     plot_certain_trajectory=1
-    simplex_mode=1
+    simplex_mode=0
     #### JACOBIAN METHODS ####
     # 1 central diff, 2 analytic simplex, 3 analytic every update (best possible)
     # 4 central differences assigned to each simplex, 5 analytic assigned to each simplex. 
-    jacobian_method=4
+    jacobian_method=1
     #####################################################################
 
     #meshing should perhaps not use the camera at all.
@@ -372,7 +380,7 @@ def main():
     if not plot_certain_trajectory:
         calculate_error(camera, tolerance, maxiter, resolution, ets, joint_limits, desiredP, mesh, jacobian_method, simplex_mode, 0, 1)
     else:
-        plot_robot_trajectory(camera, tolerance, maxiter, Q.copy(), desiredP, ets, mesh, jacobian_method, simplex_mode, 1)
+        plot_robot_trajectory(camera, tolerance, maxiter, Q.copy(), desiredP, ets, joint_limits, mesh, jacobian_method, simplex_mode, 1)
 
 
 if __name__ == '__main__':

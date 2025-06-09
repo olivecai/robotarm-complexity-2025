@@ -455,9 +455,55 @@ The spectral radius problem is mainly interesting in visual servoing: in regular
 
 I wish I had a clicky clacky keyboard.
 
-TODO: Make a plot ove the space ewith the spectral radius,
+TODO: Make a plot over the space ewith the spectral radius,
 
 Figure out the nuances
 
+# June 5
+
+There must be something wrong with either my understanding of the spectral radius OR of my code, because I am getting spectral radius to be large 
+
+# June 6
+
+Today I am reading the Numerical MEthods in Scientific Computing textbook by Germund Dahlquist and Ake Bjork.
+
+Things are looking up.
 
 
+Global convergence ... Dottie Number
+
+# June 9 
+
+There are two methods we are focusing on right now:
+
+Newton's Method: qn+1 = qn - B*F(qn)
+and our current control method: qn+1 = qn - alpha * B*residual (where resisudal = curr-desired)
+
+A lot of my confusions abotu the equations I was dealinfg wiht today were cleared up after reading the textbook and asking for help. Which is a good thing but I mourn the time spent being confused. I read a lot about polynomial interpolation and am currently reading about global search methods, which I can save in my back pocket for later. I am a little unsure what to focus on because I could look at:
+- Broyden's update
+- Global search methods
+- Simply analyzing the spectral radius in higher DOF 
+- Analyzing the spectral radius in visual servoing
+
+I think it is more worth it to analyze the spectral radius first instead of moving to global search methods, since the objective of the latter is to improve convergence, but we will be better informed about convergence if we can make statements about the spectral radius.
+
+TODO:
+- broyden update vs true jac
+- spectral radius analytic analysis
+- consecutive broyden updates: does the err bn est jac and true jac diverge/converge/oscillate/etc
+- analyzing without plots for higher dimensionality
+- complexity vs scaling, cameras, etcccc, point to point VS point to line
+
+two different ditection:
+VS: scale thing sin terms of contrasints and cmaereas
+- start one camera, try point to line, point to point, etc. start top down view, then add rotations.
+OR in terms of JOINts
+
+equation properties that allow scalability
+
+Right now, my issue is the multiple roots: 'convergence' is defined regardless of the joint configuration, but analyzing each solution shows us a different map of spectral radii... 
+
+Step 1: Look at the spectral radius analytic form and see what can be said of it. 
+Step 2: Find some way to analyze the spectrtal radius of a system where we consider all of its roots... It makes sense that each root has its own unique plot, because we are simply evaluating if each desired position capably 'attracts' solutions... 
+
+ALSO how do we know which spectral radius is for which point? Like does each starting position choose its own point of attraction? 
