@@ -505,5 +505,67 @@ Right now, my issue is the multiple roots: 'convergence' is defined regardless o
 
 Step 1: Look at the spectral radius analytic form and see what can be said of it. 
 Step 2: Find some way to analyze the spectrtal radius of a system where we consider all of its roots... It makes sense that each root has its own unique plot, because we are simply evaluating if each desired position capably 'attracts' solutions... 
+- min over both
 
 ALSO how do we know which spectral radius is for which point? Like does each starting position choose its own point of attraction? 
+
+# June 10
+
+**cartesian space convergence - if form perfect circle**
+
+*HOW TO DO THIS?*
+- for every single joint angle pair we have, simply compute the forward kinematics for each point and plot it. Very simple! Don't overthink it!
+
+relationship bn starting pos and goal? 
+- translation invariance? add .2 radius to either, will it be same? 
+
+if we trnalsate both the starting and goal by t SAMe amount, does the spectreal radius stay the same?
+
+Big Picture:
+
+**rn single jacobian: how can we add more jacobians? based on where the spectral radius is high?**
+
+if we could do a couple central differences BEFOREHAND and still allow it to converge
+
+if hessian flat, jacobian good
+if hessian high curvature, jacobian is only valid for a small local region
+
+can we use the condition number of a matrix
+
+hessian not reasonable in practice
+
+bisection in higher dimensions:
+- in practice, that means in the robot we end up moving way back and forth - not good!!! very costly 
+- bisection is also too slower... typically introduced early to get a good starting position, then switch to newton or faster method
+
+More notes from Dylan:
+If we have analytic invkin equation, then we can replace each u and v subs analytic form. Or, analytic fkin, with sym equations, collect 'collect' the fkin form  
+
+It would be nice if collect: if equation is the equation for a circle
+
+From Dylan's numerical experiemnts, seems to have a lot of circle shape going on 
+
+Eigenvalues are conjugates of each other and when sin(v)==0, ie v=k*pi where k is any integer, we may expect no convergence. This makes sense, ... either we are folded on ourself or outstretched.
+    
+Can we make basins of attraction and compare that to our spectral radius plots?
+
+TODO:
+- basins of attraction
+- cartresian space
+
+Conversation with Tanner regarding the relationship between complex eigenvalues and spectral radius being < 1 in this case. 
+Hmmmm..... Could it be coincidence, seeing that the forward kinematics equations are circular...? 
+We have something interesting to explore...
+
+if complex, ocillatory,
+if real, non oscillating
+root locus in control systems.
+
+Let's regroup.
+
+Currently it SEEMS there is a correlation between the spectral radius being less than 1, with complex eigenvalue, for the matrix A = del gn / del Qn = I - B @ (del F(Qn) / del Qn)
+
+Can we designate certain points in the robot as jacobian update hotspots?
+
+What are some questions we have?
+- why why why is complex eigenvalue and spectral radius correlated here? It seems REALLY suspicious. how can we question that?
