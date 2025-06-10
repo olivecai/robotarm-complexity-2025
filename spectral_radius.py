@@ -109,27 +109,28 @@ def spectral_radius(u_, v_, mesh, ets, camera, u0, v0):
             B=np.linalg.inv(J)
         except:
             B=None
-    print(J)
+    #print(J)
         
 
     if B is None:
         sr = None
+        evals=None
 
     else:
         F = f 
-        print(F)
+        #print(F)
         dF = F.jacobian([u,v])
        
         A = I - B*dF
 
-        print(A)
+        #print(A)
 
-        sr=calculate_spectral_radius(A.subs(reps_des)) 
+        evals, sr=evals_and_sr(A.subs(reps_des))
     
-    print(sr)
+    #print("spectral radius: ",sr)
+    print("evals:", evals)
 
-    return sr
-
+    return evals, sr
       
 def analytic_spectral_radius(ets, camera):
     '''
@@ -147,10 +148,9 @@ def analytic_spectral_radius(ets, camera):
     # l1 and l2 
     l1 = sp.Symbol('l1', positive=True)
     l2 = sp.Symbol('l2', positive=True)
-    l1=1;l2=1; #for ease let's just have lengths be 1
 
     #declare the forward kin functions
-    f1 = l1 * sp.cos(u) + l2 * sp.cos(u+v)
+    f1 = l1 * sp.cos(u) + l2 * sp.cos(u+v) #TODO: collect on f1, f2
     f2 = l1 * sp.sin(u) + l2 * sp.sin(u+v)
 
     I = sp.eye(2) #hardcoded to 2 for now, while we run experiments on the 2DOF planar arm
@@ -167,6 +167,7 @@ def analytic_spectral_radius(ets, camera):
 
     if B is None:
         sr = None
+        evals=None
 
     else:
         dF = J.subs(reps_des)
@@ -176,19 +177,27 @@ def analytic_spectral_radius(ets, camera):
 
         print("del gn / del qn:\n", A)
 
-        sr=calculate_spectral_radius(A) 
+        evals, sr=evals_and_sr(A)
     
     print("spectral radius: ",sr)
+    print("evals:", evals)
 
-    return sr
+    
 
-def calculate_spectral_radius(A):
+    return evals, sr
+
+
+def evals_and_sr(A):
     # Get the eigenvalues
     eigenvals = A.eigenvals()  # returns dict: {eigenvalue: multiplicity}
     # Compute the spectral radius (max absolute eigenvalue)
-    return sp.Max(*[sp.Abs(lam) for lam in eigenvals.keys()])
+    return list(eigenvals.keys()), sp.Max(*[sp.Abs(lam) for lam in eigenvals.keys()])
 
-def linearspace(resolution, jointlimits, mesh, ets, camera, u0, v0):
+def linearspace(resolution, jointlimits, mesh, ets, camera, u0, v0, mode):
+    '''
+    if mode ==1, see the spectral radius ranges
+    if mode ==2, have a binary IS EIGVAL COMPLEX OR NOT (complex=1, real=0)
+    '''
 
     joint_ranges = [np.linspace(low, high, resolution) for (low, high) in jointlimits]
 
@@ -207,10 +216,21 @@ def linearspace(resolution, jointlimits, mesh, ets, camera, u0, v0):
             This for loop iterates over every pair/permutation in the linear spaces of our parameters.
             '''
             Q = Q_grid[idx].copy()
-            sr = spectral_radius(Q[0], Q[1], mesh, ets, camera, u0, v0)
-            permuts_over_linspaces[idx] = sr
+            evals, sr = spectral_radius(Q[0], Q[1], mesh, ets, camera, u0, v0)
+            
+            if mode==1:
+                permuts_over_linspaces[idx] = sr
+                zaxistitle='spectral radius'
+            if mode==2:
+                zaxistitle='complex==1, real==0'
+                if evals==None:
+                    permuts_over_linspaces[idx] = None
+                elif (sp.simplify(evals[0]).is_real):
+                    permuts_over_linspaces[idx] = 0 #REAL
+                else:
+                    permuts_over_linspaces[idx] = 1 #COMPLEX
 
-            print("i:", i, "init Q: ", Q_grid[idx], "fin Q:", Q, "spectral radius:", sr)
+            #print("i:", i, "init Q: ", Q_grid[idx], "fin Q:", Q, "spectral radius:", sr)
             i+=1;
     
     permuts_over_linspaces=permuts_over_linspaces.flatten()
@@ -224,9 +244,9 @@ def linearspace(resolution, jointlimits, mesh, ets, camera, u0, v0):
         scene=dict(
             xaxis_title='q0',
             yaxis_title='q1',
-            zaxis_title='spectral radius'
+            zaxis_title=zaxistitle
         ),
-        title='2DOF spectral radius',
+        title='2DOF'+zaxistitle,
         margin=dict(l=0,r=0,b=0,t=50)
     )
     fig=go.Figure(data=[scatter], layout=layout)
@@ -266,9 +286,12 @@ def symbols_comparison():
     next_q = q - B*F
 
 
-def main():
+def plot(u_des, v_des):
+    u_vals = np.linspace(-np.pi, np.pi, 100)
+    v_vals = np.linspace(0, np.pi, 100)
+    U, V = np.meshgrid(u_vals, v_vals)
 
-  
+def main():
 
     l1=1;l2=1;
 
@@ -288,18 +311,79 @@ def main():
     smr.create_mesh_jacobians(mesh, ets, 1)
     
     #starting position
-    u_ = 0
+    u_ = 0.7853982
     v_ = sp.pi/2
 
     #desired position
-    u0=sp.pi/2
-    v0=-sp.pi/2
+    u0=0
+    v0=sp.pi/2
 
-    resolution=20
-    linearspace(resolution, jointlimits, mesh, ets, camera, u0, v0)  
+    # u and v <==> theta1 and theta2
+    u = sp.Symbol('u', real=True)
+    v = sp.Symbol('v', real=True)
+    # desired u and v <==> theta1 and theta2
+    u_des = sp.Symbol('u_des', real=True)
+    v_des = sp.Symbol('v_des', real=True)
 
-    #spectral_radius(u_, v_, mesh, ets, camera, u0, v0)
-    #analytic_spectral_radius(ets, camera)
+    reps_des = [(u, u_des), (v, v_des)]
+
+    # l1 and l2 
+    l1 = sp.Symbol('l1', positive=True)
+    l2 = sp.Symbol('l2', positive=True)
+
+    resolution=50
+    mode=2
+    linearspace(resolution, jointlimits, mesh, ets, camera, u0, v0, mode)  
+
+    evals, sr= spectral_radius(u_, v_, mesh, ets, camera, u0, v0)
+    #sr = analytic_spectral_radius(ets, camera)
+
+    #analytic spectral radius:
+    '''
+    Max(
+        Abs(
+                (-2*sin(v) 
+                + sin(-u + u_des + v_des) 
+                + sin(u - u_des + v))   
+                /(2*sin(v)) 
+            - sqrt(
+                -2*cos(v - v_des) + cos(v + v_des) 
+                - cos(-2*u + 2*u_des + 2*v_des)/2 
+                - cos(2*u - 2*u_des + 2*v)/2 
+                + cos(2*u - 2*u_des + v - v_des) 
+                + 1)
+                /(2*sin(v)
+                )
+        ), 
+
+        Abs(
+                (-2*sin(v)
+                + sin(-u + u_des + v_des) 
+                + sin(u - u_des + v))
+                /(2*sin(v)) 
+            + sqrt(
+                -2*cos(v - v_des) + cos(v + v_des) 
+                - cos(-2*u + 2*u_des + 2*v_des)/2 
+                - cos(2*u - 2*u_des + 2*v)/2 
+                + cos(2*u - 2*u_des + v - v_des) 
+                + 1)
+                /(2*sin(v)
+                )
+            )
+        )
+        
+        If we have analytic invkin equation, then we can replace each u and v subs analytic form. Or, analytic fkin, with sym equations, collect 'collect' the fkin form
+        It would be nice if collect: if equation is the equation for a circle
+
+        From Dylan's numerical experiemnts, seems to have a lot of circle shape going on 
+
+    Eigenvalues are conjugates of each other and when sin(v)==0, ie v=k*pi where k is any integer, 
+    we may expect no convergence. This makes sense, ... either we are folded on ourself or outstretched.
+    
+    Can we make basins of attraction and compare that to our spectral radius plots?
+    
+    '''
+
 
 #So, there are two things we need to consider: estimating both B and dF
     

@@ -130,7 +130,7 @@ def invkin(tolerance:int, maxiter: int, currQ, desiredP, e : rtb.Robot.ets, join
 
         trajectory.append(currQ.copy())
 
-        print(J,"\n")
+        #print(J,"\n")
         if error < tolerance:
             break
 
@@ -162,10 +162,11 @@ def invkin(tolerance:int, maxiter: int, currQ, desiredP, e : rtb.Robot.ets, join
                 curr_simplex = next_simplex
                 simplices_visited.append(curr_simplex)
 
+        '''
         print("Jacobian")
         print(J)
         print("errorP")
-        print(errorP)
+        print(errorP)'''
         #TODO: JUST TESTING SOMETHING OUT
         corrQ = np.linalg.pinv(J) @ errorP
         #currQ=currQ.copy() #comment to modify currQ directly, uncomment to create a copy each time !!!!!
@@ -174,10 +175,10 @@ def invkin(tolerance:int, maxiter: int, currQ, desiredP, e : rtb.Robot.ets, join
         #corrQ = np.linalg.pinv(J) @ desiredP
         #currQ -=alpha * corrQ
 
-
+        '''
         for i in range(len(currQ)): 
             if currQ[i] > jointlimits[i][1] or currQ[i] < jointlimits[i][0]:
-               pass # return 0, currP, i, jac_updates #'''
+               return 0, currP, i, jac_updates #'''
 
     if plot_traj: #animate trajectory, very fast
         e.plot(np.array(trajectory), block=False)
@@ -216,9 +217,11 @@ def calculate_error(camera: mvtb.CentralCamera, tolerance, maxiter, resolution, 
                 sum_error+=error
                 permuts_over_linspaces[idx] = error
                 if not success and error>tolerance:
+                    print("DEBUGGING")
                     permuts_over_linspaces[idx] = None
 
                 print("i:", i, "init Q: ", Q_grid[idx], "fin Q:", Q, "result P:", resultP, "error:", error, "jac updates:", jac_updates)
+                print("\n")
                 i+=1;
     
     print("Sum of error: ", sum_error)
@@ -251,6 +254,7 @@ def plot_robot_trajectory(camera, tolerance, maxiter, Q, desiredP, ets, jointlim
         success, resultP, iterations, jac_update_count = vs_invkin(camera=camera, tolerance=tolerance, maxiter=maxiter, currQ=Q, desiredP=desiredP, e=ets, jointlimits=jointlimits, mesh=mesh, jacobian_method=jacobian_method, simplex_mode=simplex_mode, plot_traj=plot_traj_mode)
     else:
         success, resultP, iterations, jac_update_count = invkin(tolerance=tolerance, maxiter=maxiter, currQ=Q, desiredP=desiredP, e=ets, jointlimits=jointlimits, mesh=mesh, jacobian_method=jacobian_method, simplex_mode=simplex_mode, plot_traj=plot_traj_mode)
+    print("SUCCESS:", success, ". stopped on iteration", iterations)
     error=np.linalg.norm(desiredP - resultP) 
     print("Plot Trajectory:\ninitial Q: ", initQ, "result Q:", Q, "resultP:", resultP, "error:", error, "jacobian updates:" ,jac_update_count)
 
@@ -341,12 +345,12 @@ def main():
     #MESH PARAMS
     tolerance = 1e-3
     maxiter = 100
-    resolution=20
+    resolution=5
     chebyshev = 0 #chebyshev seems to consistently result in a tiny bit more error than equidistant...
 
     #PLOTTING PARAMS
     desiredP = np.array([1,1,0])
-    Q = np.array([0, np.pi/2])
+    Q = np.array([0.78539816, 1.57079633])
     plot_certain_trajectory=1
     simplex_mode=0
     #### JACOBIAN METHODS ####
