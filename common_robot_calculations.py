@@ -51,7 +51,7 @@ def init_camera(f, rho, px, py, imagesize) -> mvtb.CentralCamera:
 def vs_centraldiff_jacobian(currQ, e: rtb.Robot.ets, camera: mvtb.CentralCamera):
     '''
     Visual Servoing;
-    Initialize and return a Jacobian through central differences, without use of a camera.'''
+    Initialize and return a Jacobian through central differences'''
     epsilon=1e-5
      ###sanity check for our dimensions: 
     # let p=robot params, k=datapts for overdet system. 

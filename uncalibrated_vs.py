@@ -64,7 +64,6 @@ def proj_point(realP, camera: CentralCamera):
     posPx = projP[0][0]
     posPy=projP[1][0]
     return np.array([posPx, posPy])
-    
 
 def vs_fkin(e,theta, camera: CentralCamera):
     '''
@@ -420,8 +419,6 @@ def main():
     projected_desired_point = proj_point(desiredRP, camera)
     print("DESIRED PROJ P", projected_desired_point)
     '''
-
-
     
     iterations, error, Xerror, Yerror, position, theta = uncalibrated_vs(initialQ, desiredPP, camera, ets)
     print("iterations:", iterations,"error:", error)

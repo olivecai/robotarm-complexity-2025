@@ -109,6 +109,10 @@ def calculate_error(camera: mvtb.CentralCamera, tolerance, maxiter, resolution, 
     sum_error=0;
 
     i=0;
+
+    cartesian_points = []
+    cartesian_error_values = []
+
     for idx in np.ndindex(permuts_over_linspaces_shape): #iter over every permut over linspace of q0...qn 
                 '''
                 This for loop iterates over every pair/permutation in the linear spaces of our parameters,
@@ -117,11 +121,8 @@ def calculate_error(camera: mvtb.CentralCamera, tolerance, maxiter, resolution, 
                 Q = Q_grid[idx].copy()
                 cartesian_initial_x = fkin(Q, e)[0]
                 cartesian_initial_y = fkin(Q, e)[1]
-
-
-#ICSDIFHSIDHFSOHUDFOUSHFDS PICK UP HEEERE
-SDOJFSJNFJSDFBSIDHFSIHDFS PICK UP HERE TOMROROWWW!!!!!!!!!!!!!11
-
+                cartesian_pos = np.array([cartesian_initial_x, cartesian_initial_y])
+                cartesian_points.append(cartesian_pos)
 
                 if camera:
                     pass # TODO add camera ughhh we need to add the camera eventually but i keep getting sidetracked with other simulations  #success, resultP, iterations, jac_updates = vs_invkin(camera, tolerance=tolerance, maxiter=maxiter, currQ=Q, desiredP=desiredP, e=e, jointlimits=jointlimits, mesh=mesh, jacobian_method=jacobian_method, simplex_mode=simplex_mode)
@@ -133,6 +134,8 @@ SDOJFSJNFJSDFBSIDHFSIHDFS PICK UP HERE TOMROROWWW!!!!!!!!!!!!!11
                 if not success and error>tolerance:
                     print("DEBUGGING")
                     permuts_over_linspaces[idx] = None
+                    #cartesian_error_values.append(None)
+                cartesian_error_values.append(error)
 
                 print("i:", i, "init Q: ", Q_grid[idx], "fin Q:", Q, "result P:", resultP, "error:", error, "jac updates:", jac_updates)
                 print("\n")
@@ -140,26 +143,21 @@ SDOJFSJNFJSDFBSIDHFSIHDFS PICK UP HERE TOMROROWWW!!!!!!!!!!!!!11
     
     print("Sum of error: ", sum_error)
 
-    if plot_error:
-        permuts_over_linspaces=permuts_over_linspaces.flatten()
-        # Flatten Q_grid to get all [q0, q1, ..., qN] configs
-        Q_flat = Q_grid.reshape(-1, Q_grid.shape[-1])
-        x, y, z = Q_flat[:, 0], Q_flat[:, 1], permuts_over_linspaces
+    cartesian_points = np.array(cartesian_points)
+    cartesian_error_values= np.array(cartesian_error_values)
 
-        print("Generating Plot...")
-        scatter = go.Scatter3d(x=x,y=y,z=z,mode='markers', marker=dict(size=8,color=permuts_over_linspaces, colorscale='plasma', colorbar=dict(title='Total Error Non-Normalized'), opacity=0.6))
-        layout = go.Layout(
-            scene=dict(
-                xaxis_title='q0',
-                yaxis_title='q1',
-                zaxis_title='error'
-            ),
-            title='Joint Space Error in 3D',
-            margin=dict(l=0,r=0,b=0,t=50)
-        )
-        fig=go.Figure(data=[scatter], layout=layout)
+    plt.figure(figsize=(6,6))
+    scatter = plt.scatter(cartesian_points[:, 0], cartesian_points[:, 1],
+                        c=cartesian_error_values, cmap='plasma', s=20)
 
-        fig.show()
+    plt.colorbar(scatter, label='Final Cartesian Error')
+    plt.xlabel('X')
+    plt.ylabel('Y')
+    plt.title('Cartesian Error vs Initial Joint Configuration')
+    plt.grid(True)
+    plt.axis('equal')
+    plt.show()
+
 
 
 def main():
@@ -201,11 +199,11 @@ def main():
     #MESH PARAMS
     tolerance = 1e-3
     maxiter = 100
-    resolution=5
+    resolution=50
     chebyshev = 0 #chebyshev seems to consistently result in a tiny bit more error than equidistant...
 
     #PLOTTING PARAMS
-    desiredP = np.array([1,1,0])
+    desiredP = np.array([0,0,0])
     Q = np.array([2.5,2.5])
     simplex_mode=0
     #### JACOBIAN METHODS ####

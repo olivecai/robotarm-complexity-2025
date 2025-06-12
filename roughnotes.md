@@ -569,3 +569,62 @@ Can we designate certain points in the robot as jacobian update hotspots?
 
 What are some questions we have?
 - why why why is complex eigenvalue and spectral radius correlated here? It seems REALLY suspicious. how can we question that?
+- by adding a non-circular function like e^x or x^3, I think we will defy this correlation.
+
+# June 11 
+
+Weights and Biases:
+- website for ai simulations
+- pass in dictionary/string thru their api to create a plot
+- synchronize time steps between plots
+- can upload videos and potentially matplotlib
+- can log changes ... use functions from api 
+- hyperparameters: human selected options that are not to be optimized, fixed for a run (ie learning rate)
+- paramters - things that are updated, changed
+
+Neovim 
+- vimscript... archaic.... uses LUA instead ... easier to embed LUA in to different applications
+
+Does damping cause the spectral radius of all initial joint configurations to pull towards 1?
+
+How to talk to robot?
+- Kinova is TCP but there is an API that hides the protocol details.
+- Ex: API has move to joint pos, and that forms the TCP message and sends it 
+- Protocol buffer which uses TCP 
+
+Ros - big picture:
+- message passing system
+- different processes (nodes) allows you to publish topics: on the WAM or Kinova, there isa  topic where it is publishgint he joint states, and a different node can subrsricbe to that topic and read in mesages
+- similar to buffer 
+
+WAM:
+- Tele-op uses UDP; we want low latency, send data, guarantees dont matter as much. 
+
+Internal computer on Kinova - fixed, so no access to UDP. Little server running that opens a TCP port (maybe.....)
+WAM has more flexibility 
+
+Ros is used as a way instead of manually setting up sockets and by default TCP - topics, subscribe, publish
+
+Ros inherently linux based .... problems!!!!
+
+IP address for windows machine - wsl creates its own netowkr where linux lives - the problem with reos stuff is usualoly we need that newtowrk to be part of greater network 
+
+VM might be easier - easier to bridge network. 
+
+Dual booting: partition: part is windwows, part is linux. 
+Linux doesnt take up a lot fo space, but windows does!!!!
+
+Google "wsl2 bridge network with host" --> microsoft "accessing network applications with..." --> mirrored mode networking 
+
+#### Okay Today, let's focus on our priorities.
+- does damping cause the spectral radius of all initial joint configurations to 'pull' towards 1? ie bad points get better but good points get worse?
+- what if the spectral radius can be associated to a specific number of jacobians... pre-compute jacobians... we do this because the mesh was too dense. But the problem is... is that the spectral radius is goal-specific. We want a goal-agnostic way of identifying nonlinear regions.
+- let's shift some gears and write a visual servoing script. Maybe we could do it in C++, since I think just learning C++ would be epic
+
+Plan for associating a number of Jacobians to the spectral radius:
+- can we get something like joint spectral radius over the whole area and get the min? that seems really silly. what if we multiplied it over the whole area... could that be helpful? Can the analytic form tell us this right away?
+- How would this translate into visual servoing? It's just another set of nonlinear equations, right? 
+
+Spectral Radius VS Damping. My hypothesis is that all values will indeed move towards 1, since the limit as alpha approaches 0 in the equation I-alpha*B@dF  = I-0 = I, where the spectral radius will be 1.
+
+After running a few experiments, it is true that as alpha gets closer to 0, the spectral radius asymptotically approaches 1, but for singular joint configurations, it appears that our spectral radius actually dips below 1 and then starts creeping back up to 1 again. So, probably

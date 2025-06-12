@@ -64,7 +64,7 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 
         
-def spectral_radius(u_, v_, mesh, ets, camera, u0, v0):
+def spectral_radius(u_, v_, ets, camera, u0, v0, alpha):
     '''
     
     '''
@@ -77,8 +77,8 @@ def spectral_radius(u_, v_, mesh, ets, camera, u0, v0):
     l1=1;l2=1; #for ease let's just have lengths be 1
 
     #declare the forward kin functions
-    f1 = l1 * sp.cos(u) + l2 * sp.cos(u+v)
-    f2 = l1 * sp.sin(u) + l2 * sp.sin(u+v)
+    f1 = l1 * sp.cos(u) + l2 * sp.cos(u+v)  # x coord
+    f2 = l1 * sp.sin(u) + l2 * sp.sin(u+v)  # y coord
 
     I = sp.eye(2) #hardcoded to 2 for now, while we run experiments on the 2DOF planar arm
     f = sp.Matrix([f1, f2]) #forward kinematics matrix
@@ -95,12 +95,6 @@ def spectral_radius(u_, v_, mesh, ets, camera, u0, v0):
         #J=J.subs(reps_pos)
         try:
             B = J.inv() #ANALYTIC
-        except:
-            B=None
-    if mode==2: #simplex designated jacobian
-        J=np.delete(mesh.mesh_jacobians[smr.find_simplex(np.array([u_,v_]),mesh)], 2, axis=0)
-        try:
-            B=np.linalg.inv(J)
         except:
             B=None
     if mode==3:
@@ -120,15 +114,19 @@ def spectral_radius(u_, v_, mesh, ets, camera, u0, v0):
         F = f 
         #print(F)
         dF = F.jacobian([u,v])
-       
-        A = I - B*dF
+
+        A = I - B*dF * alpha
 
         #print(A)
 
-        evals, sr=evals_and_sr(A.subs(reps_des))
+        A=A.subs(reps_des)
+        #print(u0, v0)
+        #print(u_, v_)
+        #print(A)
+        evals, sr=evals_and_sr(A)
     
     #print("spectral radius: ",sr)
-    print("evals:", evals)
+    #print("evals:", evals)
 
     return evals, sr
       
@@ -188,16 +186,67 @@ def analytic_spectral_radius(ets, camera):
 
 
 def evals_and_sr(A):
+    
     # Get the eigenvalues
-    eigenvals = A.eigenvals()  # returns dict: {eigenvalue: multiplicity}
-    # Compute the spectral radius (max absolute eigenvalue)
-    return list(eigenvals.keys()), sp.Max(*[sp.Abs(lam) for lam in eigenvals.keys()])
+    try:
+        eigenvals = A.eigenvals()  # returns dict: {eigenvalue: multiplicity}
+        # Compute the spectral radius (max absolute eigenvalue)
+        return list(eigenvals.keys()), sp.Max(*[sp.Abs(lam) for lam in eigenvals.keys()])
+    except:
+        return None, None
 
-def linearspace(resolution, jointlimits, mesh, ets, camera, u0, v0, mode):
+def products_of_spectral_radii(resolution, jointlimits, ets, camera):
+    '''
+    make a linearspace of desired positions,and calculate the corresponding spectral radius plot, where the spectral radius of each initial joint configuration wrt to the desired position is shown...
+    then we perform an element wise operation on each entry...
+    '''
+
+    joint_ranges = [np.linspace(low, high, resolution) for (low, high) in jointlimits]
+
+    grid = np.meshgrid(*joint_ranges, indexing='ij')  # ij indexing keeps dimensions aligned
+
+    # stack all grids to create a dof x n x n x ... array
+    Q_grid = np.stack(grid, axis=-1)  # shape: (n, n, ..., n, dof)
+
+    # preallocate error arrays (same shape as grid, but without dof)
+    permuts_over_linspaces_shape = Q_grid.shape[:-1]
+
+    permuts_over_linspaces = np.ones(permuts_over_linspaces_shape).flatten()
+    print(permuts_over_linspaces)
+
+
+    for idx in np.ndindex(permuts_over_linspaces_shape): #iter over every permut over linspace of q0...qn 
+        Q = Q_grid[idx].copy()
+        spectral_radii_map = linearspace(resolution, jointlimits, ets, camera, Q[0], Q[1], 1) #get the eigvals
+        for i in range(len(permuts_over_linspaces)):
+            if spectral_radii_map[i] is not None:
+                permuts_over_linspaces[i] += spectral_radii_map[i]
+    # Flatten Q_grid to get all [q0, q1, ..., qN] configs
+    Q_flat = Q_grid.reshape(-1, Q_grid.shape[-1])
+    x, y, z = Q_flat[:, 0], Q_flat[:, 1], permuts_over_linspaces
+
+    print("Generating Plot...")
+    scatter = go.Scatter3d(x=x,y=y,z=z,mode='markers', marker=dict(size=6,color=permuts_over_linspaces, colorscale='plasma', colorbar=dict(title='joint sr but its not actually joint'), opacity=0.6))
+    layout = go.Layout(
+        scene=dict(
+            xaxis_title='q0',
+            yaxis_title='q1',
+            zaxis_title='joint sr'
+        ),
+        title='2DOF joint sr',
+        margin=dict(l=0,r=0,b=0,t=50)
+    )
+    fig=go.Figure(data=[scatter], layout=layout)
+
+    fig.show()
+
+
+def linearspace(resolution, jointlimits, ets, camera, u0, v0, mode):
     '''
     if mode ==1, see the spectral radius ranges
     if mode ==2, have a binary IS EIGVAL COMPLEX OR NOT (complex=1, real=0)
     '''
+    alpha=1
 
     joint_ranges = [np.linspace(low, high, resolution) for (low, high) in jointlimits]
 
@@ -216,7 +265,7 @@ def linearspace(resolution, jointlimits, mesh, ets, camera, u0, v0, mode):
             This for loop iterates over every pair/permutation in the linear spaces of our parameters.
             '''
             Q = Q_grid[idx].copy()
-            evals, sr = spectral_radius(Q[0], Q[1], mesh, ets, camera, u0, v0)
+            evals, sr = spectral_radius(Q[0], Q[1], ets, camera, u0, v0, alpha) #ALPHA IS HARDCODED WITHIN THIS FUNCTION RN
             
             if mode==1:
                 permuts_over_linspaces[idx] = sr
@@ -234,6 +283,7 @@ def linearspace(resolution, jointlimits, mesh, ets, camera, u0, v0, mode):
             i+=1;
     
     permuts_over_linspaces=permuts_over_linspaces.flatten()
+    '''
     # Flatten Q_grid to get all [q0, q1, ..., qN] configs
     Q_flat = Q_grid.reshape(-1, Q_grid.shape[-1])
     x, y, z = Q_flat[:, 0], Q_flat[:, 1], permuts_over_linspaces
@@ -251,40 +301,28 @@ def linearspace(resolution, jointlimits, mesh, ets, camera, u0, v0, mode):
     )
     fig=go.Figure(data=[scatter], layout=layout)
 
-    fig.show()
+    fig.show()'''
 
-def symbols_comparison():
+    return permuts_over_linspaces
+
+def spectral_radius_wrt_damping(u_, v_, ets, camera, u0, v0):
     '''
-    I need to see the difference between Newton's Method and the optimization method I'm doing now because theya re different but I was undert the assumption that both were Newton's method up till now.
+    This function plots how each initial joint configuration VS a goal configuration performs 
     '''
-    # current u and v <==> theta1 and theta2
-    u = sp.Symbol('u', real=True)
-    v = sp.Symbol('v', real=True)
-    q = sp.Matrix([u,v])
-
-    # desired u and v <==> theta1 and theta2
-    u0 = sp.Symbol('u0', real=True)
-    v0 = sp.Symbol('v0', real=True)
-
-    # l1 and l2 
-    l1 = sp.Symbol('l1', positive=True)
-    l2 = sp.Symbol('l2', positive=True)
-
-    #declare the forward kin functions
-    f1 = l1 * sp.cos(u) + l2 * sp.cos(u+v)
-    f2 = l1 * sp.sin(u) + l2 * sp.sin(u+v)
-
-    I = sp.eye(2) #hardcoded to 2 for now, while we run experiments on the 2DOF planar arm
-    f = sp.Matrix([f1, f2]) #forward kinematics matrix
-
-    J = f.jacobian([u,v]) #ANALYTIC jacobian of the forward kinematics function
-    B = J.inv() #ANALYTIC
-
-    F = f #TODO: clarify. before, F was the cartesian space residual. Now, it is the desired cartesian position....(???)
-    dF = F.jacobian([u,v])
-
-    next_q = q - B*F
-
+    u_=0.01
+    v_=0.01
+    #print("u_, v_:", u_, v_)
+    #print("u0, v0:", u0, v0)
+    dampings = np.linspace(1, 1000, 100)
+    for damping in dampings:
+        alpha = 1/damping
+        #print("alpha:", alpha)
+        eigval, sr = spectral_radius(u_, v_, ets, camera, u0, v0, alpha)
+        print(eigval) # lim alpha -> 0 corresponds with the eigenvalues becoming 0.
+        print(sr) # the spectral radius converges to 1. But do we necessarily converge? Well, technically, we get so close to 1 that it is "inconclusive" behaviour, so it may or may not. which is why we see more convergence when we dampen. # #maybe i should just go eat lunch right now.
+        # actually interestingly enough, for initial position (0.5235988, 0.1) we dip down below 1 to around 0.9091 with alpha = 0.125, and then start creeping back up to 1! So damping can totally change the game 
+        # so dampening wont make it NOT converge for any initial joint position.
+        # perfect convergence --> eigvals == 0,
 
 def plot(u_des, v_des):
     u_vals = np.linspace(-np.pi, np.pi, 100)
@@ -299,23 +337,16 @@ def main():
     joint_limits2dof = [(0, np.pi), (-np.pi, np.pi)]  # example for 2 DOF
     joint_limits2dof_full = [(-2*np.pi, 2*np.pi), (-2*np.pi, 2*np.pi)]
     jointlimits = joint_limits2dof
-    joint_limits_full = joint_limits2dof_full
     ets=ets2dof
     robot = rtb.Robot(ets)
     camera=None 
-
-    mesh = smr.DelaunayMesh(1e-1, robot, camera, sparse_step=10, jointlimits=joint_limits_full)
-    smr.create_sparsespace(mesh)
-    #smr.create_delaunaymesh_2DOF(mesh, 1) #NOTE: this line is NOT necessary for computations, it is simply to show the viewer our plot.
-    smr.calculate_simplices(mesh) #this actually calculates the simplices we need.
-    smr.create_mesh_jacobians(mesh, ets, 1)
     
     #starting position
     u_ = 0.7853982
     v_ = sp.pi/2
 
     #desired position
-    u0=0
+    u0=0.0
     v0=sp.pi/2
 
     # u and v <==> theta1 and theta2
@@ -331,12 +362,16 @@ def main():
     l1 = sp.Symbol('l1', positive=True)
     l2 = sp.Symbol('l2', positive=True)
 
-    resolution=50
-    mode=2
-    linearspace(resolution, jointlimits, mesh, ets, camera, u0, v0, mode)  
-
-    evals, sr= spectral_radius(u_, v_, mesh, ets, camera, u0, v0)
+    resolution=15
+    mode=1
+    #spectral_radii= linearspace(resolution, jointlimits, ets, camera, u0, v0, mode)  
+    alpha=1
+    #evals, sr= spectral_radius(u_, v_, ets, camera, u0, v0, alpha)
     #sr = analytic_spectral_radius(ets, camera)
+
+    #products_of_spectral_radii(resolution, jointlimits, ets, camera)
+
+    spectral_radius_wrt_damping(u_, v_, ets, camera, u0, v0)
 
     #analytic spectral radius:
     '''
@@ -346,7 +381,7 @@ def main():
                 + sin(-u + u_des + v_des) 
                 + sin(u - u_des + v))   
                 /(2*sin(v)) 
-            - sqrt(
+            - sqrt(         
                 -2*cos(v - v_des) + cos(v + v_des) 
                 - cos(-2*u + 2*u_des + 2*v_des)/2 
                 - cos(2*u - 2*u_des + 2*v)/2 
@@ -382,6 +417,8 @@ def main():
     
     Can we make basins of attraction and compare that to our spectral radius plots?
     
+    June 11:
+    Best case when eigenvalues are both real, same, and negative. Does this ever happen?
     '''
 
 

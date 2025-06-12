@@ -350,7 +350,7 @@ def main():
 
     #PLOTTING PARAMS
     desiredP = np.array([1,1,0])
-    Q = np.array([0.78539816, 1.57079633])
+    Q = np.array([2.5,2.5])
     plot_certain_trajectory=1
     simplex_mode=0
     #### JACOBIAN METHODS ####
