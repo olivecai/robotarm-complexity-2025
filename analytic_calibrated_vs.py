@@ -46,6 +46,7 @@ t = sp.Matrix(sp.symbols('t1(1:4)'))
 E = R.col_insert(3, t) #extrinsic matrix
 #TODO: Add the homog row at bottom
 
+
 print(R)
 print(t)
 
@@ -67,19 +68,71 @@ print(x[0])
 print(x[1])
 print(x[2])
 
-def denavit_hartenburg_dylan_3dof():
+def transformation_matrix_DH(theta_i, alpha_i, r_i, d_i):
+    alpha, r, theta, d = sp.symbols('alpha, r, theta, d', real=True)
+    general_DH = sp.Matrix([[sp.cos(theta), -sp.sin(theta)*sp.cos(alpha), sp.sin(theta)*sp.sin(alpha), r*sp.cos(theta)],
+                            [sp.sin(theta), sp.cos(theta)*sp.cos(alpha), -sp.cos(theta)*sp.sin(alpha), r*sp.sin(theta)],
+                            [0, sp.sin(alpha), sp.cos(alpha), d],
+                            [0,0,0,1]])
+    #print(general_DH)
+    DH = general_DH.subs([(alpha, alpha_i), (r, r_i), (theta, theta_i), (d, d_i)])
+    print(DH)
+    return DH
+
+def denavit_hartenburg_dylan_3dof(t0, t1, t2):
     '''
     "We simulate a 3DOF arm, where the first joint rotates about the z-axis, and
     the other two about the y-axis. The link lengths were set to l1 = 0.55 and l2 = 0.30. 
     
     The denavit hartenburg matrix is:
+    theta   alpha   r   d
     [[ t0, pi/2,  0   , 0 ],
      [ t1,  0  ,  0.55, 0 ],
      [ t2,  0  ,  0.30, 0 ]]
+   
+    '''
+    T01= transformation_matrix_DH(t0, sp.pi/2, 0, 0)
+    T12= transformation_matrix_DH(t1, 0, 2, 0)
+    T23= transformation_matrix_DH(t2, 0, 1, 0)
+    transforms = [T01, T12, T23]
+
+    EE = T01 * T12 * T23
+    print("EE:" ,EE)
+
+    positions = []  # Base at origin
+    T_current = sp.eye(4)
+
+    for T in transforms:
+        T_current = T_current * T
+        pos = np.transpose(T_current[:,3])[0][:3]
+        print(pos)
+        positions.append(pos)
+
+    print(positions)
+
+    return np.array(positions) 
+    
+
+def wireframe(joints):
+    print(joints)
+    x = joints[:,0]
+    y = joints[:,1]
+    z = joints[:,2]
+
+    fig=plt.figure()
+    ax = fig.add_subplot(projection='3d')
+    ax.plot(x,y,z, marker='o', linestyle='-')
+    ax.set_xlabel('X Axis')
+    ax.set_ylabel('Y Axis')
+    ax.set_zlabel('Z Axis')
+    ax.set_title('3D Line Plot')
+    plt.show()
+
+joints=denavit_hartenburg_dylan_3dof(0,0,sp.pi/2)
+wireframe(joints)
 
     
-     
-    '''
+
 
 def compute_analytic_jac(Q):
     '''
@@ -128,8 +181,7 @@ We have a ton of hyperparameters, but I only care about u and v.
 We cannot access the true Jacobian in uncalibrated visual servoing. Should we still... TRY to get it?
 '''
  
-spectral_radius(0,1.5,.5,1.3)
-
+#spectral_radius(0,1.5,.5,1.3)
 
 '''
 Start with best condition: two orth-to-scene cameras (fixed or moving? probably start with two fixed ) 
@@ -146,3 +198,20 @@ Robotics textbook:
 - Modern Robotics (twists, exp coords)
 - Craig from 464 (has DH params)
 '''
+
+#Just to verify everything is okay, I have the rtb DH robot initialized here.
+
+from roboticstoolbox import DHRobot, RevoluteDH
+from math import pi
+
+# Define the 3 links using standard DH parameters
+link1 = RevoluteDH(alpha=pi/2, a=0, d=0)
+link2 = RevoluteDH(alpha=0,    a=2, d=0)
+link3 = RevoluteDH(alpha=0,    a=1, d=0)
+
+# Create the robot
+robot = DHRobot([link1, link2, link3], name='3DOF_Robot')
+print(robot.dhunique())
+# Print the robot description
+print(robot)
+robot.plot([0,0,sp.pi/2], block=True)#'''

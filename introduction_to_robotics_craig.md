@@ -19,4 +19,8 @@ At singularities, Jacobian is not invertible.
 
 Singularity ==> robot becomes locally degenerate
 
+# June 13 
+
+For now I need to gather some intel on the Denavit Hartenburg parameters, so let's skip to Chapter 3. 
+
 
