@@ -32,6 +32,40 @@ fy = sp.Symbol('fy', real=True)
 cx = sp.Symbol('cx', real=True)
 cy = sp.Symbol('cy', real=True)
 
+class camera:
+    '''
+    creates a camera with actual parameters
+    '''
+    def __init__(self, rot_xaxis, rot_yaxis, rot_zaxis, translation, fx, fy, cx, cy):
+        '''
+        rot axis is a radian rotation around a specified axis.
+        '''
+        self.K=sp.Matrix([[fx, 0, cx],[0, fy, cy], [0,0,1]]) #intrinsic matrix
+
+        rx = sp.Matrix([[1,0,0],[0,sp.cos(rot_xaxis), -sp.sin(rot_xaxis)],[0,sp.sin(rot_xaxis), sp.cos(rot_xaxis)]])
+        ry= sp.Matrix([[sp.cos(rot_yaxis), 0, sp.sin(rot_yaxis)],[0,1,0],[-sp.sin(rot_yaxis), 0, sp.cos(rot_yaxis)]])
+        rz = sp.Matrix([[sp.cos(rot_zaxis), -sp.sin(rot_zaxis), 0], [sp.sin(rot_zaxis), sp.cos(rot_zaxis),0],[0,0,1]])
+        
+        R = rx*ry*rz
+        t=sp.Matrix([translation[0],translation[1],translation[2]])
+        
+        E = R.col_insert(3,t)
+
+        self.E = E
+
+        self.P = self.K*self.E
+
+    def projectpoint(self, worldpoint):
+        x = self.P * worldpoint
+        #print("projection point before flatten:")
+        #print(x)
+        x[0]=x[0]/x[2]
+        x[1]=x[1]/x[2]
+        x[2]=1#'''
+        return sp.Matrix([[x[0]],[x[1]]])
+
+
+
 #focal length and center doesnt affect the convergence, which makes sense since it just scaling...
 fx=10; fy=10;
 cx=500; cy=500;
@@ -140,8 +174,6 @@ def denavit_hartenburg_planar_2dof(t0, t1, t2):
 
     return sp.Matrix(positions), EE
     
-
-
 def wireframe(joints):
     '''
     This function serves to plot the wireframe of our robot points.
@@ -171,7 +203,7 @@ def wireframe(joints):
     ax.set_title('3D Line Plot')
     plt.show()
 
-def compute_analytic_jac():
+def compute_analytic_jac(cameras):
     '''
     Analytic Jacobian of the projected image.
 
@@ -186,15 +218,12 @@ def compute_analytic_jac():
     '''
     joints, EE =denavit_hartenburg_dylan_3dof(u,v,w)
     world_position = ((EE[:,3]))
-    x = P * world_position # multiply the real world point by the projection matrix
-    #'''
-    x[0]=x[0]/x[2]
-    x[1]=x[1]/x[2]
-    x[2]=1#'''
-    print("Updated image projection point:")
-    print(x)
-    #maybe we shoudl take this step beforehnad:
+    x = cameras[0].projectpoint(world_position)
+    for i in range(1, len(cameras)):
+        x = x.col_join(cameras[i].projectpoint(world_position))
     dx = x.jacobian([u,v,w]) #get the jacobian of the projected point...
+
+    print("\nAnalytic Jacobian:\n")
     print(dx)
     return dx
 
@@ -271,13 +300,12 @@ def evals_and_sr(A):
     except:
         return None, None
     
-
 def main():
-
-    cur = [0.1, 0.01, 0.01]
+    cur = [0, 0, sp.pi/2]
     des = [sp.pi/4,0.01,0.01]
-    
 
+    origin_world = sp.Matrix([[0],[0],[0],[1]])
+    
     u_des,v_des,w_des = des
     #u_des, v_des, w_des = sp.symbols('u_des, v_des, w_des', real=True)
     reps_des=[(u,u_des), (v,v_des), (w, w_des)]
@@ -292,11 +320,23 @@ def main():
     #print("P:", P)
    # print("\nimage:", image_position, "\n")
 
-    dF = compute_analytic_jac().subs(reps_des)
+    #DO NOT TOUCH THESE CAMERAS they were really onerous to place :-(
+    cam1 = camera(0,0,0,[0,0,5], 5,5, 0, 0) #looks down directly at the scene, basically replicates the scene
+    cam2 = camera(-sp.pi/2, 0, 0, [0,0,5], 5,5,0,0) #looks at scene from the y axis, world z is cam2 y, world x is cam2 x 
+    cameras=[cam1,cam2]
+    '''
+    print("World Pos:")
+    print(world_position.subs(reps_cur))
+    print("Image Pos:")
+    print(cam1.projectpoint(world_position.subs(reps_cur)))
+    print(cam2.projectpoint(world_position.subs(reps_cur)))
+    '''
+    
+    analytic_jacobian= compute_analytic_jac(cameras)
+    dF = analytic_jacobian.subs(reps_des)
     #print("dF:\n", dF, "\n")
     
-    J = compute_analytic_jac().subs(reps_cur)
-
+    J = analytic_jacobian.subs(reps_cur)
     #print("J:", J)
     
     try:    
@@ -325,6 +365,7 @@ def main():
     #print(position.subs(reps_des))
 
     #position is our analytical cartesian world point!
+    #'''
 
 
 main()

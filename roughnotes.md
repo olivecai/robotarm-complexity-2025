@@ -661,4 +661,8 @@ And when we use the psuedo inverse, we have spectral radius >=1 for points that 
 
 I am having a lot of trouble finding points where the spectral radius is below 1 for the case where I project the point onto the x-y plane by dividing by z. This is the nonlinear aspect, since the z component becomes 1 and the inverse no longer exists. I dont need a ggraph, just a single point, so I should be able to easily make a huge iteration over the sets of pairs of joint angles. 
 
-I want to download docker now.
+# June 17
+
+I am very happy because I finished the simulation for the analytic visual servoing with two cameras using Dylan's 3DOF robot. When we only have 1 camera out of the two, we have a spectral radius of 1 or higher, but when we use both, the spectral radius goes below 1! I have only tested a few little points, so it would be good to make a linear space again. And it would be good to get the analytic form of the psectral radius, but I anticipate it will be quite lengthly...
+
+Yesterday we set up Docker and ROS a little bit and I would like to get started on the actual simulations.
