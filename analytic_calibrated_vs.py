@@ -32,32 +32,28 @@ fy = sp.Symbol('fy', real=True)
 cx = sp.Symbol('cx', real=True)
 cy = sp.Symbol('cy', real=True)
 
+#focal length and center doesnt affect the convergence, which makes sense since it just scaling...
+fx=10; fy=10;
+cx=500; cy=500;
+
 rotation_symbols= np.array(sp.symbols('r1(1:4), r2(1:4), r3(1:4)'))
 R = sp.Matrix([rotation_symbols[0:3], rotation_symbols[3:6], rotation_symbols[6:9]]) #over parameterized 
+r11=1;r12=0; r13=0
+r21=0; r22=1;r23=0
+r31=0; r32=0; r33=1
+R=sp.Matrix([[r11,r12,r13],[r21,r22,r23],[r31,r32,r33]])
 t = sp.Matrix(sp.symbols('t1(1:4)'))
+t= sp.Matrix([[0],[0],[0]]) #for now
 
-E = R.col_insert(3, t).row_insert(3, sp.Matrix([[0,0,0,1]])) #extrinsic matrix
+E = R.col_insert(3, t) #extrinsic matrix
 
-print(R)
-print(t)
-
-print(E)
+print("SETUP:")
+print("extrinsic R|t:", E)
 
 K = sp.Matrix([[fx, 0, cx],[0, fy, cy], [0,0,1]]) #intrinsic matrix
-
-print(K)
+print("intrinsic:", K)
 
 P = K * E
-
-print(P)
-
-X = sp.Matrix([[f1],[f2],[f3],[1]])
-
-x = P * X
-
-print(x[0])
-print(x[1])
-print(x[2])
 
 def transformation_matrix_DH(theta_i, alpha_i, r_i, d_i):
     '''
@@ -74,7 +70,7 @@ def transformation_matrix_DH(theta_i, alpha_i, r_i, d_i):
                             [0,0,0,1]])
     #print(general_DH)
     DH = general_DH.subs([(alpha, alpha_i), (r, r_i), (theta, theta_i), (d, d_i)])
-    print(DH)
+    #print(DH)
     return DH
 
 def denavit_hartenburg_dylan_3dof(t0, t1, t2):
@@ -90,14 +86,45 @@ def denavit_hartenburg_dylan_3dof(t0, t1, t2):
    
     Returns an array of positions for plotting, and the final DH transform matrix of the EE.
     '''
-    l1 = 0.55
-    l2 = 0.30
+    l1 = 55/100
+    l2 = 30/100
     T01= transformation_matrix_DH(t0, sp.pi/2, 0, 0)
     T12= transformation_matrix_DH(t1, 0, l1, 0)
     T23= transformation_matrix_DH(t2, 0, l2, 0)
     transforms = [T01, T12, T23]
 
     EE = T01 * T12 * T23
+
+    positions = []  # Base at origin
+    T_current = sp.eye(4)
+
+    for T in transforms:
+        T_current = T_current * T
+        pos = np.transpose(T_current[:,3])[0][:3]
+        positions.append(pos)
+
+    #print(positions)
+
+    return sp.Matrix(positions), EE
+
+def denavit_hartenburg_planar_2dof(t0, t1, t2):
+    '''
+    Your basic 2DOF planar robot. 
+    
+    The denavit hartenburg matrix is:
+    theta   alpha   r   d
+     [ t0,  0  ,  0.55, 0 ],
+     [ t1,  0  ,  0.30, 0 ]]
+   
+    Returns an array of positions for plotting, and the final DH transform matrix of the EE.
+    '''
+    l0 = 0.55
+    l1 = 0.30
+    T01= transformation_matrix_DH(t1, 0, l1, 0)
+    T12= transformation_matrix_DH(t2, 0, l2, 0)
+    transforms = [T01, T12]
+
+    EE = T01 * T12 
     print("EE:" ,EE)
 
     positions = []  # Base at origin
@@ -114,11 +141,12 @@ def denavit_hartenburg_dylan_3dof(t0, t1, t2):
     return sp.Matrix(positions), EE
     
 
+
 def wireframe(joints):
     '''
     This function serves to plot the wireframe of our robot points.
     Input is a series of points, which will be connected in the plot sequentially.
-    Fixed axis limits prevent automatic caling perspective.
+    Fixed axis limits will prevent automatic scaling perspective.
     '''
     print(joints)
     x = joints[:,0]
@@ -143,9 +171,11 @@ def wireframe(joints):
     ax.set_title('3D Line Plot')
     plt.show()
 
-def compute_analytic_jac(Q):
+def compute_analytic_jac():
     '''
-    Analytic Jacobian of image.
+    Analytic Jacobian of the projected image.
+
+    Specifically for 3DOF.
 
     Q : joint vector
     P : the camera projection matrix :-))
@@ -154,11 +184,18 @@ def compute_analytic_jac(Q):
 
     And then get the Jacobian of x, as dx
     '''
-    x = P * X
-    dx = x.jacobian([u,v,w])
-    dx=dx.subs([(u, Q[0]), (v, Q[1])])
+    joints, EE =denavit_hartenburg_dylan_3dof(u,v,w)
+    world_position = ((EE[:,3]))
+    x = P * world_position # multiply the real world point by the projection matrix
+    #'''
+    x[0]=x[0]/x[2]
+    x[1]=x[1]/x[2]
+    x[2]=1#'''
+    print("Updated image projection point:")
+    print(x)
+    #maybe we shoudl take this step beforehnad:
+    dx = x.jacobian([u,v,w]) #get the jacobian of the projected point...
     print(dx)
-    print(sp.shape(dx))
     return dx
 
 def spectral_radius(u_,v_, udes,vdes):
@@ -178,8 +215,6 @@ def spectral_radius(u_,v_, udes,vdes):
     print("G:")
     print(G)
 
-    
-
 '''
 Goal:
 
@@ -189,8 +224,6 @@ We have a ton of hyperparameters, but I only care about u and v.
 [u,v] = [u,v] - B*F*alpha, where F is the residual in image position, and B is the central differences Jacobian from the beginning... 
 We cannot access the true Jacobian in uncalibrated visual servoing. Should we still... TRY to get it?
 '''
- 
-#spectral_radius(0,1.5,.5,1.3)
 
 '''
 Start with best condition: two orth-to-scene cameras (fixed or moving? probably start with two fixed ) 
@@ -228,14 +261,66 @@ def rtb_model():
     print(robot)
     robot.plot([0,0,sp.pi/2], block=True) #'''
 
+def evals_and_sr(A):
+    
+    # Get the eigenvalues
+    try:
+        eigenvals = A.eigenvals()  # returns dict: {eigenvalue: multiplicity}
+        # Compute the spectral radius (max absolute eigenvalue)
+        return list(eigenvals.keys()), sp.Max(*[sp.Abs(lam) for lam in eigenvals.keys()])
+    except:
+        return None, None
+    
 
 def main():
-    joints, EE =denavit_hartenburg_dylan_3dof(u,v,w)
-    print("EE:\n",EE)
-    position = ((EE[:,3]).T)
-    print(position)
-    u_des,v_des,w_des = [0,sp.pi/2,sp.pi/2]
+
+    cur = [0.1, 0.01, 0.01]
+    des = [sp.pi/4,0.01,0.01]
+    
+
+    u_des,v_des,w_des = des
+    #u_des, v_des, w_des = sp.symbols('u_des, v_des, w_des', real=True)
     reps_des=[(u,u_des), (v,v_des), (w, w_des)]
+
+    ucur, vcur, wcur = cur
+    reps_cur = [(u, ucur), (v, vcur), (w, wcur)]
+
+    joints, EE =denavit_hartenburg_dylan_3dof(u,v,w)
+    world_position = ((EE[:,3]))
+    image_position = P * world_position
+
+    #print("P:", P)
+   # print("\nimage:", image_position, "\n")
+
+    dF = compute_analytic_jac().subs(reps_des)
+    #print("dF:\n", dF, "\n")
+    
+    J = compute_analytic_jac().subs(reps_cur)
+
+    #print("J:", J)
+    
+    try:    
+        B = J.pinv()
+        #print("B:", B)
+    except:
+        print("error computing B")
+        B=None
+    
+    I = sp.eye(3)
+
+    A = (I - B*dF)
+
+    #print("\nA:")
+    #print(A)
+
+    evals, sr = evals_and_sr(A)
+
+    #print("\nevals:")
+    #print(evals)
+    print("\nsr:")
+    print(sr)
+
+
     #wireframe(joints.subs(reps_des))
     #print(position.subs(reps_des))
 

@@ -627,4 +627,38 @@ Plan for associating a number of Jacobians to the spectral radius:
 
 Spectral Radius VS Damping. My hypothesis is that all values will indeed move towards 1, since the limit as alpha approaches 0 in the equation I-alpha*B@dF  = I-0 = I, where the spectral radius will be 1.
 
-After running a few experiments, it is true that as alpha gets closer to 0, the spectral radius asymptotically approaches 1, but for singular joint configurations, it appears that our spectral radius actually dips below 1 and then starts creeping back up to 1 again. So, probably
+After running a few experiments, it is true that as alpha gets closer to 0, the spectral radius asymptotically approaches 1, but for singular joint configurations, it appears that our spectral radius actually dips below 1 and then starts creeping back up to 1 again. 
+
+# June 16
+
+Over the weekend I dual booted my laptop. On Friday I spent a significant amoutn of time tyrignt o figure out Denavit Hartrenburg parameters.
+
+I finished the code for the spectral radius for the visual servoing, but I need to analyze it further to be able to say anything worthwhile about it.
+
+#### Comments from Dylan:
+- Use two cameras: should have camera points > robot DOF, otw trivial
+- avoid floats
+- reassign bad jacobians with better ones
+
+Today I am not sure what to work on next because I feel sort of stuck.
+Dilemmas:
+- We could replace singular jacobians with 'better' ones or jacobians simply to push us out of the singularities, but how can we ensure that our new location post push is convergent? Ie we can push ourselves into a new region and find a new solution trajectory, but it's not guaranteed that this solution will exist, and we really want to ensure that it can converge.
+- Should I re-dualboot my laptop to Ubunut 20.04, or learn Docker to use 22.04.5? Because Docker appears to be a commonplace tool I thin it would be hlepful to learn, but I need to learn quickly so that I can still get work done. I can still use ROS 1 with Docker, which is good...
+- Just running from simulation it appears that modifying camera parameters doesn't affect the spectral radius, but this feels wrong and it's highly possible my code is faulty.
+
+Two objectives for today:
+1. Figure out why the spectral radius is the same regardless of camera parameters (remember that extrinsic is more important to look at than intrisnic)
+2. Set up docker and ros1 in ubuntu
+
+Okay so we have a bit of a dilemma:
+
+When we divide every entry of the projected image point by z, we end up with an array 
+[x/z,y/z,1] aka [X,Y,1].
+Then the jacobian's third row is going to be zeroes no matter the Q, so it will be not be invertible.
+
+And when we use the psuedo inverse, we have spectral radius >=1 for points that were.... previously < 1...
+
+
+I am having a lot of trouble finding points where the spectral radius is below 1 for the case where I project the point onto the x-y plane by dividing by z. This is the nonlinear aspect, since the z component becomes 1 and the inverse no longer exists. I dont need a ggraph, just a single point, so I should be able to easily make a huge iteration over the sets of pairs of joint angles. 
+
+I want to download docker now.
