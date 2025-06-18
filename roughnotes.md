@@ -666,3 +666,13 @@ I am having a lot of trouble finding points where the spectral radius is below 1
 I am very happy because I finished the simulation for the analytic visual servoing with two cameras using Dylan's 3DOF robot. When we only have 1 camera out of the two, we have a spectral radius of 1 or higher, but when we use both, the spectral radius goes below 1! I have only tested a few little points, so it would be good to make a linear space again. And it would be good to get the analytic form of the psectral radius, but I anticipate it will be quite lengthly...
 
 Yesterday we set up Docker and ROS a little bit and I would like to get started on the actual simulations.
+
+#### Lab Meeting:
+
+Look into floating planes and read A Mathematical Introduction to Robotic Manipulation
+
+Big picture:
+- create a real time (online ?) method that, given an ill conditioned jacobian, will replace the ill conditioned jacobian with a better one
+- beforehand, compute the central differences for n number of jacobians, and for ANY trajectory or goal we want, we will use max n jacobians
+
+We can sit on these ideas and shift gears to real experiments.

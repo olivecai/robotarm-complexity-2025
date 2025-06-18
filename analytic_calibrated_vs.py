@@ -300,9 +300,88 @@ def evals_and_sr(A):
     except:
         return None, None
     
+def plot(desired_joint_position, cameras, resolution, jointlimits):
+    #for better generality if we move to higher dof, pass each initial joint configuration through forward kinematics to plot loss
+    joint_ranges = [np.linspace(low, high, resolution) for (low, high) in jointlimits]
+    grid = np.meshgrid(*joint_ranges, indexing='ij')  # ij indexing keeps dimensions aligned
+
+    # stack all grids to create a dof x n x n x ... array
+    Q_grid = np.stack(grid, axis=-1)  # shape: (n, n, ..., n, dof)
+
+    # preallocate error arrays (same shape as grid, but without dof)
+    permuts_over_linspaces_shape = Q_grid.shape[:-1]
+    permuts_over_linspaces = np.zeros(permuts_over_linspaces_shape)
+
+    i=0;
+
+    u_des,v_des,w_des = desired_joint_position
+    #u_des, v_des, w_des = sp.symbols('u_des, v_des, w_des', real=True)
+    reps_des=[(u,u_des), (v,v_des), (w, w_des)]
+
+    analytic_jac = compute_analytic_jac(cameras)
+    dF = analytic_jac.subs(reps_des)
+    for idx in np.ndindex(permuts_over_linspaces_shape): #iter over every permut over linspace of q0...qn 
+        '''
+        for every iteration/permutation of joint space configuration,
+        compute the spectral radius with the camera(s) for the desired joint configuration.
+        to save computation time, cache the analytic jacobian and the constant dF.
+        '''
+        Q = Q_grid[idx].copy()
+        u0,v0,w0 = Q
+        reps_0=[(u,u0), (v,v0), (w, w0)]
+        J = analytic_jac.subs(reps_0)
+        try:
+            B=J.pinv()
+        except:
+            B=None
+
+        if B:
+            I = sp.eye(3)
+            A = (I - B*dF)
+            evals, sr = evals_and_sr(A)
+            print("\nsr:")
+            print(sr)
+        else:
+            evals, sr = None, None
+        
+        '''
+        Right now this cartesian conversion is in totally the wrong place
+        # turn u0 v0 w0 into x y z (aka joint --> cartesian)
+        _, EE = denavit_hartenburg_dylan_3dof(u0, v0, w0)
+        world_init = ((EE[:,3]))
+        print(world_init)
+        x, y, z ,_ = world_init
+        '''
+
+        permuts_over_linspaces[idx] = sr
+
+        print("i:", i, "init Q: ", Q_grid[idx], "sr: ",sr, "evals:", evals)
+        print("\n")
+        i+=1;
+
+    permuts_over_linspaces=permuts_over_linspaces.flatten() #spectral radius
+    # Flatten Q_grid to get all [q0, q1, ..., qN] configs
+    Q_flat = Q_grid.reshape(-1, Q_grid.shape[-1])
+    x, y, z = Q_flat[:, 0], Q_flat[:, 1], Q_flat[:,2]
+
+    print("Generating Plot...")
+    scatter = go.Scatter3d(x=x,y=y,z=z,mode='markers', marker=dict(size=8,color=permuts_over_linspaces, colorscale='plasma', colorbar=dict(title='spectral radius'), opacity=0.6))
+    layout = go.Layout(
+        scene=dict(
+            xaxis_title='cartesian x',
+            yaxis_title='cartesian y',
+            zaxis_title='cartesian z'
+        ),
+        title='Spectral Radius in Cartesian Space',
+        margin=dict(l=0,r=0,b=0,t=50)
+    )
+    fig=go.Figure(data=[scatter], layout=layout)
+
+    fig.show()
+
 def main():
     cur = [0, 0, sp.pi/2]
-    des = [sp.pi/4,0.01,0.01]
+    des = [0,0,sp.pi/2]
 
     origin_world = sp.Matrix([[0],[0],[0],[1]])
     
@@ -323,14 +402,15 @@ def main():
     #DO NOT TOUCH THESE CAMERAS they were really onerous to place :-(
     cam1 = camera(0,0,0,[0,0,5], 5,5, 0, 0) #looks down directly at the scene, basically replicates the scene
     cam2 = camera(-sp.pi/2, 0, 0, [0,0,5], 5,5,0,0) #looks at scene from the y axis, world z is cam2 y, world x is cam2 x 
-    cameras=[cam1,cam2]
-    '''
+    cameras=[cam1]
+    
     print("World Pos:")
     print(world_position.subs(reps_cur))
-    print("Image Pos:")
+    print("Image Pos Cam 1:")
     print(cam1.projectpoint(world_position.subs(reps_cur)))
+    print("Image Pos Cam 2:")
     print(cam2.projectpoint(world_position.subs(reps_cur)))
-    '''
+    
     
     analytic_jacobian= compute_analytic_jac(cameras)
     dF = analytic_jacobian.subs(reps_des)
@@ -360,6 +440,8 @@ def main():
     print("\nsr:")
     print(sr)
 
+    jointlimits = [[0,np.pi/2], [-np.pi/2,np.pi/2], [-np.pi/2,np.pi/2]]
+    plot(des, cameras, 8, jointlimits)
 
     #wireframe(joints.subs(reps_des))
     #print(position.subs(reps_des))
