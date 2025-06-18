@@ -313,6 +313,7 @@ def spectral_radius_wrt_damping(u_, v_, ets, camera, u0, v0):
     v_=0.01
     #print("u_, v_:", u_, v_)
     #print("u0, v0:", u0, v0)
+    points=[]
     dampings = np.linspace(1, 1000, 100)
     for damping in dampings:
         alpha = 1/damping
@@ -323,6 +324,12 @@ def spectral_radius_wrt_damping(u_, v_, ets, camera, u0, v0):
         # actually interestingly enough, for initial position (0.5235988, 0.1) we dip down below 1 to around 0.9091 with alpha = 0.125, and then start creeping back up to 1! So damping can totally change the game 
         # so dampening wont make it NOT converge for any initial joint position.
         # perfect convergence --> eigvals == 0,
+
+        points.append(sr)
+    plt.plot(points, 'o')
+    plt.yscale('log')
+    plt.show()
+    
 
 def plot(u_des, v_des):
     u_vals = np.linspace(-np.pi, np.pi, 100)
@@ -342,8 +349,8 @@ def main():
     camera=None 
     
     #starting position
-    u_ = 0.7853982
-    v_ = sp.pi/2
+    u_ = 0
+    v_ = 0
 
     #desired position
     u0=0.0
