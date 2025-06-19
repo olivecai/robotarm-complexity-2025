@@ -1,0 +1,3 @@
+[submodule "kortex_bringup"]
+	path = kortex_bringup
+	url = https://github.com/cjiang2/kortex_bringup.git

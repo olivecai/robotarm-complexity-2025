@@ -1,0 +1,26 @@
+requirements is a python thing, "pip install -r" to include in the initial setting up shtuff 
+
+for convenience, use:
+RUN apt-get update && apt-get install -y \
+    $(cat packages.txt) 
+
+    to install all the packages in packages.txt
+    
+ignore line 13 (specific for kinova)
+
+rosdep update --> updates ros dependencies
+
+19 and below defines terminal alisases - instead of long cmd, small word repl     
+    
+    
+saving aliases in bashrc saves them FOREVER
+
+
+setup file for ros
+RUN echo "source /opt/ros/$ROS_DISTRO/setup.bash" >> ~/.bashrc
+
+setup workspace in repo
+RUN echo "source catkin_ws/devel/setup.bash" >> ~/.bashrc
+^debatably bad practice. rn we havent built the workspace, so when we open new terminal the cmd immeditaely fails becasue it hasnt been built yet... and if we install smth new and build, we have to run this line again
+
+xhost +  --> last thign to do to give docker access to SCREEN 
