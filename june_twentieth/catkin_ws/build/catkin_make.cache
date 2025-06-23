@@ -1,0 +1,2 @@
+mypackage88
+-DCATKIN_DEVEL_PREFIX=/home/user/myfolder88/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/user/myfolder88/catkin_ws/install -G Unix Makefiles

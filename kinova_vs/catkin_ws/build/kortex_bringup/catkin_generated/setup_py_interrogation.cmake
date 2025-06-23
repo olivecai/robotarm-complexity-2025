@@ -1,7 +1,0 @@
-set(kortex_bringup_SETUP_PY_SETUP_MODULE "distutils.core")
-set(kortex_bringup_SETUP_PY_VERSION "0.0.0")
-set(kortex_bringup_SETUP_PY_SCRIPTS "")
-set(kortex_bringup_SETUP_PY_PACKAGES "kortex_bringup")
-set(kortex_bringup_SETUP_PY_PACKAGE_DIRS "src/kortex_bringup")
-set(kortex_bringup_SETUP_PY_MODULES "")
-set(kortex_bringup_SETUP_PY_MODULE_DIRS "")

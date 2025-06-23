@@ -1,6 +1,6 @@
 {
     "dockerComposeFile": "../docker-compose.yml",
-    "service": "vs",
+    "service": "kinova",
     "workspaceFolder": "/home/user/vs",
     "shutdownAction": "stopCompose",
   
@@ -18,4 +18,4 @@
     },
   
     "forwardPorts": [3000]
-  }
+}

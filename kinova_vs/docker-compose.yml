@@ -1,6 +1,6 @@
 version: "3.8"
 services:
-  kinova_vs:
+  kinova:
     container_name: nserc2025
     working_dir: /home/user/vs
     build:
@@ -14,4 +14,4 @@ services:
       - DISPLAY=${DISPLAY}
     volumes:
       - ../kinova_vs:/home/user/vs
-      - /tmp/.X11-unix:/tmp/.X11-unixs
+      - /tmp/.X11-unix:/tmp/.X11-unix
