@@ -1,0 +1,8 @@
+prefix=/home/user/vs/catkin_ws/devel
+
+Name: kinova_basic_tests
+Description: Description of kinova_basic_tests
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

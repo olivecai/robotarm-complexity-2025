@@ -17,3 +17,5 @@ ros-noetic-moveit-setup-assistant
 ros-noetic-ros-control
 ros-noetic-ros-controllers
 ros-noetic-moveit-ros-planning-interface
+libgstreamer1.0-dev
+libgstreamer-plugins-base1.0-dev
