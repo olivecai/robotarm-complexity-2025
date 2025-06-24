@@ -110,6 +110,14 @@ catkin_package(
 #  DEPENDS system_lib
 )
 
+catkin_install_python(PROGRAMS
+  nodes/camera_node.py
+  nodes/target_node.py
+
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+
 ###########
 ## Build ##
 ###########

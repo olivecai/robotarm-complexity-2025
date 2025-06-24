@@ -65,6 +65,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/include/eigen3"
   "/usr/include/bullet"
   "/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/src"
+  "/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/generated"
   "/root/.conan/data/kortex_api_cpp/2.6.0-r.3/kortex/stable/package/c023db9fc677d4d0b3bd0c20f71385e4cf8a1220/include/client"
   "/root/.conan/data/kortex_api_cpp/2.6.0-r.3/kortex/stable/package/c023db9fc677d4d0b3bd0c20f71385e4cf8a1220/include/client_stubs"
   "/root/.conan/data/kortex_api_cpp/2.6.0-r.3/kortex/stable/package/c023db9fc677d4d0b3bd0c20f71385e4cf8a1220/include/common"
