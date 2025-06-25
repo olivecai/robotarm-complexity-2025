@@ -981,45 +981,45 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action_action_parameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Action.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Generating C++ code from kortex_driver/Action.msg"
@@ -1046,46 +1046,46 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action_action_parameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActionList.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Generating C++ code from kortex_driver/ActionList.msg"
@@ -1093,9 +1093,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActionNotification.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActionNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionNotification.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActionNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TrajectoryInfo.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActionNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActionNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActionNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActionNotification.h: /opt/ros/noetic/share/gencpp/msg.h.template
@@ -1104,10 +1104,10 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActionNotificationList.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActionNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionNotificationList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionNotification.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActionNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TrajectoryInfo.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActionNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActionNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionNotification.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActionNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActionNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActionNotificationList.h: /opt/ros/noetic/share/gencpp/msg.h.template
@@ -1122,44 +1122,44 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action_action_parameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Action_action_parameters.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Generating C++ code from kortex_driver/Action_action_parameters.msg"
@@ -1167,8 +1167,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActivateMapHandle.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActivateMapHandle.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActivateMapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActivateMapHandle.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActivateMapHandle.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActivateMapHandle.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActivateMapHandle.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActivateMapHandle.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Generating C++ code from kortex_driver/ActivateMapHandle.msg"
@@ -1207,46 +1207,46 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AppendActionInformation.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action_action_parameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AppendActionInformation.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Generating C++ code from kortex_driver/AppendActionInformation.msg"
@@ -1262,9 +1262,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ArmStateNotification.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ArmStateNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ArmStateNotification.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ArmStateNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ArmStateNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ArmStateNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ArmStateNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ArmStateNotification.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Generating C++ code from kortex_driver/ArmStateNotification.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ArmStateNotification.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -1301,9 +1301,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Base_ControlModeNotification.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Base_ControlModeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_ControlModeNotification.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Base_ControlModeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Base_ControlModeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Base_ControlModeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Base_ControlModeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Base_ControlModeNotification.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Generating C++ code from kortex_driver/Base_ControlModeNotification.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_ControlModeNotification.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -1367,8 +1367,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/BridgeConfig.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/BridgeConfig.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/BridgeConfig.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/BridgeConfig.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/BridgePortConfig.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/BridgeConfig.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/BridgeIdentifier.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/BridgeConfig.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/BridgePortConfig.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/BridgeConfig.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Generating C++ code from kortex_driver/BridgeConfig.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/BridgeConfig.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -1381,9 +1381,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/BridgeList.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/BridgeList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/BridgeList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/BridgeList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/BridgePortConfig.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/BridgeList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/BridgeConfig.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/BridgeList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/BridgeIdentifier.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/BridgeList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/BridgeConfig.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/BridgeList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/BridgePortConfig.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/BridgeList.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Generating C++ code from kortex_driver/BridgeList.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/BridgeList.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -1482,58 +1482,58 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConfigurationChangeNotification.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/NetworkHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConfigurationChangeNotification_configuration_change.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZoneHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/NetworkHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConfigurationChangeNotification_configuration_change.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Ssid.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZoneHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Generating C++ code from kortex_driver/ConfigurationChangeNotification.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConfigurationChangeNotification.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotificationList.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConfigurationChangeNotificationList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/NetworkHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConfigurationChangeNotification_configuration_change.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZoneHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Ssid.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/NetworkHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConfigurationChangeNotification.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConfigurationChangeNotification_configuration_change.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Ssid.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZoneHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotificationList.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Generating C++ code from kortex_driver/ConfigurationChangeNotificationList.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConfigurationChangeNotificationList.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification_configuration_change.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification_configuration_change.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConfigurationChangeNotification_configuration_change.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification_configuration_change.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/NetworkHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification_configuration_change.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification_configuration_change.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification_configuration_change.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification_configuration_change.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification_configuration_change.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification_configuration_change.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification_configuration_change.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZoneHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification_configuration_change.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/NetworkHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification_configuration_change.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification_configuration_change.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Ssid.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification_configuration_change.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification_configuration_change.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification_configuration_change.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification_configuration_change.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification_configuration_change.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZoneHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification_configuration_change.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification_configuration_change.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConfigurationChangeNotification_configuration_change.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Generating C++ code from kortex_driver/ConfigurationChangeNotification_configuration_change.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConfigurationChangeNotification_configuration_change.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -1553,8 +1553,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedJointAngles.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedJointAngles.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedJointAngles.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedJointAngles.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedJointAngles.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedJointAngles.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedJointAngles.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Generating C++ code from kortex_driver/ConstrainedJointAngles.msg"
@@ -1562,30 +1562,30 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedOrientation.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedOrientation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedOrientation.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedOrientation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Orientation.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedOrientation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedOrientation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedOrientation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedOrientation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedOrientation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Orientation.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedOrientation.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Generating C++ code from kortex_driver/ConstrainedOrientation.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedOrientation.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedPose.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedPose.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedPose.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedPose.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedPose.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedPose.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedPose.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedPose.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedPose.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedPose.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Generating C++ code from kortex_driver/ConstrainedPose.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedPosition.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedPosition.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPosition.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedPosition.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedPosition.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedPosition.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Position.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedPosition.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedPosition.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedPosition.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Position.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ConstrainedPosition.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Generating C++ code from kortex_driver/ConstrainedPosition.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPosition.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -1593,9 +1593,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControlModeNotificationList.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControlModeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControlModeNotificationList.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControlModeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ControlModeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_ControlModeNotification.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControlModeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControlModeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ControlModeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_ControlModeNotification.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControlModeNotificationList.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Generating C++ code from kortex_driver/ControlModeNotificationList.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControlModeNotificationList.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -1616,9 +1616,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerConfigurationList.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerConfigurationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerConfigurationList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerConfigurationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerConfigurationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerConfiguration.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerConfigurationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerConfigurationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerConfigurationList.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_100) "Generating C++ code from kortex_driver/ControllerConfigurationList.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerConfigurationList.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -1637,8 +1637,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerElementHandle.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerElementHandle.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerElementHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerElementHandle.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerElementHandle_identifier.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerElementHandle.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerElementHandle.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerElementHandle_identifier.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerElementHandle.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_103) "Generating C++ code from kortex_driver/ControllerElementHandle.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerElementHandle.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -1651,9 +1651,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerElementState.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerElementState.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerElementState.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerElementState.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerElementState.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerElementHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerElementState.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerElementHandle_identifier.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerElementState.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerElementState.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_105) "Generating C++ code from kortex_driver/ControllerElementState.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerElementState.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -1691,14 +1691,14 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotification.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerNotification.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerNotification_state.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerElementState.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerElementHandle_identifier.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerElementHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerNotification_state.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerState.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerElementState.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerElementHandle_identifier.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotification.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_111) "Generating C++ code from kortex_driver/ControllerNotification.msg"
@@ -1706,15 +1706,15 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotificationList.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerNotificationList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerNotification_state.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerNotification.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerElementState.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerElementHandle_identifier.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerElementHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerNotification_state.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerNotification.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerState.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerElementState.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerElementHandle_identifier.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotificationList.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_112) "Generating C++ code from kortex_driver/ControllerNotificationList.msg"
@@ -1722,11 +1722,11 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotification_state.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotification_state.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerNotification_state.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotification_state.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerElementState.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotification_state.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerElementHandle_identifier.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotification_state.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotification_state.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerElementHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotification_state.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerState.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotification_state.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerElementHandle_identifier.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotification_state.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerElementState.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControllerNotification_state.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_113) "Generating C++ code from kortex_driver/ControllerNotification_state.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerNotification_state.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -1770,9 +1770,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FactoryNotification.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FactoryNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/FactoryNotification.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/FactoryNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FactoryNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FactoryNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/FactoryNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FactoryNotification.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_120) "Generating C++ code from kortex_driver/FactoryNotification.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/FactoryNotification.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -1844,8 +1844,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GpioConfigurationList.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GpioConfigurationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioConfigurationList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GpioConfigurationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioPinConfiguration.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GpioConfigurationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_GpioConfiguration.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GpioConfigurationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioPinConfiguration.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GpioConfigurationList.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_131) "Generating C++ code from kortex_driver/GpioConfigurationList.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioConfigurationList.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -1897,9 +1897,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/IKData.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/IKData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/IKData.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/IKData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/IKData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/IKData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/IKData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/IKData.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_139) "Generating C++ code from kortex_driver/IKData.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/IKData.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -1999,53 +1999,53 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Map.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerEvent.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapEvent_events.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SafetyEvent.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action_action_parameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapElement.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapEvent_events.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SafetyEvent.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerEvent.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioEvent.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapEvent.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioEvent.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Map.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_155) "Generating C++ code from kortex_driver/Map.msg"
@@ -2053,52 +2053,52 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerEvent.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapEvent_events.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SafetyEvent.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action_action_parameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapEvent_events.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SafetyEvent.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerEvent.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioEvent.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapEvent.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioEvent.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapElement.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_156) "Generating C++ code from kortex_driver/MapElement.msg"
@@ -2106,11 +2106,11 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapEvent.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapEvent.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapEvent.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapEvent.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapEvent.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapEvent_events.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapEvent.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SafetyEvent.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapEvent.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerEvent.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapEvent.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioEvent.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapEvent.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapEvent_events.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapEvent.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerEvent.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapEvent.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapEvent.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_157) "Generating C++ code from kortex_driver/MapEvent.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapEvent.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -2118,8 +2118,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapEvent_events.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapEvent_events.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapEvent_events.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapEvent_events.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioEvent.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapEvent_events.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapEvent_events.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SafetyEvent.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapEvent_events.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapEvent_events.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerEvent.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapEvent_events.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_158) "Generating C++ code from kortex_driver/MapEvent_events.msg"
@@ -2127,9 +2127,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapGroup.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapGroup.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroup.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapGroup.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapGroup.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapGroup.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapGroup.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapGroup.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_159) "Generating C++ code from kortex_driver/MapGroup.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroup.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -2142,10 +2142,10 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapGroupList.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapGroupList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapGroupList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapGroupList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroup.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapGroupList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapGroupList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapGroupList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapGroupList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapGroupList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroup.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapGroupList.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_161) "Generating C++ code from kortex_driver/MapGroupList.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupList.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -2158,54 +2158,54 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Map.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerEvent.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapEvent_events.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SafetyEvent.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action_action_parameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapEvent_events.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapEvent.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SafetyEvent.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioEvent.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerEvent.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioEvent.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapEvent.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Map.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MapList.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_163) "Generating C++ code from kortex_driver/MapList.msg"
@@ -2213,8 +2213,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Mapping.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Mapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Mapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Mapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Mapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Mapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Mapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Mapping.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_164) "Generating C++ code from kortex_driver/Mapping.msg"
@@ -2229,9 +2229,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MappingInfoNotification.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MappingInfoNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingInfoNotification.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MappingInfoNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MappingInfoNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MappingInfoNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MappingInfoNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MappingInfoNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MappingInfoNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MappingInfoNotification.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_166) "Generating C++ code from kortex_driver/MappingInfoNotification.msg"
@@ -2240,10 +2240,10 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MappingInfoNotificationList.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MappingInfoNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingInfoNotificationList.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MappingInfoNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MappingInfoNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MappingInfoNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingInfoNotification.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MappingInfoNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MappingInfoNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MappingInfoNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MappingInfoNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MappingInfoNotificationList.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_167) "Generating C++ code from kortex_driver/MappingInfoNotificationList.msg"
@@ -2251,9 +2251,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MappingList.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MappingList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MappingList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/MappingList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Mapping.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MappingList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MappingList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Mapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/MappingList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MappingList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/MappingList.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_168) "Generating C++ code from kortex_driver/MappingList.msg"
@@ -2279,19 +2279,19 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/NetworkNotification.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/NetworkNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/NetworkNotification.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/NetworkNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/NetworkNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/NetworkNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/NetworkNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/NetworkNotification.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_172) "Generating C++ code from kortex_driver/NetworkNotification.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/NetworkNotification.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/NetworkNotificationList.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/NetworkNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/NetworkNotificationList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/NetworkNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/NetworkNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/NetworkNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/NetworkNotification.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/NetworkNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/NetworkNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/NetworkNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/NetworkNotificationList.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_173) "Generating C++ code from kortex_driver/NetworkNotificationList.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/NetworkNotificationList.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -2317,20 +2317,20 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OperatingModeNotification.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OperatingModeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/OperatingModeNotification.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/OperatingModeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OperatingModeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/DeviceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OperatingModeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OperatingModeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/OperatingModeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OperatingModeNotification.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_177) "Generating C++ code from kortex_driver/OperatingModeNotification.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/OperatingModeNotification.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OperatingModeNotificationList.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OperatingModeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/OperatingModeNotificationList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/OperatingModeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/OperatingModeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/DeviceHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/OperatingModeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OperatingModeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/OperatingModeNotification.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/OperatingModeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/DeviceHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/OperatingModeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/OperatingModeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OperatingModeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OperatingModeNotificationList.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_178) "Generating C++ code from kortex_driver/OperatingModeNotificationList.msg"
@@ -2376,12 +2376,12 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZone.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZone.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_RotationMatrixRow.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Point.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_RotationMatrix.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_RotationMatrixRow.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ZoneShape.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZoneHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianLimitation.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Point.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZone.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_185) "Generating C++ code from kortex_driver/ProtectionZone.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZone.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -2406,23 +2406,23 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneList.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZoneList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_RotationMatrixRow.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Point.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZone.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_RotationMatrix.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_RotationMatrixRow.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZone.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ZoneShape.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZoneHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianLimitation.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Point.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneList.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_189) "Generating C++ code from kortex_driver/ProtectionZoneList.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZoneList.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneNotification.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZoneNotification.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZoneHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneNotification.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_190) "Generating C++ code from kortex_driver/ProtectionZoneNotification.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZoneNotification.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -2430,9 +2430,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneNotificationList.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZoneNotificationList.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZoneNotification.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZoneHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZoneHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZoneNotification.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ProtectionZoneNotificationList.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_191) "Generating C++ code from kortex_driver/ProtectionZoneNotificationList.msg"
@@ -2467,21 +2467,21 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/RobotEventNotification.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/RobotEventNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/RobotEventNotification.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/RobotEventNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/RobotEventNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/DeviceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/RobotEventNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/RobotEventNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/RobotEventNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/RobotEventNotification.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_196) "Generating C++ code from kortex_driver/RobotEventNotification.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/RobotEventNotification.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/RobotEventNotificationList.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/RobotEventNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/RobotEventNotificationList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/RobotEventNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/RobotEventNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/RobotEventNotification.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/RobotEventNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/DeviceHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/RobotEventNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/RobotEventNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/RobotEventNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/RobotEventNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/RobotEventNotification.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/RobotEventNotificationList.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_197) "Generating C++ code from kortex_driver/RobotEventNotificationList.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/RobotEventNotificationList.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -2495,9 +2495,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyNotificationList.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SafetyNotificationList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyNotification.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyNotificationList.h: /opt/ros/noetic/share/gencpp/msg.h.template
@@ -2506,47 +2506,47 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Sequence.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTask.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action_action_parameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTask.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Sequence.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_200) "Generating C++ code from kortex_driver/Sequence.msg"
@@ -2560,10 +2560,10 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceInfoNotification.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceInfoNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceInfoNotification.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceInfoNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceInfoNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceInfoNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceInfoNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceInfoNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceInfoNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceInfoNotification.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_202) "Generating C++ code from kortex_driver/SequenceInfoNotification.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceInfoNotification.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -2573,8 +2573,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceInfoNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceInfoNotification.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceInfoNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceInfoNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceInfoNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceInfoNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceInfoNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceInfoNotificationList.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_203) "Generating C++ code from kortex_driver/SequenceInfoNotificationList.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceInfoNotificationList.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -2587,48 +2587,48 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTask.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action_action_parameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Sequence.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Sequence.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTask.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceList.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_205) "Generating C++ code from kortex_driver/SequenceList.msg"
@@ -2636,46 +2636,46 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTask.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action_action_parameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTask.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_206) "Generating C++ code from kortex_driver/SequenceTask.msg"
@@ -2683,48 +2683,48 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTaskConfiguration.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTask.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTaskHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action_action_parameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTaskHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTask.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTaskConfiguration.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_207) "Generating C++ code from kortex_driver/SequenceTaskConfiguration.msg"
@@ -2739,47 +2739,47 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTasks.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTask.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action_action_parameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTask.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasks.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_209) "Generating C++ code from kortex_driver/SequenceTasks.msg"
@@ -2787,48 +2787,48 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTasksConfiguration.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTask.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTaskHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action_action_parameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTaskHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTask.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SequenceTasksConfiguration.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_210) "Generating C++ code from kortex_driver/SequenceTasksConfiguration.msg"
@@ -2861,19 +2861,19 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ServoingModeNotification.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ServoingModeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ServoingModeNotification.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ServoingModeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ServoingModeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ServoingModeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ServoingModeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ServoingModeNotification.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_215) "Generating C++ code from kortex_driver/ServoingModeNotification.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ServoingModeNotification.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ServoingModeNotificationList.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ServoingModeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ServoingModeNotificationList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ServoingModeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ServoingModeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ServoingModeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ServoingModeNotification.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ServoingModeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ServoingModeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ServoingModeNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ServoingModeNotification.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ServoingModeNotificationList.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_216) "Generating C++ code from kortex_driver/ServoingModeNotificationList.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ServoingModeNotificationList.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -2916,8 +2916,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SwitchControlMapping.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SwitchControlMapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SwitchControlMapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SwitchControlMapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SwitchControlMapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SwitchControlMapping.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_223) "Generating C++ code from kortex_driver/SwitchControlMapping.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -3024,19 +3024,19 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UserNotification.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UserNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/UserNotification.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UserNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UserNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UserNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UserNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UserNotification.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_240) "Generating C++ code from kortex_driver/UserNotification.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/UserNotification.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UserNotificationList.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UserNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/UserNotificationList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UserNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UserNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/UserNotification.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UserNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UserNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UserNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/UserNotification.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UserNotificationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UserNotificationList.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_241) "Generating C++ code from kortex_driver/UserNotificationList.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/UserNotificationList.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -3058,21 +3058,21 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Waypoint.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Waypoint.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Waypoint.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Waypoint.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Waypoint.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Waypoint.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Waypoint.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Waypoint.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Waypoint.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_244) "Generating C++ code from kortex_driver/Waypoint.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/WaypointList.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/WaypointList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/WaypointList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/WaypointList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/WaypointList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/WaypointList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/WaypointList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/WaypointList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/WaypointList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/WaypointList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/WaypointList.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_245) "Generating C++ code from kortex_driver/WaypointList.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -3080,22 +3080,22 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 /home/user/vs/catkin_ws/devel/include/kortex_driver/WaypointValidationReport.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/WaypointValidationReport.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointValidationReport.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/WaypointValidationReport.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TrajectoryErrorElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/WaypointValidationReport.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/WaypointValidationReport.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/WaypointValidationReport.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TrajectoryErrorReport.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/WaypointValidationReport.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/WaypointValidationReport.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/WaypointValidationReport.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/WaypointValidationReport.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/WaypointValidationReport.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TrajectoryErrorReport.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/WaypointValidationReport.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/WaypointValidationReport.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/WaypointValidationReport.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/WaypointValidationReport.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/WaypointValidationReport.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_246) "Generating C++ code from kortex_driver/WaypointValidationReport.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointValidationReport.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Waypoint_type_of_waypoint.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Waypoint_type_of_waypoint.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Waypoint_type_of_waypoint.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Waypoint_type_of_waypoint.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Waypoint_type_of_waypoint.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Waypoint_type_of_waypoint.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Waypoint_type_of_waypoint.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Waypoint_type_of_waypoint.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_247) "Generating C++ code from kortex_driver/Waypoint_type_of_waypoint.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -3109,8 +3109,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/WifiConfigurationList.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/WifiConfigurationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WifiConfigurationList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/WifiConfigurationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WifiConfiguration.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/WifiConfigurationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Ssid.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/WifiConfigurationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WifiConfiguration.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/WifiConfigurationList.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_249) "Generating C++ code from kortex_driver/WifiConfigurationList.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WifiConfigurationList.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -3136,8 +3136,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/WifiInformationList.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/WifiInformationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WifiInformationList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/WifiInformationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Ssid.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/WifiInformationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WifiInformation.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/WifiInformationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Ssid.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/WifiInformationList.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_253) "Generating C++ code from kortex_driver/WifiInformationList.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WifiInformationList.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -3193,9 +3193,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ZoneShape.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ZoneShape.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ZoneShape.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ZoneShape.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_RotationMatrix.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ZoneShape.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_RotationMatrixRow.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ZoneShape.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Point.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ZoneShape.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_RotationMatrix.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ZoneShape.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_262) "Generating C++ code from kortex_driver/ZoneShape.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ZoneShape.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -3220,12 +3220,12 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_Command.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_Command.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic/BaseCyclic_Command.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_Command.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_MessageId.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_Command.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_Command_tool_command.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_Command.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/MotorCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_Command.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/GripperCyclic_MessageId.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_Command.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_Command.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_Command.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/GripperCyclic_Command.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_Command.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/MotorCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_Command.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_Command.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_Command.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_Command_tool_command.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_Command.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_MessageId.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_Command.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/GripperCyclic_MessageId.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_Command.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic/ActuatorCommand.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_Command.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_266) "Generating C++ code from kortex_driver/BaseCyclic_Command.msg"
@@ -3233,11 +3233,11 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_CustomData.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_CustomData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic/BaseCyclic_CustomData.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_CustomData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_MessageId.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_CustomData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic/ActuatorCustomData.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_CustomData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_CustomData_tool_customData.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_CustomData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic/ActuatorCustomData.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_CustomData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/GripperCyclic_CustomData.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_CustomData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_CustomData.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_CustomData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_MessageId.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_CustomData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/CustomDataUnit.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_CustomData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/GripperCyclic_MessageId.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_CustomData.h: /opt/ros/noetic/share/gencpp/msg.h.template
@@ -3246,14 +3246,14 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_Feedback.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_Feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic/BaseCyclic_Feedback.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_Feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic/BaseFeedback.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_Feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_Feedback_tool_feedback.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_Feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/MotorFeedback.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_Feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/GripperCyclic_Feedback.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_Feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic/ActuatorFeedback.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_Feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_MessageId.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_Feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_Feedback.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_Feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic/ActuatorFeedback.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_Feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/MotorFeedback.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_Feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic/BaseFeedback.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_Feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/GripperCyclic_MessageId.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_Feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/GripperCyclic_Feedback.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_Feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_Feedback_tool_feedback.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/BaseCyclic_Feedback.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_268) "Generating C++ code from kortex_driver/BaseCyclic_Feedback.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic/BaseCyclic_Feedback.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -3351,10 +3351,10 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyNotification.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyNotification.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyNotification.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_284) "Generating C++ code from kortex_driver/SafetyNotification.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyNotification.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -3451,9 +3451,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControlConfig_ControlModeNotification.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControlConfig_ControlModeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config/ControlConfig_ControlModeNotification.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ControlConfig_ControlModeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControlConfig_ControlModeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControlConfig_ControlModeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ControlConfig_ControlModeNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControlConfig_ControlModeNotification.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_300) "Generating C++ code from kortex_driver/ControlConfig_ControlModeNotification.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config/ControlConfig_ControlModeNotification.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -3484,9 +3484,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControlConfigurationNotification.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControlConfigurationNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config/ControlConfigurationNotification.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ControlConfigurationNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControlConfigurationNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControlConfigurationNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ControlConfigurationNotification.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Timestamp.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControlConfigurationNotification.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_305) "Generating C++ code from kortex_driver/ControlConfigurationNotification.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config/ControlConfigurationNotification.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -3543,8 +3543,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ToolConfiguration.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ToolConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config/ToolConfiguration.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ToolConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config/CartesianTransform.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ToolConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config/ControlConfig_Position.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ToolConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config/CartesianTransform.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ToolConfiguration.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_314) "Generating C++ code from kortex_driver/ToolConfiguration.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config/ToolConfiguration.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -3710,8 +3710,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyConfiguration.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/SafetyConfiguration.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/SafetyEnable.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyConfiguration.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_341) "Generating C++ code from kortex_driver/SafetyConfiguration.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/SafetyConfiguration.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -3719,8 +3719,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyConfigurationList.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyConfigurationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/SafetyConfigurationList.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyConfigurationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/SafetyConfiguration.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyConfigurationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyConfigurationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/SafetyEnable.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyConfigurationList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SafetyConfigurationList.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_342) "Generating C++ code from kortex_driver/SafetyConfigurationList.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/SafetyConfigurationList.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -3807,16 +3807,16 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GripperCyclic_CustomData.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GripperCyclic_CustomData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/GripperCyclic_CustomData.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GripperCyclic_CustomData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/CustomDataUnit.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GripperCyclic_CustomData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/GripperCyclic_MessageId.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GripperCyclic_CustomData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/CustomDataUnit.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GripperCyclic_CustomData.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_355) "Generating C++ code from kortex_driver/GripperCyclic_CustomData.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/GripperCyclic_CustomData.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GripperCyclic_Feedback.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GripperCyclic_Feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/GripperCyclic_Feedback.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GripperCyclic_Feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/MotorFeedback.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GripperCyclic_Feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/GripperCyclic_MessageId.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GripperCyclic_Feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/MotorFeedback.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GripperCyclic_Feedback.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_356) "Generating C++ code from kortex_driver/GripperCyclic_Feedback.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/GripperCyclic_Feedback.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -4005,11 +4005,11 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_Command.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_Command.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_Command.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_Command.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_MessageId.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_Command.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_Command_tool_command.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_Command.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/MotorCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_Command.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/GripperCyclic_MessageId.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_Command.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/GripperCyclic_Command.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_Command.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/MotorCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_Command.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_Command_tool_command.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_Command.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_MessageId.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_Command.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/GripperCyclic_MessageId.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_Command.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_387) "Generating C++ code from kortex_driver/InterconnectCyclic_Command.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_Command.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -4025,9 +4025,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_CustomData.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_CustomData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_CustomData.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_CustomData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_MessageId.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_CustomData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_CustomData_tool_customData.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_CustomData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/GripperCyclic_CustomData.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_CustomData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_MessageId.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_CustomData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/CustomDataUnit.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_CustomData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/GripperCyclic_MessageId.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_CustomData.h: /opt/ros/noetic/share/gencpp/msg.h.template
@@ -4036,28 +4036,28 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_CustomData_tool_customData.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_CustomData_tool_customData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_CustomData_tool_customData.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_CustomData_tool_customData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/GripperCyclic_CustomData.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_CustomData_tool_customData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/CustomDataUnit.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_CustomData_tool_customData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/GripperCyclic_MessageId.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_CustomData_tool_customData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/CustomDataUnit.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_CustomData_tool_customData.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/GripperCyclic_CustomData.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_CustomData_tool_customData.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_390) "Generating C++ code from kortex_driver/InterconnectCyclic_CustomData_tool_customData.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_CustomData_tool_customData.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_Feedback.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_Feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_Feedback.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_Feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_Feedback_tool_feedback.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_Feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_MessageId.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_Feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/MotorFeedback.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_Feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/GripperCyclic_MessageId.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_Feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/GripperCyclic_Feedback.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_Feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_MessageId.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_Feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/GripperCyclic_MessageId.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_Feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_Feedback_tool_feedback.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_Feedback.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_391) "Generating C++ code from kortex_driver/InterconnectCyclic_Feedback.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_Feedback.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_Feedback_tool_feedback.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_Feedback_tool_feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic/InterconnectCyclic_Feedback_tool_feedback.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_Feedback_tool_feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/MotorFeedback.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_Feedback_tool_feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/GripperCyclic_MessageId.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_Feedback_tool_feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/MotorFeedback.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_Feedback_tool_feedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic/GripperCyclic_Feedback.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/InterconnectCyclic_Feedback_tool_feedback.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_392) "Generating C++ code from kortex_driver/InterconnectCyclic_Feedback_tool_feedback.msg"
@@ -4150,8 +4150,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExtrinsicParameters.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExtrinsicParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/ExtrinsicParameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExtrinsicParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/TranslationVector.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExtrinsicParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/VisionConfig_RotationMatrix.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExtrinsicParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/TranslationVector.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExtrinsicParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/VisionConfig_RotationMatrixRow.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExtrinsicParameters.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_407) "Generating C++ code from kortex_driver/ExtrinsicParameters.msg"
@@ -4233,8 +4233,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SensorFocusAction.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SensorFocusAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/SensorFocusAction.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SensorFocusAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/ManualFocus.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SensorFocusAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/SensorFocusAction_action_parameters.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SensorFocusAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/FocusPoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SensorFocusAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/SensorFocusAction_action_parameters.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SensorFocusAction.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_420) "Generating C++ code from kortex_driver/SensorFocusAction.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/SensorFocusAction.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -4299,57 +4299,57 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryAction.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryAction.h: /home/user/vs/catkin_ws/devel/share/kortex_driver/msg/FollowCartesianTrajectoryAction.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryAction.h: /home/user/vs/catkin_ws/devel/share/kortex_driver/msg/FollowCartesianTrajectoryActionResult.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryAction.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryAction.h: /home/user/vs/catkin_ws/devel/share/kortex_driver/msg/FollowCartesianTrajectoryFeedback.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryAction.h: /opt/ros/noetic/share/actionlib_msgs/msg/GoalStatus.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryAction.h: /home/user/vs/catkin_ws/devel/share/kortex_driver/msg/FollowCartesianTrajectoryGoal.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryAction.h: /opt/ros/noetic/share/actionlib_msgs/msg/GoalID.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryAction.h: /home/user/vs/catkin_ws/devel/share/kortex_driver/msg/FollowCartesianTrajectoryFeedback.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryAction.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryAction.h: /home/user/vs/catkin_ws/devel/share/kortex_driver/msg/FollowCartesianTrajectoryActionFeedback.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryAction.h: /home/user/vs/catkin_ws/devel/share/kortex_driver/msg/FollowCartesianTrajectoryResult.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryAction.h: /home/user/vs/catkin_ws/devel/share/kortex_driver/msg/FollowCartesianTrajectoryActionGoal.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryAction.h: /opt/ros/noetic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryAction.h: /home/user/vs/catkin_ws/devel/share/kortex_driver/msg/FollowCartesianTrajectoryResult.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryAction.h: /opt/ros/noetic/share/actionlib_msgs/msg/GoalID.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryAction.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_430) "Generating C++ code from kortex_driver/FollowCartesianTrajectoryAction.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/devel/share/kortex_driver/msg/FollowCartesianTrajectoryAction.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryActionGoal.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryActionGoal.h: /home/user/vs/catkin_ws/devel/share/kortex_driver/msg/FollowCartesianTrajectoryActionGoal.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryActionGoal.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryActionGoal.h: /home/user/vs/catkin_ws/devel/share/kortex_driver/msg/FollowCartesianTrajectoryGoal.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryActionGoal.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryActionGoal.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryActionGoal.h: /opt/ros/noetic/share/actionlib_msgs/msg/GoalID.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryActionGoal.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryActionGoal.h: /opt/ros/noetic/share/actionlib_msgs/msg/GoalID.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryActionGoal.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_431) "Generating C++ code from kortex_driver/FollowCartesianTrajectoryActionGoal.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/devel/share/kortex_driver/msg/FollowCartesianTrajectoryActionGoal.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryActionResult.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryActionResult.h: /home/user/vs/catkin_ws/devel/share/kortex_driver/msg/FollowCartesianTrajectoryActionResult.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryActionResult.h: /opt/ros/noetic/share/actionlib_msgs/msg/GoalID.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryActionResult.h: /home/user/vs/catkin_ws/devel/share/kortex_driver/msg/FollowCartesianTrajectoryResult.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryActionResult.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryActionResult.h: /opt/ros/noetic/share/actionlib_msgs/msg/GoalStatus.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryActionResult.h: /home/user/vs/catkin_ws/devel/share/kortex_driver/msg/FollowCartesianTrajectoryResult.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryActionResult.h: /opt/ros/noetic/share/actionlib_msgs/msg/GoalID.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryActionResult.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_432) "Generating C++ code from kortex_driver/FollowCartesianTrajectoryActionResult.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/devel/share/kortex_driver/msg/FollowCartesianTrajectoryActionResult.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryActionFeedback.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryActionFeedback.h: /home/user/vs/catkin_ws/devel/share/kortex_driver/msg/FollowCartesianTrajectoryActionFeedback.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryActionFeedback.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryActionFeedback.h: /home/user/vs/catkin_ws/devel/share/kortex_driver/msg/FollowCartesianTrajectoryFeedback.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryActionFeedback.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryActionFeedback.h: /opt/ros/noetic/share/actionlib_msgs/msg/GoalStatus.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryActionFeedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryActionFeedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryActionFeedback.h: /opt/ros/noetic/share/actionlib_msgs/msg/GoalID.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryActionFeedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryActionFeedback.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_433) "Generating C++ code from kortex_driver/FollowCartesianTrajectoryActionFeedback.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/devel/share/kortex_driver/msg/FollowCartesianTrajectoryActionFeedback.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryGoal.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryGoal.h: /home/user/vs/catkin_ws/devel/share/kortex_driver/msg/FollowCartesianTrajectoryGoal.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryGoal.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryGoal.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryGoal.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryGoal.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_434) "Generating C++ code from kortex_driver/FollowCartesianTrajectoryGoal.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/devel/share/kortex_driver/msg/FollowCartesianTrajectoryGoal.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -4362,8 +4362,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryFeedback.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryFeedback.h: /home/user/vs/catkin_ws/devel/share/kortex_driver/msg/FollowCartesianTrajectoryFeedback.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryFeedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryFeedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryFeedback.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/FollowCartesianTrajectoryFeedback.h: /opt/ros/noetic/share/gencpp/msg.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_436) "Generating C++ code from kortex_driver/FollowCartesianTrajectoryFeedback.msg"
 	cd /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/devel/share/kortex_driver/msg/FollowCartesianTrajectoryFeedback.msg -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/non_generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/gripper_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_cyclic -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration -Ikortex_driver:/home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config -Ikortex_driver:/home/user/vs/catkin_ws/devel/share/kortex_driver/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p kortex_driver -o /home/user/vs/catkin_ws/devel/include/kortex_driver -e /opt/ros/noetic/share/gencpp/cmake/..
@@ -4429,8 +4429,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetCommandMode.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetCommandMode.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/actuator_config/GetCommandMode.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetCommandMode.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetCommandMode.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config/CommandModeInformation.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetCommandMode.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetCommandMode.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetCommandMode.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_444) "Generating C++ code from kortex_driver/GetCommandMode.srv"
@@ -4456,8 +4456,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetServoing.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetServoing.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/actuator_config/GetServoing.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetServoing.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetServoing.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config/Servoing.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetServoing.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetServoing.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetServoing.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_447) "Generating C++ code from kortex_driver/GetServoing.srv"
@@ -4492,8 +4492,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetActivatedControlLoop.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetActivatedControlLoop.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/actuator_config/SetActivatedControlLoop.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SetActivatedControlLoop.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetActivatedControlLoop.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config/ControlLoop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SetActivatedControlLoop.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetActivatedControlLoop.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetActivatedControlLoop.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_451) "Generating C++ code from kortex_driver/SetActivatedControlLoop.srv"
@@ -4519,8 +4519,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetCommandMode.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetCommandMode.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/actuator_config/SetCommandMode.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SetCommandMode.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetCommandMode.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config/CommandModeInformation.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SetCommandMode.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetCommandMode.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetCommandMode.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_454) "Generating C++ code from kortex_driver/SetCommandMode.srv"
@@ -4528,8 +4528,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetControlLoopParameters.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetControlLoopParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/actuator_config/SetControlLoopParameters.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SetControlLoopParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetControlLoopParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config/ControlLoopParameters.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SetControlLoopParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetControlLoopParameters.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetControlLoopParameters.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_455) "Generating C++ code from kortex_driver/SetControlLoopParameters.srv"
@@ -4555,8 +4555,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetTorqueOffset.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetTorqueOffset.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/actuator_config/SetTorqueOffset.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SetTorqueOffset.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config/TorqueOffset.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetTorqueOffset.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SetTorqueOffset.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/actuator_config/TorqueOffset.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetTorqueOffset.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetTorqueOffset.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_458) "Generating C++ code from kortex_driver/SetTorqueOffset.srv"
@@ -4564,11 +4564,11 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActivateMap.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActivateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/ActivateMap.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActivateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActivateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActivateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ActivateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActivateMapHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActivateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActivateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActivateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ActivateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActivateMapHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActivateMap.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ActivateMap.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_459) "Generating C++ code from kortex_driver/ActivateMap.srv"
@@ -4576,50 +4576,50 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/AddSequenceTasks.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTask.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTasksConfiguration.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTaskHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTasksConfiguration.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action_action_parameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTasksRange.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTaskHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTask.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AddSequenceTasks.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -4628,9 +4628,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AddWifiConfiguration.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AddWifiConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/AddWifiConfiguration.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddWifiConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WifiConfiguration.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/AddWifiConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Ssid.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AddWifiConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddWifiConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Ssid.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/AddWifiConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WifiConfiguration.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AddWifiConfiguration.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/AddWifiConfiguration.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_461) "Generating C++ code from kortex_driver/AddWifiConfiguration.srv"
@@ -4672,8 +4672,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Base_OnNotificationControlModeTopic.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Base_OnNotificationControlModeTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/Base_OnNotificationControlModeTopic.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Base_OnNotificationControlModeTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Base_OnNotificationControlModeTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Base_OnNotificationControlModeTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Base_OnNotificationControlModeTopic.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Base_OnNotificationControlModeTopic.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_466) "Generating C++ code from kortex_driver/Base_OnNotificationControlModeTopic.srv"
@@ -4690,8 +4690,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Base_Unsubscribe.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Base_Unsubscribe.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/Base_Unsubscribe.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/Base_Unsubscribe.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Base_Unsubscribe.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/Base_Unsubscribe.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Base_Unsubscribe.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/Base_Unsubscribe.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_468) "Generating C++ code from kortex_driver/Base_Unsubscribe.srv"
@@ -4709,8 +4709,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ComputeForwardKinematics.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ComputeForwardKinematics.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/ComputeForwardKinematics.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ComputeForwardKinematics.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ComputeForwardKinematics.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ComputeForwardKinematics.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ComputeForwardKinematics.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ComputeForwardKinematics.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ComputeForwardKinematics.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -4719,10 +4719,10 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ComputeInverseKinematics.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ComputeInverseKinematics.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/ComputeInverseKinematics.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ComputeInverseKinematics.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ComputeInverseKinematics.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ComputeInverseKinematics.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/IKData.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ComputeInverseKinematics.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ComputeInverseKinematics.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ComputeInverseKinematics.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ComputeInverseKinematics.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ComputeInverseKinematics.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_471) "Generating C++ code from kortex_driver/ComputeInverseKinematics.srv"
@@ -4739,46 +4739,46 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/CreateAction.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action_action_parameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateAction.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -4787,54 +4787,54 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/CreateMap.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Map.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerEvent.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapEvent_events.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SafetyEvent.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action_action_parameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapEvent_events.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapEvent.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SafetyEvent.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioEvent.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerEvent.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioEvent.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapEvent.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Map.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMap.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -4843,9 +4843,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMapping.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/CreateMapping.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Mapping.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Mapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMapping.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateMapping.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -4854,13 +4854,13 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateProtectionZone.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/CreateProtectionZone.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_RotationMatrixRow.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Point.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZone.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_RotationMatrix.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_RotationMatrixRow.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZone.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ZoneShape.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZoneHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianLimitation.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Point.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateProtectionZone.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateProtectionZone.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_476) "Generating C++ code from kortex_driver/CreateProtectionZone.srv"
@@ -4868,48 +4868,48 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/CreateSequence.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTask.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action_action_parameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Sequence.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Sequence.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTask.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateSequence.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -4919,8 +4919,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateUserProfile.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateUserProfile.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/CreateUserProfile.srv
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateUserProfile.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateUserProfile.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/UserProfile.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateUserProfile.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/FullUserProfile.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/CreateUserProfile.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/UserProfile.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateUserProfile.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/CreateUserProfile.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_478) "Generating C++ code from kortex_driver/CreateUserProfile.srv"
@@ -4928,8 +4928,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/DeleteAction.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/DeleteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/DeleteAction.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/DeleteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/DeleteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/DeleteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/DeleteAction.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/DeleteAction.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_479) "Generating C++ code from kortex_driver/DeleteAction.srv"
@@ -4955,8 +4955,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/DeleteMapping.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/DeleteMapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/DeleteMapping.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/DeleteMapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/DeleteMapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/DeleteMapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/DeleteMapping.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/DeleteMapping.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_482) "Generating C++ code from kortex_driver/DeleteMapping.srv"
@@ -4964,8 +4964,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/DeleteProtectionZone.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/DeleteProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/DeleteProtectionZone.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/DeleteProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/DeleteProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZoneHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/DeleteProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/DeleteProtectionZone.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/DeleteProtectionZone.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_483) "Generating C++ code from kortex_driver/DeleteProtectionZone.srv"
@@ -4982,8 +4982,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/DeleteSequenceTask.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/DeleteSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/DeleteSequenceTask.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/DeleteSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/DeleteSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTaskHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/DeleteSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/DeleteSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/DeleteSequenceTask.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/DeleteSequenceTask.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -5043,10 +5043,10 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/EnableBridge.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/EnableBridge.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/EnableBridge.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/EnableBridge.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/BridgePortConfig.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/EnableBridge.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/BridgeResult.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/EnableBridge.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/BridgeConfig.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/EnableBridge.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/BridgeIdentifier.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/EnableBridge.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/BridgeConfig.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/EnableBridge.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/BridgePortConfig.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/EnableBridge.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/EnableBridge.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_492) "Generating C++ code from kortex_driver/EnableBridge.srv"
@@ -5054,47 +5054,47 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/ExecuteAction.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action_action_parameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteAction.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -5103,8 +5103,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteActionFromReference.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteActionFromReference.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/ExecuteActionFromReference.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteActionFromReference.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteActionFromReference.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteActionFromReference.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteActionFromReference.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteActionFromReference.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_494) "Generating C++ code from kortex_driver/ExecuteActionFromReference.srv"
@@ -5112,13 +5112,13 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteWaypointTrajectory.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteWaypointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/ExecuteWaypointTrajectory.srv
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteWaypointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteWaypointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteWaypointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteWaypointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteWaypointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteWaypointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteWaypointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteWaypointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteWaypointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteWaypointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteWaypointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteWaypointTrajectory.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteWaypointTrajectory.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_495) "Generating C++ code from kortex_driver/ExecuteWaypointTrajectory.srv"
@@ -5126,8 +5126,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetActuatorCount.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetActuatorCount.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/GetActuatorCount.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetActuatorCount.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetActuatorCount.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActuatorInformation.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetActuatorCount.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetActuatorCount.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetActuatorCount.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_496) "Generating C++ code from kortex_driver/GetActuatorCount.srv"
@@ -5135,10 +5135,10 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllConfiguredWifis.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllConfiguredWifis.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/GetAllConfiguredWifis.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllConfiguredWifis.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllConfiguredWifis.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Ssid.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllConfiguredWifis.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WifiConfiguration.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllConfiguredWifis.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllConfiguredWifis.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WifiConfigurationList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllConfiguredWifis.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WifiConfiguration.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllConfiguredWifis.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllConfiguredWifis.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_497) "Generating C++ code from kortex_driver/GetAllConfiguredWifis.srv"
@@ -5146,8 +5146,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllConnectedControllers.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllConnectedControllers.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/GetAllConnectedControllers.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllConnectedControllers.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllConnectedControllers.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllConnectedControllers.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllConnectedControllers.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllConnectedControllers.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllConnectedControllers.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -5156,11 +5156,11 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllControllerConfigurations.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllControllerConfigurations.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/GetAllControllerConfigurations.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllControllerConfigurations.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerConfigurationList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllControllerConfigurations.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllControllerConfigurations.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllControllerConfigurations.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllControllerConfigurations.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerConfiguration.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllControllerConfigurations.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllControllerConfigurations.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerConfigurationList.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllControllerConfigurations.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllControllerConfigurations.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_499) "Generating C++ code from kortex_driver/GetAllControllerConfigurations.srv"
@@ -5168,9 +5168,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsSpeedHardLimitation.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsSpeedHardLimitation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/GetAllJointsSpeedHardLimitation.srv
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsSpeedHardLimitation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointsLimitationsList.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsSpeedHardLimitation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsSpeedHardLimitation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointLimitation.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsSpeedHardLimitation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointsLimitationsList.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsSpeedHardLimitation.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsSpeedHardLimitation.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_500) "Generating C++ code from kortex_driver/GetAllJointsSpeedHardLimitation.srv"
@@ -5178,9 +5178,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsSpeedSoftLimitation.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsSpeedSoftLimitation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/GetAllJointsSpeedSoftLimitation.srv
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsSpeedSoftLimitation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointsLimitationsList.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsSpeedSoftLimitation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsSpeedSoftLimitation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointLimitation.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsSpeedSoftLimitation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointsLimitationsList.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsSpeedSoftLimitation.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsSpeedSoftLimitation.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_501) "Generating C++ code from kortex_driver/GetAllJointsSpeedSoftLimitation.srv"
@@ -5188,9 +5188,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsTorqueHardLimitation.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsTorqueHardLimitation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/GetAllJointsTorqueHardLimitation.srv
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsTorqueHardLimitation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointsLimitationsList.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsTorqueHardLimitation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsTorqueHardLimitation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointLimitation.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsTorqueHardLimitation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointsLimitationsList.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsTorqueHardLimitation.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsTorqueHardLimitation.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_502) "Generating C++ code from kortex_driver/GetAllJointsTorqueHardLimitation.srv"
@@ -5198,9 +5198,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsTorqueSoftLimitation.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsTorqueSoftLimitation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/GetAllJointsTorqueSoftLimitation.srv
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsTorqueSoftLimitation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointsLimitationsList.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsTorqueSoftLimitation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsTorqueSoftLimitation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointLimitation.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsTorqueSoftLimitation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointsLimitationsList.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsTorqueSoftLimitation.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllJointsTorqueSoftLimitation.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_503) "Generating C++ code from kortex_driver/GetAllJointsTorqueSoftLimitation.srv"
@@ -5209,9 +5209,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetArmState.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetArmState.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/GetArmState.srv
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetArmState.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetArmState.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetArmState.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetArmState.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ArmStateInformation.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetArmState.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Connection.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetArmState.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetArmState.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetArmState.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_504) "Generating C++ code from kortex_driver/GetArmState.srv"
@@ -5219,10 +5219,10 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAvailableWifi.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAvailableWifi.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/GetAvailableWifi.srv
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetAvailableWifi.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WifiInformationList.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAvailableWifi.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAvailableWifi.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WifiInformation.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAvailableWifi.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Ssid.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetAvailableWifi.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WifiInformationList.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAvailableWifi.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAvailableWifi.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_505) "Generating C++ code from kortex_driver/GetAvailableWifi.srv"
@@ -5239,9 +5239,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetBridgeConfig.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetBridgeConfig.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/GetBridgeConfig.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetBridgeConfig.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/BridgePortConfig.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetBridgeConfig.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/BridgeConfig.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetBridgeConfig.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/BridgeIdentifier.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetBridgeConfig.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/BridgeConfig.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetBridgeConfig.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/BridgePortConfig.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetBridgeConfig.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetBridgeConfig.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_507) "Generating C++ code from kortex_driver/GetBridgeConfig.srv"
@@ -5251,9 +5251,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetBridgeList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/GetBridgeList.srv
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetBridgeList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/BridgeList.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetBridgeList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/BridgeIdentifier.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetBridgeList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/BridgeConfig.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetBridgeList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetBridgeList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/BridgePortConfig.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetBridgeList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/BridgeConfig.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetBridgeList.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetBridgeList.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_508) "Generating C++ code from kortex_driver/GetBridgeList.srv"
@@ -5261,8 +5261,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetConfiguredWifi.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetConfiguredWifi.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/GetConfiguredWifi.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetConfiguredWifi.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WifiConfiguration.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetConfiguredWifi.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Ssid.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetConfiguredWifi.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WifiConfiguration.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetConfiguredWifi.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetConfiguredWifi.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_509) "Generating C++ code from kortex_driver/GetConfiguredWifi.srv"
@@ -5271,8 +5271,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetConnectedWifiInformation.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetConnectedWifiInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/GetConnectedWifiInformation.srv
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetConnectedWifiInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetConnectedWifiInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Ssid.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetConnectedWifiInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WifiInformation.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetConnectedWifiInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Ssid.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetConnectedWifiInformation.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetConnectedWifiInformation.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_510) "Generating C++ code from kortex_driver/GetConnectedWifiInformation.srv"
@@ -5281,8 +5281,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetControllerConfiguration.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetControllerConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/GetControllerConfiguration.srv
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetControllerConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerConfiguration.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetControllerConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetControllerConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetControllerConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetControllerConfiguration.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetControllerConfiguration.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_511) "Generating C++ code from kortex_driver/GetControllerConfiguration.srv"
@@ -5299,8 +5299,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetControllerState.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetControllerState.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/GetControllerState.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetControllerState.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerState.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetControllerState.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetControllerState.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerState.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetControllerState.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetControllerState.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_513) "Generating C++ code from kortex_driver/GetControllerState.srv"
@@ -5309,8 +5309,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetFirmwareBundleVersions.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetFirmwareBundleVersions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/GetFirmwareBundleVersions.srv
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetFirmwareBundleVersions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetFirmwareBundleVersions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/FirmwareComponentVersion.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetFirmwareBundleVersions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/FirmwareBundleVersions.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetFirmwareBundleVersions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/FirmwareComponentVersion.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetFirmwareBundleVersions.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetFirmwareBundleVersions.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_514) "Generating C++ code from kortex_driver/GetFirmwareBundleVersions.srv"
@@ -5327,8 +5327,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetIPv4Information.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetIPv4Information.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/GetIPv4Information.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetIPv4Information.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/NetworkHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetIPv4Information.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/IPv4Information.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetIPv4Information.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/NetworkHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetIPv4Information.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetIPv4Information.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_516) "Generating C++ code from kortex_driver/GetIPv4Information.srv"
@@ -5346,8 +5346,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetMeasuredGripperMovement.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetMeasuredGripperMovement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/GetMeasuredGripperMovement.srv
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetMeasuredGripperMovement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetMeasuredGripperMovement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperRequest.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetMeasuredGripperMovement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetMeasuredGripperMovement.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperRequest.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetMeasuredGripperMovement.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetMeasuredGripperMovement.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_518) "Generating C++ code from kortex_driver/GetMeasuredGripperMovement.srv"
@@ -5355,9 +5355,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetMeasuredJointAngles.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetMeasuredJointAngles.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/GetMeasuredJointAngles.srv
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetMeasuredJointAngles.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetMeasuredJointAngles.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetMeasuredJointAngles.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetMeasuredJointAngles.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetMeasuredJointAngles.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetMeasuredJointAngles.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_519) "Generating C++ code from kortex_driver/GetMeasuredJointAngles.srv"
@@ -5365,8 +5365,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetOperatingMode.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetOperatingMode.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/GetOperatingMode.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetOperatingMode.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetOperatingMode.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/OperatingModeInformation.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetOperatingMode.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetOperatingMode.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/DeviceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetOperatingMode.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetOperatingMode.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -5375,9 +5375,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetProductConfiguration.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetProductConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/GetProductConfiguration.srv
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetProductConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration/CompleteProductConfiguration.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetProductConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetProductConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/CountryCode.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetProductConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/product_configuration/CompleteProductConfiguration.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetProductConfiguration.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetProductConfiguration.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_521) "Generating C++ code from kortex_driver/GetProductConfiguration.srv"
@@ -5394,9 +5394,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetTrajectoryErrorReport.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetTrajectoryErrorReport.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/GetTrajectoryErrorReport.srv
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetTrajectoryErrorReport.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TrajectoryErrorReport.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetTrajectoryErrorReport.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetTrajectoryErrorReport.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TrajectoryErrorElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetTrajectoryErrorReport.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TrajectoryErrorReport.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetTrajectoryErrorReport.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetTrajectoryErrorReport.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_523) "Generating C++ code from kortex_driver/GetTrajectoryErrorReport.srv"
@@ -5431,8 +5431,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetWifiEnableState.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetWifiEnableState.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/GetWifiEnableState.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetWifiEnableState.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetWifiEnableState.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WifiEnableState.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetWifiEnableState.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetWifiEnableState.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetWifiEnableState.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_527) "Generating C++ code from kortex_driver/GetWifiEnableState.srv"
@@ -5440,8 +5440,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetWifiInformation.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetWifiInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/GetWifiInformation.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetWifiInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Ssid.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetWifiInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WifiInformation.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetWifiInformation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Ssid.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetWifiInformation.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetWifiInformation.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_528) "Generating C++ code from kortex_driver/GetWifiInformation.srv"
@@ -5467,8 +5467,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/IsCommunicationInterfaceEnable.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/IsCommunicationInterfaceEnable.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/IsCommunicationInterfaceEnable.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/IsCommunicationInterfaceEnable.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/NetworkHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/IsCommunicationInterfaceEnable.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CommunicationInterfaceConfiguration.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/IsCommunicationInterfaceEnable.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/NetworkHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/IsCommunicationInterfaceEnable.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/IsCommunicationInterfaceEnable.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_531) "Generating C++ code from kortex_driver/IsCommunicationInterfaceEnable.srv"
@@ -5486,8 +5486,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationActionTopic.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationActionTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/OnNotificationActionTopic.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationActionTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationActionTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationActionTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationActionTopic.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationActionTopic.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_533) "Generating C++ code from kortex_driver/OnNotificationActionTopic.srv"
@@ -5495,8 +5495,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationArmStateTopic.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationArmStateTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/OnNotificationArmStateTopic.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationArmStateTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationArmStateTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationArmStateTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationArmStateTopic.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationArmStateTopic.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_534) "Generating C++ code from kortex_driver/OnNotificationArmStateTopic.srv"
@@ -5504,8 +5504,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationConfigurationChangeTopic.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationConfigurationChangeTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/OnNotificationConfigurationChangeTopic.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationConfigurationChangeTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationConfigurationChangeTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationConfigurationChangeTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationConfigurationChangeTopic.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationConfigurationChangeTopic.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_535) "Generating C++ code from kortex_driver/OnNotificationConfigurationChangeTopic.srv"
@@ -5513,8 +5513,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationControllerTopic.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationControllerTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/OnNotificationControllerTopic.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationControllerTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationControllerTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationControllerTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationControllerTopic.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationControllerTopic.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_536) "Generating C++ code from kortex_driver/OnNotificationControllerTopic.srv"
@@ -5522,8 +5522,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationFactoryTopic.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationFactoryTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/OnNotificationFactoryTopic.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationFactoryTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationFactoryTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationFactoryTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationFactoryTopic.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationFactoryTopic.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_537) "Generating C++ code from kortex_driver/OnNotificationFactoryTopic.srv"
@@ -5531,8 +5531,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationMappingInfoTopic.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationMappingInfoTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/OnNotificationMappingInfoTopic.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationMappingInfoTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationMappingInfoTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationMappingInfoTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationMappingInfoTopic.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationMappingInfoTopic.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_538) "Generating C++ code from kortex_driver/OnNotificationMappingInfoTopic.srv"
@@ -5540,8 +5540,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationNetworkTopic.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationNetworkTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/OnNotificationNetworkTopic.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationNetworkTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationNetworkTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationNetworkTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationNetworkTopic.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationNetworkTopic.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_539) "Generating C++ code from kortex_driver/OnNotificationNetworkTopic.srv"
@@ -5549,8 +5549,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationOperatingModeTopic.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationOperatingModeTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/OnNotificationOperatingModeTopic.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationOperatingModeTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationOperatingModeTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationOperatingModeTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationOperatingModeTopic.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationOperatingModeTopic.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_540) "Generating C++ code from kortex_driver/OnNotificationOperatingModeTopic.srv"
@@ -5558,8 +5558,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationProtectionZoneTopic.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationProtectionZoneTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/OnNotificationProtectionZoneTopic.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationProtectionZoneTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationProtectionZoneTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationProtectionZoneTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationProtectionZoneTopic.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationProtectionZoneTopic.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_541) "Generating C++ code from kortex_driver/OnNotificationProtectionZoneTopic.srv"
@@ -5567,8 +5567,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationRobotEventTopic.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationRobotEventTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/OnNotificationRobotEventTopic.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationRobotEventTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationRobotEventTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationRobotEventTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationRobotEventTopic.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationRobotEventTopic.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_542) "Generating C++ code from kortex_driver/OnNotificationRobotEventTopic.srv"
@@ -5576,8 +5576,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationSequenceInfoTopic.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationSequenceInfoTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/OnNotificationSequenceInfoTopic.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationSequenceInfoTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationSequenceInfoTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationSequenceInfoTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationSequenceInfoTopic.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationSequenceInfoTopic.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_543) "Generating C++ code from kortex_driver/OnNotificationSequenceInfoTopic.srv"
@@ -5585,8 +5585,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationServoingModeTopic.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationServoingModeTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/OnNotificationServoingModeTopic.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationServoingModeTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationServoingModeTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationServoingModeTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationServoingModeTopic.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationServoingModeTopic.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_544) "Generating C++ code from kortex_driver/OnNotificationServoingModeTopic.srv"
@@ -5594,8 +5594,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationUserTopic.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationUserTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/OnNotificationUserTopic.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationUserTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationUserTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationUserTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationUserTopic.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationUserTopic.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_545) "Generating C++ code from kortex_driver/OnNotificationUserTopic.srv"
@@ -5629,12 +5629,12 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectory.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/PlayCartesianTrajectory.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectory.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectory.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_549) "Generating C++ code from kortex_driver/PlayCartesianTrajectory.srv"
@@ -5642,12 +5642,12 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectoryOrientation.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectoryOrientation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/PlayCartesianTrajectoryOrientation.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectoryOrientation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Orientation.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectoryOrientation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectoryOrientation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectoryOrientation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectoryOrientation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectoryOrientation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectoryOrientation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedOrientation.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectoryOrientation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectoryOrientation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectoryOrientation.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Orientation.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectoryOrientation.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectoryOrientation.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_550) "Generating C++ code from kortex_driver/PlayCartesianTrajectoryOrientation.srv"
@@ -5655,11 +5655,11 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectoryPosition.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectoryPosition.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/PlayCartesianTrajectoryPosition.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectoryPosition.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPosition.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectoryPosition.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectoryPosition.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectoryPosition.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectoryPosition.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPosition.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectoryPosition.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectoryPosition.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectoryPosition.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectoryPosition.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Position.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectoryPosition.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayCartesianTrajectoryPosition.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -5668,11 +5668,11 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayJointTrajectory.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayJointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/PlayJointTrajectory.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/PlayJointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayJointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/PlayJointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/PlayJointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayJointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/PlayJointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/PlayJointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/PlayJointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayJointTrajectory.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayJointTrajectory.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_552) "Generating C++ code from kortex_driver/PlayJointTrajectory.srv"
@@ -5680,9 +5680,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayPreComputedJointTrajectory.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayPreComputedJointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/PlayPreComputedJointTrajectory.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/PlayPreComputedJointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/PlayPreComputedJointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayPreComputedJointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/PlayPreComputedJointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/PlayPreComputedJointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayPreComputedJointTrajectory.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlayPreComputedJointTrajectory.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_553) "Generating C++ code from kortex_driver/PlayPreComputedJointTrajectory.srv"
@@ -5690,9 +5690,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlaySelectedJointTrajectory.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlaySelectedJointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/PlaySelectedJointTrajectory.srv
+/home/user/vs/catkin_ws/devel/include/kortex_driver/PlaySelectedJointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlaySelectedJointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlaySelectedJointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/PlaySelectedJointTrajectory.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlaySelectedJointTrajectory.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/PlaySelectedJointTrajectory.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_554) "Generating C++ code from kortex_driver/PlaySelectedJointTrajectory.srv"
@@ -5709,46 +5709,46 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/ReadAction.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action_action_parameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAction.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -5757,48 +5757,48 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/ReadAllActions.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/RequestedActionType.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action_action_parameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllActions.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -5807,12 +5807,12 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMappings.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMappings.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/ReadAllMappings.srv
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMappings.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMappings.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMappings.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMappings.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMappings.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Mapping.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMappings.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMappings.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMappings.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMappings.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMappings.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingList.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMappings.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMappings.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_558) "Generating C++ code from kortex_driver/ReadAllMappings.srv"
@@ -5820,57 +5820,57 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/ReadAllMaps.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Map.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerEvent.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapEvent_events.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SafetyEvent.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action_action_parameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapEvent_events.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapEvent.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SafetyEvent.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioEvent.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerEvent.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioEvent.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapEvent.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Map.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllMaps.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_559) "Generating C++ code from kortex_driver/ReadAllMaps.srv"
@@ -5878,15 +5878,15 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllProtectionZones.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllProtectionZones.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/ReadAllProtectionZones.srv
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllProtectionZones.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_RotationMatrix.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllProtectionZones.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllProtectionZones.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_RotationMatrixRow.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllProtectionZones.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZoneList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllProtectionZones.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Point.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllProtectionZones.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZone.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllProtectionZones.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_RotationMatrix.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllProtectionZones.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ZoneShape.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllProtectionZones.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZoneHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllProtectionZones.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianLimitation.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllProtectionZones.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Point.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllProtectionZones.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllProtectionZones.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_560) "Generating C++ code from kortex_driver/ReadAllProtectionZones.srv"
@@ -5894,48 +5894,48 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/ReadAllSequenceTasks.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTask.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTasks.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action_action_parameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTasks.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTask.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequenceTasks.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -5944,50 +5944,50 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/ReadAllSequences.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTask.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action_action_parameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Sequence.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Sequence.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTask.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllSequences.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -5996,8 +5996,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllUserProfiles.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllUserProfiles.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/ReadAllUserProfiles.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllUserProfiles.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllUserProfiles.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/UserProfileList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllUserProfiles.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllUserProfiles.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllUserProfiles.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/UserProfile.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllUserProfiles.h: /opt/ros/noetic/share/gencpp/msg.h.template
@@ -6017,54 +6017,54 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/ReadMap.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Map.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerEvent.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapEvent_events.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SafetyEvent.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action_action_parameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapEvent_events.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapEvent.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SafetyEvent.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioEvent.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerEvent.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioEvent.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapEvent.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Map.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMap.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -6073,9 +6073,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMapping.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/ReadMapping.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Mapping.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Mapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMapping.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadMapping.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -6084,13 +6084,13 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadProtectionZone.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/ReadProtectionZone.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_RotationMatrixRow.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Point.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZone.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_RotationMatrix.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_RotationMatrixRow.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZone.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ZoneShape.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZoneHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianLimitation.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Point.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadProtectionZone.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadProtectionZone.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_567) "Generating C++ code from kortex_driver/ReadProtectionZone.srv"
@@ -6098,48 +6098,48 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/ReadSequence.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTask.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action_action_parameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Sequence.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Sequence.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTask.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequence.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -6148,48 +6148,48 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/ReadSequenceTask.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTask.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTaskHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action_action_parameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTaskHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTask.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadSequenceTask.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -6198,8 +6198,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadUserProfile.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadUserProfile.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/ReadUserProfile.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadUserProfile.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadUserProfile.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/UserProfile.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadUserProfile.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadUserProfile.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadUserProfile.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_570) "Generating C++ code from kortex_driver/ReadUserProfile.srv"
@@ -6241,8 +6241,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SendGripperCommand.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/SendGripperCommand.srv
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SendGripperCommand.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SendGripperCommand.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SendGripperCommand.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SendGripperCommand.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SendGripperCommand.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SendGripperCommand.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SendGripperCommand.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_575) "Generating C++ code from kortex_driver/SendGripperCommand.srv"
@@ -6289,8 +6289,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SendTwistCommand.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SendTwistCommand.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/SendTwistCommand.srv
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SendTwistCommand.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SendTwistCommand.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SendTwistCommand.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SendTwistCommand.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SendTwistCommand.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SendTwistCommand.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_580) "Generating C++ code from kortex_driver/SendTwistCommand.srv"
@@ -6299,8 +6299,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SendTwistJoystickCommand.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SendTwistJoystickCommand.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/SendTwistJoystickCommand.srv
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SendTwistJoystickCommand.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SendTwistJoystickCommand.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SendTwistJoystickCommand.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SendTwistJoystickCommand.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SendTwistJoystickCommand.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SendTwistJoystickCommand.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_581) "Generating C++ code from kortex_driver/SendTwistJoystickCommand.srv"
@@ -6308,8 +6308,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SendWrenchCommand.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SendWrenchCommand.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/SendWrenchCommand.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SendWrenchCommand.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SendWrenchCommand.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SendWrenchCommand.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SendWrenchCommand.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SendWrenchCommand.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SendWrenchCommand.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -6318,8 +6318,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SendWrenchJoystickCommand.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SendWrenchJoystickCommand.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/SendWrenchJoystickCommand.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SendWrenchJoystickCommand.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SendWrenchJoystickCommand.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SendWrenchJoystickCommand.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SendWrenchJoystickCommand.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SendWrenchJoystickCommand.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SendWrenchJoystickCommand.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -6328,8 +6328,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetAdmittance.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetAdmittance.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/SetAdmittance.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SetAdmittance.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetAdmittance.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Admittance.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SetAdmittance.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetAdmittance.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetAdmittance.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_584) "Generating C++ code from kortex_driver/SetAdmittance.srv"
@@ -6346,8 +6346,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetCommunicationInterfaceEnable.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetCommunicationInterfaceEnable.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/SetCommunicationInterfaceEnable.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SetCommunicationInterfaceEnable.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetCommunicationInterfaceEnable.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CommunicationInterfaceConfiguration.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SetCommunicationInterfaceEnable.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetCommunicationInterfaceEnable.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetCommunicationInterfaceEnable.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_586) "Generating C++ code from kortex_driver/SetCommunicationInterfaceEnable.srv"
@@ -6355,10 +6355,10 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetControllerConfiguration.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetControllerConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/SetControllerConfiguration.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SetControllerConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SetControllerConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetControllerConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerConfiguration.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetControllerConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SetControllerConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SetControllerConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetControllerConfiguration.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetControllerConfiguration.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_587) "Generating C++ code from kortex_driver/SetControllerConfiguration.srv"
@@ -6375,8 +6375,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetIPv4Configuration.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetIPv4Configuration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/SetIPv4Configuration.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SetIPv4Configuration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetIPv4Configuration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/NetworkHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SetIPv4Configuration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetIPv4Configuration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/IPv4Configuration.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetIPv4Configuration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/FullIPv4Configuration.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetIPv4Configuration.h: /opt/ros/noetic/share/gencpp/msg.h.template
@@ -6386,8 +6386,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetOperatingMode.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetOperatingMode.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/SetOperatingMode.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SetOperatingMode.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetOperatingMode.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/OperatingModeInformation.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SetOperatingMode.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetOperatingMode.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/DeviceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetOperatingMode.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetOperatingMode.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -6414,8 +6414,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetWifiEnableState.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetWifiEnableState.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/SetWifiEnableState.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SetWifiEnableState.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetWifiEnableState.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WifiEnableState.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SetWifiEnableState.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetWifiEnableState.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetWifiEnableState.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_593) "Generating C++ code from kortex_driver/SetWifiEnableState.srv"
@@ -6423,8 +6423,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/StartTeaching.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/StartTeaching.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/StartTeaching.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/StartTeaching.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/StartTeaching.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTaskHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/StartTeaching.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/StartTeaching.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/StartTeaching.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/StartTeaching.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -6492,47 +6492,47 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/UpdateAction.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action_action_parameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateAction.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -6550,55 +6550,55 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/UpdateMap.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Map.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerEvent.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapEvent_events.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SafetyEvent.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action_action_parameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapEvent_events.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapEvent.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SafetyEvent.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioEvent.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ControllerEvent.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioEvent.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapEvent.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Map.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMap.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -6607,11 +6607,11 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMapping.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/UpdateMapping.srv
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Mapping.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MappingHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMapping.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMapping.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateMapping.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_605) "Generating C++ code from kortex_driver/UpdateMapping.srv"
@@ -6619,14 +6619,14 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateProtectionZone.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/UpdateProtectionZone.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_RotationMatrixRow.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Point.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZone.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_RotationMatrix.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_RotationMatrixRow.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZone.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ZoneShape.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ProtectionZoneHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianLimitation.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateProtectionZone.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Point.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateProtectionZone.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateProtectionZone.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_606) "Generating C++ code from kortex_driver/UpdateProtectionZone.srv"
@@ -6634,49 +6634,49 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/UpdateSequence.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTask.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action_action_parameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Sequence.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Sequence.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTask.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequence.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -6685,50 +6685,50 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/UpdateSequenceTask.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTask.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GripperCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeJointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTaskConfiguration.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedJointAngles.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTaskHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectory.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Wrench.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Finger.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Gripper.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Twist.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action_action_parameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngles.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint_type.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeWrench.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TwistCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Snapshot.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SwitchControlMapping.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ChangeTwist.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ConstrainedPose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTaskConfiguration.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointAngle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointTrajectoryConstraint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/ActionHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WrenchCommand.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Faults.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Action.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/MapGroupHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/EmergencyStop.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Delay.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_JointSpeeds.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/PreComputedJointTrajectoryElement.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianTrajectoryConstraint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/GpioCommand.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTaskHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/JointSpeed.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceTask.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Base_Stop.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/SequenceHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateSequenceTask.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -6737,8 +6737,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateUserProfile.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateUserProfile.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/UpdateUserProfile.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateUserProfile.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateUserProfile.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UserProfileHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateUserProfile.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateUserProfile.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/UserProfile.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateUserProfile.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/UpdateUserProfile.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -6748,14 +6748,14 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ValidateWaypointList.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ValidateWaypointList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/base/ValidateWaypointList.srv
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ValidateWaypointList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TrajectoryErrorElement.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ValidateWaypointList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ValidateWaypointList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ValidateWaypointList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ValidateWaypointList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ValidateWaypointList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/TrajectoryErrorReport.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ValidateWaypointList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Pose.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ValidateWaypointList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ValidateWaypointList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ValidateWaypointList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointValidationReport.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ValidateWaypointList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/Waypoint_type_of_waypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ValidateWaypointList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/CartesianWaypoint.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ValidateWaypointList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/AngularWaypoint.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ValidateWaypointList.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/base/WaypointList.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ValidateWaypointList.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ValidateWaypointList.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_610) "Generating C++ code from kortex_driver/ValidateWaypointList.srv"
@@ -6772,8 +6772,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControlConfig_OnNotificationControlModeTopic.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControlConfig_OnNotificationControlModeTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/control_config/ControlConfig_OnNotificationControlModeTopic.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ControlConfig_OnNotificationControlModeTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControlConfig_OnNotificationControlModeTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ControlConfig_OnNotificationControlModeTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControlConfig_OnNotificationControlModeTopic.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControlConfig_OnNotificationControlModeTopic.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_612) "Generating C++ code from kortex_driver/ControlConfig_OnNotificationControlModeTopic.srv"
@@ -6781,8 +6781,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControlConfig_Unsubscribe.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControlConfig_Unsubscribe.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/control_config/ControlConfig_Unsubscribe.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ControlConfig_Unsubscribe.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControlConfig_Unsubscribe.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ControlConfig_Unsubscribe.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControlConfig_Unsubscribe.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ControlConfig_Unsubscribe.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_613) "Generating C++ code from kortex_driver/ControlConfig_Unsubscribe.srv"
@@ -6790,8 +6790,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllKinematicSoftLimits.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllKinematicSoftLimits.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/control_config/GetAllKinematicSoftLimits.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllKinematicSoftLimits.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllKinematicSoftLimits.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config/KinematicLimits.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllKinematicSoftLimits.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllKinematicSoftLimits.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config/KinematicLimitsList.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllKinematicSoftLimits.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllKinematicSoftLimits.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -6818,8 +6818,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetGravityVector.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetGravityVector.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/control_config/GetGravityVector.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetGravityVector.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetGravityVector.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config/GravityVector.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetGravityVector.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetGravityVector.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetGravityVector.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_617) "Generating C++ code from kortex_driver/GetGravityVector.srv"
@@ -6827,8 +6827,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetKinematicHardLimits.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetKinematicHardLimits.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/control_config/GetKinematicHardLimits.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetKinematicHardLimits.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetKinematicHardLimits.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config/KinematicLimits.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetKinematicHardLimits.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetKinematicHardLimits.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetKinematicHardLimits.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_618) "Generating C++ code from kortex_driver/GetKinematicHardLimits.srv"
@@ -6855,10 +6855,10 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetToolConfiguration.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetToolConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/control_config/GetToolConfiguration.srv
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetToolConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config/ToolConfiguration.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetToolConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetToolConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config/ControlConfig_Position.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetToolConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config/CartesianTransform.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetToolConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config/ToolConfiguration.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetToolConfiguration.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetToolConfiguration.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_621) "Generating C++ code from kortex_driver/GetToolConfiguration.srv"
@@ -6866,8 +6866,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationControlConfigurationTopic.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationControlConfigurationTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/control_config/OnNotificationControlConfigurationTopic.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationControlConfigurationTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationControlConfigurationTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationControlConfigurationTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationControlConfigurationTopic.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationControlConfigurationTopic.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_622) "Generating C++ code from kortex_driver/OnNotificationControlConfigurationTopic.srv"
@@ -6875,8 +6875,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ResetGravityVector.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ResetGravityVector.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/control_config/ResetGravityVector.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ResetGravityVector.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ResetGravityVector.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config/GravityVector.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ResetGravityVector.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ResetGravityVector.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ResetGravityVector.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_623) "Generating C++ code from kortex_driver/ResetGravityVector.srv"
@@ -6912,10 +6912,10 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ResetToolConfiguration.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ResetToolConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/control_config/ResetToolConfiguration.srv
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ResetToolConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config/ToolConfiguration.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ResetToolConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ResetToolConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config/ControlConfig_Position.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ResetToolConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config/CartesianTransform.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ResetToolConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config/ToolConfiguration.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ResetToolConfiguration.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ResetToolConfiguration.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_627) "Generating C++ code from kortex_driver/ResetToolConfiguration.srv"
@@ -6968,8 +6968,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetDesiredLinearTwist.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetDesiredLinearTwist.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/control_config/SetDesiredLinearTwist.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SetDesiredLinearTwist.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config/LinearTwist.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetDesiredLinearTwist.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SetDesiredLinearTwist.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config/LinearTwist.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetDesiredLinearTwist.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetDesiredLinearTwist.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_633) "Generating C++ code from kortex_driver/SetDesiredLinearTwist.srv"
@@ -6977,8 +6977,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetGravityVector.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetGravityVector.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/control_config/SetGravityVector.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SetGravityVector.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetGravityVector.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config/GravityVector.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SetGravityVector.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetGravityVector.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetGravityVector.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_634) "Generating C++ code from kortex_driver/SetGravityVector.srv"
@@ -7015,9 +7015,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetToolConfiguration.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetToolConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/control_config/SetToolConfiguration.srv
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetToolConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config/ToolConfiguration.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SetToolConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config/CartesianTransform.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SetToolConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config/ControlConfig_Position.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetToolConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SetToolConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config/ControlConfig_Position.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SetToolConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/control_config/CartesianTransform.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetToolConfiguration.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetToolConfiguration.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_638) "Generating C++ code from kortex_driver/SetToolConfiguration.srv"
@@ -7079,8 +7079,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteCalibration.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteCalibration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/device_config/ExecuteCalibration.srv
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteCalibration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteCalibration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/CalibrationParameter.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteCalibration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/Calibration.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteCalibration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/CalibrationParameter.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteCalibration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/CalibrationParameter_value.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteCalibration.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ExecuteCalibration.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -7089,11 +7089,11 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllSafetyConfiguration.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllSafetyConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/device_config/GetAllSafetyConfiguration.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllSafetyConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/SafetyConfigurationList.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllSafetyConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllSafetyConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllSafetyConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/SafetyConfiguration.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllSafetyConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/SafetyEnable.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllSafetyConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllSafetyConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/SafetyConfiguration.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllSafetyConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/SafetyConfigurationList.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllSafetyConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllSafetyConfiguration.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetAllSafetyConfiguration.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_646) "Generating C++ code from kortex_driver/GetAllSafetyConfiguration.srv"
@@ -7112,8 +7112,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetBootloaderVersion.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetBootloaderVersion.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/device_config/GetBootloaderVersion.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetBootloaderVersion.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetBootloaderVersion.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/BootloaderVersion.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetBootloaderVersion.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetBootloaderVersion.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetBootloaderVersion.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_648) "Generating C++ code from kortex_driver/GetBootloaderVersion.srv"
@@ -7121,8 +7121,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetCalibrationResult.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetCalibrationResult.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/device_config/GetCalibrationResult.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetCalibrationResult.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/CalibrationResult.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetCalibrationResult.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/CalibrationElement.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetCalibrationResult.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/CalibrationResult.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetCalibrationResult.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetCalibrationResult.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_649) "Generating C++ code from kortex_driver/GetCalibrationResult.srv"
@@ -7184,8 +7184,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetPartNumberRevision.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetPartNumberRevision.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/device_config/GetPartNumberRevision.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetPartNumberRevision.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetPartNumberRevision.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/PartNumberRevision.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetPartNumberRevision.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetPartNumberRevision.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetPartNumberRevision.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_656) "Generating C++ code from kortex_driver/GetPartNumberRevision.srv"
@@ -7203,8 +7203,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetSafetyConfiguration.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetSafetyConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/device_config/GetSafetyConfiguration.srv
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetSafetyConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/SafetyConfiguration.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetSafetyConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetSafetyConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/SafetyEnable.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetSafetyConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetSafetyConfiguration.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetSafetyConfiguration.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_658) "Generating C++ code from kortex_driver/GetSafetyConfiguration.srv"
@@ -7212,8 +7212,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetSafetyEnable.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetSafetyEnable.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/device_config/GetSafetyEnable.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetSafetyEnable.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetSafetyEnable.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/SafetyEnable.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetSafetyEnable.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetSafetyEnable.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetSafetyEnable.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_659) "Generating C++ code from kortex_driver/GetSafetyEnable.srv"
@@ -7248,8 +7248,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationSafetyTopic.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationSafetyTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/device_config/OnNotificationSafetyTopic.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationSafetyTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationSafetyTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationSafetyTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationSafetyTopic.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationSafetyTopic.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_663) "Generating C++ code from kortex_driver/OnNotificationSafetyTopic.srv"
@@ -7292,10 +7292,10 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyConfiguration.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/device_config/SetSafetyConfiguration.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/SafetyConfiguration.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/SafetyEnable.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyConfiguration.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyConfiguration.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_668) "Generating C++ code from kortex_driver/SetSafetyConfiguration.srv"
@@ -7304,8 +7304,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyEnable.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyEnable.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/device_config/SetSafetyEnable.srv
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyEnable.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyEnable.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyEnable.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/SafetyEnable.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyEnable.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyEnable.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyEnable.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_669) "Generating C++ code from kortex_driver/SetSafetyEnable.srv"
@@ -7313,9 +7313,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyErrorThreshold.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyErrorThreshold.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/device_config/SetSafetyErrorThreshold.srv
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyErrorThreshold.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyErrorThreshold.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/SafetyThreshold.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyErrorThreshold.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyErrorThreshold.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyErrorThreshold.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyErrorThreshold.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_670) "Generating C++ code from kortex_driver/SetSafetyErrorThreshold.srv"
@@ -7323,9 +7323,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyWarningThreshold.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyWarningThreshold.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/device_config/SetSafetyWarningThreshold.srv
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyWarningThreshold.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyWarningThreshold.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/SafetyThreshold.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyWarningThreshold.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/SafetyHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyWarningThreshold.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyWarningThreshold.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetSafetyWarningThreshold.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_671) "Generating C++ code from kortex_driver/SetSafetyWarningThreshold.srv"
@@ -7334,8 +7334,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 /home/user/vs/catkin_ws/devel/include/kortex_driver/StopCalibration.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/StopCalibration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/device_config/StopCalibration.srv
 /home/user/vs/catkin_ws/devel/include/kortex_driver/StopCalibration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/CalibrationResult.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/StopCalibration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/CalibrationParameter.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/StopCalibration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/Calibration.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/StopCalibration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/CalibrationParameter.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/StopCalibration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_config/CalibrationParameter_value.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/StopCalibration.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/StopCalibration.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -7344,9 +7344,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllDevices.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllDevices.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/device_manager/ReadAllDevices.srv
+/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllDevices.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager/DeviceHandles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllDevices.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllDevices.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/DeviceHandle.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllDevices.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/device_manager/DeviceHandles.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllDevices.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/ReadAllDevices.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_673) "Generating C++ code from kortex_driver/ReadAllDevices.srv"
@@ -7372,8 +7372,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetGPIOState.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetGPIOState.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/interconnect_config/GetGPIOState.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetGPIOState.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config/GPIOState.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetGPIOState.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config/GPIOIdentification.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetGPIOState.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config/GPIOState.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetGPIOState.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetGPIOState.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_676) "Generating C++ code from kortex_driver/GetGPIOState.srv"
@@ -7390,8 +7390,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetUARTConfiguration.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetUARTConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/interconnect_config/GetUARTConfiguration.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetUARTConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UARTDeviceIdentification.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetUARTConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UARTConfiguration.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetUARTConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UARTDeviceIdentification.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetUARTConfiguration.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetUARTConfiguration.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_678) "Generating C++ code from kortex_driver/GetUARTConfiguration.srv"
@@ -7399,8 +7399,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/I2CRead.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/I2CRead.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/interconnect_config/I2CRead.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/I2CRead.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config/I2CReadParameter.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/I2CRead.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config/I2CData.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/I2CRead.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config/I2CReadParameter.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/I2CRead.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/I2CRead.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_679) "Generating C++ code from kortex_driver/I2CRead.srv"
@@ -7417,9 +7417,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/I2CWrite.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/I2CWrite.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/interconnect_config/I2CWrite.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/I2CWrite.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config/I2CWriteParameter.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/I2CWrite.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/I2CWrite.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config/I2CData.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/I2CWrite.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/I2CWrite.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config/I2CWriteParameter.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/I2CWrite.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/I2CWrite.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_681) "Generating C++ code from kortex_driver/I2CWrite.srv"
@@ -7427,9 +7427,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/I2CWriteRegister.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/I2CWriteRegister.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/interconnect_config/I2CWriteRegister.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/I2CWriteRegister.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/I2CWriteRegister.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config/I2CData.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/I2CWriteRegister.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config/I2CWriteRegisterParameter.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/I2CWriteRegister.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/I2CWriteRegister.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/I2CWriteRegister.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_682) "Generating C++ code from kortex_driver/I2CWriteRegister.srv"
@@ -7437,8 +7437,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetEthernetConfiguration.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetEthernetConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/interconnect_config/SetEthernetConfiguration.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SetEthernetConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetEthernetConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config/EthernetConfiguration.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SetEthernetConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetEthernetConfiguration.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetEthernetConfiguration.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_683) "Generating C++ code from kortex_driver/SetEthernetConfiguration.srv"
@@ -7446,8 +7446,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetGPIOConfiguration.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetGPIOConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/interconnect_config/SetGPIOConfiguration.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SetGPIOConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetGPIOConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/interconnect_config/InterconnectConfig_GPIOConfiguration.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SetGPIOConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetGPIOConfiguration.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetGPIOConfiguration.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_684) "Generating C++ code from kortex_driver/SetGPIOConfiguration.srv"
@@ -7473,8 +7473,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetUARTConfiguration.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetUARTConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/interconnect_config/SetUARTConfiguration.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SetUARTConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetUARTConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/UARTConfiguration.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SetUARTConfiguration.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetUARTConfiguration.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetUARTConfiguration.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_687) "Generating C++ code from kortex_driver/SetUARTConfiguration.srv"
@@ -7482,11 +7482,11 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/DoSensorFocusAction.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/DoSensorFocusAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/vision_config/DoSensorFocusAction.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/DoSensorFocusAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/DoSensorFocusAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/ManualFocus.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/DoSensorFocusAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/DoSensorFocusAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/FocusPoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/DoSensorFocusAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/SensorFocusAction_action_parameters.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/DoSensorFocusAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/SensorFocusAction.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/DoSensorFocusAction.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/FocusPoint.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/DoSensorFocusAction.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/DoSensorFocusAction.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_688) "Generating C++ code from kortex_driver/DoSensorFocusAction.srv"
@@ -7494,9 +7494,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetExtrinsicParameters.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetExtrinsicParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/vision_config/GetExtrinsicParameters.srv
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetExtrinsicParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/VisionConfig_RotationMatrix.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetExtrinsicParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetExtrinsicParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/ExtrinsicParameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetExtrinsicParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/VisionConfig_RotationMatrix.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetExtrinsicParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/TranslationVector.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetExtrinsicParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/VisionConfig_RotationMatrixRow.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetExtrinsicParameters.h: /opt/ros/noetic/share/gencpp/msg.h.template
@@ -7506,8 +7506,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetIntrinsicParameters.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetIntrinsicParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/vision_config/GetIntrinsicParameters.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetIntrinsicParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/SensorIdentifier.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetIntrinsicParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/DistortionCoefficients.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetIntrinsicParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/SensorIdentifier.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetIntrinsicParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/IntrinsicParameters.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetIntrinsicParameters.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetIntrinsicParameters.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -7516,8 +7516,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetIntrinsicParametersProfile.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetIntrinsicParametersProfile.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/vision_config/GetIntrinsicParametersProfile.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetIntrinsicParametersProfile.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/IntrinsicProfileIdentifier.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetIntrinsicParametersProfile.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/DistortionCoefficients.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetIntrinsicParametersProfile.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/IntrinsicProfileIdentifier.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetIntrinsicParametersProfile.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/IntrinsicParameters.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetIntrinsicParametersProfile.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetIntrinsicParametersProfile.h: /opt/ros/noetic/share/gencpp/srv.h.template
@@ -7544,8 +7544,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetSensorSettings.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetSensorSettings.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/vision_config/GetSensorSettings.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/GetSensorSettings.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/SensorIdentifier.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetSensorSettings.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/SensorSettings.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/GetSensorSettings.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/SensorIdentifier.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetSensorSettings.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/GetSensorSettings.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_694) "Generating C++ code from kortex_driver/GetSensorSettings.srv"
@@ -7553,8 +7553,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationVisionTopic.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationVisionTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/vision_config/OnNotificationVisionTopic.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationVisionTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationVisionTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationHandle.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationVisionTopic.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/NotificationOptions.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationVisionTopic.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/OnNotificationVisionTopic.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_695) "Generating C++ code from kortex_driver/OnNotificationVisionTopic.srv"
@@ -7562,9 +7562,9 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetExtrinsicParameters.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetExtrinsicParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/vision_config/SetExtrinsicParameters.srv
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SetExtrinsicParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/VisionConfig_RotationMatrix.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetExtrinsicParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetExtrinsicParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/ExtrinsicParameters.msg
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SetExtrinsicParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/VisionConfig_RotationMatrix.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetExtrinsicParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/TranslationVector.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetExtrinsicParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/VisionConfig_RotationMatrixRow.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetExtrinsicParameters.h: /opt/ros/noetic/share/gencpp/msg.h.template
@@ -7574,8 +7574,8 @@ ros_kortex/kortex_driver/CMakeFiles/kortex_driver_generate_messages_cpp: /home/u
 
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetIntrinsicParameters.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetIntrinsicParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/vision_config/SetIntrinsicParameters.srv
-/home/user/vs/catkin_ws/devel/include/kortex_driver/SetIntrinsicParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetIntrinsicParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/DistortionCoefficients.msg
+/home/user/vs/catkin_ws/devel/include/kortex_driver/SetIntrinsicParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/common/Empty.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetIntrinsicParameters.h: /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/msg/generated/vision_config/IntrinsicParameters.msg
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetIntrinsicParameters.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/user/vs/catkin_ws/devel/include/kortex_driver/SetIntrinsicParameters.h: /opt/ros/noetic/share/gencpp/srv.h.template

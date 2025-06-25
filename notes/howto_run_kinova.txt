@@ -1,0 +1,6 @@
+Launch kinova:
+
+ roslaunch kortex_bringup kortex_bringup.launch 
+ 
+ roscore VS roslaunch
+

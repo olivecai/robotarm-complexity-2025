@@ -1,0 +1,25 @@
+ros basics
+
+roscore: collection of nodes and programs - aka ros monster. contains info abt all nodes and ip addresses. knows who pub and sub to whom. can only have one roscore running at a time.
+nodes: single exe file, performs some tasks: collects or sends data to nodes. two wasy to do this: service or topics.
+topics: communicates bn ros nodes. rosnodes either sub or pub. one topic only one pub, inf subs. pub publishes information to topic, sub collects info. is a one way communication. a subscriber can be turned into publisher to send msgs back to initial publisher (ie publisher and sub switch roles)
+messages: describe what content is pub to specific topic. message messages need to be described by their type
+
+create a ros publisher, add catkin_intall_python(PROGRAMS scripts/publisher_node.py
+	DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}) then save that file, then we run catkin_make in bash to build it.
+	then we run source devel/setup.bash.
+	
+Then in a seperate terminal, we run roscore!!! which allows us to create nodes
+
+Then go back the terminal where we ran catkin make and the source devel setup.bash, and run rosrun <package name> <publisher.py>
+
+Now open a new terminal and type "rostopic list" 
+
+then rostopic echo /<TOPIC YOU WANT TO SEE>
+
+and it will start to echo at the Rate you set in the publisher!
+
+TO GET VSCODE IN CONTAINER:
+- Ctrl+Shift+P --> DevContainer: open in container. 
+
+

@@ -16,11 +16,13 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
+import time
+
 print("Initializing camera node with Lucas-Kanade Optical Flow...")
 
 # Initialize ROS node
 rospy.init_node("camera_node", anonymous=True) #create a camera node
-cam_idx = 6  #hardcode the camera idx
+cam_idx = str(0)  #hardcode the camera idx
 
 # Open video capture
 cap = cv2.VideoCapture(cam_idx)
@@ -60,7 +62,9 @@ lk_params = dict( winSize  = (15, 15),
                   maxLevel = 2,
                   criteria = (cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT, 10, 0.03))
 
-while 1:
+starttime=time.monotonic()
+endtime = starttime+30
+while time.monotonic() < endtime:
     ret, frame = cap.read()
     if not ret:
         print("No frames grabbed...")
@@ -84,5 +88,7 @@ while 1:
     # Now update the previous frame and previous points
     old_gray = frame_gray.copy()
     points0 = points1.copy()
+    time.sleep(0.1)
 
+cap.release()
 cv2.destroyAllWindows

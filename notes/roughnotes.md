@@ -676,3 +676,15 @@ Big picture:
 - beforehand, compute the central differences for n number of jacobians, and for ANY trajectory or goal we want, we will use max n jacobians
 
 We can sit on these ideas and shift gears to real experiments.
+
+# June 25
+
+Past week and a bit had been focusing on Ros and Docker, etc, but it has taken a bit of time and I want to focus back on the mathematical analysis part....
+
+Let's assume we HAVE the spectral radius everywhere...
+
+Then if we indicate we want to take on a certain trajectory, can we... get the jacobian of the final destination and 
+
+bayesian opt: query around datapoints, select next datapoint - gaussian processes
+
+
