@@ -3,6 +3,6 @@ prefix=/home/user/vs/catkin_ws/devel
 Name: camera_node
 Description: Description of camera_node
 Version: 0.0.0
-Cflags: 
+Cflags: -I/home/user/vs/catkin_ws/devel/include
 Libs: -L${prefix}/lib 
 Requires: 

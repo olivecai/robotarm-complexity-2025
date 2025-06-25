@@ -43,12 +43,13 @@ class CameraNode:
         self.id_pub = rospy.Publisher("/cam_id", Int32, queue_size=1)
 
         #timer to repeatedly publish a capture from vidcap
-        rospy.Timer(rospy.Duration(0.1), self.callback)
+        rospy.Timer(rospy.Duration(0.1), self.publish_capture_callback())
         
-    def callback(self):
+    def publish_capture_callback(self):
         '''
         Callback: publish a ROS Image Message from OpenCV,
         '''
+        print(f"publishing camera {self.cam_id} capture")
         self.id_pub.publish(Int32(data=self.cam_id))
         ret, frame = self.vidcap.read()
         if not ret:
@@ -57,10 +58,15 @@ class CameraNode:
         
         #convert the BGR frame to a grayscale image to send through the ros message.
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-        rosImage : Image = self.bridge.cv2_to_imgmsg(cvim=frame, encoding="mono8")
+        rosImage = Image()
+        rosImage.data = self.bridge.cv2_to_imgmsg(cvim=frame, encoding="mono8")
         rosImage.header.frame_id = f"{self.cam_id}"
-        
 
+        self.cap_pub.publish(rosImage)
+
+
+if __name__ == '__main__':
+    camera1 = CameraNode(0)
 
 
 

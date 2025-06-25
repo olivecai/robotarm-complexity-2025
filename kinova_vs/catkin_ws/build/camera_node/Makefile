@@ -78,17 +78,38 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
 
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # Special rule for the target install
 install: preinstall
@@ -102,38 +123,17 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
 
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,6 +168,96 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+camera_node/CMakeFiles/camera_node_generate_messages_py.dir/rule:
+	cd /home/user/vs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_node/CMakeFiles/camera_node_generate_messages_py.dir/rule
+.PHONY : camera_node/CMakeFiles/camera_node_generate_messages_py.dir/rule
+
+# Convenience name for target.
+camera_node_generate_messages_py: camera_node/CMakeFiles/camera_node_generate_messages_py.dir/rule
+
+.PHONY : camera_node_generate_messages_py
+
+# fast build rule for target.
+camera_node_generate_messages_py/fast:
+	cd /home/user/vs/catkin_ws/build && $(MAKE) -f camera_node/CMakeFiles/camera_node_generate_messages_py.dir/build.make camera_node/CMakeFiles/camera_node_generate_messages_py.dir/build
+.PHONY : camera_node_generate_messages_py/fast
+
+# Convenience name for target.
+camera_node/CMakeFiles/camera_node_gennodejs.dir/rule:
+	cd /home/user/vs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_node/CMakeFiles/camera_node_gennodejs.dir/rule
+.PHONY : camera_node/CMakeFiles/camera_node_gennodejs.dir/rule
+
+# Convenience name for target.
+camera_node_gennodejs: camera_node/CMakeFiles/camera_node_gennodejs.dir/rule
+
+.PHONY : camera_node_gennodejs
+
+# fast build rule for target.
+camera_node_gennodejs/fast:
+	cd /home/user/vs/catkin_ws/build && $(MAKE) -f camera_node/CMakeFiles/camera_node_gennodejs.dir/build.make camera_node/CMakeFiles/camera_node_gennodejs.dir/build
+.PHONY : camera_node_gennodejs/fast
+
+# Convenience name for target.
+camera_node/CMakeFiles/camera_node_generate_messages_nodejs.dir/rule:
+	cd /home/user/vs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_node/CMakeFiles/camera_node_generate_messages_nodejs.dir/rule
+.PHONY : camera_node/CMakeFiles/camera_node_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+camera_node_generate_messages_nodejs: camera_node/CMakeFiles/camera_node_generate_messages_nodejs.dir/rule
+
+.PHONY : camera_node_generate_messages_nodejs
+
+# fast build rule for target.
+camera_node_generate_messages_nodejs/fast:
+	cd /home/user/vs/catkin_ws/build && $(MAKE) -f camera_node/CMakeFiles/camera_node_generate_messages_nodejs.dir/build.make camera_node/CMakeFiles/camera_node_generate_messages_nodejs.dir/build
+.PHONY : camera_node_generate_messages_nodejs/fast
+
+# Convenience name for target.
+camera_node/CMakeFiles/camera_node_genlisp.dir/rule:
+	cd /home/user/vs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_node/CMakeFiles/camera_node_genlisp.dir/rule
+.PHONY : camera_node/CMakeFiles/camera_node_genlisp.dir/rule
+
+# Convenience name for target.
+camera_node_genlisp: camera_node/CMakeFiles/camera_node_genlisp.dir/rule
+
+.PHONY : camera_node_genlisp
+
+# fast build rule for target.
+camera_node_genlisp/fast:
+	cd /home/user/vs/catkin_ws/build && $(MAKE) -f camera_node/CMakeFiles/camera_node_genlisp.dir/build.make camera_node/CMakeFiles/camera_node_genlisp.dir/build
+.PHONY : camera_node_genlisp/fast
+
+# Convenience name for target.
+camera_node/CMakeFiles/camera_node_geneus.dir/rule:
+	cd /home/user/vs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_node/CMakeFiles/camera_node_geneus.dir/rule
+.PHONY : camera_node/CMakeFiles/camera_node_geneus.dir/rule
+
+# Convenience name for target.
+camera_node_geneus: camera_node/CMakeFiles/camera_node_geneus.dir/rule
+
+.PHONY : camera_node_geneus
+
+# fast build rule for target.
+camera_node_geneus/fast:
+	cd /home/user/vs/catkin_ws/build && $(MAKE) -f camera_node/CMakeFiles/camera_node_geneus.dir/build.make camera_node/CMakeFiles/camera_node_geneus.dir/build
+.PHONY : camera_node_geneus/fast
+
+# Convenience name for target.
+camera_node/CMakeFiles/camera_node_generate_messages_eus.dir/rule:
+	cd /home/user/vs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_node/CMakeFiles/camera_node_generate_messages_eus.dir/rule
+.PHONY : camera_node/CMakeFiles/camera_node_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+camera_node_generate_messages_eus: camera_node/CMakeFiles/camera_node_generate_messages_eus.dir/rule
+
+.PHONY : camera_node_generate_messages_eus
+
+# fast build rule for target.
+camera_node_generate_messages_eus/fast:
+	cd /home/user/vs/catkin_ws/build && $(MAKE) -f camera_node/CMakeFiles/camera_node_generate_messages_eus.dir/build.make camera_node/CMakeFiles/camera_node_generate_messages_eus.dir/build
+.PHONY : camera_node_generate_messages_eus/fast
+
+# Convenience name for target.
 camera_node/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
 	cd /home/user/vs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_node/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
 .PHONY : camera_node/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
@@ -183,6 +273,36 @@ sensor_msgs_generate_messages_cpp/fast:
 .PHONY : sensor_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
+camera_node/CMakeFiles/camera_node_generate_messages_lisp.dir/rule:
+	cd /home/user/vs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_node/CMakeFiles/camera_node_generate_messages_lisp.dir/rule
+.PHONY : camera_node/CMakeFiles/camera_node_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+camera_node_generate_messages_lisp: camera_node/CMakeFiles/camera_node_generate_messages_lisp.dir/rule
+
+.PHONY : camera_node_generate_messages_lisp
+
+# fast build rule for target.
+camera_node_generate_messages_lisp/fast:
+	cd /home/user/vs/catkin_ws/build && $(MAKE) -f camera_node/CMakeFiles/camera_node_generate_messages_lisp.dir/build.make camera_node/CMakeFiles/camera_node_generate_messages_lisp.dir/build
+.PHONY : camera_node_generate_messages_lisp/fast
+
+# Convenience name for target.
+camera_node/CMakeFiles/_camera_node_generate_messages_check_deps_image_point.dir/rule:
+	cd /home/user/vs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_node/CMakeFiles/_camera_node_generate_messages_check_deps_image_point.dir/rule
+.PHONY : camera_node/CMakeFiles/_camera_node_generate_messages_check_deps_image_point.dir/rule
+
+# Convenience name for target.
+_camera_node_generate_messages_check_deps_image_point: camera_node/CMakeFiles/_camera_node_generate_messages_check_deps_image_point.dir/rule
+
+.PHONY : _camera_node_generate_messages_check_deps_image_point
+
+# fast build rule for target.
+_camera_node_generate_messages_check_deps_image_point/fast:
+	cd /home/user/vs/catkin_ws/build && $(MAKE) -f camera_node/CMakeFiles/_camera_node_generate_messages_check_deps_image_point.dir/build.make camera_node/CMakeFiles/_camera_node_generate_messages_check_deps_image_point.dir/build
+.PHONY : _camera_node_generate_messages_check_deps_image_point/fast
+
+# Convenience name for target.
 camera_node/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
 	cd /home/user/vs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_node/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
 .PHONY : camera_node/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
@@ -196,21 +316,6 @@ sensor_msgs_generate_messages_eus: camera_node/CMakeFiles/sensor_msgs_generate_m
 sensor_msgs_generate_messages_eus/fast:
 	cd /home/user/vs/catkin_ws/build && $(MAKE) -f camera_node/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make camera_node/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
 .PHONY : sensor_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-camera_node/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
-	cd /home/user/vs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_node/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-.PHONY : camera_node/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_eus: camera_node/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_eus
-
-# fast build rule for target.
-geometry_msgs_generate_messages_eus/fast:
-	cd /home/user/vs/catkin_ws/build && $(MAKE) -f camera_node/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make camera_node/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-.PHONY : geometry_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 camera_node/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
@@ -317,6 +422,81 @@ geometry_msgs_generate_messages_nodejs/fast:
 	cd /home/user/vs/catkin_ws/build && $(MAKE) -f camera_node/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make camera_node/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
 .PHONY : geometry_msgs_generate_messages_nodejs/fast
 
+# Convenience name for target.
+camera_node/CMakeFiles/camera_node_genpy.dir/rule:
+	cd /home/user/vs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_node/CMakeFiles/camera_node_genpy.dir/rule
+.PHONY : camera_node/CMakeFiles/camera_node_genpy.dir/rule
+
+# Convenience name for target.
+camera_node_genpy: camera_node/CMakeFiles/camera_node_genpy.dir/rule
+
+.PHONY : camera_node_genpy
+
+# fast build rule for target.
+camera_node_genpy/fast:
+	cd /home/user/vs/catkin_ws/build && $(MAKE) -f camera_node/CMakeFiles/camera_node_genpy.dir/build.make camera_node/CMakeFiles/camera_node_genpy.dir/build
+.PHONY : camera_node_genpy/fast
+
+# Convenience name for target.
+camera_node/CMakeFiles/camera_node_gencpp.dir/rule:
+	cd /home/user/vs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_node/CMakeFiles/camera_node_gencpp.dir/rule
+.PHONY : camera_node/CMakeFiles/camera_node_gencpp.dir/rule
+
+# Convenience name for target.
+camera_node_gencpp: camera_node/CMakeFiles/camera_node_gencpp.dir/rule
+
+.PHONY : camera_node_gencpp
+
+# fast build rule for target.
+camera_node_gencpp/fast:
+	cd /home/user/vs/catkin_ws/build && $(MAKE) -f camera_node/CMakeFiles/camera_node_gencpp.dir/build.make camera_node/CMakeFiles/camera_node_gencpp.dir/build
+.PHONY : camera_node_gencpp/fast
+
+# Convenience name for target.
+camera_node/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
+	cd /home/user/vs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_node/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+.PHONY : camera_node/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_eus: camera_node/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_eus
+
+# fast build rule for target.
+geometry_msgs_generate_messages_eus/fast:
+	cd /home/user/vs/catkin_ws/build && $(MAKE) -f camera_node/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make camera_node/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+.PHONY : geometry_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+camera_node/CMakeFiles/camera_node_generate_messages.dir/rule:
+	cd /home/user/vs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_node/CMakeFiles/camera_node_generate_messages.dir/rule
+.PHONY : camera_node/CMakeFiles/camera_node_generate_messages.dir/rule
+
+# Convenience name for target.
+camera_node_generate_messages: camera_node/CMakeFiles/camera_node_generate_messages.dir/rule
+
+.PHONY : camera_node_generate_messages
+
+# fast build rule for target.
+camera_node_generate_messages/fast:
+	cd /home/user/vs/catkin_ws/build && $(MAKE) -f camera_node/CMakeFiles/camera_node_generate_messages.dir/build.make camera_node/CMakeFiles/camera_node_generate_messages.dir/build
+.PHONY : camera_node_generate_messages/fast
+
+# Convenience name for target.
+camera_node/CMakeFiles/camera_node_generate_messages_cpp.dir/rule:
+	cd /home/user/vs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 camera_node/CMakeFiles/camera_node_generate_messages_cpp.dir/rule
+.PHONY : camera_node/CMakeFiles/camera_node_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+camera_node_generate_messages_cpp: camera_node/CMakeFiles/camera_node_generate_messages_cpp.dir/rule
+
+.PHONY : camera_node_generate_messages_cpp
+
+# fast build rule for target.
+camera_node_generate_messages_cpp/fast:
+	cd /home/user/vs/catkin_ws/build && $(MAKE) -f camera_node/CMakeFiles/camera_node_generate_messages_cpp.dir/build.make camera_node/CMakeFiles/camera_node_generate_messages_cpp.dir/build
+.PHONY : camera_node_generate_messages_cpp/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -325,10 +505,19 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... list_install_components"
+	@echo "... rebuild_cache"
+	@echo "... edit_cache"
+	@echo "... camera_node_generate_messages_py"
+	@echo "... camera_node_gennodejs"
+	@echo "... camera_node_generate_messages_nodejs"
+	@echo "... camera_node_genlisp"
+	@echo "... camera_node_geneus"
+	@echo "... camera_node_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_cpp"
+	@echo "... test"
+	@echo "... camera_node_generate_messages_lisp"
+	@echo "... _camera_node_generate_messages_check_deps_image_point"
 	@echo "... sensor_msgs_generate_messages_eus"
-	@echo "... install/local"
-	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... install"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_lisp"
@@ -337,9 +526,12 @@ help:
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_nodejs"
-	@echo "... test"
-	@echo "... edit_cache"
-	@echo "... rebuild_cache"
+	@echo "... install/local"
+	@echo "... camera_node_genpy"
+	@echo "... camera_node_gencpp"
+	@echo "... geometry_msgs_generate_messages_eus"
+	@echo "... camera_node_generate_messages"
+	@echo "... camera_node_generate_messages_cpp"
 .PHONY : help
 
 
