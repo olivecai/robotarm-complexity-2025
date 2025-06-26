@@ -93,6 +93,10 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/camera_node" TYPE PROGRAM FILES "/home/user/vs/catkin_ws/build/camera_node/catkin_generated/installspace/target_node.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/camera_node" TYPE PROGRAM FILES "/home/user/vs/catkin_ws/build/camera_node/catkin_generated/installspace/tracking_node.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/camera_node" TYPE PROGRAM FILES "/home/user/vs/catkin_ws/build/camera_node/catkin_generated/installspace/visual_servoing_node.py")
 endif()
 
