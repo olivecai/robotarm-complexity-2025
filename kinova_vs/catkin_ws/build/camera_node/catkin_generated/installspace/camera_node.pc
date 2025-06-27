@@ -1,8 +1,0 @@
-prefix=/home/user/vs/catkin_ws/install
-
-Name: camera_node
-Description: Description of camera_node
-Version: 0.0.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib 
-Requires: roscpp rospy sensor_msgs std_msgs message_runtime

@@ -38,7 +38,10 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/visualservo/msg" TYPE FILE FILES "/home/user/vs/catkin_ws/src/visualservo/msg/image_point.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/visualservo/msg" TYPE FILE FILES
+    "/home/user/vs/catkin_ws/src/visualservo/msg/image_point.msg"
+    "/home/user/vs/catkin_ws/src/visualservo/msg/points_array.msg"
+    )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -98,5 +101,9 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/visualservo" TYPE PROGRAM FILES "/home/user/vs/catkin_ws/build/visualservo/catkin_generated/installspace/visual_servoing_node.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/visualservo" TYPE PROGRAM FILES "/home/user/vs/catkin_ws/build/visualservo/catkin_generated/installspace/consolidate_cams_node.py")
 endif()
 

@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "/home/user/vs/catkin_ws/devel/include/visualservo/image_point.h"
+  "/home/user/vs/catkin_ws/devel/include/visualservo/points_array.h"
   "CMakeFiles/visualservo_generate_messages_cpp"
 )
 

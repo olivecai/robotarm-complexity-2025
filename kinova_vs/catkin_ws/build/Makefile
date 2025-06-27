@@ -1533,6 +1533,19 @@ visualservo_generate_messages/fast:
 .PHONY : visualservo_generate_messages/fast
 
 #=============================================================================
+# Target rules for targets named _visualservo_generate_messages_check_deps_points_array
+
+# Build rule for target.
+_visualservo_generate_messages_check_deps_points_array: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _visualservo_generate_messages_check_deps_points_array
+.PHONY : _visualservo_generate_messages_check_deps_points_array
+
+# fast build rule for target.
+_visualservo_generate_messages_check_deps_points_array/fast:
+	$(MAKE) -f visualservo/CMakeFiles/_visualservo_generate_messages_check_deps_points_array.dir/build.make visualservo/CMakeFiles/_visualservo_generate_messages_check_deps_points_array.dir/build
+.PHONY : _visualservo_generate_messages_check_deps_points_array/fast
+
+#=============================================================================
 # Target rules for targets named _visualservo_generate_messages_check_deps_image_point
 
 # Build rule for target.
@@ -1624,19 +1637,6 @@ visualservo_genlisp/fast:
 .PHONY : visualservo_genlisp/fast
 
 #=============================================================================
-# Target rules for targets named visualservo_generate_messages_py
-
-# Build rule for target.
-visualservo_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 visualservo_generate_messages_py
-.PHONY : visualservo_generate_messages_py
-
-# fast build rule for target.
-visualservo_generate_messages_py/fast:
-	$(MAKE) -f visualservo/CMakeFiles/visualservo_generate_messages_py.dir/build.make visualservo/CMakeFiles/visualservo_generate_messages_py.dir/build
-.PHONY : visualservo_generate_messages_py/fast
-
-#=============================================================================
 # Target rules for targets named visualservo_generate_messages_eus
 
 # Build rule for target.
@@ -1661,6 +1661,19 @@ visualservo_generate_messages_nodejs: cmake_check_build_system
 visualservo_generate_messages_nodejs/fast:
 	$(MAKE) -f visualservo/CMakeFiles/visualservo_generate_messages_nodejs.dir/build.make visualservo/CMakeFiles/visualservo_generate_messages_nodejs.dir/build
 .PHONY : visualservo_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named visualservo_generate_messages_py
+
+# Build rule for target.
+visualservo_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 visualservo_generate_messages_py
+.PHONY : visualservo_generate_messages_py
+
+# fast build rule for target.
+visualservo_generate_messages_py/fast:
+	$(MAKE) -f visualservo/CMakeFiles/visualservo_generate_messages_py.dir/build.make visualservo/CMakeFiles/visualservo_generate_messages_py.dir/build
+.PHONY : visualservo_generate_messages_py/fast
 
 #=============================================================================
 # Target rules for targets named visualservo_genpy
@@ -11751,6 +11764,7 @@ help:
 	@echo "... control_msgs_generate_messages_py"
 	@echo "... roboticsgroup_upatras_gazebo_mimic_joint_plugin"
 	@echo "... visualservo_generate_messages"
+	@echo "... _visualservo_generate_messages_check_deps_points_array"
 	@echo "... _visualservo_generate_messages_check_deps_image_point"
 	@echo "... visualservo_gennodejs"
 	@echo "... visualservo_gencpp"
@@ -11758,9 +11772,9 @@ help:
 	@echo "... visualservo_generate_messages_lisp"
 	@echo "... visualservo_generate_messages_cpp"
 	@echo "... visualservo_genlisp"
-	@echo "... visualservo_generate_messages_py"
 	@echo "... visualservo_generate_messages_eus"
 	@echo "... visualservo_generate_messages_nodejs"
+	@echo "... visualservo_generate_messages_py"
 	@echo "... visualservo_genpy"
 	@echo "... run_tests_kortex_driver_gtest_kortex_arm_driver_func_tests"
 	@echo "... _run_tests_kortex_driver_gtest"

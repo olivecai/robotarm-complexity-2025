@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/user/vs/catkin_ws/build
 include ros_kortex/kortex_driver/CMakeFiles/_kortex_driver_generate_messages_check_deps_GetI2CConfiguration.dir/progress.make
 
 ros_kortex/kortex_driver/CMakeFiles/_kortex_driver_generate_messages_check_deps_GetI2CConfiguration:
-	cd /home/user/vs/catkin_ws/build/ros_kortex/kortex_driver && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py kortex_driver /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/interconnect_config/GetI2CConfiguration.srv kortex_driver/I2CConfiguration:kortex_driver/I2CDeviceIdentification
+	cd /home/user/vs/catkin_ws/build/ros_kortex/kortex_driver && ../../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py kortex_driver /home/user/vs/catkin_ws/src/ros_kortex/kortex_driver/srv/generated/interconnect_config/GetI2CConfiguration.srv kortex_driver/I2CDeviceIdentification:kortex_driver/I2CConfiguration
 
 _kortex_driver_generate_messages_check_deps_GetI2CConfiguration: ros_kortex/kortex_driver/CMakeFiles/_kortex_driver_generate_messages_check_deps_GetI2CConfiguration
 _kortex_driver_generate_messages_check_deps_GetI2CConfiguration: ros_kortex/kortex_driver/CMakeFiles/_kortex_driver_generate_messages_check_deps_GetI2CConfiguration.dir/build.make

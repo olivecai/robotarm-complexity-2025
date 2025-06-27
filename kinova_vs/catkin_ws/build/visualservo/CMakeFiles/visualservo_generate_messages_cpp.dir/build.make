@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/user/vs/catkin_ws/build
 include visualservo/CMakeFiles/visualservo_generate_messages_cpp.dir/progress.make
 
 visualservo/CMakeFiles/visualservo_generate_messages_cpp: /home/user/vs/catkin_ws/devel/include/visualservo/image_point.h
+visualservo/CMakeFiles/visualservo_generate_messages_cpp: /home/user/vs/catkin_ws/devel/include/visualservo/points_array.h
 
 
 /home/user/vs/catkin_ws/devel/include/visualservo/image_point.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
@@ -62,8 +63,15 @@ visualservo/CMakeFiles/visualservo_generate_messages_cpp: /home/user/vs/catkin_w
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from visualservo/image_point.msg"
 	cd /home/user/vs/catkin_ws/src/visualservo && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/visualservo/msg/image_point.msg -Ivisualservo:/home/user/vs/catkin_ws/src/visualservo/msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p visualservo -o /home/user/vs/catkin_ws/devel/include/visualservo -e /opt/ros/noetic/share/gencpp/cmake/..
 
+/home/user/vs/catkin_ws/devel/include/visualservo/points_array.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
+/home/user/vs/catkin_ws/devel/include/visualservo/points_array.h: /home/user/vs/catkin_ws/src/visualservo/msg/points_array.msg
+/home/user/vs/catkin_ws/devel/include/visualservo/points_array.h: /opt/ros/noetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from visualservo/points_array.msg"
+	cd /home/user/vs/catkin_ws/src/visualservo && /home/user/vs/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/user/vs/catkin_ws/src/visualservo/msg/points_array.msg -Ivisualservo:/home/user/vs/catkin_ws/src/visualservo/msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p visualservo -o /home/user/vs/catkin_ws/devel/include/visualservo -e /opt/ros/noetic/share/gencpp/cmake/..
+
 visualservo_generate_messages_cpp: visualservo/CMakeFiles/visualservo_generate_messages_cpp
 visualservo_generate_messages_cpp: /home/user/vs/catkin_ws/devel/include/visualservo/image_point.h
+visualservo_generate_messages_cpp: /home/user/vs/catkin_ws/devel/include/visualservo/points_array.h
 visualservo_generate_messages_cpp: visualservo/CMakeFiles/visualservo_generate_messages_cpp.dir/build.make
 
 .PHONY : visualservo_generate_messages_cpp

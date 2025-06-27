@@ -56,18 +56,6 @@ CMAKE_BINARY_DIR = /home/user/vs/catkin_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -113,6 +101,18 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # Special rule for the target list_install_components
 list_install_components:
@@ -181,6 +181,21 @@ visualservo_generate_messages: visualservo/CMakeFiles/visualservo_generate_messa
 visualservo_generate_messages/fast:
 	cd /home/user/vs/catkin_ws/build && $(MAKE) -f visualservo/CMakeFiles/visualservo_generate_messages.dir/build.make visualservo/CMakeFiles/visualservo_generate_messages.dir/build
 .PHONY : visualservo_generate_messages/fast
+
+# Convenience name for target.
+visualservo/CMakeFiles/_visualservo_generate_messages_check_deps_points_array.dir/rule:
+	cd /home/user/vs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 visualservo/CMakeFiles/_visualservo_generate_messages_check_deps_points_array.dir/rule
+.PHONY : visualservo/CMakeFiles/_visualservo_generate_messages_check_deps_points_array.dir/rule
+
+# Convenience name for target.
+_visualservo_generate_messages_check_deps_points_array: visualservo/CMakeFiles/_visualservo_generate_messages_check_deps_points_array.dir/rule
+
+.PHONY : _visualservo_generate_messages_check_deps_points_array
+
+# fast build rule for target.
+_visualservo_generate_messages_check_deps_points_array/fast:
+	cd /home/user/vs/catkin_ws/build && $(MAKE) -f visualservo/CMakeFiles/_visualservo_generate_messages_check_deps_points_array.dir/build.make visualservo/CMakeFiles/_visualservo_generate_messages_check_deps_points_array.dir/build
+.PHONY : _visualservo_generate_messages_check_deps_points_array/fast
 
 # Convenience name for target.
 visualservo/CMakeFiles/_visualservo_generate_messages_check_deps_image_point.dir/rule:
@@ -288,21 +303,6 @@ visualservo_genlisp/fast:
 .PHONY : visualservo_genlisp/fast
 
 # Convenience name for target.
-visualservo/CMakeFiles/visualservo_generate_messages_py.dir/rule:
-	cd /home/user/vs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 visualservo/CMakeFiles/visualservo_generate_messages_py.dir/rule
-.PHONY : visualservo/CMakeFiles/visualservo_generate_messages_py.dir/rule
-
-# Convenience name for target.
-visualservo_generate_messages_py: visualservo/CMakeFiles/visualservo_generate_messages_py.dir/rule
-
-.PHONY : visualservo_generate_messages_py
-
-# fast build rule for target.
-visualservo_generate_messages_py/fast:
-	cd /home/user/vs/catkin_ws/build && $(MAKE) -f visualservo/CMakeFiles/visualservo_generate_messages_py.dir/build.make visualservo/CMakeFiles/visualservo_generate_messages_py.dir/build
-.PHONY : visualservo_generate_messages_py/fast
-
-# Convenience name for target.
 visualservo/CMakeFiles/visualservo_generate_messages_eus.dir/rule:
 	cd /home/user/vs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 visualservo/CMakeFiles/visualservo_generate_messages_eus.dir/rule
 .PHONY : visualservo/CMakeFiles/visualservo_generate_messages_eus.dir/rule
@@ -333,6 +333,21 @@ visualservo_generate_messages_nodejs/fast:
 .PHONY : visualservo_generate_messages_nodejs/fast
 
 # Convenience name for target.
+visualservo/CMakeFiles/visualservo_generate_messages_py.dir/rule:
+	cd /home/user/vs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 visualservo/CMakeFiles/visualservo_generate_messages_py.dir/rule
+.PHONY : visualservo/CMakeFiles/visualservo_generate_messages_py.dir/rule
+
+# Convenience name for target.
+visualservo_generate_messages_py: visualservo/CMakeFiles/visualservo_generate_messages_py.dir/rule
+
+.PHONY : visualservo_generate_messages_py
+
+# fast build rule for target.
+visualservo_generate_messages_py/fast:
+	cd /home/user/vs/catkin_ws/build && $(MAKE) -f visualservo/CMakeFiles/visualservo_generate_messages_py.dir/build.make visualservo/CMakeFiles/visualservo_generate_messages_py.dir/build
+.PHONY : visualservo_generate_messages_py/fast
+
+# Convenience name for target.
 visualservo/CMakeFiles/visualservo_genpy.dir/rule:
 	cd /home/user/vs/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 visualservo/CMakeFiles/visualservo_genpy.dir/rule
 .PHONY : visualservo/CMakeFiles/visualservo_genpy.dir/rule
@@ -353,12 +368,13 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... install"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... visualservo_generate_messages"
+	@echo "... install/strip"
+	@echo "... _visualservo_generate_messages_check_deps_points_array"
 	@echo "... _visualservo_generate_messages_check_deps_image_point"
 	@echo "... visualservo_gennodejs"
 	@echo "... visualservo_gencpp"
@@ -367,10 +383,10 @@ help:
 	@echo "... visualservo_generate_messages_lisp"
 	@echo "... visualservo_generate_messages_cpp"
 	@echo "... visualservo_genlisp"
-	@echo "... visualservo_generate_messages_py"
+	@echo "... test"
 	@echo "... visualservo_generate_messages_eus"
 	@echo "... visualservo_generate_messages_nodejs"
-	@echo "... test"
+	@echo "... visualservo_generate_messages_py"
 	@echo "... visualservo_genpy"
 .PHONY : help
 

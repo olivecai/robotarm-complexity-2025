@@ -4,7 +4,7 @@
 June 23 2025
 
 Connect to camera
-PUBLISH to topic '/cameras/camidx' the capture as a Ros Image every 0.1 second.
+PUBLISH to topic '/cameras/camid' the capture as a Ros Image every 0.1 second.
 SUBSCRIBE to the topic 'visual_servoing', CALLBACK release camera and end capture.
 
 '''
@@ -25,18 +25,28 @@ class CameraNode:
     Each CAMERA in use should correspond to a CAMERA NODE. 
     Initialize a CameraNode object with argument as index of the camera.
     '''
-    def __init__(self, cam_id):
+    def __init__(self):
         '''
         Publish OpenCV video capture 
         '''
-        rospy.loginfo("Initializing camera_node"+str(cam_id))
         rospy.init_node("camera_node", anonymous=True) #anonymous since there may be multiple cameras
-        self.vidcap = cv2.VideoCapture(cam_id)
+        
+        cam_param = rospy.search_param("cam_id")
+        self.cam_id=rospy.get_param(cam_param, None) #this is our identifier for our camera        
+        
+        if self.cam_id is None:
+            rospy.logwarn("Must pass camera index as _cam_id:=<cam_id>")
+            exit()
+        
+        rospy.delete_param(cam_param) # delete param so its needed for future runs.
+        rospy.loginfo(f"Initialized Camera on topic /cameras/cam{self.cam_id}")
+        
+    
+        self.vidcap = cv2.VideoCapture(self.cam_id)
         if not self.vidcap.isOpened():
             rospy.logerr("Error: Could not open video source.")
             exit()
 
-        self.cam_id=cam_id #this is our identifier for our camera        
         self.bridge = cv_bridge.CvBridge()
 
         self.cap_pub = rospy.Publisher(f"/cameras/cam{self.cam_id}", Image, queue_size=10)
@@ -71,9 +81,19 @@ class CameraNode:
         self.cap_pub.publish(rosImage)
 
 
+def main(args):
+    rospy.sleep(5) 
+    rospy.loginfo("Starting a CameraNode ...")
+    node = CameraNode()
+    
+    try:
+        rospy.spin()
+    except KeyboardInterrupt:
+        rospy.loginfo("Shutting down Camera...")
+        cv2.destroyAllWindows()
+
 if __name__ == '__main__':
-    camera1 = CameraNode(0)
-    rospy.spin()
+    main(sys.argv)
 
 
 

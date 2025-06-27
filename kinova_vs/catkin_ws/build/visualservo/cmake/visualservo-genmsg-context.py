@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/user/vs/catkin_ws/src/visualservo/msg/image_point.msg"
+messages_str = "/home/user/vs/catkin_ws/src/visualservo/msg/image_point.msg;/home/user/vs/catkin_ws/src/visualservo/msg/points_array.msg"
 services_str = ""
 pkg_name = "visualservo"
 dependencies_str = "sensor_msgs;std_msgs"

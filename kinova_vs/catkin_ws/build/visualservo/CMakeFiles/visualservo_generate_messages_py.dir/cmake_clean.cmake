@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "/home/user/vs/catkin_ws/devel/lib/python3/dist-packages/visualservo/msg/__init__.py"
   "/home/user/vs/catkin_ws/devel/lib/python3/dist-packages/visualservo/msg/_image_point.py"
+  "/home/user/vs/catkin_ws/devel/lib/python3/dist-packages/visualservo/msg/_points_array.py"
   "CMakeFiles/visualservo_generate_messages_py"
 )
 

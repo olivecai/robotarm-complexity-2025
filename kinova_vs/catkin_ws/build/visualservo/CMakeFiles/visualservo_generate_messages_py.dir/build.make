@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/user/vs/catkin_ws/build
 include visualservo/CMakeFiles/visualservo_generate_messages_py.dir/progress.make
 
 visualservo/CMakeFiles/visualservo_generate_messages_py: /home/user/vs/catkin_ws/devel/lib/python3/dist-packages/visualservo/msg/_image_point.py
+visualservo/CMakeFiles/visualservo_generate_messages_py: /home/user/vs/catkin_ws/devel/lib/python3/dist-packages/visualservo/msg/_points_array.py
 visualservo/CMakeFiles/visualservo_generate_messages_py: /home/user/vs/catkin_ws/devel/lib/python3/dist-packages/visualservo/msg/__init__.py
 
 
@@ -62,13 +63,20 @@ visualservo/CMakeFiles/visualservo_generate_messages_py: /home/user/vs/catkin_ws
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG visualservo/image_point"
 	cd /home/user/vs/catkin_ws/build/visualservo && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/user/vs/catkin_ws/src/visualservo/msg/image_point.msg -Ivisualservo:/home/user/vs/catkin_ws/src/visualservo/msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p visualservo -o /home/user/vs/catkin_ws/devel/lib/python3/dist-packages/visualservo/msg
 
+/home/user/vs/catkin_ws/devel/lib/python3/dist-packages/visualservo/msg/_points_array.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/user/vs/catkin_ws/devel/lib/python3/dist-packages/visualservo/msg/_points_array.py: /home/user/vs/catkin_ws/src/visualservo/msg/points_array.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG visualservo/points_array"
+	cd /home/user/vs/catkin_ws/build/visualservo && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/user/vs/catkin_ws/src/visualservo/msg/points_array.msg -Ivisualservo:/home/user/vs/catkin_ws/src/visualservo/msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p visualservo -o /home/user/vs/catkin_ws/devel/lib/python3/dist-packages/visualservo/msg
+
 /home/user/vs/catkin_ws/devel/lib/python3/dist-packages/visualservo/msg/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 /home/user/vs/catkin_ws/devel/lib/python3/dist-packages/visualservo/msg/__init__.py: /home/user/vs/catkin_ws/devel/lib/python3/dist-packages/visualservo/msg/_image_point.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python msg __init__.py for visualservo"
+/home/user/vs/catkin_ws/devel/lib/python3/dist-packages/visualservo/msg/__init__.py: /home/user/vs/catkin_ws/devel/lib/python3/dist-packages/visualservo/msg/_points_array.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python msg __init__.py for visualservo"
 	cd /home/user/vs/catkin_ws/build/visualservo && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/user/vs/catkin_ws/devel/lib/python3/dist-packages/visualservo/msg --initpy
 
 visualservo_generate_messages_py: visualservo/CMakeFiles/visualservo_generate_messages_py
 visualservo_generate_messages_py: /home/user/vs/catkin_ws/devel/lib/python3/dist-packages/visualservo/msg/_image_point.py
+visualservo_generate_messages_py: /home/user/vs/catkin_ws/devel/lib/python3/dist-packages/visualservo/msg/_points_array.py
 visualservo_generate_messages_py: /home/user/vs/catkin_ws/devel/lib/python3/dist-packages/visualservo/msg/__init__.py
 visualservo_generate_messages_py: visualservo/CMakeFiles/visualservo_generate_messages_py.dir/build.make
 

@@ -52,6 +52,7 @@ find_package(catkin REQUIRED COMPONENTS
  add_message_files(
    FILES
    image_point.msg
+   points_array.msg
  )
 
 ## Generate services in the 'srv' folder
@@ -115,6 +116,7 @@ catkin_install_python(PROGRAMS
   nodes/camera_node.py
   nodes/tracking_node.py
   nodes/visual_servoing_node.py
+  nodes/consolidate_cams_node.py
 
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
@@ -133,7 +135,7 @@ include_directories(
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/camera_node.cpp
+#   src/${PROJECT_NAME}/visualservo.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -144,7 +146,7 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/camera_node_node.cpp)
+# add_executable(${PROJECT_NAME}_node src/visualservo_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -208,7 +210,7 @@ include_directories(
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_camera_node.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/visualservo.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
