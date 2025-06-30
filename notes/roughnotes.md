@@ -715,4 +715,14 @@ Maybe we could draw a circle around the joint, gauge if we think one jacobian wi
 
 This feels very naive, but maybe we could just try it anyway.
 
-If we go along with this idea of reconstructing poses, it becomes very problematic if two cameras reconstruct two different poses.
+If we go along with this idea of reconstructing poses, it becomes very problematic if two cameras reconstruct two different poses. Let's ignore the camera conundrum for now.
+
+What if instead of computing ellipses, we see: for each joint, which camera sees a greater amount of perturbation? Then, generate a circle in that camera: so each camera has one 'circle' for each joint.... and for each step we can reevaluate circles
+
+This entire time i have been thinking of the problem very much as a system of nonlinear equations, but when we think about the fact that a local region in cartesian space often converges and that we have access to OpenCV and cameras in visual servoing, I realize we have many more tools than we think.
+
+Of course this "draw a circle and go there" is not very reliable, especailly if:
+- perspective looking at circle is skewed
+- we have a camera on the robot
+
+nevertheless, this could serve a good TOOL
