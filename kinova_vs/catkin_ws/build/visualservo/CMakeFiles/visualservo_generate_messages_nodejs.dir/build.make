@@ -55,6 +55,7 @@ include visualservo/CMakeFiles/visualservo_generate_messages_nodejs.dir/progress
 
 visualservo/CMakeFiles/visualservo_generate_messages_nodejs: /home/user/vs/catkin_ws/devel/share/gennodejs/ros/visualservo/msg/image_point.js
 visualservo/CMakeFiles/visualservo_generate_messages_nodejs: /home/user/vs/catkin_ws/devel/share/gennodejs/ros/visualservo/msg/points_array.js
+visualservo/CMakeFiles/visualservo_generate_messages_nodejs: /home/user/vs/catkin_ws/devel/share/gennodejs/ros/visualservo/msg/vs_info.js
 
 
 /home/user/vs/catkin_ws/devel/share/gennodejs/ros/visualservo/msg/image_point.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
@@ -67,9 +68,15 @@ visualservo/CMakeFiles/visualservo_generate_messages_nodejs: /home/user/vs/catki
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from visualservo/points_array.msg"
 	cd /home/user/vs/catkin_ws/build/visualservo && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/user/vs/catkin_ws/src/visualservo/msg/points_array.msg -Ivisualservo:/home/user/vs/catkin_ws/src/visualservo/msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p visualservo -o /home/user/vs/catkin_ws/devel/share/gennodejs/ros/visualservo/msg
 
+/home/user/vs/catkin_ws/devel/share/gennodejs/ros/visualservo/msg/vs_info.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+/home/user/vs/catkin_ws/devel/share/gennodejs/ros/visualservo/msg/vs_info.js: /home/user/vs/catkin_ws/src/visualservo/msg/vs_info.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Javascript code from visualservo/vs_info.msg"
+	cd /home/user/vs/catkin_ws/build/visualservo && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/user/vs/catkin_ws/src/visualservo/msg/vs_info.msg -Ivisualservo:/home/user/vs/catkin_ws/src/visualservo/msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p visualservo -o /home/user/vs/catkin_ws/devel/share/gennodejs/ros/visualservo/msg
+
 visualservo_generate_messages_nodejs: visualservo/CMakeFiles/visualservo_generate_messages_nodejs
 visualservo_generate_messages_nodejs: /home/user/vs/catkin_ws/devel/share/gennodejs/ros/visualservo/msg/image_point.js
 visualservo_generate_messages_nodejs: /home/user/vs/catkin_ws/devel/share/gennodejs/ros/visualservo/msg/points_array.js
+visualservo_generate_messages_nodejs: /home/user/vs/catkin_ws/devel/share/gennodejs/ros/visualservo/msg/vs_info.js
 visualservo_generate_messages_nodejs: visualservo/CMakeFiles/visualservo_generate_messages_nodejs.dir/build.make
 
 .PHONY : visualservo_generate_messages_nodejs

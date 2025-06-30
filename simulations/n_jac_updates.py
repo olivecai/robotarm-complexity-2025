@@ -326,9 +326,9 @@ def main():
     joint_limits_puma= [(-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2) , (-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2) , (-np.pi/2, np.pi/2)]
     joint_limits_puma_full = [(-2*np.pi/2, 2*np.pi/2), (-2*np.pi/2, 2*np.pi/2) , (-2*np.pi/2, 2*np.pi/2),(-2*np.pi/2, 2*np.pi/2), (-2*np.pi/2, 2*np.pi/2) , (-2*np.pi/2, 2*np.pi/2)]
 
-    joint_limits = joint_limits2dof
-    joint_limits_full = joint_limits2dof_full
-    ets=ets2dof
+    joint_limits = joint_limits3dof
+    joint_limits_full = joint_limits3dof_full
+    ets=ets3dof
 
     robot = rtb.Robot(ets)
 
@@ -349,8 +349,8 @@ def main():
     chebyshev = 0 #chebyshev seems to consistently result in a tiny bit more error than equidistant...
 
     #PLOTTING PARAMS
-    desiredP = np.array([1,1,0])
-    Q = np.array([2.5,2.5])
+    desiredP = np.array([0,0.9,0.5])
+    Q = np.array([0,0,PI/2])
     plot_certain_trajectory=1
     simplex_mode=0
     #### JACOBIAN METHODS ####

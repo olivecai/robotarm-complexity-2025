@@ -26,21 +26,21 @@ class ConsolidateTrackersNode:
         cam_param = rospy.search_param("cams_list")
         self.cams_id_list=rospy.get_param(cam_param, None) #this is our identifier for our camera        
         
-        if self.cams_list is None:
-            rospy.logwarn("Must pass camera index as _cams_list:=<cams_list>")
+        if self.cams_id_list is None:
+            rospy.logwarn("Must pass camera index as _cams_list:=\"[cam1_idx, cam2_idx, ...]\"")
             exit()
         
         rospy.delete_param(cam_param) # delete param so its needed for future runs.
-        rospy.loginfo(f"Initialized Tracker on topic /cameras/consolidate_trackers{self.cams_id__list}")
+        rospy.loginfo(f"Initialized Tracker on topic /cameras/consolidate_trackers{self.cams_id_list}")
         
         msg_filter_subs = [] #put the desired and current points in one subscriber 
 
         for i in range(len(self.cams_id_list)):
             cam_id = self.cams_id_list[i]
-            cam_i_des_pub = message_filters.Subscriber(f"/cameras/cam{cam_id}/des_pnt", image_point, queue_size=10)
-            cam_i_cur_pub = message_filters.Subscriber(f"/cameras/cam{cam_id}/curr_pnt", image_point, queue_size=10)
-            msg_filter_subs.append(cam_i_des_pub)
-            msg_filter_subs.append(cam_i_cur_pub)
+            cam_i_des_sub = message_filters.Subscriber(f"/cameras/cam{cam_id}/des_pnt", image_point, queue_size=10)
+            cam_i_cur_sub = message_filters.Subscriber(f"/cameras/cam{cam_id}/curr_pnt", image_point, queue_size=10)
+            msg_filter_subs.append(cam_i_des_sub)
+            msg_filter_subs.append(cam_i_cur_sub)
 
         ts = message_filters.ApproximateTimeSynchronizer(msg_filter_subs, 10, 0.1, allow_headerless=True) 
         # so for one iteration with two cameras, the list of nodes should look like
@@ -48,8 +48,8 @@ class ConsolidateTrackersNode:
 
         ts.registerCallback(self.callback)
 
-        self.error_sub = rospy.Publisher("/visualservoing/errors", points_array, queue_size=10)
-        self.cur_pos_sub = rospy.Publisher("/visualservoing/current_position", points_array, queue_size=10)
+        self.error_pub = rospy.Publisher("/visualservoing/errors", points_array, queue_size=10)
+        self.cur_pos_pub = rospy.Publisher("/visualservoing/current_position", points_array, queue_size=10)
 
       
     def callback(self, *msgs): #for n cameras, we get 2n arguments
@@ -76,8 +76,8 @@ class ConsolidateTrackersNode:
         rospy.loginfo(f"errors: {errors}")
         rospy.loginfo(f"current cartesian position: {cur_cart_pos}")
 
-        self.error_sub.publish(errors)
-        self.cur_pos_sub.publish(cur_cart_pos)
+        self.error_pub.publish(errors)
+        self.cur_pos_pub.publish(cur_cart_pos)
 
 def main(args):
     rospy.sleep(5) 

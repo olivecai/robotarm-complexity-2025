@@ -687,4 +687,32 @@ Then if we indicate we want to take on a certain trajectory, can we... get the j
 
 bayesian opt: query around datapoints, select next datapoint - gaussian processes
 
+# June 27
 
+Finished setting up the visual servoing on the Kinova which I am very happy about!
+
+Now we REALLY have to focus on the MATH. 
+
+# June 30
+
+Nice to haves:
+- don't need analytic calculations (I mean, we CANNOT have it since we are projecting it down ANYWAY)
+- 
+
+When we have a goal position for the arm, how can we generate an intermediate pose for the arm to go to so that we can seperate the movements?
+
+We have 
+
+TODO:
+- try using linear combinations of n predetermined Jacobians. and maybe this will also give us a sense of depth. It is admittedly very difficult to discern the depth, isn't it...
+
+
+This is a kind of random idea but there IS a pretty strong correlation between the cartesian position being NEAR the goal position... And this also has to do with the fact that, if all joints are in the correct position except the furthest joint from the base ie the hand, it seems easier to converge. (Is this true? We should try this out.)
+
+It feels like just looking at the cartesian radius of a joint is too simple, but we don't have access to that much infromation anyway, and during visual servoing, we are allowed to look at the projection. We can draw circles to gauge the radius on the joints in OpenCV or something. 
+
+Maybe we could draw a circle around the joint, gauge if we think one jacobian will do it, and if the goal isn't near the perimeter of the radius of the circle, that indicates we need a little more action... move the base arm until the radius of the joint touches the goal.
+
+This feels very naive, but maybe we could just try it anyway.
+
+If we go along with this idea of reconstructing poses, it becomes very problematic if two cameras reconstruct two different poses.

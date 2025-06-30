@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "visualservo: 2 messages, 0 services")
+message(STATUS "visualservo: 3 messages, 0 services")
 
 set(MSG_I_FLAGS "-Ivisualservo:/home/user/vs/catkin_ws/src/visualservo/msg;-Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg;-Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg")
 
@@ -27,6 +27,11 @@ add_custom_target(_visualservo_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "visualservo" "/home/user/vs/catkin_ws/src/visualservo/msg/points_array.msg" ""
 )
 
+get_filename_component(_filename "/home/user/vs/catkin_ws/src/visualservo/msg/vs_info.msg" NAME_WE)
+add_custom_target(_visualservo_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "visualservo" "/home/user/vs/catkin_ws/src/visualservo/msg/vs_info.msg" ""
+)
+
 #
 #  langs = gencpp;geneus;genlisp;gennodejs;genpy
 #
@@ -41,6 +46,12 @@ _generate_msg_cpp(visualservo
 )
 _generate_msg_cpp(visualservo
   "/home/user/vs/catkin_ws/src/visualservo/msg/points_array.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/visualservo
+)
+_generate_msg_cpp(visualservo
+  "/home/user/vs/catkin_ws/src/visualservo/msg/vs_info.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/visualservo
@@ -64,6 +75,8 @@ get_filename_component(_filename "/home/user/vs/catkin_ws/src/visualservo/msg/im
 add_dependencies(visualservo_generate_messages_cpp _visualservo_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/user/vs/catkin_ws/src/visualservo/msg/points_array.msg" NAME_WE)
 add_dependencies(visualservo_generate_messages_cpp _visualservo_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/user/vs/catkin_ws/src/visualservo/msg/vs_info.msg" NAME_WE)
+add_dependencies(visualservo_generate_messages_cpp _visualservo_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(visualservo_gencpp)
@@ -82,6 +95,12 @@ _generate_msg_eus(visualservo
 )
 _generate_msg_eus(visualservo
   "/home/user/vs/catkin_ws/src/visualservo/msg/points_array.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/visualservo
+)
+_generate_msg_eus(visualservo
+  "/home/user/vs/catkin_ws/src/visualservo/msg/vs_info.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/visualservo
@@ -105,6 +124,8 @@ get_filename_component(_filename "/home/user/vs/catkin_ws/src/visualservo/msg/im
 add_dependencies(visualservo_generate_messages_eus _visualservo_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/user/vs/catkin_ws/src/visualservo/msg/points_array.msg" NAME_WE)
 add_dependencies(visualservo_generate_messages_eus _visualservo_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/user/vs/catkin_ws/src/visualservo/msg/vs_info.msg" NAME_WE)
+add_dependencies(visualservo_generate_messages_eus _visualservo_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(visualservo_geneus)
@@ -123,6 +144,12 @@ _generate_msg_lisp(visualservo
 )
 _generate_msg_lisp(visualservo
   "/home/user/vs/catkin_ws/src/visualservo/msg/points_array.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/visualservo
+)
+_generate_msg_lisp(visualservo
+  "/home/user/vs/catkin_ws/src/visualservo/msg/vs_info.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/visualservo
@@ -146,6 +173,8 @@ get_filename_component(_filename "/home/user/vs/catkin_ws/src/visualservo/msg/im
 add_dependencies(visualservo_generate_messages_lisp _visualservo_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/user/vs/catkin_ws/src/visualservo/msg/points_array.msg" NAME_WE)
 add_dependencies(visualservo_generate_messages_lisp _visualservo_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/user/vs/catkin_ws/src/visualservo/msg/vs_info.msg" NAME_WE)
+add_dependencies(visualservo_generate_messages_lisp _visualservo_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(visualservo_genlisp)
@@ -164,6 +193,12 @@ _generate_msg_nodejs(visualservo
 )
 _generate_msg_nodejs(visualservo
   "/home/user/vs/catkin_ws/src/visualservo/msg/points_array.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/visualservo
+)
+_generate_msg_nodejs(visualservo
+  "/home/user/vs/catkin_ws/src/visualservo/msg/vs_info.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/visualservo
@@ -187,6 +222,8 @@ get_filename_component(_filename "/home/user/vs/catkin_ws/src/visualservo/msg/im
 add_dependencies(visualservo_generate_messages_nodejs _visualservo_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/user/vs/catkin_ws/src/visualservo/msg/points_array.msg" NAME_WE)
 add_dependencies(visualservo_generate_messages_nodejs _visualservo_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/user/vs/catkin_ws/src/visualservo/msg/vs_info.msg" NAME_WE)
+add_dependencies(visualservo_generate_messages_nodejs _visualservo_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(visualservo_gennodejs)
@@ -209,6 +246,12 @@ _generate_msg_py(visualservo
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/visualservo
 )
+_generate_msg_py(visualservo
+  "/home/user/vs/catkin_ws/src/visualservo/msg/vs_info.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/visualservo
+)
 
 ### Generating Services
 
@@ -227,6 +270,8 @@ add_dependencies(visualservo_generate_messages visualservo_generate_messages_py)
 get_filename_component(_filename "/home/user/vs/catkin_ws/src/visualservo/msg/image_point.msg" NAME_WE)
 add_dependencies(visualservo_generate_messages_py _visualservo_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/user/vs/catkin_ws/src/visualservo/msg/points_array.msg" NAME_WE)
+add_dependencies(visualservo_generate_messages_py _visualservo_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/user/vs/catkin_ws/src/visualservo/msg/vs_info.msg" NAME_WE)
 add_dependencies(visualservo_generate_messages_py _visualservo_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

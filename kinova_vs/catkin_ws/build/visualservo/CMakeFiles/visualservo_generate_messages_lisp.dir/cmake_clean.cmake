@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "/home/user/vs/catkin_ws/devel/share/common-lisp/ros/visualservo/msg/image_point.lisp"
   "/home/user/vs/catkin_ws/devel/share/common-lisp/ros/visualservo/msg/points_array.lisp"
+  "/home/user/vs/catkin_ws/devel/share/common-lisp/ros/visualservo/msg/vs_info.lisp"
   "CMakeFiles/visualservo_generate_messages_lisp"
 )
 

@@ -41,6 +41,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/visualservo/msg" TYPE FILE FILES
     "/home/user/vs/catkin_ws/src/visualservo/msg/image_point.msg"
     "/home/user/vs/catkin_ws/src/visualservo/msg/points_array.msg"
+    "/home/user/vs/catkin_ws/src/visualservo/msg/vs_info.msg"
     )
 endif()
 

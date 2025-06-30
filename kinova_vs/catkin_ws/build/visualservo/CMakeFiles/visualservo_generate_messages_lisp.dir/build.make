@@ -55,6 +55,7 @@ include visualservo/CMakeFiles/visualservo_generate_messages_lisp.dir/progress.m
 
 visualservo/CMakeFiles/visualservo_generate_messages_lisp: /home/user/vs/catkin_ws/devel/share/common-lisp/ros/visualservo/msg/image_point.lisp
 visualservo/CMakeFiles/visualservo_generate_messages_lisp: /home/user/vs/catkin_ws/devel/share/common-lisp/ros/visualservo/msg/points_array.lisp
+visualservo/CMakeFiles/visualservo_generate_messages_lisp: /home/user/vs/catkin_ws/devel/share/common-lisp/ros/visualservo/msg/vs_info.lisp
 
 
 /home/user/vs/catkin_ws/devel/share/common-lisp/ros/visualservo/msg/image_point.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
@@ -67,9 +68,15 @@ visualservo/CMakeFiles/visualservo_generate_messages_lisp: /home/user/vs/catkin_
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from visualservo/points_array.msg"
 	cd /home/user/vs/catkin_ws/build/visualservo && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/user/vs/catkin_ws/src/visualservo/msg/points_array.msg -Ivisualservo:/home/user/vs/catkin_ws/src/visualservo/msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p visualservo -o /home/user/vs/catkin_ws/devel/share/common-lisp/ros/visualservo/msg
 
+/home/user/vs/catkin_ws/devel/share/common-lisp/ros/visualservo/msg/vs_info.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
+/home/user/vs/catkin_ws/devel/share/common-lisp/ros/visualservo/msg/vs_info.lisp: /home/user/vs/catkin_ws/src/visualservo/msg/vs_info.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/user/vs/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Lisp code from visualservo/vs_info.msg"
+	cd /home/user/vs/catkin_ws/build/visualservo && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/user/vs/catkin_ws/src/visualservo/msg/vs_info.msg -Ivisualservo:/home/user/vs/catkin_ws/src/visualservo/msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p visualservo -o /home/user/vs/catkin_ws/devel/share/common-lisp/ros/visualservo/msg
+
 visualservo_generate_messages_lisp: visualservo/CMakeFiles/visualservo_generate_messages_lisp
 visualservo_generate_messages_lisp: /home/user/vs/catkin_ws/devel/share/common-lisp/ros/visualservo/msg/image_point.lisp
 visualservo_generate_messages_lisp: /home/user/vs/catkin_ws/devel/share/common-lisp/ros/visualservo/msg/points_array.lisp
+visualservo_generate_messages_lisp: /home/user/vs/catkin_ws/devel/share/common-lisp/ros/visualservo/msg/vs_info.lisp
 visualservo_generate_messages_lisp: visualservo/CMakeFiles/visualservo_generate_messages_lisp.dir/build.make
 
 .PHONY : visualservo_generate_messages_lisp

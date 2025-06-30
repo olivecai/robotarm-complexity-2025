@@ -53,6 +53,7 @@ find_package(catkin REQUIRED COMPONENTS
    FILES
    image_point.msg
    points_array.msg
+   vs_info.msg
  )
 
 ## Generate services in the 'srv' folder

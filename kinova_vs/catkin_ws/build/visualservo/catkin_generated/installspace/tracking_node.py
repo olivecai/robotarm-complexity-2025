@@ -48,6 +48,9 @@ class TrackingNode:
         self.old_gray = None
         self.new_gray = None
 
+        self.use_constant_desired_position = 1
+        self.constant_desired_pos = None #togglable, we will use this for now so that the desired position never moves, to deal with occlusion and bad tracking.
+
         self.des_pub = rospy.Publisher(f"/cameras/cam{self.cam_id}/des_pnt", image_point, queue_size=10)
         self.curr_pub = rospy.Publisher(f"/cameras/cam{self.cam_id}/curr_pnt", image_point, queue_size=10)
         self.error = None
@@ -64,6 +67,9 @@ class TrackingNode:
             plt.title("Click END EFFECTOR, then click DESIRED POINT, then CLOSE WINDOW")
             plt.axis('on')
             self.old_points = np.array(plt.ginput(2), dtype="float32")
+
+            self.constant_desired_pos = self.old_points[1]
+
             plt.close()
 
             rospy.loginfo(f"INITIAL POINTS: {self.old_points}")
@@ -84,12 +90,20 @@ class TrackingNode:
             new_points, _, _ = cv2.calcOpticalFlowPyrLK(self.old_gray, self.new_gray, self.old_points, None, **self.lk_params)
             self.new_points = np.array(new_points)
             
+            
+            ######################################################################################################
+            if self.use_constant_desired_position:
+                self.old_points[1] = self.constant_desired_pos
+                self.new_points[1] = self.constant_desired_pos
+
             for i, (new, old) in enumerate(zip(self.new_points, self.old_points)):
                 a,b = new.ravel()
                 c,d = old.ravel()
                 self.mask = cv2.line(self.mask, (int(a), int(b)), (int(c), int(d)), color=(0, 255, 0), thickness=10)
                 frame = cv2.circle(frame, (int(a), int(b)), 5, (0, 255, 0), -1)
             
+        
+
             img = cv2.add(frame, self.mask)
             cv2.imshow('frame', img)
             cv2.waitKey(1)
@@ -102,6 +116,9 @@ class TrackingNode:
             cur = self.old_points[0]
             des = self.old_points[1]
 
+            if self.use_constant_desired_position:
+                des = self.constant_desired_pos 
+
             des_pnt = image_point()
             des_pnt.x = des[0]
             des_pnt.y = des[1]
@@ -113,7 +130,7 @@ class TrackingNode:
             self.error = np.linalg.norm(des-cur)
             rospy.loginfo(f"Current P2P Error: {self.error}")
 
-            self.des_pub.publish(des_pnt)
+            self.des_pub.publish(des_pnt) #publish the constant desired position instead of updating the desired position
             self.curr_pub.publish(cur_pnt)
 
 def main(args):

@@ -5,5 +5,7 @@
    "IMAGE_POINT"
    "<POINTS_ARRAY>"
    "POINTS_ARRAY"
+   "<VS_INFO>"
+   "VS_INFO"
   ))
 

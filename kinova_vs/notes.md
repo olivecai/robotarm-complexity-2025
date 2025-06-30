@@ -38,6 +38,8 @@ and ping 192.168.1.10 to see if kinova is responding.
 
 can also search in browser for 192.168.1.10 --> control kinova!
 
+roslaunch kortex_bringup kortex_bringup.launch 
+
 ## using openCV to get video capture and using optical flow LK tracking
 
 `$ ls /dev` to view curent cameras: usually video0 is laptop, and even numbers are external cameras you want to find.
