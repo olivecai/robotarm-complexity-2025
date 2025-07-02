@@ -1,0 +1,13 @@
+prefix=/home/oliveoil/Desktop/VisionRobotics/robotarm_complexity_2025/simulations/.conda
+exec_prefix=/home/oliveoil/Desktop/VisionRobotics/robotarm_complexity_2025/simulations/.conda
+libdir=/home/oliveoil/Desktop/VisionRobotics/robotarm_complexity_2025/simulations/.conda/lib
+sharedlibdir=/home/oliveoil/Desktop/VisionRobotics/robotarm_complexity_2025/simulations/.conda/lib
+includedir=/home/oliveoil/Desktop/VisionRobotics/robotarm_complexity_2025/simulations/.conda/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}

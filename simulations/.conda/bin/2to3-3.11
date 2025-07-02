@@ -1,0 +1,5 @@
+#!/home/oliveoil/Desktop/VisionRobotics/robotarm_complexity_2025/simulations/.conda/bin/python3.11
+import sys
+from lib2to3.main import main
+
+sys.exit(main("lib2to3.fixes"))

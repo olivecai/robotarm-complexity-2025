@@ -1,0 +1,8 @@
+prefix=/home/oliveoil/Desktop/VisionRobotics/robotarm_complexity_2025/simulations/.conda
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+
+Name: pthread stubs
+Description: Stubs missing from libc for standard pthread functions
+Version: 0.3
+Libs: 

@@ -1,0 +1,11 @@
+prefix=/home/oliveoil/Desktop/VisionRobotics/robotarm_complexity_2025/simulations/.conda
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+toolexeclibdir=${libdir}
+includedir=/home/oliveoil/Desktop/VisionRobotics/robotarm_complexity_2025/simulations/.conda/include
+
+Name: libffi
+Description: Library supporting Foreign Function Interfaces
+Version: 3.4.4
+Libs: -L${toolexeclibdir} -lffi
+Cflags: -I${includedir}

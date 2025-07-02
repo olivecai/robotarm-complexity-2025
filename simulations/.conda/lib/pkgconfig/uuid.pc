@@ -1,0 +1,11 @@
+prefix=/home/oliveoil/Desktop/VisionRobotics/robotarm_complexity_2025/simulations/.conda
+exec_prefix=/home/oliveoil/Desktop/VisionRobotics/robotarm_complexity_2025/simulations/.conda
+libdir=/home/oliveoil/Desktop/VisionRobotics/robotarm_complexity_2025/simulations/.conda/lib
+includedir=/home/oliveoil/Desktop/VisionRobotics/robotarm_complexity_2025/simulations/.conda/include
+
+Name: uuid
+Description: Universally unique id library
+Version: 2.32.1
+Requires:
+Cflags: -I${includedir}/uuid
+Libs: -L${libdir} -luuid
