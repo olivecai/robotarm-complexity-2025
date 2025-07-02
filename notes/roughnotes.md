@@ -726,3 +726,15 @@ Of course this "draw a circle and go there" is not very reliable, especailly if:
 - we have a camera on the robot
 
 nevertheless, this could serve a good TOOL
+
+# July 2
+
+Conversation with Dylan and Cole:
+
+Creating trajectory intermediate steps and associating that number of steps with number of jacobian updates: can we take a trajectory to get to a goal position and check every step, see the area of convergence to get to that next goal position (see the farthest point that it can successfully converge to, or work BACKWARDS: from the goal position, find the area around that circle that can converge to the goal)
+
+So, instead of my previous idea of focusing on each joint and 'toggling' the joint to get closer, try a more general approach of looking at the Jacobians.
+
+When we look at the planar 2DOF arm, we can see the x-y convergence areas clearly, but I wonder if it'll still work for 3D cartesian space. But we are just trying to see what works and see the actual minimum number of jacobians here, so just use the analytic jacobians.
+
+WORKFLOW:
