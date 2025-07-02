@@ -737,4 +737,14 @@ So, instead of my previous idea of focusing on each joint and 'toggling' the joi
 
 When we look at the planar 2DOF arm, we can see the x-y convergence areas clearly, but I wonder if it'll still work for 3D cartesian space. But we are just trying to see what works and see the actual minimum number of jacobians here, so just use the analytic jacobians.
 
-WORKFLOW:
+Hypothesis: the closer we are to a singular matrix, the smaller the convergence region to that point is around that point. 
+
+Result: yes it's true! the farther we are from the singular outstretched position, the larger the convergence radius is. When the desired position is ORIGIN, we have a huge region of convergence in cartesian space, but this could be attributeed by the multiple solutions that exist for that orientation. It's hard to say if this is a valid observation yet.
+
+So, workflow right now (and let's do everything analytically, since it's best if we can make some observations and then apply)
+- for an ets, see where the singular jacobians are, and make note of them!
+- then get the region of convergence for a constant jacobian around that area. (and note that damping can change all of this, so let's try without damping for noe, since we can see how damping changes things LATER)
+- test if our 'theory' works by generating a trajectory of jacobians.... ;-;
+
+- what if we store all the success/fail points for each point that converge to the GOAL POSITION --> then from the set of success points, we choose the closest point to the CURRENT GOAL POSITION and make that our intermediate step. REPEAT until we get to the GOAL.
+

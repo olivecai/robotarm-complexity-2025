@@ -312,23 +312,30 @@ def main():
     ets1dof = rtb.ET.Rz() * rtb.ET.tx(l0)
     joint_limits1dof = [(-np.pi/2, np.pi/2)]
     joint_limits1dof_full = [(-2*np.pi, 2*np.pi)]
+    dof1 = (ets1dof, joint_limits1dof, joint_limits1dof_full)
 
     ets2dof = rtb.ET.Rz() * rtb.ET.tx(l0) * rtb.ET.Rz() * rtb.ET.tx(l1) 
     joint_limits2dof = [(0, np.pi), (-np.pi, np.pi)]  # example for 2 DOF
     joint_limits2dof_full = [(-2*np.pi, 2*np.pi), (-2*np.pi, 2*np.pi)]
+    dof2 = (ets2dof, joint_limits2dof, joint_limits2dof_full)
 
     ets3dof = rtb.ET.Rz() * rtb.ET.tx(l0) * rtb.ET.Rx() * rtb.ET.tz(l1) * rtb.ET.Rx() * rtb.ET.tz(l2)
     joint_limits3dof = [(-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2) , (-np.pi/2, np.pi/2)]
     joint_limits3dof_full = [(-2*np.pi/2, 2*np.pi/2), (-2*np.pi/2, 2*np.pi/2) , (-2*np.pi/2, 2*np.pi/2)]
+    dof3 = (ets3dof, joint_limits3dof, joint_limits3dof_full)
+
+    ets_dylan = rtb.ET.Rz() * rtb.ET.Ry(np.pi/2) * rtb.ET.Rz(np.pi) * rtb.ET.Ry() * rtb.ET.tz(0.55) * rtb.ET.Ry() * rtb.ET.tz(0.30)
+    #joint_limits_dylan = [(0, np.pi/2), (0, np.pi/2) , (-np.pi/2, np.pi/2)]
+    joint_limits_dylan = [(-np.pi/2, np.pi/2), (-np.pi, np.pi) , (-np.pi, np.pi)]
+    joint_limits_full_dylan = [(-2*np.pi/2, 2*np.pi/2), (-2*np.pi/2, 2*np.pi/2) , (-2*np.pi/2, 2*np.pi/2)]
+    dofdylan = (ets_dylan, joint_limits_dylan, joint_limits_full_dylan)
 
     puma = Puma560()
     ets_puma = (puma.ets())  # shows ETS version
     joint_limits_puma= [(-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2) , (-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2) , (-np.pi/2, np.pi/2)]
     joint_limits_puma_full = [(-2*np.pi/2, 2*np.pi/2), (-2*np.pi/2, 2*np.pi/2) , (-2*np.pi/2, 2*np.pi/2),(-2*np.pi/2, 2*np.pi/2), (-2*np.pi/2, 2*np.pi/2) , (-2*np.pi/2, 2*np.pi/2)]
 
-    joint_limits = joint_limits3dof
-    joint_limits_full = joint_limits3dof_full
-    ets=ets3dof
+    ets, joint_limits, joint_limits_full = dof3
 
     robot = rtb.Robot(ets)
 
@@ -349,8 +356,8 @@ def main():
     chebyshev = 0 #chebyshev seems to consistently result in a tiny bit more error than equidistant...
 
     #PLOTTING PARAMS
-    desiredP = np.array([0,0.9,0.5])
-    Q = np.array([0,0,PI/2])
+    desiredP = np.array([2,0,0])
+    Q = np.array([0.1,0.1,0.1])
     plot_certain_trajectory=1
     simplex_mode=0
     #### JACOBIAN METHODS ####
