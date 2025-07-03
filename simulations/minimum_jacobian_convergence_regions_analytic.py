@@ -21,7 +21,7 @@ from common_robot_calculations import *
 from roboticstoolbox.models.DH import Puma560
 
 class ConvergenceAlgorithm():
-    def __init__(self, tolerance=1e-1, maxiter=200, alpha=1, resolution = 50, show_each_convergence_region = 1):
+    def __init__(self, tolerance=1e-1, maxiter=200, alpha=1e-1, resolution = 50, show_each_convergence_region = 1):
         self.tolerance =tolerance #residual tolerance to stop iterations
         self.maxiter = maxiter
         self.alpha = alpha #dampening
@@ -46,7 +46,7 @@ class Trajectory():
         self.initP = None #important for comparing the radius of each convergence region
         self.desiredP = None
         self.currMilestoneP = None
-        self.closeEnoughTolerance = 0.5
+        self.closeEnoughTolerance = 1
         if convergence_algorithm_params == None:
             self.algorithm = ConvergenceAlgorithm()
         else:
@@ -196,7 +196,8 @@ def get_convergence_region(Trajectory: Trajectory):
     #sanity check:
     print("curr milestone:", Trajectory.currMilestoneP)
     print("curr Q:", Trajectory.currQ, "init Q:", Trajectory.initQ, "init P:", Trajectory.initP, "currMilestoneP:", Trajectory.currMilestoneP)
-
+    print("closest success point:", closest_success_point_to_starting_position)
+    print("^ distance:", closest_success_point_to_starting_position_distance)
 
     if closest_success_point_to_starting_position_distance == np.inf:
         closest_success_point_to_starting_position_distance = None #if this happens, that means there are absolutely no success points. 
@@ -257,6 +258,7 @@ def plan_trajectory(Trajectory: Trajectory):
 
     print("INITIAL Q:", Trajectory.initQ, "INITIAL P:", Trajectory.initP)
 
+    print("number of jacobian updates:", Trajectory.jacobian_updates)
     print("milestones:")
     print(Trajectory.cartesian_milestones)
 
@@ -305,15 +307,23 @@ def main():
     ets, joint_limits, joint_limits_full  = dof2
     ########################################################################
 
-    initQ = np.array([0,np.pi/4])
+    initQ = np.array([0,np.pi/8])
     desiredP= np.array([1.,1.,0.])
 
     traj1 = Trajectory(ets, joint_limits, joint_limits_full)
     traj1.assign_trajectory(initQ, desiredP)
-    plan_trajectory(traj1)
-    #traj1.planning_complete=1
-    #invkin(traj1)
-    traj1.plot_robot_trajectory()
+    if 1:
+        plan_trajectory(traj1)
+        traj1.plot_robot_trajectory()
+    else:
+        traj1.planning_complete=1
+        success, i, currP, currQ = invkin(traj1)
+        traj1.plot_robot_trajectory()
+        if success:
+            print("SUCCESS, iterations:", i)
+        else:
+            print("FAILURE, currP:", currP, "currQ:", currQ)
+    
 
 
 main()
