@@ -20,26 +20,42 @@ import plotly.graph_objects as go
 from common_robot_calculations import * 
 from roboticstoolbox.models.DH import Puma560
 
+class ConvergenceAlgorithm():
+    def __init__(self, tolerance=1e-3, maxiter=200, alpha=1):
+        self.tolerance =tolerance #residual tolerance to stop iterations
+        self.maxiter = maxiter
+        self.alpha = alpha #dampening
+        self.current_jacobian = None
+
 class Trajectory():
-    def __init__(self, ets: rtb.ETS):
+    def __init__(self, ets: rtb.ETS, joint_ranges : list, joint_ranges_full: list, convergence_algorithm_params : dict =None): 
+        '''
+        ets: robotics toolkit ets to perform invkin on
+        convergence_algorithm_params: dict, create convergence algorithm to run plan_trajectory
+        '''
         self.robot = rtb.Robot(ets)
         self.ets = ets
+        self.joint_ranges = joint_ranges
+        self.joint_ranges_full= joint_ranges_full
         self.cartesian_milestones = [] # let this be a FILO queue, since we plan the trajectory starting from GOAL and work up to INITIAL
-        self.initialQ = None
+        self.initQ = None
         self.desiredP = None
         self.jacobian_updates = 0 #this is the focus 
         self.init2newmilestone_dist_supremums = dict() #every time we update the jacobian, see how large the distance from initial to the new milestone is. This can inform us about the radius. KEYS: 1, 2, 3... Key 1 is ALWAYS associated with the desired position's jacobian. AKA if we can converge with only one jacobian, then this dictionary should be: {1: 0.00}
         self.iterations = 0
-        self.trajectory = [] #a list of joint configurations to plot later if needed
+        self.trajectory = [] #a list of joint configurations to plot later if needed. only update this in the invkin function
+        if convergence_algorithm_params == None:
+            self.algorithm = ConvergenceAlgorithm()
+        else:
+            self.algorithm = ConvergenceAlgorithm(**convergence_algorithm_params) #pass the dictionary as params
 
     def assign_trajectory(self, initialQ, desiredP):
         '''
         Assign the starting joint configuration, and the desired cartesian space point.
         NOTE: Currently the desired point will be in 3D Cartesian Space. If we want to do VS, make a seperate function.
         '''
-        self.initialQ = initialQ
+        self.initQ = initialQ
         self.desiredP = desiredP
-        self.trajectory.append(self.initialQ) 
 
     def plan_trajectory(self):
         '''
@@ -62,12 +78,35 @@ class Trajectory():
         plt.close('all')
         #slider_robot_trajectory(np.array(trajectory))
 
-class ConvergenceAlgorithm():
-    def __init__(self, tolerance=1e-3, maxiter=200, alpha=1):
-        self.tolerance =tolerance #residual tolerance to stop iterations
-        self.maxiter = maxiter
-        self.alpha = alpha #dampening
-        self.current_jacobian = None
         
-def invkin(trajectory: Trajectory, algorithm: ConvergenceAlgorithm)
+def invkin(Trajectory: Trajectory, Algorithm: ConvergenceAlgorithm):
+    '''
+    Compute the inverse kinematics for a constant Jacobian.
+    Return SUCCESS bool, number of iterations, the resulting position, and the resulting joint configuration.
+    '''
+    currQ = Trajectory.initQ
+    for i in range(Algorithm.maxiter):
+        currP = fkin(currQ, Trajectory.ets)
+        errorP = Trajectory.desiredP - currP
+        error = np.linalg.norm(errorP)
+
+        Trajectory.trajectory.append(currQ.copy())
+
+        ret=None
+
+        if error < Algorithm.tolerance:
+            ret = 1, i, currP, currQ
+            break
+
+        J = centraldiff_jacobian(currQ, Trajectory.ets)
+        corrQ = np.linalg.pinv(J) @ errorP
+
+        currQ += Algorithm.alpha * corrQ
+
+    if not ret:
+        ret=0, i, currP, currQ
+    
+    return ret
+
+def calculate_error(Trajectory: Trajectory, Algorithm: ConvergenceAlgorithm):
     
