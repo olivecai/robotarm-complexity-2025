@@ -20,7 +20,6 @@ import roboticstoolbox as rtb
 import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.graph_objects as go
-from scipy.spatial import Delaunay
 from common_robot_calculations import * 
 from roboticstoolbox.models.DH import Puma560
 
@@ -48,7 +47,7 @@ def invkin(tolerance:int, maxiter: int, currQ, desiredP, e : rtb.Robot.ets, join
     trajectory = []
     jac_updates=0;
 
-    alpha = 1 #dampening factor
+    alpha = 0.1 #dampening factor
     if jacobian_method==1:
         J = centraldiff_jacobian(currQ, e)
     if jacobian_method==2 or jacobian_method==3:
@@ -92,6 +91,8 @@ def invkin(tolerance:int, maxiter: int, currQ, desiredP, e : rtb.Robot.ets, join
 
 
     if plot_traj: #animate trajectory, very fast
+        print("THIS IS TRAJECTORY:")
+        print(np.array(trajectory))
         e.plot(np.array(trajectory), block=False)
         plt.close('all')
         #slider_robot_trajectory(np.array(trajectory))
@@ -316,7 +317,7 @@ def main():
     joint_limits_puma= [(-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2) , (-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2) , (-np.pi/2, np.pi/2)]
     joint_limits_puma_full = [(-2*np.pi/2, 2*np.pi/2), (-2*np.pi/2, 2*np.pi/2) , (-2*np.pi/2, 2*np.pi/2),(-2*np.pi/2, 2*np.pi/2), (-2*np.pi/2, 2*np.pi/2) , (-2*np.pi/2, 2*np.pi/2)]
 
-    ets, joint_limits, joint_limits_full  = dofdylan
+    ets, joint_limits, joint_limits_full  = dof2
 
     robot = rtb.Robot(ets)
 
@@ -333,11 +334,11 @@ def main():
     #MESH PARAMS
     tolerance = 1e-1
     maxiter = 200
-    resolution=10
+    resolution=50
     
     #PLOTTING PARAMS
-    desiredP = np.array([0., 0.39, 0.69])
-    currQ = np.array([np.pi/2,np.pi/4,np.pi/4])
+    desiredP = np.array([1., 1., 0.])
+    currQ = np.array([np.pi/4,np.pi/4])
 
     #### JACOBIAN METHODS ####
     # 1 central diff, 2 central diff every update, 3 analytic every update (best possible)
@@ -347,7 +348,7 @@ def main():
     print(fkin(currQ, ets))
     ets.plot(currQ, block=True)
 
-    #success, resultP, iterations, jac_updates = invkin(tolerance, maxiter*2, currQ, desiredP, ets, joint_limits, joint_limits_full jacobian_method, 1)
+    #success, resultP, iterations, jac_updates = invkin(tolerance, maxiter*2, currQ, desiredP, ets, joint_limits_full, jacobian_method, 1)
     #print("init Q: ", currQ, "fin Q:", currQ, "result P:", resultP, "jac updates:", jac_updates)
 
     calculate_error(camera, tolerance, maxiter, resolution, ets, joint_limits, joint_limits_full, desiredP, jacobian_method, 0, 1)

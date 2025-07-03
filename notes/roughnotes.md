@@ -748,3 +748,9 @@ So, workflow right now (and let's do everything analytically, since it's best if
 
 - what if we store all the success/fail points for each point that converge to the GOAL POSITION --> then from the set of success points, we choose the closest point to the CURRENT GOAL POSITION and make that our intermediate step. REPEAT until we get to the GOAL.
 
+# July 3
+
+Consider goal to init VS init to goal (pros of the latter: you could KNow the joint angles)
+
+- practicaltiyh
+- smooth the trajectory steps? --> even if jagged looking cartesian solution, the joint solution might be smooth :0 ...... might end up get something like that anyway ewhen you end up with a full solution bc the approx of a rad of convergence is CONSERVATIVE, so likely more steps than needed. --> might give u more smoothing 

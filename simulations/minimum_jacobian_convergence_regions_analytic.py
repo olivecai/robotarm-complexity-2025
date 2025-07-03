@@ -21,8 +21,9 @@ from common_robot_calculations import *
 from roboticstoolbox.models.DH import Puma560
 
 class ConvergenceAlgorithm():
-    def __init__(self, tolerance=1e-1, maxiter=200, alpha=1e-1, resolution = 50, show_each_convergence_region = 1):
+    def __init__(self, tolerance=1e-3, practical_tolerance=1e-1, maxiter=200, alpha=.5, resolution = 8, show_each_convergence_region = 1):
         self.tolerance =tolerance #residual tolerance to stop iterations
+        self.practical_tolerance = practical_tolerance
         self.maxiter = maxiter
         self.alpha = alpha #dampening
         self.resolution = resolution
@@ -46,7 +47,7 @@ class Trajectory():
         self.initP = None #important for comparing the radius of each convergence region
         self.desiredP = None
         self.currMilestoneP = None
-        self.closeEnoughTolerance = 1
+        self.closeEnoughTolerance = 1e-1
         if convergence_algorithm_params == None:
             self.algorithm = ConvergenceAlgorithm()
         else:
@@ -85,7 +86,7 @@ class Trajectory():
         '''
         self.initQ = initialQ
         self.currQ = initialQ
-        self.initP = fkin(initialQ, self.ets)
+        self.initP = fkin(initialQ.copy(), self.ets)
         self.desiredP = desiredP
         self.currMilestoneP = desiredP
 
@@ -94,32 +95,48 @@ class Trajectory():
         Use the Robotics Tool Kit plot robot feature to see the cartesian trajectory the robot takes, along with the joint trajectory plot in joint space.
         '''
         print(np.array(self.trajectory))
-        self.ets.plot(np.array(self.trajectory), block=False)
+        self.ets.plot(np.array(self.trajectory), block=True)
         plt.close('all')
         #slider_robot_trajectory(np.array(trajectory))
         
-def invkin(Trajectory: Trajectory):
+def within_joint_limits(q, joint_ranges):
+    return all(low <= q[i] <= high for i, (low, high) in enumerate(joint_ranges))
+
+def invkin(Trajectory: Trajectory, startQ=None):
     '''
     Compute the inverse kinematics for a constant Jacobian.
     Return SUCCESS bool, number of iterations, the resulting position, and the resulting joint configuration.
     '''
     Algorithm = Trajectory.algorithm
+    if Trajectory.planning_complete:
+        tolerance=Algorithm.practical_tolerance
+    else:
+        tolerance = Algorithm.tolerance
 
-    currQ = Trajectory.currQ.copy()
-    J = centraldiff_jacobian(currQ.copy(), Trajectory.ets)
-
+    currQ = startQ.copy() if startQ is not None else Trajectory.currQ.copy()
+    J = centraldiff_jacobian(currQ, Trajectory.ets)
+    print("Current milestone:", Trajectory.currMilestoneP)
     for i in range(Algorithm.maxiter):
         currP = fkin(currQ.copy(), Trajectory.ets)
+        if Trajectory.planning_complete:
+            print("currQ:",currQ,"currP:", currP)
         errorP = Trajectory.currMilestoneP - currP
         error = np.linalg.norm(errorP)
 
+        out_of_bounds=0
+        if not within_joint_limits(currQ, Trajectory.joint_ranges_full):
+            ret=  0, i, currP, currQ
+            out_of_bounds=1
+        if out_of_bounds:
+            break
+  
         if Trajectory.planning_complete==1:
             Trajectory.trajectory.append(currQ.copy())
             Trajectory.iterations +=1
 
         ret=None
 
-        if error < Algorithm.tolerance:
+        if error < tolerance:
             ret = 1, i, currP, currQ
             break
 
@@ -134,6 +151,16 @@ def invkin(Trajectory: Trajectory):
         Trajectory.currQ = currQ
     
     return ret
+
+def arrays_are_similar(arr1, arr2, tol):
+    '''
+    check if two numpy arrays are similar to one another.
+    '''
+    #print("arr1-arr2:",np.abs(arr1.copy()-arr2.copy() ))
+    diff = np.abs(arr1.copy()-arr2.copy())
+    less_than_mask = diff < tol
+    all_less = np.all(less_than_mask.copy())
+    return all_less #if the difference is all under tolerance, then the arrays must be very similar.
 
 def get_convergence_region(Trajectory: Trajectory):
     '''
@@ -163,34 +190,45 @@ def get_convergence_region(Trajectory: Trajectory):
     greatest_distance_in_convergence_region_point = None
     closest_success_point_to_starting_position_distance = np.inf #get the smallest distance
     closest_success_point_to_starting_position = None #get the actual cartesian point
-    
 
     for idx in np.ndindex(permuts_over_linspaces_shape):
         Q = joint_space_grid[idx].copy()
         cartesian_pos = fkin(Q, Trajectory.ets)
         cartesian_space.append(cartesian_pos)
-        Trajectory.currQ = Q.copy()
-        isuccess, iiters, iP, iQ = invkin(Trajectory)
+        isuccess, iiters, iP, iQ = invkin(Trajectory, Q)
+
+        print(iP, Trajectory.currMilestoneP, Trajectory.initP, Trajectory.desiredP)
 
         ierror = np.linalg.norm(Trajectory.currMilestoneP - iP) #NOTE: error IS the distance magnitude
+
+            
         if isuccess: #iff this point successfully converged, calculate TWO THINGS: the farthest success point, and the closest success point to the initial position.
+            #'''
             if ierror > greatest_distance_in_convergence_region:
-                greatest_distance_in_convergence_region_point = iP
-                greatest_distance_in_convergence_region = ierror
-            
-            dist_to_initP = np.linalg.norm(iP - Trajectory.initP)
+                greatest_distance_in_convergence_region_point = iP.copy()
+                greatest_distance_in_convergence_region = ierror#'''
+
+            dist_to_initP = np.linalg.norm(cartesian_pos - Trajectory.initP)
             if dist_to_initP < closest_success_point_to_starting_position_distance:
-                closest_success_point_to_starting_position = iP
+                isuccess = -1
+                closest_success_point_to_starting_position = cartesian_pos
                 closest_success_point_to_starting_position_distance = dist_to_initP
-            
-            #these next two lines are very optional, have no impact on the code logic, and serve to visualize the plots.
-            if iiters <=2: 
-                isuccess = 0.5 # the only purpose this serves is to differentiate the color in the plot to see where the catresian goal actually is
-    
+                
+            #these next few lines are very optional, have no impact on the code logic, and serve to visualize the plots.
+            #if iiters <=2: 
+            #    isuccess = 0.5 # the only purpose this serves is to differentiate the color in the plot to see where the catresian goal actually is
+
+        # JUST FOR PLOTTING
+        if arrays_are_similar(Trajectory.initP.copy(), cartesian_pos, Trajectory.closeEnoughTolerance):
+            print("this iteration beginning point is similar to the initial point")
+            isuccess = -2
+        if arrays_are_similar(Trajectory.currMilestoneP.copy() , cartesian_pos, Trajectory.closeEnoughTolerance):
+            print("current milestone is near this iteration position")
+            isuccess = 2
+
         sum_error += ierror
 
         cartesian_values.append(isuccess)
-    Trajectory.currQ = Trajectory.initQ.copy()
 
     #end for
     #sanity check:
@@ -202,7 +240,6 @@ def get_convergence_region(Trajectory: Trajectory):
     if closest_success_point_to_starting_position_distance == np.inf:
         closest_success_point_to_starting_position_distance = None #if this happens, that means there are absolutely no success points. 
         closest_success_point_to_starting_position = None
-
 
     if Algorithm.show_each_convergence_region: #default Algorithm object plots
         cartesian_space = np.array(cartesian_space); cartesian_values = np.array(cartesian_values)
@@ -224,10 +261,9 @@ def get_convergence_region(Trajectory: Trajectory):
         plt.tight_layout()
         plt.show()
 
-
     #remember we are dealing with discrete math here! therefore if closest_success_point_to_starting_position is close enough to the actual starting position, do not get another jacobian.
-    if np.linalg.norm(closest_success_point_to_starting_position  - Trajectory.initP) < Trajectory.closeEnoughTolerance:
-        closest_success_point_to_starting_position = Trajectory.initP
+    if arrays_are_similar(closest_success_point_to_starting_position, Trajectory.initP, Trajectory.closeEnoughTolerance):
+        closest_success_point_to_starting_position = Trajectory.initP #the closest success point and the starting point are very close
         Trajectory.planning_complete = 1
 
     Trajectory.jacobian_updates += 1
@@ -270,6 +306,7 @@ def plan_trajectory(Trajectory: Trajectory):
     Trajectory.iterations = 0 
 
     for i in range(Trajectory.jacobian_updates):
+        print("Currently on the Jacobian update i=", i)
         Trajectory.currMilestoneP = Trajectory.cartesian_milestones[Trajectory.jacobian_updates-i-1] #work backwards! FILO
         invkin(Trajectory)
     
@@ -290,7 +327,7 @@ def main():
 
     ets2dof = rtb.ET.Rz() * rtb.ET.tx(l0) * rtb.ET.Rz() * rtb.ET.tx(l1) 
     joint_limits2dof = [(0, np.pi), (-np.pi, np.pi)]  # example for 2 DOF
-    joint_limits2dof_full = [(-2*np.pi, 2*np.pi), (-2*np.pi, 2*np.pi)]
+    joint_limits2dof_full = [(-np.pi, np.pi), (-np.pi, 2*np.pi)]
     dof2 = ets2dof, joint_limits2dof, joint_limits2dof_full
 
     ets3dof = rtb.ET.Rz() * rtb.ET.tx(l0) * rtb.ET.Rx() * rtb.ET.tz(l1) * rtb.ET.Rx() * rtb.ET.tz(l2)
@@ -304,10 +341,10 @@ def main():
     joint_limits_full_dylan = [(-2*np.pi, 2*np.pi), (-2*np.pi, 2*np.pi) , (-2*np.pi, 2*np.pi)]
     dofdylan = ets_dylan, joint_limits_dylan, joint_limits_full_dylan
 
-    ets, joint_limits, joint_limits_full  = dof2
+    ets, joint_limits, joint_limits_full  = dofdylan
     ########################################################################
 
-    initQ = np.array([0,np.pi/8])
+    initQ = np.array([2.5,np.pi/8,np.pi/2])
     desiredP= np.array([1.,1.,0.])
 
     traj1 = Trajectory(ets, joint_limits, joint_limits_full)
