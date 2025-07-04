@@ -754,3 +754,47 @@ Consider goal to init VS init to goal (pros of the latter: you could KNow the jo
 
 - practicaltiyh
 - smooth the trajectory steps? --> even if jagged looking cartesian solution, the joint solution might be smooth :0 ...... might end up get something like that anyway ewhen you end up with a full solution bc the approx of a rad of convergence is CONSERVATIVE, so likely more steps than needed. --> might give u more smoothing 
+
+# July 4
+
+So far we have a simulation that works backwards from the goal to find all points that converge to the goal, identify a successful point in that region that is closest to the starting end effector position, and make that successful point a milestone in the cartesian trajectory. 
+
+There are two topics (aka potential issues) we need to address right nwo:
+1. TRUE NUMBER OF JACOBIANS: We can successfully compute a number of jacobians, and the number is often low (2-4) which is a very good sign because we should never really need too many especially for these smaller problems. HOWEVER, there are times when 1 Jacobian is necessary but our algorithm calculates 2 are needed or so... Part of the problem is we have to specify a tolerance to qualify the number of jacobians as appropriate, and depending on how we geenrate the mesh, the tolerance needs to be meddled wth, and of course this is not genralizable. fix this we had to put in bandaid solutions of a sort: when we sample from the same points each time, we can get 'stuck' trying to refine further when there really are no more 'closest points' and the algorithm jsut comptues the same point over and over again. So the solution to fix that is to cache that closest success distance, and then check on the next iterartion if the distance is the exact same. OR (and this is actually a much better apporach) to randomly sample points all over the space. We could keep the same points or get new ones, perhaps it doesn't matter and perhaps one has an advantage. 
+2. There is also the issue of moving out of bounds when we have multiple milestones.
+
+Time to read some papers on...
+ - trajectory generation
+
+4-D point cloud  --> exact same process of which overlapping points --> account for discrepancy between multiple solutions 
+ - how to decide which joint is most 'effective'
+
+this raises an interesting question at looking at the joint space and the cartesian space together.
+how can we do this with the real robot though? Still no idea so we might as well gather a lot of insight in simulation.
+Earlier I had chosen to get the region of convergence in joint space because the multiple solutions cause some ambiguity, but if we are simply choosing the nearest point each time, we would be travelling towards the correct joint space solution --> thinking about the basins of attraction --> how can we pay attention to which basin of attraction the robot wants to go in? This seems like a possible area to explore.       
+
+Tanner has suggested creating a 4D space with the cartesian x,y,z, and the base joint. This sounds like a good idea. 
+
+where to research
+- fkin --> GIVEN jcaobian, use to solve and plan optimal path
+- kinemaitcs under uncertainty --> ML
+
+keywords:
+'uncertain' 'unknown' kinematics path planning
+
+could look at calibrated form --> is calibrated different than uncalibrated 
+
+globally approximate the jacobian with ~100 training data samples 
+
+new directions --> less samples OR real time (avoid waving around in unfamiliar environment)
+
+you CAN learn it globally online, but its not useful if you have a different target where you want it go --> ok keep updating over time everytime see new target, broyden update. but if we are recomputing everytime we go somewhere new, we defeat the purpose of learning the global function. 
+
+What if we comput eall the poibts that the initial configuration can converge to
+ANd all the points that converge to the goal
+
+Imagine multiple permissible and possible milestones. Our goal is one of them. 
+If we could look at the basins of attraction for the goal, and the closest point in the goal, and only 
+
+Get the basins of attraction for the GOAL
+Find the shortest distance between the intial joint configuration and a joint configuration in the identified basin of attraction. (this is essentially repeating the closest success point again but in the jonit space.)

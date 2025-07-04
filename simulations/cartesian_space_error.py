@@ -268,6 +268,7 @@ def find_singularities(resolution, e, jointlimits: list):
 
     cartesian_points = np.array(cartesian_points)
     cartesian_error_values = np.array(cartesian_error_values)
+    
 
     fig = plt.figure(figsize=(8, 6))
     ax = fig.add_subplot(111, projection='3d')
@@ -337,7 +338,7 @@ def main():
     resolution=50
     
     #PLOTTING PARAMS
-    desiredP = np.array([1., 1., 0.])
+    desiredP = np.array([0., 0., 0.])
     currQ = np.array([np.pi/4,np.pi/4])
 
     #### JACOBIAN METHODS ####

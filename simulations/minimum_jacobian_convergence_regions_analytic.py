@@ -21,7 +21,7 @@ from common_robot_calculations import *
 from roboticstoolbox.models.DH import Puma560
 
 class ConvergenceAlgorithm():
-    def __init__(self, tolerance=1e-3, practical_tolerance=1e-1, maxiter=200, alpha=.5, resolution = 8, show_each_convergence_region = 1):
+    def __init__(self, tolerance=1e-3, practical_tolerance=1e-1, maxiter=200, alpha=.2, resolution = 20, show_each_convergence_region = 1):
         self.tolerance =tolerance #residual tolerance to stop iterations
         self.practical_tolerance = practical_tolerance
         self.maxiter = maxiter
@@ -55,6 +55,7 @@ class Trajectory():
         self.planning_complete = 0 #check this every milestone. if the closest point is within some tolerance of the starting point, then planning is complete and we can see how successful our inverse kinematics is.
 
         # DELIVERABLES
+        self.closest_success_point_to_starting_position_dist = 0
         self.iterations : int = 0 # gather this data after the trajectory has been planned. probably is highly dependent on damping.
         self.trajectory : list = [] #a list of joint configurations to plot later if needed. only update this in the invkin function
         self.jacobian_updates : int = 0 #this is the focus. this value should, after conducting trajectory, ALWAYS be >= 1. IOW if we only need the desired point's jacobian, this value should be ==1.
@@ -94,9 +95,18 @@ class Trajectory():
         '''
         Use the Robotics Tool Kit plot robot feature to see the cartesian trajectory the robot takes, along with the joint trajectory plot in joint space.
         '''
-        print(np.array(self.trajectory))
-        self.ets.plot(np.array(self.trajectory), block=True)
-        plt.close('all')
+        #print(np.array(self.trajectory))
+        ret = self.ets.plot(np.array(self.trajectory), block=True)
+        return
+        for traj in self.trajectory:
+            ret = self.ets.plot(np.array(traj), block=True)
+            print(ret)
+            #ax = fig.add_subplot(111, projection='3d')
+            #ax.set_xlim(-2, 2)
+            #ax.set_ylim(-2, 2)
+            #ax.set_zlim(-2, 2)
+            #plt.pause(2)
+            #plt.close()
         #slider_robot_trajectory(np.array(trajectory))
         
 def within_joint_limits(q, joint_ranges):
@@ -128,6 +138,7 @@ def invkin(Trajectory: Trajectory, startQ=None):
             ret=  0, i, currP, currQ
             out_of_bounds=1
         if out_of_bounds:
+            print("Out of bounds!")
             break
   
         if Trajectory.planning_complete==1:
@@ -162,28 +173,30 @@ def arrays_are_similar(arr1, arr2, tol):
     all_less = np.all(less_than_mask.copy())
     return all_less #if the difference is all under tolerance, then the arrays must be very similar.
 
-def get_convergence_region(Trajectory: Trajectory):
+def joint_cartesian_convergence_region(Trajectory: Trajectory):
     '''
-    iterate over the joint space to get the convergence region for a desired POINT. 
+    JOINT AND CARTESIAN SPACE
+    iterate over the joint space to get the convergence region for a desired POINT, and puts both the joint space and convergence space in a vector to be compared with... 
     modifies object Trajectory.
     visualizes the convergence plots if show_each_convergence_region == 1 in the object Algorithm.
     returns None
     '''
     Algorithm : ConvergenceAlgorithm = Trajectory.algorithm
 
-    joint_space_linspace = [np.linspace(low, high, Algorithm.resolution) for (low, high) in Trajectory.joint_ranges]
+    num_samples = 888  # Tune this for accuracy vs speed
 
-    grid = np.meshgrid(*joint_space_linspace, indexing='ij')
-
-    # stack all grids to create a dof x n x n x ... array
-    joint_space_grid = np.stack(grid, axis=-1) # shape: (n, n, ..., n, dof)
-
-    # preallocate error arrays (same shape as grid, but without dof)
-    permuts_over_linspaces_shape = joint_space_grid.shape[:-1]
+    random_joint_configs = [
+        np.array([np.random.uniform(low, high) for (low, high) in Trajectory.joint_ranges])
+        for _ in range(num_samples)
+    ]
 
     # parallel list of cartesian space and values.
-    cartesian_space = [] # joint space fkin into cartesian space
-    cartesian_values = [] # value of each cartesian position
+    cart_joint_space = [] # joint space fkin into cartesian space AND joint(s)
+    cart_joint_values = [] # value of each specific space
+    
+    #have each of these values be a different shape
+    success_values= [] #star
+    fail_values= [] #square
 
     sum_error = 0
     greatest_distance_in_convergence_region = 0 #get the largest distance
@@ -191,16 +204,21 @@ def get_convergence_region(Trajectory: Trajectory):
     closest_success_point_to_starting_position_distance = np.inf #get the smallest distance
     closest_success_point_to_starting_position = None #get the actual cartesian point
 
-    for idx in np.ndindex(permuts_over_linspaces_shape):
-        Q = joint_space_grid[idx].copy()
+    for Q in random_joint_configs:
         cartesian_pos = fkin(Q, Trajectory.ets)
-        cartesian_space.append(cartesian_pos)
+        cart_joint_space.append(np.concatenate((cartesian_pos, Q)))
         isuccess, iiters, iP, iQ = invkin(Trajectory, Q)
 
         print(iP, Trajectory.currMilestoneP, Trajectory.initP, Trajectory.desiredP)
 
         ierror = np.linalg.norm(Trajectory.currMilestoneP - iP) #NOTE: error IS the distance magnitude
 
+        if isuccess:
+            success_values.append(1)
+            fail_values.append(None)
+        else:
+            success_values.append(None)
+            fail_values.append(1)
             
         if isuccess: #iff this point successfully converged, calculate TWO THINGS: the farthest success point, and the closest success point to the initial position.
             #'''
@@ -226,6 +244,7 @@ def get_convergence_region(Trajectory: Trajectory):
             print("current milestone is near this iteration position")
             isuccess = 2
 
+
         sum_error += ierror
 
         cartesian_values.append(isuccess)
@@ -242,16 +261,23 @@ def get_convergence_region(Trajectory: Trajectory):
         closest_success_point_to_starting_position = None
 
     if Algorithm.show_each_convergence_region: #default Algorithm object plots
-        cartesian_space = np.array(cartesian_space); cartesian_values = np.array(cartesian_values)
+        cartesian_space = np.array(cartesian_space); 
+        cartesian_values = np.array(cartesian_values)
+        success_values = np.array(success_values)
+        fail_values = np.array(fail_values)
 
         fig = plt.figure(figsize=(8,6))
         ax = fig.add_subplot(111, projection='3d')
-        scatter= ax.scatter(cartesian_space[:, 0],  # X
-                            cartesian_space[:, 1],  # Y
-                            cartesian_space[:, 2],  # Z
-                            c=cartesian_values,  # Color
-                            cmap='plasma',
-                            s=20)
+        
+        scatter = ax.scatter(
+            cartesian_space[:, 0],  # X
+            cartesian_space[:, 1],  # Y
+            cartesian_space[:, 2],  # Z
+            c=success_values,  # Color
+            marker='*',
+            cmap='plasma',
+            s=20)
+        
 
         fig.colorbar(scatter, ax=ax, label='0:FAIL, .5: <=2 iterations, 1:SUCCESS')
         ax.set_xlabel('X')
@@ -265,6 +291,151 @@ def get_convergence_region(Trajectory: Trajectory):
     if arrays_are_similar(closest_success_point_to_starting_position, Trajectory.initP, Trajectory.closeEnoughTolerance):
         closest_success_point_to_starting_position = Trajectory.initP #the closest success point and the starting point are very close
         Trajectory.planning_complete = 1
+    
+    #NOTE: this next block is for cases where we reuse the same points every time.
+    #if we are at the point where we truly cannot refine any more, then we get stuck because the tolerance isn't low enough and the same point is the closest point every time.
+    if Trajectory.closest_success_point_to_starting_position_dist == closest_success_point_to_starting_position_distance:
+        Trajectory.planning_complete = 1
+        return #no need to update the jacobians, since it's the same position.
+    Trajectory.closest_success_point_to_starting_position_dist = closest_success_point_to_starting_position_distance
+
+    Trajectory.jacobian_updates += 1
+    Trajectory.cartesian_milestones.append(Trajectory.currMilestoneP)
+    Trajectory.milestone_info[Trajectory.jacobian_updates] = (Trajectory.currMilestoneP, closest_success_point_to_starting_position_distance, greatest_distance_in_convergence_region_point, greatest_distance_in_convergence_region)
+
+    if Trajectory.planning_complete: #finished up our work here
+        return 
+    else:
+        Trajectory.currMilestoneP = closest_success_point_to_starting_position
+        return
+
+def get_convergence_region(Trajectory: Trajectory):
+    '''
+    CARTESIAN SPACE
+    iterate over the joint space to get the convergence region for a desired POINT. 
+    modifies object Trajectory.
+    visualizes the convergence plots if show_each_convergence_region == 1 in the object Algorithm.
+    returns None
+    '''
+    Algorithm : ConvergenceAlgorithm = Trajectory.algorithm
+
+    num_samples = 888  # Tune this for accuracy vs speed
+
+    random_joint_configs = [
+        np.array([np.random.uniform(low, high) for (low, high) in Trajectory.joint_ranges])
+        for _ in range(num_samples)
+    ]
+
+    # parallel list of cartesian space and values.
+    cartesian_space = [] # joint space fkin into cartesian space
+    cartesian_values = [] # value of each cartesian position
+    
+    #have each of these values be a different shape
+    success_values= [] #star
+    fail_values= [] #square
+    near_initial_values= [None] * num_samples #circle
+    near_curr_milestone_values= [None] * num_samples #diamond
+
+    sum_error = 0
+    greatest_distance_in_convergence_region = 0 #get the largest distance
+    greatest_distance_in_convergence_region_point = None
+    closest_success_point_to_starting_position_distance = np.inf #get the smallest distance
+    closest_success_point_to_starting_position = None #get the actual cartesian point
+
+    for Q in random_joint_configs:
+        cartesian_pos = fkin(Q, Trajectory.ets)
+        cartesian_space.append(cartesian_pos)
+        isuccess, iiters, iP, iQ = invkin(Trajectory, Q)
+
+        print(iP, Trajectory.currMilestoneP, Trajectory.initP, Trajectory.desiredP)
+
+        ierror = np.linalg.norm(Trajectory.currMilestoneP - iP) #NOTE: error IS the distance magnitude
+
+        if isuccess:
+            success_values.append(1)
+            fail_values.append(None)
+        else:
+            success_values.append(None)
+            fail_values.append(1)
+            
+        if isuccess: #iff this point successfully converged, calculate TWO THINGS: the farthest success point, and the closest success point to the initial position.
+            #'''
+            if ierror > greatest_distance_in_convergence_region:
+                greatest_distance_in_convergence_region_point = iP.copy()
+                greatest_distance_in_convergence_region = ierror#'''
+
+            dist_to_initP = np.linalg.norm(cartesian_pos - Trajectory.initP)
+            if dist_to_initP < closest_success_point_to_starting_position_distance:
+                isuccess = -1
+                closest_success_point_to_starting_position = cartesian_pos
+                closest_success_point_to_starting_position_distance = dist_to_initP
+                
+            #these next few lines are very optional, have no impact on the code logic, and serve to visualize the plots.
+            #if iiters <=2: 
+            #    isuccess = 0.5 # the only purpose this serves is to differentiate the color in the plot to see where the catresian goal actually is
+
+        # JUST FOR PLOTTING
+        if arrays_are_similar(Trajectory.initP.copy(), cartesian_pos, Trajectory.closeEnoughTolerance):
+            print("this iteration beginning point is similar to the initial point")
+            isuccess = -2
+        if arrays_are_similar(Trajectory.currMilestoneP.copy() , cartesian_pos, Trajectory.closeEnoughTolerance):
+            print("current milestone is near this iteration position")
+            isuccess = 2
+
+
+        sum_error += ierror
+
+        cartesian_values.append(isuccess)
+
+    #end for
+    #sanity check:
+    print("curr milestone:", Trajectory.currMilestoneP)
+    print("curr Q:", Trajectory.currQ, "init Q:", Trajectory.initQ, "init P:", Trajectory.initP, "currMilestoneP:", Trajectory.currMilestoneP)
+    print("closest success point:", closest_success_point_to_starting_position)
+    print("^ distance:", closest_success_point_to_starting_position_distance)
+
+    if closest_success_point_to_starting_position_distance == np.inf:
+        closest_success_point_to_starting_position_distance = None #if this happens, that means there are absolutely no success points. 
+        closest_success_point_to_starting_position = None
+
+    if Algorithm.show_each_convergence_region: #default Algorithm object plots
+        cartesian_space = np.array(cartesian_space); 
+        cartesian_values = np.array(cartesian_values)
+        success_values = np.array(success_values)
+        fail_values = np.array(fail_values)
+
+        fig = plt.figure(figsize=(8,6))
+        ax = fig.add_subplot(111, projection='3d')
+        
+        scatter = ax.scatter(
+            cartesian_space[:, 0],  # X
+            cartesian_space[:, 1],  # Y
+            cartesian_space[:, 2],  # Z
+            c=success_values,  # Color
+            marker='*',
+            cmap='plasma',
+            s=20)
+        
+
+        fig.colorbar(scatter, ax=ax, label='0:FAIL, .5: <=2 iterations, 1:SUCCESS')
+        ax.set_xlabel('X')
+        ax.set_ylabel('Y')
+        ax.set_zlabel('Z')
+        ax.set_title('Convergence in Cartesian Space')
+        plt.tight_layout()
+        plt.show()
+
+    #remember we are dealing with discrete math here! therefore if closest_success_point_to_starting_position is close enough to the actual starting position, do not get another jacobian.
+    if arrays_are_similar(closest_success_point_to_starting_position, Trajectory.initP, Trajectory.closeEnoughTolerance):
+        closest_success_point_to_starting_position = Trajectory.initP #the closest success point and the starting point are very close
+        Trajectory.planning_complete = 1
+    
+    #NOTE: this next block is for cases where we reuse the same points every time.
+    #if we are at the point where we truly cannot refine any more, then we get stuck because the tolerance isn't low enough and the same point is the closest point every time.
+    if Trajectory.closest_success_point_to_starting_position_dist == closest_success_point_to_starting_position_distance:
+        Trajectory.planning_complete = 1
+        return #no need to update the jacobians, since it's the same position.
+    Trajectory.closest_success_point_to_starting_position_dist = closest_success_point_to_starting_position_distance
 
     Trajectory.jacobian_updates += 1
     Trajectory.cartesian_milestones.append(Trajectory.currMilestoneP)
@@ -344,17 +515,20 @@ def main():
     ets, joint_limits, joint_limits_full  = dofdylan
     ########################################################################
 
-    initQ = np.array([2.5,np.pi/8,np.pi/2])
-    desiredP= np.array([1.,1.,0.])
+    initQ = np.array([0.,np.pi/2,np.pi/4])
+    desiredP= np.array([0.30,0,0])
 
     traj1 = Trajectory(ets, joint_limits, joint_limits_full)
     traj1.assign_trajectory(initQ, desiredP)
     if 1:
         plan_trajectory(traj1)
+
+        ets.plot(initQ, block=True)
         traj1.plot_robot_trajectory()
     else:
         traj1.planning_complete=1
         success, i, currP, currQ = invkin(traj1)
+        ets.plot(initQ, block=True)
         traj1.plot_robot_trajectory()
         if success:
             print("SUCCESS, iterations:", i)
