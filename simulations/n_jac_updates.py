@@ -112,7 +112,7 @@ def invkin(tolerance:int, maxiter: int, currQ, desiredP, e : rtb.Robot.ets, join
     trajectory = []
     jac_updates=0;
 
-    alpha = 1 #dampening factor
+    alpha = 0.05 #dampening factor
     if jacobian_method==1:
         J = centraldiff_jacobian(currQ, e)
     if jacobian_method==2 or jacobian_method==3:
@@ -181,7 +181,7 @@ def invkin(tolerance:int, maxiter: int, currQ, desiredP, e : rtb.Robot.ets, join
                return 0, currP, i, jac_updates #'''
 
     if plot_traj: #animate trajectory, very fast
-        e.plot(np.array(trajectory), block=False)
+        e.plot(np.array(trajectory), block=True)
         plt.close('all')
         slider_robot_trajectory(np.array(trajectory))
 
@@ -335,7 +335,7 @@ def main():
     joint_limits_puma= [(-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2) , (-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2) , (-np.pi/2, np.pi/2)]
     joint_limits_puma_full = [(-2*np.pi/2, 2*np.pi/2), (-2*np.pi/2, 2*np.pi/2) , (-2*np.pi/2, 2*np.pi/2),(-2*np.pi/2, 2*np.pi/2), (-2*np.pi/2, 2*np.pi/2) , (-2*np.pi/2, 2*np.pi/2)]
 
-    ets, joint_limits, joint_limits_full = dof3
+    ets, joint_limits, joint_limits_full = dof2
 
     robot = rtb.Robot(ets)
 
@@ -351,13 +351,13 @@ def main():
 
     #MESH PARAMS
     tolerance = 1e-3
-    maxiter = 100
+    maxiter = 200
     resolution=5
     chebyshev = 0 #chebyshev seems to consistently result in a tiny bit more error than equidistant...
 
     #PLOTTING PARAMS
-    desiredP = np.array([2,0,0])
-    Q = np.array([0.1,0.1,0.1])
+    desiredP = np.array([1.0,1.0,0])
+    Q = np.array([np.pi/2+0.5,np.pi-0.05])
     plot_certain_trajectory=1
     simplex_mode=0
     #### JACOBIAN METHODS ####
@@ -387,6 +387,8 @@ def main():
         smr.create_mesh_jacobians(mesh, ets, 1)
     if jacobian_method==5:
         smr.create_mesh_jacobians(mesh,ets,2)
+
+    ets.plot(Q.copy(), block=True)
 
     if not plot_certain_trajectory:
         calculate_error(camera, tolerance, maxiter, resolution, ets, joint_limits, desiredP, mesh, jacobian_method, simplex_mode, 0, 1)

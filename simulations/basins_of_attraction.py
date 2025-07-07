@@ -29,7 +29,9 @@ import matplotlib.pyplot as plt
 import roboticstoolbox as rtb
 import plotly.graph_objects as go
 
-solutions = (np.array([np.pi/2, -np.pi/2]), np.array([0, np.pi/2]))
+solutions = np.array([0., np.pi/2, -np.pi/2]), np.array([0., 0., np.pi/2])
+
+#solutions for 2dof (1,1,0):(np.array([np.pi/2, -np.pi/2]), np.array([0, np.pi/2]))
 
 def invkin(tolerance:int, maxiter: int, currQ, desiredP, e : rtb.Robot.ets, jointlimits : list): #uses a constant Jacobian.
     '''
@@ -60,7 +62,19 @@ def invkin(tolerance:int, maxiter: int, currQ, desiredP, e : rtb.Robot.ets, join
     for j in range(len(solutions)): 
         if (np.abs(currQ - solutions[j]) < 1e-1).all(): #if within tolerance...
             return j+1, currP, i
+        
     return 0, currP, i
+
+def compare_diff(Q):
+    lowest_difference = np.inf
+    best_sol = None
+    for i in range(len(solutions)):
+        diff = np.linalg.norm(Q-solutions[i])
+        if diff < lowest_difference:
+            lowest_difference = diff
+            best_sol = i
+    return best_sol
+        
         
 def calculate_error(tolerance, maxiter, resolution, e, jointlimits: list, desiredP):
 
@@ -87,9 +101,10 @@ def calculate_error(tolerance, maxiter, resolution, e, jointlimits: list, desire
                 basin, resultP, iterations= invkin(tolerance=tolerance, maxiter=maxiter, currQ=Q, desiredP=desiredP, e=e, jointlimits=jointlimits)
                 error=np.linalg.norm(desiredP - resultP) 
                 sum_error+=error
+
                 permuts_over_linspaces[idx] = basin
 
-                print("i:", i, "init Q: ", Q_grid[idx], "fin Q:", Q, "result P:", resultP, "error:", error, "iterations:", iterations)
+                #print("i:", i, "init Q: ", Q_grid[idx], "fin Q:", Q, "result P:", resultP, "error:", error, "iterations:", iterations)
                 i+=1;
     
     print("Sum of error: ", sum_error)
@@ -97,22 +112,35 @@ def calculate_error(tolerance, maxiter, resolution, e, jointlimits: list, desire
     permuts_over_linspaces=permuts_over_linspaces.flatten()
     # Flatten Q_grid to get all [q0, q1, ..., qN] configs
     Q_flat = Q_grid.reshape(-1, Q_grid.shape[-1])
-    x, y, z = Q_flat[:, 0], Q_flat[:, 1], permuts_over_linspaces
+    x, y, z = Q_flat[:, 0], Q_flat[:, 1], Q_flat[:,2]
+    colors= permuts_over_linspaces
+
+    print(x.shape)
+    print(y.shape)
+    print(z.shape)
+    print(colors.shape)
 
     print("Generating Plot...")
-    scatter = go.Scatter3d(x=x,y=y,z=z,mode='markers', marker=dict(size=3,color=permuts_over_linspaces, colorscale='plasma', colorbar=dict(title='Basins of Attraction!'), opacity=0.6))
-    layout = go.Layout(
-        scene=dict(
-            xaxis_title='q0',
-            yaxis_title='q1',
-            zaxis_title='basin'
-        ),
-        title='Basins of Attraction',
-        margin=dict(l=0,r=0,b=0,t=50)
-        )
-    fig=go.Figure(data=[scatter], layout=layout)
+    
+    fig=plt.figure(figsize=(8,6))
+    ax = fig.add_subplot((111), projection='3d')
 
-    fig.show()
+    scatter = ax.scatter(
+        x,
+        y,
+        z,
+        c=colors,
+        marker = 'o',
+        cmap='plasma',
+        s=20)
+
+    fig.colorbar(scatter, ax=ax, label='0==FAIL, otw SUCCESS')
+    ax.set_xlabel('X')
+    ax.set_ylabel('Y')
+    ax.set_zlabel('Z')
+    ax.set_title('Basins of Convergence')
+    plt.tight_layout()
+    plt.show()
 
 
 def main():
@@ -121,18 +149,25 @@ def main():
     ets1dof = rtb.ET.Rz() * rtb.ET.tx(l0)
     joint_limits1dof = [(-np.pi/2, np.pi/2)]
     joint_limits1dof_full = [(-2*np.pi, 2*np.pi)]
+    dof1 = ets1dof, joint_limits1dof, joint_limits1dof_full
 
     ets2dof = rtb.ET.Rz() * rtb.ET.tx(l0) * rtb.ET.Rz() * rtb.ET.tx(l1) 
     joint_limits2dof = [(0, np.pi), (-np.pi, np.pi)]  # example for 2 DOF
-    joint_limits2dof_full = [(-2*np.pi, 2*np.pi), (-2*np.pi, 2*np.pi)]
+    joint_limits2dof_full = [(-np.pi, np.pi), (-np.pi, 2*np.pi)]
+    dof2 = ets2dof, joint_limits2dof, joint_limits2dof_full
 
     ets3dof = rtb.ET.Rz() * rtb.ET.tx(l0) * rtb.ET.Rx() * rtb.ET.tz(l1) * rtb.ET.Rx() * rtb.ET.tz(l2)
     joint_limits3dof = [(-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2) , (-np.pi/2, np.pi/2)]
     joint_limits3dof_full = [(-2*np.pi/2, 2*np.pi/2), (-2*np.pi/2, 2*np.pi/2) , (-2*np.pi/2, 2*np.pi/2)]
+    dof3 = ets3dof, joint_limits3dof, joint_limits3dof_full
 
-    joint_limits = joint_limits2dof
-    joint_limits_full = joint_limits2dof_full
-    ets=ets2dof
+    ets_dylan = rtb.ET.Rz() * rtb.ET.Ry(np.pi/2) * rtb.ET.Rz(np.pi) * rtb.ET.Ry() * rtb.ET.tz(1.) * rtb.ET.Ry() * rtb.ET.tz(1.)
+    #joint_limits_dylan = [(0, np.pi/2), (0, np.pi/2) , (-np.pi/2, np.pi/2)]
+    joint_limits_dylan = [(-np.pi, np.pi), (-np.pi/2, np.pi/2) , (-np.pi/2, np.pi/2)]
+    joint_limits_full_dylan = [(-2*np.pi, 2*np.pi), (-2*np.pi, 2*np.pi) , (-2*np.pi, 2*np.pi)]
+    dofdylan = ets_dylan, joint_limits_dylan, joint_limits_full_dylan
+
+    ets, joint_limits, joint_limits_full  = dofdylan
 
     robot = rtb.Robot(ets)
 
@@ -141,10 +176,10 @@ def main():
     #MESH PARAMS
     tolerance = 1e-3
     maxiter = 100
-    resolution=50
+    resolution=10
 
     #PLOTTING PARAMS
-    desiredP = np.array([1,1,0])
+    desiredP = np.array([1,0,1])
 
     calculate_error(tolerance, maxiter, resolution, ets, joint_limits, desiredP)
    

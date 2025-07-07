@@ -798,3 +798,15 @@ If we could look at the basins of attraction for the goal, and the closest point
 
 Get the basins of attraction for the GOAL
 Find the shortest distance between the intial joint configuration and a joint configuration in the identified basin of attraction. (this is essentially repeating the closest success point again but in the jonit space.)
+
+# July 5
+
+Refocus: what is the objective? To quantify how many jacobians are needed to converge to a certain point in visual servoing. 
+We do not have access to analytic equations. We will not have a calibrated system. 
+Can we use the image projection of the robot in some way? 
+
+Objective: 
+- is there an equation to determine how many jacobians are needed for a desired and an initial point/configuration? Can we determine that based on how large the spectral radius is? Can we generally eyeball it? How would our assumptions hold in a robot with prismatic joints?
+
+Some things we have noticed:
+- The joints do not like to flip. For instance if you have a 2DOF robot with joints -0.1 and -3pi/4, instead of swinging the entire second arm by pi, the first joint moves up by pi/2 while the second joint only has to open up by around pi/4.
