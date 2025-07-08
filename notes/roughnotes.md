@@ -810,3 +810,125 @@ Objective:
 
 Some things we have noticed:
 - The joints do not like to flip. For instance if you have a 2DOF robot with joints -0.1 and -3pi/4, instead of swinging the entire second arm by pi, the first joint moves up by pi/2 while the second joint only has to open up by around pi/4.
+
+REVISIT the basins of attraction: Perhaps this was obvious, but the basin that a joint configuration is in is typically the solution that minimizes the simple difference between that joint configuration Q and the solution Q. This indicates that idea we had before to simply move the 'most effective' joint is probably not the best idea, since neither arm can quantitatively more important. For instance in this example:
+
+initQ = np.array([-0.1,-3*np.pi/4])
+desiredP= np.array([1.0,1.0,0])
+
+There are three milestones: Beginning, Middle, End: [ 0.17474149 -2.46174514], [ 0.88614019 -2.07347846], [ 1.57144681 -1.57220103]
+This translates to 2 jacobian updates needed...
+
+# July 6
+
+Trajectory generation in joint space vs cartesian space:
+
+### Jotnotes from Chpater 13 Trajectory Generation from Science Direct:
+
+https://www.sciencedirect.com/topics/computer-science/trajectory-generation
+
+Trajectory generation in the joint space is desirable to achieve FAST MOTIONS in a FREE SPACE
+
+PROS:
+- requires fewer online computations, since there is no need to compute the inverse geometric or kin models 
+- trajectory is not affected by crossing singular configurations
+- max velocities and torques determiend from actuator data sheets.
+
+CONS:
+- corresponding end effector path in task space is unpredictable
+- risk of undesriable collisions
+
+Trajectory generation in the task space permits prediction of geometry of the path, but:
+- may fail when the computed trajectory crosses a singular configuration
+- fails when the generated points are out of the joint limits or when robot forced to change its current aspect
+- robot is slower
+
+The trajectories of a robot can be classified as follows:
+- trajectory between two points with free path bn them
+- trajectory between two points via a sequence of desired intermediate points (aka VIA POINTS) with free paths bn via points
+- trajectory bn two points with constrained path bn the points
+- trajectory bn two points via intermediate points with constrained paths bn the via points.
+
+*Perhaps this means I should focus on visual servoing trajectory generation...*
+
+Cole:
+- joint space traj gen is easier
+- task space has different ways to do it: ie takign intermediate points and inv kin 
+- visual servoing --> planning in the image space. probably not taking joint space 
+
+### jotnotes from craig robotics chapter 7 on trajectory generation:
+- it is generally easier to find trajectories in joint space so that singularities are not an issue
+- something interesting is, for linear parabolic blend splines, if you choose a via point and then interpolate the trajectory around those via points, you will not actually pass through those via points. If you want to go through them, you should plot two via points next to each other and the algorithm will naturally force the interpolation to pass through the LINEAR path between them. (if we did this for a different algorithm, we might have the risk of something like Runge's Phenomenon perhaps, where there is a great deal of spiky behaviour in between two very close-together-points.)
+- collision free path planning seems very interesting:
+> systems that plan collision-free paths are not avaialble commercially... One approach solves the problem by forming a connected-graph representation fo the free space and thren searchign the graph for a colision-free path. CONS: exponential complecxity in the number of joints in the device ... The second approach is based on creating artifical potential fields around obstales, which cause the manipultator(s) to avoid the obstacles while they are drawn toward an artifical atrective pole at the goal point. CONs: local vieew of env, subejct to becoming stuck at local minima of the artificial field.
+
+### jotnotes from "Online task space trajectory generation" Daniel Sidobre and Wuwei He
+
+> Trajectories are time functions defined in geometrical spaces (Cartesian or joint space)
+
+For trajectory planning, the lower degree the polynomial is, the better.
+
+*What information do trajectory planning problems also have/don't have?*
+
+TODO:
+- backwards and forwards concurrently? find where they overlap
+- forwards --> more feasible trajectory?
+
+### jotnotes from optimal path plannig for image based visual servoing Mark Allen
+
+> key factors in handling non optimal state trajectories and factors on how to set up a dynamic programming algorithm for IBVS were discovered: the first is that the image Jacobian matrix must be a square matrix, in order to provide a deteminant that gives information on the local behaviour of the image function including mapping. Due to the image Jacobian for one point having dimensinos of 2x6, exactly 3 points are required for the dynamic programming approach.
+
+- calcualte backwards, starting from known final position. (which we also have!)
+
+## takeaways:
+
+after reading some papers/resources, what do we think?
+- trajectory generation is usually completed in the joint space because the task space leads us into singularities more often.
+- we will have access to the joints during real world visual servoing since we initialize to a specific pose and move from there. 
+
+What if we sampled the jacobian at a bunch of joint space points? Then we have:
+- the joint space vector, central differences jacobian for several unique joint space positions, and the corresponding task space vector. 
+
+using those jacobians, we can see how different they vary/the landscape of how nonlinear they are. This helps tell us where/how we should update the jacobian. 
+
+For instance, if we are given an initial pose and a desired pose, do the following:
+
+For the given desired task point, can we, using the precomputed points, 'guess' the corresponding joint vector, compare the initial vs desired JOINT vectors, and then guess how many jacobian updates we will need based on the joint space? But this is difficult because of the multiple solution problem.
+
+But this seems like a flawed approach... because it's really not generalizable. So, we know that there exists one task space region where only one jacobian is needed. And it's helpful that it is just ONE region. 
+
+
+
+Choosing our error vectors:
+
+if successful convergence from initial to milestone,
+iP - desP must be small to indicate this is a good milestone.
+currmilestoneQ (aka initQ for now) - iQ must be smaller OR currmilestoneQ-Q must be smaller so that we can reasonably get there.
+
+trajectory generation is NOT an inverse kinematics problem
+
+chaptter 10 craig robotics
+ - trajectory conversion, you KNOW the jacobian for ANY points basically. we KNOW the inverse kinematics 
+
+ try existing visual servoing traj gen experiments
+
+ try on the robot:
+ - use a const jacobian, send the goal, try to get as clsoe as possible, monitor how the eror is changing, if error not decreasing fast enough, compute a new jacobian.
+
+ from singular point to singular point, we definitely need MORE jacobians.
+
+Currently focused on trajectory generation, but need to still consider nonlinearity and complexity of the landscape as a whole...
+
+Perhaps we should focus back on the analytic equations and the math. 
+
+TODO
+1. Is there a measurement similar to the spectral radius to see whether a point may converge? 
+2. What are some properties of nonconvergence? --> singularities, boundaries
+3. What is the NON-singularity reason why some joint configurations do not converge despite NOT being in a singular position? Well, the spectral radius is usually around 2, and the joint trajectory usually oscillates in a LINE --> the eigenvalues are real, while the converging eigenvalues are imaginary.
+4. Side note: we are able to compute the perfect amount of damping at any moment
+
+For 2DOF, remember the spectral radius equation? See if you can find a relationship in there: if v is very low, then we get stuck at a singularity. But there should be a relationship between u des, v des, u, v, explaining convergence. Well... remember the imaginary vs non imaginary? Just look under the square root.
+
+But what about being able to converge in general? What about creatign trajectories? Very difficult...
+
+
