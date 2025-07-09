@@ -22,8 +22,9 @@ import plotly.graph_objects as go
 from common_robot_calculations import * 
 from roboticstoolbox.models.DH import Puma560
 
+
 class ConvergenceAlgorithm():
-    def __init__(self, tolerance=1e-3, practical_tolerance=1e-2, maxiter=200, alpha=1e-1, resolution = 20, show_each_convergence_region = 1):
+    def __init__(self, tolerance=1e-3, practical_tolerance=1e-2, maxiter=200, alpha=1e-1, resolution = 20, show_each_convergence_region = 0):
         self.tolerance =tolerance #residual tolerance to stop iterations
         self.practical_tolerance = practical_tolerance
         self.maxiter = maxiter
@@ -85,6 +86,8 @@ class Trajectory():
         #   the first value entry of the dictionary should be identical to the list cartesian_milestones.
         # the dictionary milestone_info uses the value of jacobian_updates as its key, so be sure to update it consistently.
 
+        self.success = None
+
     def assign_trajectory_backwards(self, initialQ, desiredP):
         '''
         Assign the starting joint configuration and its corresponding starting cartesian space point, and the desired cartesian space point.
@@ -113,7 +116,7 @@ class Trajectory():
         Use the Robotics Tool Kit plot robot feature to see the cartesian trajectory the robot takes, along with the joint trajectory plot in joint space.
         '''
         #print(np.array(self.trajectory))
-        ret = self.ets.plot(np.array(self.trajectory), block=True)
+        ret = self.ets.plot(np.array(self.trajectory), block=False)
         return
         for traj in self.trajectory:
             ret = self.ets.plot(np.array(traj), block=True)
@@ -164,7 +167,8 @@ def invkin(Trajectory: Trajectory, startQ=None, desP=None):
             ret=  0, i, currP, currQ
             out_of_bounds=1
         if out_of_bounds:
-            print("Out of bounds!")
+            Trajectory.success=0
+            #print("Out of bounds!")
             break
   
         if Trajectory.planning_complete==1:
@@ -175,6 +179,7 @@ def invkin(Trajectory: Trajectory, startQ=None, desP=None):
 
         if error < tolerance:
             ret = 1, i, currP, currQ
+            Trajectory.success=1
             break
 
         corrQ = np.linalg.pinv(J) @ errorP
@@ -183,6 +188,7 @@ def invkin(Trajectory: Trajectory, startQ=None, desP=None):
 
     if ret is None:
         ret=0, i, currP, currQ
+        Trajectory.success=0
 
     if Trajectory.planning_complete==1:
         Trajectory.currQ = currQ
@@ -577,7 +583,7 @@ def plan_trajectory_backwards(Trajectory: Trajectory):
     Algorithm : ConvergenceAlgorithm = Trajectory.algorithm
 
     attempts=0
-    while Trajectory.planning_complete==0 and attempts<10:
+    while Trajectory.planning_complete==0 and attempts<15:
         attempts+=1
         #get_convergence_region_backwards(Trajectory)
         get_convergence_region_joint_cart_space_backwards(Trajectory)
@@ -652,6 +658,61 @@ def plan_trajectory_forwards(Trajectory: Trajectory):
     print("Iterations taken to converge:")
     print(Trajectory.iterations)
 
+def count_number_of_jacobian_updates_over_space(desP, ets, jointlim, jointlimfull):
+    #for each starting position, count how many jacobians are needed to converge to a certain position and plot the regions...
+    
+    num_samples = 300  # Tune this for accuracy vs speed
+
+    random_joint_configs = [
+        np.array([np.random.uniform(low, high) for (low, high) in jointlim])
+        for _ in range(num_samples)
+    ]
+
+    jointspace=[]
+    spacevals=[]
+    taskspace=[]
+
+    for Q in random_joint_configs:
+        traj = Trajectory(ets, jointlim, jointlimfull)
+        traj.assign_trajectory_backwards(Q.copy(), desP)
+        plan_trajectory_backwards(traj)
+        print(f"joint config {Q} with des {desP} planned {traj.jacobian_updates} to converge.")
+        print("####SUCCESS:", traj.success)
+        spacevals.append(traj.jacobian_updates)
+        jointspace.append(Q)
+        taskspace.append(fkin(Q, ets))
+
+
+    # Assuming taskspace and spacevals are numpy arrays
+    taskspace = np.array(taskspace)
+    spacevals = np.array(spacevals)
+
+    fig = plt.figure(figsize=(8,6))
+    ax = fig.add_subplot(111, projection='3d')
+
+
+    taskspace = np.array(taskspace)
+    spacevals=np.array(spacevals)
+    jointspace=np.array(jointspace)
+
+    scatter = ax.scatter(
+        taskspace[:, 0],  # X
+        taskspace[:, 1],  # Y
+        taskspace[:, 2],  # Z
+        c=spacevals,  # Color
+        #marker='o',
+        cmap='plasma',
+        s=20)
+
+    fig.colorbar(scatter, ax=ax, label='num of jac updates used to converge.')
+    ax.set_xlabel('X')
+    ax.set_ylabel('Y')
+    ax.set_zlabel('Z')
+    ax.set_title('Number of Jacobian Updates in Task Space')
+    plt.tight_layout()
+    plt.show()
+
+
 
 def main():
     ####################################################################
@@ -678,18 +739,21 @@ def main():
     joint_limits_full_dylan = [(-2*np.pi, 2*np.pi), (-2*np.pi, 2*np.pi) , (-2*np.pi, 2*np.pi)]
     dofdylan = ets_dylan, joint_limits_dylan, joint_limits_full_dylan
 
-    ets, joint_limits, joint_limits_full  = dofdylan
+    ets, joint_limits, joint_limits_full  = dof2
     ########################################################################
 
-    initQ = np.array([0., np.pi/2, -np.pi/4]) #1.23197905 0.07786037 1.07792537 #1.47876316  0.65113557 -0.98678046
-    desiredP= np.array([0.0,0.3,0.0])
+    initQ = np.array([np.pi, np.pi/3]) #1.23197905 0.07786037 1.07792537 #1.47876316  0.65113557 -0.98678046
+    desiredP= np.array([1.0,1.0,0.0])
 
     traj1 = Trajectory(ets, joint_limits, joint_limits_full)
     #traj1.assign_trajectory_forwards(initQ, desiredP)
     traj1.assign_trajectory_backwards(initQ,desiredP)
 
+
     if 1:
         plan_trajectory_backwards(traj1)
+        print("Jacobian updates needed: ",traj1.jacobian_updates)
+        print("TRajectory success:", traj1.success)
 
         ets.plot(initQ, block=True)
         traj1.plot_robot_trajectory()
@@ -704,6 +768,8 @@ def main():
             print("SUCCESS, iterations:", i)
         else:
             print("FAILURE, currP:", currP, "currQ:", currQ)
+
+    count_number_of_jacobian_updates_over_space(desiredP, ets, joint_limits, joint_limits_full)
     
 
 main()

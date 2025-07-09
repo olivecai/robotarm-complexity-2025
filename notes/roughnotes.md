@@ -942,3 +942,23 @@ Then when we have a goal, we can search the BEST PATH to get to goal...
 
 We know that the MORE SOLUTIONS EXIST, the larger the region of convergence... So can we use something like CHEBYSHEV sampling to sample more on the workspace boundaries.... And we know that the basin of attraction well suited to us is the one which the joint vector is CLOSER so we can add that in the evaluation step...
 
+Is my objective to create a method of pre-calibrating, or to explore the mathematical properties?
+
+generate a bunhc of joint configurations.. get the end effector...
+for desired point, get the multiple  corresponding solutions and compare which solution is closer to the current joint configuration... then that is the solution we should try to aim for...
+what is the relationship between the radius of the convergence region and the desired position and the initial position? We could find this out using the spectral radius but its so difficult to even obtain.
+
+Focus on upper/lower bounds?
+
+Check the difference between the current joint configuration and the solutions: maybe there is some relationship there...
+
+Do i want to find something THEORETICAL or something PRACTICAL?
+
+T_T
+
+e
+
+TODO:
+- Bounds
+- Simple frobenius norm diff in curr joint -  the des joint solution
+- kshbdfskhdbfkshdbf

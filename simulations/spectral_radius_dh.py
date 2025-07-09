@@ -82,25 +82,40 @@ class DenavitHartenbergSystem:
 
         try:
             B = J.inv()
+            print("Successfully computed inverse.")
+            print("B:\n", B)
         except:
             print("Error calcualting inverse!")
             B = None
        
-        if B is None:
-            sr = None
-            evals=None
+        evals=None
+        sr=None
 
-        else:
+        if B is not None:
             dF = J.subs(reps_des)
 
             A = I - B*dF
 
             print("( del gn / del qn ) (aka A):\n", A)
 
-            evals, sr=self.evals_and_sr(A)
 
-        print("SPECTRAL RADIUS:\n", sr)
-        print("E-VALS:\n", evals)
+            # Compute matrix norms symbolically
+            norm_1 = A.norm(1)      # max column sum
+            norm_inf = A.norm(sp.oo)  # max row sum
+            norm_frob = A.norm('fro')
+
+            print("1-norm upper bound on spectral radius:\n", norm_1)
+            print("∞-norm upper bound on spectral radius:\n", norm_inf)
+            print("Frobenius norm upper bound on spectral radius:\n", norm_frob)
+
+            norm_2 = A.norm(2) #spectral norm
+            print("spectral norm:\n", norm_2)
+
+            #evals, sr=self.evals_and_sr(A)
+
+
+        #print("SPECTRAL RADIUS:\n", sr)
+        #print("E-VALS:\n", evals)
     
     def evals_and_sr(self, A):
     
@@ -146,6 +161,17 @@ dylan_dof3_params=[
                 [ t2,  0  ,  0.30, 0 ]
                 ]
 
+kinova_dof6_params = [[0, 0.,0.,sp.pi],
+                       [t0, 0., -(156.43 + 128.38), sp.pi/2],
+                       [t1-sp.pi/2, 410., -5.38, sp.pi],
+                       [t2-sp.pi/2, 0., -6.38, sp.pi/2],
+                       [t3+sp.pi, 0., -(208.43+105.93), sp.pi/2],
+                       [t4+sp.pi, 0., 0., sp.pi/2],
+                       [t5+sp.pi, 0., -(105.93+61.53), sp.pi]
+                       ] #as written in the documentation but im pretty sure this is WRONG. alpha and d are certainly the wrong column.
+
+
+kinova_6dof = DenavitHartenbergSystem(kinova_dof6_params)
 #dof2 = DenavitHartenbergSystem(dof2_params)
 #dylan_dof3 = DenavitHartenbergSystem(dylan_dof3_params)
 
@@ -155,3 +181,5 @@ def analyze(sp_eq):
     when less than 1
     when inf
     '''
+    pass
+

@@ -63,7 +63,58 @@ import machinevisiontoolbox as mvtb
 import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 
+from sympy import sin, cos, pi
         
+def sr_3dof(i0,i1,i2, ets, camera, d0,d1,d2, alpha):
+        # u and v <==> theta1 and theta2
+    t0,t1,t2 = sp.symbols('t(0:3)', real=True)
+    # desired u and v <==> theta1 and theta2
+    reps_init = [(t0, i0), (t1, i1), (t2,i2)]
+    reps_des = [(t0, d0), (t1, d1), (t2,d2)]
+
+
+    #declare the forward kin functions
+    #f1 = l1 * sp.cos(u) + l2 * sp.cos(u+v) #TODO: collect on f1, f2
+    #f2 = l1 * sp.sin(u) + l2 * sp.sin(u+v)
+    f= sp.Matrix([[-0.3*sin(t1)*sin(t2)*cos(t0) + 0.3*cos(t0)*cos(t1)*cos(t2) + 0.55*cos(t0)*cos(t1)],
+              [-0.3*sin(t0)*sin(t1)*sin(t2) + 0.3*sin(t0)*cos(t1)*cos(t2) + 0.55*sin(t0)*cos(t1)], 
+              [0.3*sin(t1)*cos(t2) + 0.55*sin(t1) + 0.3*sin(t2)*cos(t1)]])
+    
+    I = sp.eye(3) #hardcoded to 3 for now, while we run experiments on the 3DOF
+
+    
+    J = f.jacobian([t0,t1,t2]) #ANALYTIC jacobian of the forward kinematics function
+    try:
+        B = J.inv() #ANALYTIC
+        B=B.subs(reps_init)
+    except:
+        print("error")
+        B=None
+    print("Jacobian of initial position:\n", J)
+        
+
+    if B is None:
+        sr = None
+        evals=None
+
+    else:
+        print(reps_des)
+        dF = J.subs(reps_des)
+        print("Jacobian of desired position:\n", J)
+
+        A = I - B*dF
+
+        print("del gn / del qn:\n", A)
+
+        evals, sr=evals_and_sr(A)
+    
+    print("spectral radius: ",sr)
+    print("evals:", evals)
+    
+
+    return evals, sr
+    
+
 def spectral_radius(u_, v_, ets, camera, u0, v0, alpha):
     '''
     
@@ -135,26 +186,24 @@ def analytic_spectral_radius(ets, camera):
     
     '''
     # u and v <==> theta1 and theta2
-    u = sp.Symbol('u', real=True)
-    v = sp.Symbol('v', real=True)
+    t0,t1,t2 = sp.symbols('t(0:3)', real=True)
     # desired u and v <==> theta1 and theta2
-    u_des = sp.Symbol('u_des', real=True)
-    v_des = sp.Symbol('v_des', real=True)
+    u0,u1,u2 = sp.symbols('u(0:3)', real=True)
 
-    reps_des = [(u, u_des), (v, v_des)]
-
-    # l1 and l2 
-    l1 = sp.Symbol('l1', positive=True)
-    l2 = sp.Symbol('l2', positive=True)
+    reps_des = [(t0, u0), (t1, u1), (t2,u2)]
 
     #declare the forward kin functions
-    f1 = l1 * sp.cos(u) + l2 * sp.cos(u+v) #TODO: collect on f1, f2
-    f2 = l1 * sp.sin(u) + l2 * sp.sin(u+v)
+    #f1 = l1 * sp.cos(u) + l2 * sp.cos(u+v) #TODO: collect on f1, f2
+    #f2 = l1 * sp.sin(u) + l2 * sp.sin(u+v)
+    f= sp.Matrix([[-0.3*sin(t1)*sin(t2)*cos(t0) + 0.3*cos(t0)*cos(t1)*cos(t2) + 0.55*cos(t0)*cos(t1)],
+              [-0.3*sin(t0)*sin(t1)*sin(t2) + 0.3*sin(t0)*cos(t1)*cos(t2) + 0.55*sin(t0)*cos(t1)], 
+              [0.3*sin(t1)*cos(t2) + 0.55*sin(t1) + 0.3*sin(t2)*cos(t1)]])
 
-    I = sp.eye(2) #hardcoded to 2 for now, while we run experiments on the 2DOF planar arm
-    f = sp.Matrix([f1, f2]) #forward kinematics matrix
+
+    I = sp.eye(3) #hardcoded to 3 for now, while we run experiments on the 3DOF
+
     
-    J = f.jacobian([u,v]) #ANALYTIC jacobian of the forward kinematics function
+    J = f.jacobian([t0,t1,t2]) #ANALYTIC jacobian of the forward kinematics function
     try:
         B = J.inv() #ANALYTIC
     except:
@@ -241,7 +290,7 @@ def products_of_spectral_radii(resolution, jointlimits, ets, camera):
     fig.show()
 
 
-def linearspace(resolution, jointlimits, ets, camera, u0, v0, mode):
+def linearspace(resolution, jointlimits, ets, camera, u0, v0, w0, mode):
     '''
     if mode ==1, see the spectral radius ranges
     if mode ==2, have a binary IS EIGVAL COMPLEX OR NOT (complex=1, real=0)
@@ -265,7 +314,8 @@ def linearspace(resolution, jointlimits, ets, camera, u0, v0, mode):
             This for loop iterates over every pair/permutation in the linear spaces of our parameters.
             '''
             Q = Q_grid[idx].copy()
-            evals, sr = spectral_radius(Q[0], Q[1], ets, camera, u0, v0, alpha) #ALPHA IS HARDCODED WITHIN THIS FUNCTION RN
+            if mode ==1 or mode ==2:
+                evals, sr = spectral_radius(Q[0], Q[1], ets, camera, u0, v0, alpha) #ALPHA IS HARDCODED WITHIN THIS FUNCTION RN
             
             if mode==1:
                 permuts_over_linspaces[idx] = sr
@@ -279,29 +329,39 @@ def linearspace(resolution, jointlimits, ets, camera, u0, v0, mode):
                 else:
                     permuts_over_linspaces[idx] = 1 #COMPLEX
 
+            if mode ==3:
+                evals, sr = sr_3dof(Q[0],Q[1],Q[2], ets, camera, u0,v0,w0, alpha)
+
+
             #print("i:", i, "init Q: ", Q_grid[idx], "fin Q:", Q, "spectral radius:", sr)
             i+=1;
     
-    permuts_over_linspaces=permuts_over_linspaces.flatten()
-    '''
-    # Flatten Q_grid to get all [q0, q1, ..., qN] configs
+   
+    # Flatten the data
     Q_flat = Q_grid.reshape(-1, Q_grid.shape[-1])
-    x, y, z = Q_flat[:, 0], Q_flat[:, 1], permuts_over_linspaces
+    x = Q_flat[:, 0]
+    y = Q_flat[:, 1]
+    z = np.zeros_like(x)  # use z=0 for a flat 3D surface if you just want color as "4th" dim
+    c = permuts_over_linspaces.flatten()
 
-    print("Generating Plot...")
-    scatter = go.Scatter3d(x=x,y=y,z=z,mode='markers', marker=dict(size=6,color=permuts_over_linspaces, colorscale='plasma', colorbar=dict(title='Total Error Non-Normalized'), opacity=0.6))
-    layout = go.Layout(
-        scene=dict(
-            xaxis_title='q0',
-            yaxis_title='q1',
-            zaxis_title=zaxistitle
-        ),
-        title='2DOF'+zaxistitle,
-        margin=dict(l=0,r=0,b=0,t=50)
-    )
-    fig=go.Figure(data=[scatter], layout=layout)
+    # Create 3D scatter plot
+    fig = plt.figure(figsize=(10, 7))
+    ax = fig.add_subplot(111, projection='3d')
 
-    fig.show()'''
+    sc = ax.scatter(x, y, z, c=c, cmap='plasma', s=20)
+
+    # Add colorbar
+    cbar = plt.colorbar(sc, ax=ax)
+    cbar.set_label('Total Error Non-Normalized')
+
+    # Axis labels and title
+    ax.set_xlabel('q0')
+    ax.set_ylabel('q1')
+    ax.set_zlabel('')  # Empty or something like 'dummy z'
+    ax.set_title(f'2DOF {zaxistitle}')
+
+    plt.tight_layout()
+    plt.show()
 
     return permuts_over_linspaces
 
@@ -343,8 +403,15 @@ def main():
     ets2dof = rtb.ET.Rz() * rtb.ET.tx(l1) * rtb.ET.Rz() * rtb.ET.tx(l2) 
     joint_limits2dof = [(0, np.pi), (-np.pi, np.pi)]  # example for 2 DOF
     joint_limits2dof_full = [(-2*np.pi, 2*np.pi), (-2*np.pi, 2*np.pi)]
-    jointlimits = joint_limits2dof
-    ets=ets2dof
+
+    ets_dylan = rtb.ET.Rz() * rtb.ET.Ry(np.pi/2) * rtb.ET.Rz(np.pi) * rtb.ET.Ry() * rtb.ET.tz(0.55) * rtb.ET.Ry() * rtb.ET.tz(0.30)
+    #joint_limits_dylan = [(0, np.pi/2), (0, np.pi/2) , (-np.pi/2, np.pi/2)]
+    joint_limits_dylan = [(-np.pi, np.pi), (-np.pi/2, np.pi/2) , (-np.pi/2, np.pi/2)]
+    joint_limits_full_dylan = [(-2*np.pi, 2*np.pi), (-2*np.pi, 2*np.pi) , (-2*np.pi, 2*np.pi)]
+    dofdylan = ets_dylan, joint_limits_dylan, joint_limits_full_dylan
+
+
+    ets, jointlimits, _ = dofdylan 
     robot = rtb.Robot(ets)
     camera=None 
     
@@ -369,16 +436,17 @@ def main():
     l1 = sp.Symbol('l1', positive=True)
     l2 = sp.Symbol('l2', positive=True)
 
-    resolution=15
-    mode=1
-    #spectral_radii= linearspace(resolution, jointlimits, ets, camera, u0, v0, mode)  
+    resolution=2
+    mode=3
+    spectral_radii= linearspace(resolution, jointlimits, ets, camera, u0, v0, None, mode)  
     alpha=1
+    sr_3dof(2,2,2, ets, camera, 1,1,1,1)
     #evals, sr= spectral_radius(u_, v_, ets, camera, u0, v0, alpha)
     #sr = analytic_spectral_radius(ets, camera)
 
     #products_of_spectral_radii(resolution, jointlimits, ets, camera)
 
-    spectral_radius_wrt_damping(u_, v_, ets, camera, u0, v0)
+    #spectral_radius_wrt_damping(u_, v_, ets, camera, u0, v0)
 
     #analytic spectral radius:
     '''
