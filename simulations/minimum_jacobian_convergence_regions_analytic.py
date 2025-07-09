@@ -681,14 +681,14 @@ def main():
     ets, joint_limits, joint_limits_full  = dofdylan
     ########################################################################
 
-    initQ = np.array([0.,  0.0, 0.0]) #1.23197905 0.07786037 1.07792537 #1.47876316  0.65113557 -0.98678046
-    desiredP= np.array([0.0,0.85,0.0])
+    initQ = np.array([0., np.pi/2, -np.pi/4]) #1.23197905 0.07786037 1.07792537 #1.47876316  0.65113557 -0.98678046
+    desiredP= np.array([0.0,0.3,0.0])
 
     traj1 = Trajectory(ets, joint_limits, joint_limits_full)
     #traj1.assign_trajectory_forwards(initQ, desiredP)
     traj1.assign_trajectory_backwards(initQ,desiredP)
 
-    if 0:
+    if 1:
         plan_trajectory_backwards(traj1)
 
         ets.plot(initQ, block=True)

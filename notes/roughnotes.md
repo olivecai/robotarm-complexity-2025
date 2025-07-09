@@ -799,7 +799,7 @@ If we could look at the basins of attraction for the goal, and the closest point
 Get the basins of attraction for the GOAL
 Find the shortest distance between the intial joint configuration and a joint configuration in the identified basin of attraction. (this is essentially repeating the closest success point again but in the jonit space.)
 
-# July 5
+# July 7
 
 Refocus: what is the objective? To quantify how many jacobians are needed to converge to a certain point in visual servoing. 
 We do not have access to analytic equations. We will not have a calibrated system. 
@@ -819,7 +819,7 @@ desiredP= np.array([1.0,1.0,0])
 There are three milestones: Beginning, Middle, End: [ 0.17474149 -2.46174514], [ 0.88614019 -2.07347846], [ 1.57144681 -1.57220103]
 This translates to 2 jacobian updates needed...
 
-# July 6
+# July 8
 
 Trajectory generation in joint space vs cartesian space:
 
@@ -931,4 +931,14 @@ For 2DOF, remember the spectral radius equation? See if you can find a relations
 
 But what about being able to converge in general? What about creatign trajectories? Very difficult...
 
+
+# July 9 
+
+If we can guess the radius of convergence, we can guess how many updates will be needed... since we can just overlap them...
+
+### Pre-calibration: sample over the space, associate joint space to task space. 
+
+Then when we have a goal, we can search the BEST PATH to get to goal... 
+
+We know that the MORE SOLUTIONS EXIST, the larger the region of convergence... So can we use something like CHEBYSHEV sampling to sample more on the workspace boundaries.... And we know that the basin of attraction well suited to us is the one which the joint vector is CLOSER so we can add that in the evaluation step...
 
