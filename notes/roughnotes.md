@@ -994,9 +994,9 @@ We also need to highlight the fact that damping should be adaptive becauase of t
 
 So if the spectral radius is 2, where should we redirect ourselves? There are multiple paths to go from here because there are multiple reasons.
 - REASON A: The spectral radius is 2 because we are actually well positioned to converge to the task space but with just a different joint solution. But we would only know this if we had access to all the solutions prior. 
-- REASON B: The spectral radius is 2 because we are near a singularity, though.... the spectral radius of the singular points are often extremely high and the spectral radius gets small again very quickly. 
+- REASON B: The spectral radius is 2 because we are near a singularity, though.... the spectral radius of the singular points are often extremely high and the spectral radius gets small again very quickly.
 
-Remember when we looked at the spectral radius plots for 2DOF arm? They had a clear boundary in them where the second joint ==0 (the singulartiy where the joint was fully outstretched) and it's like.. walking across that divide is very difficult... And if we aren't sure where the solution is, it's difficult to decide if we should cross that boundary, or move closer to our nearby solution. 
+Remember when we looked at the spectral radius plots for 2DOF arm? They had a clear boundary in them where the second joint == 0 (the singulartiy where the joint was fully outstretched) and it's like.. walking across that divide is very difficult... And if we aren't sure where the solution is, it's difficult to decide if we should cross that boundary, or move closer to our nearby solution. 
 
 Isn't the root that the solution will choose simply the root such that minimum(norm(ith_root-current_joint_vector)) out of all roots?
 
@@ -1026,3 +1026,29 @@ PROS of task space:
 Wait what if we just looked at both spaces at once? 
 
 We also need to decide if we should traverse online, or compute evrything beforehand.
+
+We kind of need TWO steps:
+- ADDRESS SINGUALRITY: are we in a singular position? If so, we should get somewhere better. This is not a difficult problem. The main qualm is just: which way should we perturb?
+- ADDRESS WHICH SOLUTION: which solution do we belong to, or can get into? This is far more difficult, because it is goal dependent. It is starting to feel like we will need to sample over the space and interpolate positions, etc. But that brings us back to Cole's point: if you can access the joint positions that are near a corresponding cartesian point, then why NOT just 'go there'? Then you don't even need inverse kinematics. Maybe we are thinking about this the wrong way. 
+
+What if we only look at task space? For each joint configuration, get the radius of convergence for that specific joint config... 
+and joint space trajectory planning is uncommon anyway so that could be soemthign interesting to explore anyway.
+
+If we sample over the joint space (and thus the task space), we might as well just interpolate the solution and GO THERE.
+Let's try something in real time.
+
+Look at the condition number and GUESS where the radius in JOINT space is. So, given one initial point, how many points can it converge to? 
+
+So what is the relationship between the condition number and the region of convergence?
+
+Question: as long as youre not in a singular ill conditioned position, is it possible to converge from all points eventually? Right now we are insistent on providing a way for the robot to find its natural basin of attraction, but why don't we provide it simply 
+
+How does condition number relate to the radius of convergence?
+
+TODO:
+- Make a simulation that gets condition number and compares it to the convex hull of the convergence region- the largest possible radius? Well, it's not a circle, so that complicates things, but maybe it will be OK. 
+- If jacobian is singular, then the joint that is responsible for the singularity should be perturbed (and we can identify the joint) and whichever direction decreases the loss, that is where we should move.
+- Move by how much? Ans: something like the osculatory radius ....
+- Okay we have moved. Now re-evaluate the condition number and go to the point that is magically closer.
+
+During this process, should we update and store/cache information as we go, or just have a milestone and go there and then re-evaluate?
