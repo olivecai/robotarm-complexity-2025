@@ -956,9 +956,73 @@ Do i want to find something THEORETICAL or something PRACTICAL?
 
 T_T
 
-e
-
 TODO:
 - Bounds
 - Simple frobenius norm diff in curr joint -  the des joint solution
 - kshbdfskhdbfkshdbf
+
+# July 10 
+
+Let's find some way to get the bounds of:
+- the radius of convergence in task space
+- the radius of convergence in joint space --> multiple solutions so this is potentially harder.
+- the radius of convergence in task space given the joint configurations 
+
+is there a relationship between the nonlinearity of the jacobian and the radius of convergence? Well, it would be surprising if not.
+
+Over the space if we can see how great the change in central differences is --> or just get the condition number of the matrix, since if there is great change or nonlinearity present in the matrix, the conditiion number will simply be a bit higher at that points: and in that case we can really just get the norms or the norm bounds.
+
+The thing is, the analytic bounds get really complicated, really fast.
+
+What is something analytic we can look at the discern the radius of convergence?
+
+I found a paper that uses the osculatory circle to approximate the small epsilon-like amount to add to an initial guess at singularity or local extrema so that you can push yourself out of the ill conditioned region and back to finding the solution. 
+
+Lipschitz function: relates to the LIMIT of the rate of change of a function. Uses the double cone (looks like an hourglass) along the function and the function must never overlap the cone area. The smallest shape of the cone is the lipschitz constant.
+
+If there exists this method to get out of singularities for single variable fn, is there multivar? Very very likely, so let's take a look.
+
+Use the lower DOF case to justify approximate methods for higher DOF:
+So, the more singular the condition number of the goal position, the smaller the regions of convergence and the more jacobians we will need to converge. Also it seems the higher DOF we are, the mroe jacobians we will need.
+
+But just getting out of the singular position is tough and it helps to perturb a little bit initially to get out of there.
+
+Is there an analytic way we can show:
+Given an initial point and a desired point, how many jacobians and where should these jacobians be sampled? 
+
+We also need to highlight the fact that damping should be adaptive becauase of the way that the spectral radius goes to 1 as damping goes to infinity, that's pretty rad! (Maybe revisit, why does it actually, and what does it mean, that the spectral radius actualyl dips below 1 jsut a little bit?)
+
+So if the spectral radius is 2, where should we redirect ourselves? There are multiple paths to go from here because there are multiple reasons.
+- REASON A: The spectral radius is 2 because we are actually well positioned to converge to the task space but with just a different joint solution. But we would only know this if we had access to all the solutions prior. 
+- REASON B: The spectral radius is 2 because we are near a singularity, though.... the spectral radius of the singular points are often extremely high and the spectral radius gets small again very quickly. 
+
+Remember when we looked at the spectral radius plots for 2DOF arm? They had a clear boundary in them where the second joint ==0 (the singulartiy where the joint was fully outstretched) and it's like.. walking across that divide is very difficult... And if we aren't sure where the solution is, it's difficult to decide if we should cross that boundary, or move closer to our nearby solution. 
+
+Isn't the root that the solution will choose simply the root such that minimum(norm(ith_root-current_joint_vector)) out of all roots?
+
+So this is some way to predict which root we will CHOOSE, but this is more of an empirical thing, and we need to focus on analytically, how can we handle the multiple soltuions? It is worht tryign to figure out how to converge to a very hyper specific solution even if there exists a better solution at hand? Well, if we can navigate singularities, then we can try to make every single possible point converge to that specific solution, but then we have this issue of:
+- If we know the solution, then we know the joint configuration, then we don't need inverse kinematics.
+
+So go back to looking at the jacobian... if the region of convergence 
+
+OK so what we need to rely on is....
+Can the condition number of the jacobian of a certain joint configuration (since this is goal agnostic and only needs the current joints) tell us its region of convergence? Well, we've seen that yes it can tell us quite a bit, since lower == better.
+
+Then after we obtain the guess for the region radius shape etc etc,,,,, how can we guess the number of jacobians it will take for us to converge? 
+
+And another thing, how can we include damping in these calculations???
+
+Fully rely on the jacobian to tell us about the landscape and how nonlinear the landscape is in cartesian or joint space? 
+
+PROS of joint space:
+- smoother, avoid singularities
+- multiple solutions, how to navigate?
+- much bigger than cartesian space, but way more informative
+- but it is TRUE that the singularities are like barriers, so the question is, how important is it that we can step over those barriers? Well, right now we are kind of saying it's not important, but that is only because we assume there exisst another solution on "our side of the barrier", but what if we believe the grass is greener on the other side for real and there isnt a solution near us? Then in that case it is honestly pretty imperative that we can step over the singularity barrier, but only after checking for certain that there isn't a solution nearby that we should just move to instead.
+
+PROS of task space:
+- the convergence region is typically one region and not multiple confusing basins and stuff
+
+Wait what if we just looked at both spaces at once? 
+
+We also need to decide if we should traverse online, or compute evrything beforehand.
