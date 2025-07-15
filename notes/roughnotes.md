@@ -1052,3 +1052,27 @@ TODO:
 - Okay we have moved. Now re-evaluate the condition number and go to the point that is magically closer.
 
 During this process, should we update and store/cache information as we go, or just have a milestone and go there and then re-evaluate?
+
+For now let's focus on just getting the condition number, and the convex hull of the convergence region.
+
+# July 12
+
+If we want to do this as an online algorithm, we need to make some sacrifices:
+- We cannot guarantee convergence for any arbitrary initial and goal position: we can only say we reduce the number of jacobians updates needed by approximating the region of convergence. REASONING: imagine we are in a singular position. Our first priority is to get out of that singular position. To deal with the singular position, maybe we can: perturb the joint that is most responsible for the singularity, thus providing two possible solutions... and whichever solution has less error we can use...
+
+Two things to focus on:
+1. Radius of convergence (how many iterations should I travel given the jacobian? Can I guess the radius of convergence of Newton's Method?)
+2. Getting out of a singularity
+
+# July 14
+
+Kantorovich Theorem
+
+1. Find the Lipschitz constant
+2. Are the first 3 K conditions upheld?
+3. Find a way to make the 4th condition true, and then calculate the n-d ball of convergence.
+
+It is possible that this ball of convergence may be very small for larger and larger DOF. 
+
+After we explore Kantorovich, we can look into the parameters of convergence.
+
