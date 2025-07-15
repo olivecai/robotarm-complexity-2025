@@ -58,11 +58,12 @@ TODO for regions of parameter: "How to improve the domain of parameters for Newt
     The paper posits that the optimum case of Argyros is when K*BETA*ETA <= 1/ (1+MU) where MU = L0/L. 
     From there, notice that the smaller MU is, the bigger our radius of convergence is.
     So, this gives us some happy conclusions that were indicated above... the local Lipschitz evaluation is indeed effective! And, unsurprisingly, the smaller the local Lipschitz value, the better.
-    
+
 '''
 
-
 # ret err fn F
+# get the vector F from the Denavit Hartenberg Parameters
+
 
 # ret lipschitz const L by iterating over the joint space 
 

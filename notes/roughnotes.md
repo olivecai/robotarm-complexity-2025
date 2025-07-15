@@ -1076,3 +1076,24 @@ It is possible that this ball of convergence may be very small for larger and la
 
 After we explore Kantorovich, we can look into the parameters of convergence.
 
+# July 15
+
+compare local vs global lipschitz constant of jacobian over the 2d space 
+
+Today we are dealing with the problem of approximating/reasonably obtaining the global lipschitz constant.
+
+The global lipschitz constant of A is equal to the spectral norm of A == the supremum of the absolute value of the largest singular value of A == the squareroot of the largest eigenvalue of ATA == the supremum spectral norm of A.
+
+
+### On Using Estimates of Lipschitz Constants in Global Optimization Hansen et al 
+
+> No finite algorithm can guarentee obtaining a solution within epsilon of the optimal one, for any positive epsilon. Indeed, f might contain a very high and narrow peak which might be missed by all the function evaluations even if they are very numerous.
+
+Use sawtooth iteration and continually build the sawtooth cover to find its maximum. Kind of like refining the mesh.
+L = max slope found, then multiply max slope by some factor r>1, (recommended r=2) since the slope is potentially very very large...
+
+Start with global end with local seems to be a recurring theme...
+
+### Lipschitzian Optimization wthout the Lipschitz Constant
+
+DIRECT algorithm seems very appealing based on conclusion: has only one parameter that appears to be 'faily insensitive' and eliminates need to Lipschitz constant by carrying out simultaneous searches with all possible constants. Can also run in very high dimensional spaces. Does not require derivatives.
