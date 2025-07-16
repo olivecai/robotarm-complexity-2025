@@ -101,32 +101,6 @@ dylan_dof3_params=[
 dof3 = dh.DenavitHartenbergAnalytic(dylan_dof3_params, P)
 robot = dof3
 
-# Define your function to maximize
-def f(x):
-    # x is a vector: [x0, x1]
-    function = (x[0] + x[1])
-    return - function # Negative for maximization
-
-# Set bounds for each variable: [(min, max), (min, max), ...]
-bounds = [(0, 4), (0, 2)]
-
-# Initial guess
-x0 = [1.0, 1.0]
-
-# Run the optimization
-result = minimize(f, x0, method='L-BFGS-B', bounds=bounds)
-
-# Get the maximizer and maximum
-x_max = result.x
-f_max = -result.fun  # Don't forget the minus sign!
-
-print("Maximizer:", x_max)
-print("Maximum value:", f_max)
-
-from scipy.optimize import minimize
-
-
-
 print(robot.J)
 '''
 This is robot.J:
@@ -152,16 +126,15 @@ def test(q):
     print("q:", q, "→ norm:", fn)
     return - fn
 
-
-
 # Initial guess and bounds
 q0 = np.array([0.1,0.1,0.1]) #whatever is the maximum 
 bounds = [(0, np.pi/2), (0, np.pi/2), (0, np.pi)]
 
 
-
-res = minimize(test, q0, bounds=bounds)
+res = minimize(lipschitz_objective, q0, bounds=bounds)
 L_estimate = -res.fun
 
 print("Estimated global Lipschitz constant:", L_estimate)
 print("At joint config:", res.x)
+
+def empirical_lipschitz

@@ -1211,3 +1211,11 @@ To get the analytic Lipschitz:
 - Get multivariable operator F
 - Get the Jacobian J = F'
 - Optimize over the joint space to find the maximum spectral norm in the given bounds for each variable.
+
+To get the analytic Lipschitz, we are currently lambdifify the sympy Jacobian into numpy/scipy expression, evaluate with a guess, and then optimize using scipy minimizer (minimize the negative function to get the maximum).
+
+Approximate the Lipschitz... we should do random sampling or halton or sobol sampling. Uniform grid sampling is really expensive.
+
+Today we figured out what center Lipschitz is. 
+
+Tomorrow let's focus on getting more code down.
