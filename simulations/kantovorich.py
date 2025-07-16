@@ -69,10 +69,99 @@ PLAN: Start off with the approximated Lipschitz constant. Maybe we can make a me
 '''
 
 # ret err fn F
-# get the vector F from the Denavit Hartenberg Parameters
-
 
 # ret lipschitz const L by iterating over the joint space 
 
 # ret init error const b
 
+from scipy.optimize import minimize
+import sympy as sp
+import numpy as np
+
+import denavit_hartenberg as dh
+
+P = dh.DHSympyParams() #this lowkey has to be global, sorry
+jntspace, cartspace, taskspace = P.get_params()
+t0, t1, t2, t3, t4, t5, t6, t7, t8, t9 = jntspace
+x, y, z = cartspace
+u, v = taskspace
+
+dof2_params = [
+                [t0, 0, 1, 0], 
+                [t1, 0, 1, 0]
+                ]
+
+dylan_dof3_params=[
+                [ t0, sp.pi/2, 0 , 0 ],
+                [ t1,  0  ,  0.55, 0 ],
+                [ t2,  0  ,  0.30, 0 ]
+                ]
+
+#dof2 = dh.DenavitHartenbergAnalytic(dof2_params, P)
+dof3 = dh.DenavitHartenbergAnalytic(dylan_dof3_params, P)
+robot = dof3
+
+# Define your function to maximize
+def f(x):
+    # x is a vector: [x0, x1]
+    function = (x[0] + x[1])
+    return - function # Negative for maximization
+
+# Set bounds for each variable: [(min, max), (min, max), ...]
+bounds = [(0, 4), (0, 2)]
+
+# Initial guess
+x0 = [1.0, 1.0]
+
+# Run the optimization
+result = minimize(f, x0, method='L-BFGS-B', bounds=bounds)
+
+# Get the maximizer and maximum
+x_max = result.x
+f_max = -result.fun  # Don't forget the minus sign!
+
+print("Maximizer:", x_max)
+print("Maximum value:", f_max)
+
+from scipy.optimize import minimize
+
+
+
+print(robot.J)
+'''
+This is robot.J:
+Matrix([[0.3*sin(t0)*sin(t1)*sin(t2) - 0.3*sin(t0)*cos(t1)*cos(t2) - 0.55*sin(t0)*cos(t1), -0.3*sin(t1)*cos(t0)*cos(t2) - 0.55*sin(t1)*cos(t0) - 0.3*sin(t2)*cos(t0)*cos(t1), -0.3*sin(t1)*cos(t0)*cos(t2) - 0.3*sin(t2)*cos(t0)*cos(t1)], [-0.3*sin(t1)*sin(t2)*cos(t0) + 0.3*cos(t0)*cos(t1)*cos(t2) + 0.55*cos(t0)*cos(t1), -0.3*sin(t0)*sin(t1)*cos(t2) - 0.55*sin(t0)*sin(t1) - 0.3*sin(t0)*sin(t2)*cos(t1), -0.3*sin(t0)*sin(t1)*cos(t2) - 0.3*sin(t0)*sin(t2)*cos(t1)], [0, -0.3*sin(t1)*sin(t2) + 0.3*cos(t1)*cos(t2) + 0.55*cos(t1), -0.3*sin(t1)*sin(t2) + 0.3*cos(t1)*cos(t2)]])
+'''
+
+fn = (sp.utilities.lambdify([t0,t1,t2], robot.J, 'numpy'))
+
+# Objective: negative spectral norm (so that minimize → maximum)
+def lipschitz_objective(q):
+    J_val = fn(*q)
+    norm_val = np.linalg.norm(J_val, ord=2).copy()
+    print("J:\n", J_val)
+    print("q:", q, "→ norm:", norm_val)
+    return -norm_val
+
+def test(q):
+    f = np.array([[q[0],0,0],
+                  [0,q[1],0],
+                  [0,0,q[2]]])
+    fn = np.linalg.norm(f, ord=2)
+    print("f:\n", f)
+    print("q:", q, "→ norm:", fn)
+    return - fn
+
+
+
+# Initial guess and bounds
+q0 = np.array([0.1,0.1,0.1]) #whatever is the maximum 
+bounds = [(0, np.pi/2), (0, np.pi/2), (0, np.pi)]
+
+
+
+res = minimize(test, q0, bounds=bounds)
+L_estimate = -res.fun
+
+print("Estimated global Lipschitz constant:", L_estimate)
+print("At joint config:", res.x)

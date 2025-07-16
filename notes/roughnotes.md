@@ -1191,4 +1191,23 @@ OPTIONS according to the World Wide Web:
 - Holder continuity
 - Weak Lipschitz
 
-Allegedly there is a way to, given a starting point, find a better starting point, but it's very difficult to parse the paper and find the actual method. Right now we are scrolling through the same proofs againa nd again...
+Allegedly there is a way to, given a starting point, find a better starting point, but it's very difficult to parse the paper and find the actual method. Right now we are scrolling through the same proofs again and again...
+
+### Newton's Method under Different Lipschitz Conditions Jose M Guiterrez and Miguel A Hernandez
+
+The 'center Lipschitz' refers to the Lipschitz condition with the fixed x0. 
+
+The center Lipschitz is weaker because one of the points is fixed.
+
+There is another Lipschitz condition on the first derivative (thus requiring the second derivative) that is more restrictive.
+
+Okay I cannot really find too much more.
+For now we can try:
+
+EMPIRICAL LIPSCHITZ:
+Sample over the space to get the lipschitz and multiply by 2.
+
+To get the analytic Lipschitz:
+- Get multivariable operator F
+- Get the Jacobian J = F'
+- Optimize over the joint space to find the maximum spectral norm in the given bounds for each variable.

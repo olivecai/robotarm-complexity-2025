@@ -7,18 +7,31 @@ This program obtains analytic expressions from the Denavit Hartenberg parameters
 '''
 
 import sympy as sp
-joint_vars = sp.symbols('t(:10)') #t1,t2,t3,...t9
-t0,t1,t2,t3,t4,t5,t6,t7,t8,t9 = joint_vars
-cart_space_vars = sp.symbols('x,y,z') #x,y,z
-x,y,z = cart_space_vars
-task_space_vars = sp.symbols('u,v') #u,v
-u, v = task_space_vars
 
-class DenavitHartenbergAnalytic:
+
+class DHSympyParams:
+    '''
+    these must be initialized first so that we can use the parameters in the dh system
+    '''
+    def __init__(self):
+        self.joint_vars = sp.symbols('t(:10)') #t1,t2,t3,...t9
+        t0,t1,t2,t3,t4,t5,t6,t7,t8,t9 = self. joint_vars
+        self.cart_space_vars = sp.symbols('x,y,z') #x,y,z
+        x,y,z = self.cart_space_vars
+        self.task_space_vars = sp.symbols('u,v') #u,v
+        u, v = self.task_space_vars
+        
+    def get_params(self):
+        return (self.joint_vars, self.cart_space_vars, self.task_space_vars)
+
+class DenavitHartenbergAnalytic():
     '''
     initialize a denavit hartenberg system with analytic symbols, using sympy.
     '''
-    def __init__(self, dh_params: list):
+    def __init__(self, dh_params: list, symbolclass: DHSympyParams):
+        self.cartvars= symbolclass.cart_space_vars
+        self.taskvars = symbolclass.task_space_vars
+        self.jntvars = symbolclass.joint_vars
         #dh_params is a double nested list, where each row is one joint.
         transforms=[]
         for param in dh_params: # for each joint 
@@ -32,17 +45,19 @@ class DenavitHartenbergAnalytic:
         self.ee_translation = sp.Matrix(ee_translation)
         self.dof = len(dh_params) #degree of freedom correlates to the number of dh parameter rows
 
-        self.calc_kantorovich_vars()
+        print("ee_translation:", self.ee_translation[:3])
+        self.F = sp.Matrix(self.ee_translation[:3]) - sp.Matrix(self.cartvars)
+        print("F:", self.F)
+        
+        self.J = self.F.jacobian(self.jntvars[:self.dof])
+
+
 
     def calc_kantorovich_vars(self):
         #error function F...
-        print("ee_translation:", self.ee_translation[:3])
-        
-        self.F = sp.Matrix(self.ee_translation[:3]) - sp.Matrix([x,y,z])
-
+    
         #initial newton error step...
         #F jacobian inverse @ F <= eta
-        self.J = self.F.jacobian(joint_vars[:self.dof])
         self.B = self.J.inv()
         BF = self.B*self.F
         BFTBF = BF.T*BF
@@ -83,16 +98,23 @@ class DenavitHartenbergAnalytic:
 
 
 
-dof2_params = [
-                [t0, 0, 1, 0], 
-                [t1, 0, 1, 0]
-                ]
+if __name__ == '__main__':
+    P = DHSympyParams()
+    jntspace, cartspace, taskspace = P.get_params()
+    t0, t1, t2, t3, t4, t5, t6, t7, t8, t9 = jntspace
+    x, y, z = cartspace
+    u, v = taskspace
 
-dylan_dof3_params=[
-                [ t0, sp.pi/2, 0 , 0 ],
-                [ t1,  0  ,  0.55, 0 ],
-                [ t2,  0  ,  0.30, 0 ]
-                ]
+    dof2_params = [
+                    [t0, 0, 1, 0], 
+                    [t1, 0, 1, 0]
+                    ]
 
-#dof2 = DenavitHartenbergAnalytic(dof2_params)
-dof3 = DenavitHartenbergAnalytic(dylan_dof3_params)
+    dylan_dof3_params=[
+                    [ t0, sp.pi/2, 0 , 0 ],
+                    [ t1,  0  ,  0.55, 0 ],
+                    [ t2,  0  ,  0.30, 0 ]
+                    ]
+
+    #dof2 = DenavitHartenbergAnalytic(dof2_params, P)
+    dof3 = DenavitHartenbergAnalytic(dylan_dof3_params, P)
