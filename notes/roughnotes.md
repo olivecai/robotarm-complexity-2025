@@ -1068,6 +1068,56 @@ Two things to focus on:
 
 Kantorovich Theorem
 
+Kantovorich Theorem can give us results on semilocal convergence.
+
+There are FOUR CONDITIONS on operator F and starting point x0:
+Let X, Y, be Banach spaces, C contained in X, F: C-->Y a continuous function cont differentiable on int(C). 
+
+K1: for x0 in X, there exists inv([F'(x0)]) in the set of bounded linear operators L(Y,X) st the operator norm of this inverse jacobian is <= some constant BETA
+K2: the operator norm of the inverse jacobian of F at (x0) @ F(x0) is <= some constant ETA
+K3: There exists a constant Lipschitz >=0 st the operator norm of [F'(x)-F'(y)] is <= L*[norm of x-y] for any x,y, in the subset C in the Banach space X
+K4: h = Lipschitz * BETA * ETA <= 1/2 and B(x0,R) st R = ETA * [2*(1-a0)]/[2-3a0], where if a0 is >0 but <1/2, then the Newton sequence has R-order of convergence of at least two, while if a0==1/2, the seuqence has at least 1-order of convergence,
+
+If K4 is valid, then we have guarenteed that:
+- a solution exists
+- a solution is unique
+- we know some bound on the rate of convergence to this solution
+
+The first two conditions are on starting point x0.
+The third is on operator F.
+The fourth combines the first three.
+
+So, some takeaways:
+K1 tells us that the inverse Jacobian of the starting position must exist (aka J is nonsingular). So, if we are initialized (or wind up in) a singular position, the first priority is to get out of that singular position.
+K2 tells us how near we are to a solution already: this is, after all, the size of the first step! And remember that F(x0) is the error function that should == 0. The higher b is, the farther we are from the solution.
+K3 tells us we need Lipschitz continuity of the Jacobian: the Jacobian change must be bounded by some LINEAR constant. The higher L is, the more unpredictable and nonlinear our function likely is. This tells us how predictable the region is. 
+    Papers that focus on the domains of parameters and increasing that region focus on tuning the Lipschitz constant, which is something we should focus on.
+K4 is THE condition and is called the Kantorovich condition! It simply tells us whether or not we have guaranteed convergence.
+
+Here is some information we need to gather:
+
+- Error function that maps DOF variables into a 3D task space (However, we will have to work in the 2D task space eventually): F(t1,t2,...tDOF): R^DOF -> R^3
+    We can easily grab this from the Denavit Hartenberg Parameters Matrix third column (the translation vector)
+    Needs the forward kinematics/ DH parameters. EASY
+- The global lipschitz constant L.
+    This may be quite difficult to obtain over a large joint space. This is a bit of a problem in and of itself. L = sup((operator norm of F'(x)-F'(y))/(operator norm of (x-y))
+    It is potentially a little silly that we scrapped the other 'compute/calibrate beforehand' ideas but must go ahead with this, so we should see if there is a way to predict (or if there exists a general lower bound we can find) for this Lipschitz constant.
+    Hmmmm... I also wonder if it is possible to get the Lipschitz constant locally, if that'll do?
+    Needs the Jacobian of the error function. HARD
+- The constant b, st the operator norm of [F'(x0)^(-1) @ F(x0)] is <= b. 
+    This should be easy to attain, since we simply need to: compute the central differences, invert, and mat mult by the curr error fn. b= the constant obtained from this Newton step calculation :-)
+    Needs x0 and the Error Function F. EASY
+    
+So, we can gather that, since we need the GLOBAL lipschitz constant, that this is a very conservative, safe lower bound. 
+This tells us though, that for function landscapes with very high Lipschitz values, the radius of convergence may end up being far too conservative!
+
+So, there is certainly a lot of value in deciding not to even go NEAR singular positions, since it will likely enlargen the radius of convergence. HYPOTHESIS 1
+
+We should get started with coding the first three values:
+- Error Function F
+- Lipschitz constant L
+- Initial error constant b
+
 1. Find the Lipschitz constant
 2. Are the first 3 K conditions upheld?
 3. Find a way to make the 4th condition true, and then calculate the n-d ball of convergence.
@@ -1097,3 +1147,48 @@ Start with global end with local seems to be a recurring theme...
 ### Lipschitzian Optimization wthout the Lipschitz Constant
 
 DIRECT algorithm seems very appealing based on conclusion: has only one parameter that appears to be 'faily insensitive' and eliminates need to Lipschitz constant by carrying out simultaneous searches with all possible constants. Can also run in very high dimensional spaces. Does not require derivatives.
+
+# July 16
+
+Still looking for a global lipschitz constant solution.
+
+Worst case scenario if we cannot find anything: sample over the joint space and multiply that by a factor > 1, since it is highly likely we will always underestimate the true Lipschitz constant from purely empirical guessing, and it is better to overestimate the constant anyways.
+
+### Enlarging the domain of starting points for Newton’s method under center conditions on the first Fréchet-derivative, Esquerro, Hernandez-Veron
+
+This paper suggests we can find better starting positions for Newtons Method based on a starting position we already have, even if that initial starting position is not necesarily very good. 
+
+Many papers also use the local Lipschitz constant to enlargen the domain of parameters, but this is quite restrictive. 
+
+Some authors require that, instead of Lipschitz continuity, we must have Holder continuity: 
+
+There exist two constants K >= 0 and p in [0,1] such that operator norm(F'(x)-F'(y)) <= K* operator norm (x-y) ^p
+
+Now we are using instead of a Lipschitz constant, a function in the usual Lipschitz inequality. This function w is a nondecreasing function.
+ 
+*What is meant by 'center lipschitz'?*
+
+Condition B2b: 
+There exist x~ in X and two continuous and nondecreasing functions w~ : R positive --> R positive and h~ : [0,1] --> R positive such that w~(0) >= 0 , w~ (tz) <= h~(t)w~(z), with t in [0,1], z in [0, inf), and operator norm of F'(x) - F'(x~) <= w~(operator norm of x-x~), x in X
+
+What does that even mean? 
+
+Region of Accessibility: The set of starting points such that an iterative method will allow any solution of an equation from any point of the set to converge to the solution.
+
+### Newton's Method: an Updated Approach of Kantorovich's Theory
+
+There exists semilocal, local, and global methods of studying convergence.
+
+SEMILOCAL: demand we know initial x, find domain of parameters to get ball of convergence
+LOCAL: demand we know final x, find domain of params to get the region of accessibility
+GLOBAL: convergence of sequence xn to the solution x* in a domain and independently of the initial approximation x0.
+
+Essentially, is there some Newton-Kantorovich method that mitigates need for the Lipschitz global constant?
+
+OPTIONS according to the World Wide Web:
+- Center Lipschitz
+- Lipschitz + Center Lipschitz
+- Holder continuity
+- Weak Lipschitz
+
+Allegedly there is a way to, given a starting point, find a better starting point, but it's very difficult to parse the paper and find the actual method. Right now we are scrolling through the same proofs againa nd again...

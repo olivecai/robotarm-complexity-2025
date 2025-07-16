@@ -1,5 +1,9 @@
 '''
 July 15
+
+This program obtains analytic expressions from the Denavit Hartenberg parameters.
+
+
 '''
 
 import sympy as sp
@@ -28,7 +32,9 @@ class DenavitHartenbergAnalytic:
         self.ee_translation = sp.Matrix(ee_translation)
         self.dof = len(dh_params) #degree of freedom correlates to the number of dh parameter rows
 
+        self.calc_kantorovich_vars()
 
+    def calc_kantorovich_vars(self):
         #error function F...
         print("ee_translation:", self.ee_translation[:3])
         

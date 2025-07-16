@@ -59,6 +59,13 @@ TODO for regions of parameter: "How to improve the domain of parameters for Newt
     From there, notice that the smaller MU is, the bigger our radius of convergence is.
     So, this gives us some happy conclusions that were indicated above... the local Lipschitz evaluation is indeed effective! And, unsurprisingly, the smaller the local Lipschitz value, the better.
 
+    
+NOTE on the global Lipschitz constant in the real robot system:
+- We don't know F, and can't get the global constant without sampling over the joint space.
+- If we overestimate the constant, it's SAFER, but the tradeoff is that the radius of convergence is much smaller.
+PLAN: Start off with the approximated Lipschitz constant. Maybe we can make a mesh of local Lipschitz regions, so as our joints travel through the space, we take on a different Lipschitz constant. 
+- We only have to calibrate once beforehand to obtain the lipschitz constant for each region of our mesh. In fact, what if we have a jacobian AND a local lipschitz constant for regions in the mesh?
+- HOWEVER: What if we get a certain radius, move there, and
 '''
 
 # ret err fn F
