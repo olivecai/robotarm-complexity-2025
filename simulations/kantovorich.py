@@ -137,4 +137,34 @@ L_estimate = -res.fun
 print("Estimated global Lipschitz constant:", L_estimate)
 print("At joint config:", res.x)
 
-def empirical_lipschitz
+def empirical_lipschitz(robot: dh.DenavitHartenbergAnalytic):
+    '''
+    simple lipschitz algorithm.
+
+    random sample sparsely over the entire space to get central differences
+    from central differences jacobian we can get that local lipschitz
+    global lipschitz = max of all local lipschitz
+    '''
+    global_lipschitz = 0 #init as minimum value
+
+    num_samples = 888
+    random_joint_configs = [
+        np.array([np.random.uniform(low, high) for (low, high) in bounds])
+        for _ in range(num_samples)
+    ]
+    i=0
+    for Q in random_joint_configs:
+        i+=1
+        # get central differences jacobian
+        jac = robot.central_differences(Q)
+        spectralnorm = np.linalg.norm(jac, ord=2)
+        if spectralnorm > global_lipschitz:
+            global_lipschitz = spectralnorm
+        print(i)
+        print(spectralnorm)
+
+    print("global lipschitz:", global_lipschitz)
+    return global_lipschitz
+
+        
+empi

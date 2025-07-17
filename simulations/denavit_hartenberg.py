@@ -7,7 +7,7 @@ This program obtains analytic expressions from the Denavit Hartenberg parameters
 '''
 
 import sympy as sp
-
+import numpy as np
 
 class DHSympyParams:
     '''
@@ -29,7 +29,7 @@ class DenavitHartenbergAnalytic():
     initialize a denavit hartenberg system with analytic symbols, using sympy.
     '''
     def __init__(self, dh_params: list, symbolclass: DHSympyParams):
-        self.cartvars= symbolclass.cart_space_vars
+        self.cartvars = symbolclass.cart_space_vars
         self.taskvars = symbolclass.task_space_vars
         self.jntvars = symbolclass.joint_vars
         #dh_params is a double nested list, where each row is one joint.
@@ -40,18 +40,18 @@ class DenavitHartenbergAnalytic():
         for i in range(len(transforms)): #chain multiply the DH matrices to get the final position
             ee_matrix *= transforms[i]
 
-        ee_translation = ee_matrix[:,3] #translation final position 
+        ee_translation = ee_matrix[:,3][:3] #translation final position 
         self.ee_matrix = ee_matrix #entire matrix including rotations etc
         self.ee_translation = sp.Matrix(ee_translation)
         self.dof = len(dh_params) #degree of freedom correlates to the number of dh parameter rows
 
-        print("ee_translation:", self.ee_translation[:3])
+        print("ee_translation:", self.ee_translation)
         self.F = sp.Matrix(self.ee_translation[:3]) - sp.Matrix(self.cartvars)
         print("F:", self.F)
         
         self.J = self.F.jacobian(self.jntvars[:self.dof])
 
-
+        self.fkin_eval = (sp.utilities.lambdify(self.jntvars[:self.dof], self.ee_translation, 'numpy'))
 
     def calc_kantorovich_vars(self):
         #error function F...
@@ -96,6 +96,36 @@ class DenavitHartenbergAnalytic():
         #print(DH)
         return DH
 
+    def central_differences(self, Q, epsilon=None):
+        '''
+        Returns the central differences Jacobian and the value of epsilon to perturb by
+        '''
+        Q= np.array((Q))
+
+        reps = []
+        for i in range(len(list(Q))):
+            reps.append((self.jntvars[i], Q[i]))
+
+        if epsilon == None:
+            epsilon = 1e-4
+        
+        p= Q.shape[0]
+        d= self.F.shape[0]
+        print("pxd:", p,"x",d)
+
+        k=1
+        Jt = np.zeros((p,d))
+        I = np.identity(p)
+        for i in range(p):
+            forward = self.fkin_eval(*(Q + epsilon * I[i]))
+            print(forward)
+            backward = self.fkin_eval(*(Q - epsilon * I[i]))
+            print(backward)
+            diff = (forward-backward).T
+            print(diff)
+            Jt[i] = diff / (2*epsilon)
+
+        return Jt.T
 
 
 if __name__ == '__main__':
@@ -118,3 +148,4 @@ if __name__ == '__main__':
 
     #dof2 = DenavitHartenbergAnalytic(dof2_params, P)
     dof3 = DenavitHartenbergAnalytic(dylan_dof3_params, P)
+    print(dof3.central_differences([0.,0.,0.]))
