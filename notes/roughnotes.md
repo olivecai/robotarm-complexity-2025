@@ -1219,3 +1219,17 @@ Approximate the Lipschitz... we should do random sampling or halton or sobol sam
 Today we figured out what center Lipschitz is. 
 
 Tomorrow let's focus on getting more code down.
+
+# July 17
+
+Today we compare the optimization minimzastion strategy VS the random sampling fo 50 points to get the Lipschitz Constant. We need to be aware, though, that if we sample too much, it defeats the purpose of our strategy since we might as well solve the problem using interpolation or something.
+
+Right now the issue with the global lipschitz constant is that we don't want to sample over the entire space. 
+
+TODO: 
+
+- test difference between global lipschitz constant VS local*2
+- camera projections
+- check how damping affects 
+- does pinv mess up calculations? 
+

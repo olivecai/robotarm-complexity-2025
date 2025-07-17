@@ -47,7 +47,7 @@ This tells us though, that for function landscapes with very high Lipschitz valu
 So, there is certainly a lot of value in deciding not to even go NEAR singular positions, since it will likely enlargen the radius of convergence. HYPOTHESIS 1
 
 We should get started with coding the first three values:
-- Error Function F
+- Error Function F # NOTE we don't need to know the exact operator, we can just sample this function.
 - Lipschitz constant L
 - Initial error constant b
 
@@ -77,6 +77,7 @@ PLAN: Start off with the approximated Lipschitz constant. Maybe we can make a me
 from scipy.optimize import minimize
 import sympy as sp
 import numpy as np
+import matplotlib.pyplot as plt
 
 import denavit_hartenberg as dh
 
@@ -94,11 +95,24 @@ dof2_params = [
 dylan_dof3_params=[
                 [ t0, sp.pi/2, 0 , 0 ],
                 [ t1,  0  ,  0.55, 0 ],
-                [ t2,  0  ,  0.30, 0 ]
+                [ t2,  0  ,  0.3, 0 ]
                 ]
 
-#dof2 = dh.DenavitHartenbergAnalytic(dof2_params, P)
+
+kinova_dof7_params = [
+    [t0,      sp.pi,   0.0,   0.0],
+    [t1,      sp.pi/2, 0.0, -(0.1564 + 0.1284)],
+    [t2 +sp.pi, sp.pi/2, 0.0, -(0.0054 + 0.0064)],
+    [t3 +sp.pi, sp.pi/2, 0.0, -(0.2104 + 0.2104)],
+    [t4 +sp.pi, sp.pi/2, 0.0, -(0.0064 + 0.0064)],
+    [t5 +sp.pi, sp.pi/2, 0.0, -(0.2084 + 0.1059)],
+    [t6 +sp.pi, sp.pi/2, 0.0, 0.0],
+    [t7 +sp.pi,    sp.pi, 0.0, -(0.1059 + 0.0615)],
+]
+
+dof2 = dh.DenavitHartenbergAnalytic(dof2_params, P)
 dof3 = dh.DenavitHartenbergAnalytic(dylan_dof3_params, P)
+kinova = dh.DenavitHartenbergAnalytic(kinova_dof7_params, P)
 robot = dof3
 
 print(robot.J)
@@ -107,14 +121,14 @@ This is robot.J:
 Matrix([[0.3*sin(t0)*sin(t1)*sin(t2) - 0.3*sin(t0)*cos(t1)*cos(t2) - 0.55*sin(t0)*cos(t1), -0.3*sin(t1)*cos(t0)*cos(t2) - 0.55*sin(t1)*cos(t0) - 0.3*sin(t2)*cos(t0)*cos(t1), -0.3*sin(t1)*cos(t0)*cos(t2) - 0.3*sin(t2)*cos(t0)*cos(t1)], [-0.3*sin(t1)*sin(t2)*cos(t0) + 0.3*cos(t0)*cos(t1)*cos(t2) + 0.55*cos(t0)*cos(t1), -0.3*sin(t0)*sin(t1)*cos(t2) - 0.55*sin(t0)*sin(t1) - 0.3*sin(t0)*sin(t2)*cos(t1), -0.3*sin(t0)*sin(t1)*cos(t2) - 0.3*sin(t0)*sin(t2)*cos(t1)], [0, -0.3*sin(t1)*sin(t2) + 0.3*cos(t1)*cos(t2) + 0.55*cos(t1), -0.3*sin(t1)*sin(t2) + 0.3*cos(t1)*cos(t2)]])
 '''
 
-fn = (sp.utilities.lambdify([t0,t1,t2], robot.J, 'numpy'))
+fn = (sp.utilities.lambdify(jntspace[:robot.dof], robot.J, 'numpy'))
 
 # Objective: negative spectral norm (so that minimize → maximum)
 def lipschitz_objective(q):
     J_val = fn(*q)
     norm_val = np.linalg.norm(J_val, ord=2).copy()
-    print("J:\n", J_val)
-    print("q:", q, "→ norm:", norm_val)
+    #print("J:\n", J_val)
+    #print("q:", q, "→ norm:", norm_val)
     return -norm_val
 
 def test(q):
@@ -127,14 +141,16 @@ def test(q):
     return - fn
 
 # Initial guess and bounds
-q0 = np.array([0.1,0.1,0.1]) #whatever is the maximum 
-bounds = [(0, np.pi/2), (0, np.pi/2), (0, np.pi)]
+q0 = np.array([0.1]*robot.dof) #whatever is the maximum 
+bounds = [(0, np.pi/2)]*robot.dof
+print("BOUNDS")
+print(bounds)
 
 
 res = minimize(lipschitz_objective, q0, bounds=bounds)
 L_estimate = -res.fun
 
-print("Estimated global Lipschitz constant:", L_estimate)
+print("\n\nEstimated global Lipschitz constant:", L_estimate)
 print("At joint config:", res.x)
 
 def empirical_lipschitz(robot: dh.DenavitHartenbergAnalytic):
@@ -146,25 +162,65 @@ def empirical_lipschitz(robot: dh.DenavitHartenbergAnalytic):
     global lipschitz = max of all local lipschitz
     '''
     global_lipschitz = 0 #init as minimum value
+    min_spectral_norm = np.inf
 
-    num_samples = 888
+    num_samples = 50
     random_joint_configs = [
         np.array([np.random.uniform(low, high) for (low, high) in bounds])
         for _ in range(num_samples)
     ]
     i=0
+    condnums = []
+    spectralnums = []
+    xrange = np.array(list(range(num_samples)))
+
     for Q in random_joint_configs:
         i+=1
         # get central differences jacobian
         jac = robot.central_differences(Q)
+        inv = np.linalg.pinv(jac)
+        
         spectralnorm = np.linalg.norm(jac, ord=2)
+        invnorm = np.linalg.norm(inv, ord=2)
+
+        cond = spectralnorm* invnorm
+
         if spectralnorm > global_lipschitz:
+            lipschitzQ=Q
             global_lipschitz = spectralnorm
-        print(i)
-        print(spectralnorm)
+
+        if spectralnorm < min_spectral_norm:
+            min_spectral_norm = spectralnorm
+        '''
+        print("condition number:", cond)
+        print(i, Q)
+        print(jac)
+        print(spectralnorm)'''
+
+        condnums.append(np.log(cond))
+        spectralnums.append(spectralnorm)
 
     print("global lipschitz:", global_lipschitz)
-    return global_lipschitz
+    print("minimum spectral norm:", min_spectral_norm)
 
+    plt.scatter(xrange, condnums, c='blue')
+    plt.scatter(xrange, spectralnums, c='red')
+    plt.show()
+
+    robot.plot(lipschitzQ)
+
+    return global_lipschitz
         
-empi
+lipschitz = empirical_lipschitz(robot)
+
+#robot.calc_kantorovich_vars()
+
+
+#################
+initQ = [0.,0.,0.]
+desP = [0.,0.3,0.0]
+# Choose a starting position and the error function to minimize...
+# Let's start with DOF2 first...
+
+p = robot.ret_kantovorich(lipschitz, initQ, desP)
+print(p)

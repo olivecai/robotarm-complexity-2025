@@ -2,12 +2,11 @@
 July 15
 
 This program obtains analytic expressions from the Denavit Hartenberg parameters.
-
-
 '''
 
 import sympy as sp
 import numpy as np
+import roboticstoolbox as rtb
 
 class DHSympyParams:
     '''
@@ -33,6 +32,8 @@ class DenavitHartenbergAnalytic():
         self.taskvars = symbolclass.task_space_vars
         self.jntvars = symbolclass.joint_vars
         #dh_params is a double nested list, where each row is one joint.
+        
+        
         transforms=[]
         for param in dh_params: # for each joint 
             transforms.append(self.transformation_matrix_DH(*param)) #transformation_matrix_DH returns the DH matrix for that single joint...
@@ -45,6 +46,9 @@ class DenavitHartenbergAnalytic():
         self.ee_translation = sp.Matrix(ee_translation)
         self.dof = len(dh_params) #degree of freedom correlates to the number of dh parameter rows
 
+        self.dh_params = dh_params
+        self.rtb_robot = self.rtb_model()
+
         print("ee_translation:", self.ee_translation)
         self.F = sp.Matrix(self.ee_translation[:3]) - sp.Matrix(self.cartvars)
         print("F:", self.F)
@@ -53,12 +57,55 @@ class DenavitHartenbergAnalytic():
 
         self.fkin_eval = (sp.utilities.lambdify(self.jntvars[:self.dof], self.ee_translation, 'numpy'))
 
-    def calc_kantorovich_vars(self):
+    def ret_kantovorich(self, lipschitz, initQ, desP):
+        reps_des = []
+        reps_dof = []
+        
+        for i in range(len(desP)):
+            reps_des.append((self.cartvars[i], desP[i]))
+        for i in range(self.dof):
+            reps_dof.append((self.jntvars[i], initQ[i]))
+
+        
+        F = self.F.subs(reps_des).subs(reps_dof)
+
+        print(F)
+
+        J = self.central_differences(initQ)
+        print(J)
+
+        B=np.linalg.pinv(J)
+        print(B)
+        BF = np.array(B@F, dtype=float).flatten()
+        print(np.array(BF))
+
+        b = np.linalg.norm(BF, ord=2) #newton step, ƞ
+        
+        B = np.linalg.norm(B, ord=2) #nonsingular
+
+        print("b:", b, "B:", B)
+
+        h = lipschitz * b * B
+        print("h:", h)
+
+        if h == 1/2:
+            p = (1-np.sqrt(1-2*h))*b/h
+        elif h < 1/2:
+            p = (1+np.sqrt(1-2*h))*b/h
+        else: # h > 1/2
+            p = None
+
+        return p
+
+
+
+
+    def analytic_kantorovich_vars(self):
         #error function F...
     
         #initial newton error step...
         #F jacobian inverse @ F <= eta
-        self.B = self.J.inv()
+        self.B = self.J.pinv()
         BF = self.B*self.F
         BFTBF = BF.T*BF
         print("BFTBF", BFTBF)
@@ -102,31 +149,54 @@ class DenavitHartenbergAnalytic():
         '''
         Q= np.array((Q))
 
-        reps = []
-        for i in range(len(list(Q))):
-            reps.append((self.jntvars[i], Q[i]))
-
         if epsilon == None:
             epsilon = 1e-4
         
         p= Q.shape[0]
         d= self.F.shape[0]
-        print("pxd:", p,"x",d)
+        #print("pxd:", p,"x",d)
 
         k=1
         Jt = np.zeros((p,d))
         I = np.identity(p)
         for i in range(p):
             forward = self.fkin_eval(*(Q + epsilon * I[i]))
-            print(forward)
+            #print(forward)
             backward = self.fkin_eval(*(Q - epsilon * I[i]))
-            print(backward)
+            #print(backward)
             diff = (forward-backward).T
-            print(diff)
+            #print(diff)
             Jt[i] = diff / (2*epsilon)
 
         return Jt.T
 
+    def rtb_model(self):
+        '''
+        Just to verify everything is okay, I have the rtb DH robot initialized here.
+        '''
+        links = []
+
+        for i in range(len(self.dh_params)):
+            for j in range(4):
+                try:
+                    self.dh_params[i][j] = float(self.dh_params[i][j])
+                except:
+                    pass
+            
+            links.append(rtb.RevoluteDH(alpha = self.dh_params[i][1], a=self.dh_params[i][2], d=self.dh_params[i][3]))
+
+        robot = rtb.DHRobot(links, name=f"robot_{self.dof}dof")
+        print(robot.dhunique())
+        print(robot)
+
+        return robot
+
+    def plot(self, Q=None):
+        if Q.all()==None:
+            print("plotting robot joints zero vector")
+            Q = [0.0] * self.dof
+        self.rtb_robot.plot(Q, block=True)
+        
 
 if __name__ == '__main__':
     P = DHSympyParams()
