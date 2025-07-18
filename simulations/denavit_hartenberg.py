@@ -49,7 +49,7 @@ class DenavitHartenbergAnalytic():
         self.dh_params = dh_params
         self.rtb_robot = self.rtb_model()
 
-        print("ee_translation:", self.ee_translation)
+        print("ee_translation:", self.ee_translation)^
         self.F = sp.Matrix(self.ee_translation[:3]) - sp.Matrix(self.cartvars)
         print("F:", self.F)
         
@@ -57,7 +57,8 @@ class DenavitHartenbergAnalytic():
 
         self.fkin_eval = (sp.utilities.lambdify(self.jntvars[:self.dof], self.ee_translation, 'numpy'))
 
-    def ret_kantovorich(self, lipschitz, initQ, desP):
+    def ret_kantovorich(self, lipschitz, initQ, desP, alpha):
+        
         reps_des = []
         reps_dof = []
         
@@ -74,18 +75,28 @@ class DenavitHartenbergAnalytic():
         J = self.central_differences(initQ)
         print(J)
 
-        B=np.linalg.pinv(J)
-        print(B)
-        BF = np.array(B@F, dtype=float).flatten()
-        print(np.array(BF))
+        JI=np.linalg.pinv(J)
+        print(JI)
+        JI_F = np.array(JI@F, dtype=float).flatten()
+        print(np.array(JI_F))
 
-        b = np.linalg.norm(BF, ord=2) #newton step, ƞ
+        b = np.linalg.norm(alpha * JI_F, ord=2) #norm of newton step, ƞ
         
-        B = np.linalg.norm(B, ord=2) #nonsingular
+        B = np.linalg.norm(JI, ord=2) #norm of jacobian inverse to determine if jacobian itself is nonsingular
 
         print("b:", b, "B:", B)
 
-        h = lipschitz * b * B
+        spectral_norm = np.linalg.norm(J, ord=2)
+        inv_sn = np.linalg.norm(JI, ord=2)
+
+        cond = spectral_norm * inv_sn
+
+        print("CONDITION NUMBER:", cond) # if the condition number or B is super high, we are at a singularity and we need to move.
+        # note that the condition number is always >=1, since it is defined as the greatest singular value of A / smallest singular value of A
+
+        print("SPECTRAL NORM:", spectral_norm)
+
+        h = lipschitz * b * B 
         print("h:", h)
 
         if h == 1/2:
@@ -97,33 +108,6 @@ class DenavitHartenbergAnalytic():
 
         return p
 
-
-
-
-    def analytic_kantorovich_vars(self):
-        #error function F...
-    
-        #initial newton error step...
-        #F jacobian inverse @ F <= eta
-        self.B = self.J.pinv()
-        BF = self.B*self.F
-        BFTBF = BF.T*BF
-        print("BFTBF", BFTBF)
-        BFTBF_evals = BFTBF.eigenvals()
-        largest_eval=sp.Max(*BFTBF_evals.keys())
-        self.b = sp.sqrt(largest_eval)
-        print("J", self.J)
-        print("B:", self.B)
-        print("b:", self.b)
-
-        #global lipschitz...
-        #global lipschitz == the maximum absolute value of the singular values of the jacobian... in other words the supremum spectral norm of J
-        JTJ = self.J.T * self.J
-        JTJ_evals = JTJ.eigenvals()
-        largest_eval = sp.Max(*JTJ_evals.keys())
-        lipschitz = sp.sqrt(largest_eval)
-        # we are bounded so technically we should be able to compute the analytic lipschitz...
-        print("lipschitz:", lipschitz) 
 
     def transformation_matrix_DH(self, theta_i, alpha_i, r_i, d_i):
         '''

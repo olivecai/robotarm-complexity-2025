@@ -1233,3 +1233,59 @@ TODO:
 - check how damping affects 
 - does pinv mess up calculations? 
 
+# July 18
+
+Algorithm Flow:
+
+Calculate for a specific initQ and desP: norm of inv jac at initQ, spectral norm of the jacobian at that spot, and norm of the first newton step.
+
+if h is <= 1/2, we should be able to simply converge using a constant jacobian..
+
+ELSE
+
+inv jac at initQ. If jacobian is infinite, we are in a singular position --> identify the culprit joint, and perturb just that joint at forward, backward. obtain the kantorovich variables for forward, backward, and choose the solution with the lower h. 
+
+
+If the spectral norm (norm 2) of the inverse (or pinv) jacobian is infinite (or just very high), then we are in a singular position and should just get OUT of that singular position.
+
+ and determine whether or not we can converge (h<=1/2)
+
+If we cannot converge, then we need to determine WHY.
+
+Okay either we are in a singular position, or our first Newton step wants to explode over because it's just no good. 
+
+So if we are at a singualr position, we've already come up with a way to perturb out.
+
+But if the newton step is too big, then can we DAMPEN the oeprator F (aka the error function) and that's basically saying "can we converge if our goal is a little... just a little closer?"
+
+And since we aren't singular there, I feel like it should be okay.
+
+Are we necessarily avoiding singular positions? Can we say, given that we don't START from a singular position, that if we are caught in a singular position, identify the troublesome joint and perturb it in the same direction that got us there to begin with?
+
+IF we are too far from the desired position and our Newton step is very alrge,  we do something like a logarithmic search and dampen the operator by halves until h <1/2 and then add to the dampening until h == 1/2 or so, and then make that our MILESTONE?
+
+For dylan's 3DOF arm, the lipschitz constant is around 0.9.
+For desP = [0.3,0.,0.0], the initQ is very weak and h is only < 1/2 for values EXTREMELY (within like 0.1) of the actual solution. This is no good, becuase the radius should not be so weak.
+
+When we modify the newton step condition and add the alpha damping amount, it (obviously) decreases h, but I'm not sure if I'm allowed to just do that...?
+
+### H.T. Kung: THE COMPLEXITY OF OBTAINING STARTING POINTS FOR SOLVING OPERATOR EQUATIONS BY NEWTON'S METHOD, 1975
+
+This is a very interesting paper that does away with the whole 'assume we have access to good starting points' and instead says, okay if we have a bad starting point (and we can discern if it is a bad starting point by employing Kantorovich's method) then we are actually equipped with the tools to find a better starting point which is AMAZING and maybe exactly precisely what we have been looking for because it also does not seem super expensive, since we only need to make one newton step every time, and I don't believe we even need to obtain the jacobian ( need to look a little closer but it seems we just need to get the norm of the operator evaluated at that point, which is epic. )
+
+Workflow of things to implement:
+
+1. Kantovorich conditions
+2. (Try with and without this step: If SINGULAR, then move to a nonsingular position)
+3. If not met, then use the HT Kung algorithm to find a better starting position
+4. Figure out where to use damping
+
+And after all of this, compare using the global Lipschitz VS the local lipschitz * some number (if there is a relationship between the lipschitz and the singularity of the matrix, then we can have a smarter way of figuring this out.)
+
+And we should add dynamic dampening
+
+So essentially what we have is a program that uses the least amount of Jacobians possible, since we can find a better starting point and then use that constant jacobian to converge.
+
+This isn't exactly what we WANTED to find out before though... we wanted to discern how many jacobian updates were needed from one region to the next... maybe that is too difficult to complete online-- because if we pre-computed many jacobians and stored them offline for online use, then... we might as well look at those JOINT positions near the task solution and say Well why don't we just GO THERE instead of solving for ANYTHING at all.
+
+Hopefully this is going somewhere interesting.

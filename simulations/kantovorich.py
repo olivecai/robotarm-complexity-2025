@@ -217,10 +217,14 @@ lipschitz = empirical_lipschitz(robot)
 
 
 #################
-initQ = [0.,0.,0.]
-desP = [0.,0.3,0.0]
+initQ = [0.0,1.5,-2.0]
+desP = [0.3,0.,0.0]
+alpha=0.1
 # Choose a starting position and the error function to minimize...
 # Let's start with DOF2 first...
 
-p = robot.ret_kantovorich(lipschitz, initQ, desP)
-print(p)
+p = robot.ret_kantovorich(lipschitz, initQ, desP, alpha)
+print("radius of convergence ball:" , p)
+
+#robot.view_invkin_task(initQ, desP, p)
+#robot.invkin()

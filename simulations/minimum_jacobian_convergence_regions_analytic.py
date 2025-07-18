@@ -739,18 +739,18 @@ def main():
     joint_limits_full_dylan = [(-2*np.pi, 2*np.pi), (-2*np.pi, 2*np.pi) , (-2*np.pi, 2*np.pi)]
     dofdylan = ets_dylan, joint_limits_dylan, joint_limits_full_dylan
 
-    ets, joint_limits, joint_limits_full  = dof2
+    ets, joint_limits, joint_limits_full  = dof3
     ########################################################################
 
-    initQ = np.array([np.pi, np.pi/3]) #1.23197905 0.07786037 1.07792537 #1.47876316  0.65113557 -0.98678046
-    desiredP= np.array([1.0,1.0,0.0])
+    initQ = np.array([0.1,0.1,-1]) #1.23197905 0.07786037 1.07792537 #1.47876316  0.65113557 -0.98678046
+    desiredP= np.array([0.,0.3,0.])
 
     traj1 = Trajectory(ets, joint_limits, joint_limits_full)
     #traj1.assign_trajectory_forwards(initQ, desiredP)
     traj1.assign_trajectory_backwards(initQ,desiredP)
 
 
-    if 1:
+    if 0:
         plan_trajectory_backwards(traj1)
         print("Jacobian updates needed: ",traj1.jacobian_updates)
         print("TRajectory success:", traj1.success)
@@ -769,7 +769,7 @@ def main():
         else:
             print("FAILURE, currP:", currP, "currQ:", currQ)
 
-    count_number_of_jacobian_updates_over_space(desiredP, ets, joint_limits, joint_limits_full)
+    #count_number_of_jacobian_updates_over_space(desiredP, ets, joint_limits, joint_limits_full)
     
 
 main()

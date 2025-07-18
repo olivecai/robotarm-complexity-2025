@@ -112,7 +112,7 @@ def invkin(tolerance:int, maxiter: int, currQ, desiredP, e : rtb.Robot.ets, join
     trajectory = []
     jac_updates=0;
 
-    alpha = 0.05 #dampening factor
+    alpha = 0.1 #dampening factor
     if jacobian_method==1:
         J = centraldiff_jacobian(currQ, e)
     if jacobian_method==2 or jacobian_method==3:
@@ -335,7 +335,7 @@ def main():
     joint_limits_puma= [(-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2) , (-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2), (-np.pi/2, np.pi/2) , (-np.pi/2, np.pi/2)]
     joint_limits_puma_full = [(-2*np.pi/2, 2*np.pi/2), (-2*np.pi/2, 2*np.pi/2) , (-2*np.pi/2, 2*np.pi/2),(-2*np.pi/2, 2*np.pi/2), (-2*np.pi/2, 2*np.pi/2) , (-2*np.pi/2, 2*np.pi/2)]
 
-    ets, joint_limits, joint_limits_full = dof2
+    ets, joint_limits, joint_limits_full = dofdylan
 
     robot = rtb.Robot(ets)
 
@@ -350,14 +350,14 @@ def main():
     camera=None
 
     #MESH PARAMS
-    tolerance = 1e-3
-    maxiter = 200
+    tolerance = 1e-2
+    maxiter = 300
     resolution=5
     chebyshev = 0 #chebyshev seems to consistently result in a tiny bit more error than equidistant...
 
     #PLOTTING PARAMS
-    desiredP = np.array([1.0,1.0,0])
-    Q = np.array([np.pi/2+0.5,np.pi-0.05])
+    desiredP = np.array([0.31,0., 0.])
+    Q = np.array([0., 1.5 , -2.0])
     plot_certain_trajectory=1
     simplex_mode=0
     #### JACOBIAN METHODS ####
