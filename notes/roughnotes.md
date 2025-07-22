@@ -1289,3 +1289,104 @@ So essentially what we have is a program that uses the least amount of Jacobians
 This isn't exactly what we WANTED to find out before though... we wanted to discern how many jacobian updates were needed from one region to the next... maybe that is too difficult to complete online-- because if we pre-computed many jacobians and stored them offline for online use, then... we might as well look at those JOINT positions near the task solution and say Well why don't we just GO THERE instead of solving for ANYTHING at all.
 
 Hopefully this is going somewhere interesting.
+
+# July 19 
+
+Harrowing news. The HT Kung method requires we know the function f so that we can generate homotopic functions.
+
+Before, we could sample the function and explore the function heuristically. Homotopy has different needs.
+
+# July 21
+
+So, if we want to solve an easier function than F, we could choose a few points and interpolate them to try to make some spline. But what points do we need to even choose?? 
+
+Reading on Homotopy Methods in the Handbook of Global Optimization:
+
+So right now we have a method of checking whether or not convergence will occur.
+
+If convergence fails, what can we do? --> Find better starting points.
+But to find better starting points, we need to use homotopy methods. YET F is unknown. !!!
+
+## Handbook of Global Optimization W Forster
+
+### Lipschitz Optimization Hansen, Jaumard
+
+It is easier to solve global optimization if we make the assumption that the slopes are bounded: thus the functions are LIPSCHITZ.
+
+Univariate lipschitz is studied most.
+
+Multivariate: more complicated since it is hard to define a 'best possible algorithm' to be used as a basis for comparisons.
+
+Constrained lipschitz optimization has been much less studied than unconstrained.
+*Section 4* covers CONSTRAINED 
+
+Problem 1-3:
+maximize f(x) (1)
+subject to:
+    gi(x) <= 0 , i=1,2,3..,m (2) (where g is the constaint, ie x^2 + y^2 - 1 <= 0 constrains the point to be inside the unit circle)
+    x in X (3)
+
+minimal assumption to allow solution of problem 1-3 is that the functions f and g ( the operator and the constraint) can be evaluated at all points of X. 
+
+Problem P: find a solution
+Problem Q: find the set of global solutions
+
+Black Box System Optimization:
+- SOURCES: Brooks [13] application of a heuristic search method, more examples Pinter [106]
+
+Thm 1: No algorithm with finite convergence for Problem P.
+Crl 1: NO alg for Prb P have finite convergence unless it uses the EXACT value of the Lipschitz constant L to bound fn f.
+
+usually we only have an overestimate of L. but even then, only a few Lipschitz functions can be optimized in finite steps.
+
+if general Lipschitz functions are considered: only a point with a globally optimal value can be found with a finite number of function evaluations.
+
+To find L, typically use sawtooth cover of f and iteratively try to approx (or overest)
+
+Assume we know Lipschitz constant.
+
+#### 4.2 Known Lipschitz Constant
+
+> If the Lipschitz constant L is known but is large, the time required for solving Problem P' may become prohibitive even with just a few variables. Increasing c, i.e., giving up precision may even not be sufficient to get quickly a solution.
+
+Other possibilites:
+- depth first search to get rapidly good solution 
+- generate points randomly, seelct some in high regions of the upper bounding function 
+- use approximate upper bounding function obtained by considering only a few neighbouring points of each evaluation point
+- estimation of local lipschitz constants in most expensive to explore regions
+
+Global optimization is 'extremely difficult to solve' ... 
+
+> For them not to be intractable some minimal assumptions have to be made (such as bounded slopes)
+
+### Trajectory Methods in Global Optimization
+
+> Consider problem (P) on Rn. The idea of a homotopy method is to consider instead of the difficult problem F(x) = 0 an appropriate easier problem G(x) = 0 which can be solved. Suppose the zeros of G are xi, ... , xk. Then one slowly "deforms" G into F and tries to follow the changes that the solutions to G(x) = 0 undergo during the deformation. 
+
+> In otw, one introduces a new parameter t in [0,1] and defines a homotopy from G to F, a differentiable map H: Rn x [0,1] --> Rn
+
+
+TAKEAWAYS...
+
+It has been a few hours of combing through the Global Optimization handbook and my problem isn't to find all the solutions: it is to, from ANY location, find a SINGLE solution and stop.
+
+## Trust Region based adaptive radial basis function algorithm for global optimization of expensive constrained black box problems 
+
+- unknown function f, complex constraints, severly limited computational budget
+
+constrained problem turned into an unconstrained problem by using a penalty function
+
+TARBF: 
+- exploit a local surrogate model in the trust region in each iteration INSTEAD of building a global surrogate model
+
+trust region adaptively adjusted in each iteration based on four indicators:
+- size of current trust region
+- location of design var in trust region and in global design space
+- movement history of each design variable
+- iteration point vector
+
+Okay... so the main purpose is to see if we can get away with using n constant jacobian for a certain point, and we should be able to decide upon n beforehand.
+
+Then we found the Kantorovich guarantee for certain points that a constant jacobian would work (semilocal convergence conditions) but there are two problems:
+- it is really (REALLY) conservative
+- if we don't converge, what should we do to keep going? First push ourselves out of singularity to a certain extent, then keep moving with constant jacobian until... until when? 

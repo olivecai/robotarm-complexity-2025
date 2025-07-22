@@ -137,5 +137,67 @@ def newton_step_fi(x_init, f0, eta0, etai, lambdai, r, beta, K, delta, max_iters
 
     print("❌ Did not converge within Newton iterations.")
     return None
+'''
 
 '''
+# beta = operator norm of the Jacobian of F, inverse.
+# eta_0 = vector norm of F(x0) evaluated at that point.
+# K = global lipschitz constant
+# radius of the ball that we hope to find the solution in.
+
+h0 = tolerance beta**2*K*eta_0
+delta = some float between (0, 1/2) exclusive
+
+
+# enter the loop and return the good starting point OR return None if no good starting position was found.
+for i in range max iterations:
+    if tolerance h_i is satisfiable (h_i <= 1/2 - delta), xi a good starting point for approximating alpha:
+        return x_i 
+    if not, 
+        set lamba_i = (1/2 - delta) / h_i
+        f_i(x) = f(x)- eta_i * f(x_0) / eta_0 + lamba_i * eta_i * f(x_0) / eta_0
+        df(x) = we can use the same jacobian the entire time
+
+        eta_i  = (1 - lambda_i) * eta_i #update eta_i
+        
+        RUN NEWTON METHOD ON NEW FUNCTION: 
+            starting from x_i, apply newton steps B * F (where B is the inverse Jacobian of F) repeatedly on x_i, 
+            so that the two conditions are satisfied.
+        if newton's method does not satisfy the function quickly (test around with max_iters) we should repeat newtons method starting from whatever x_i+1 we exited the newton loop at.
+
+'''
+
+import numpy as np
+cos = np.cos
+sin = np.sin
+
+def f(t1, t2):
+    '''
+    fkin for the 2dof arm with lengths 1,1
+    '''
+    x,y = (1,1) # HARDCODED FOR EXPERIMENTATION
+    return np.array([[cos(t1) + cos(t1 + t2) - x],
+                    [sin(t1) + sin(t1+t2) - y]])
+
+def df(t1, t2):
+    '''
+    jacobian of the 2dof arm with lengths 1,1
+    '''
+    return np.array([[-sin(t1) - sin(t1 + t2), -sin(t1 + t2)],
+                    [ cos(t1) + cos(t1 + t2),  cos(t1 + t2)]])
+
+x0 = np.array([0.5,0.5])
+f0 = f(x0)
+df0 = df(x0)
+
+eta0 = np.linalg.norm(f0) # || f(x0) || --> "how small is the error0, measured from our initial x0? "
+beta = np.linalg.norm(df0, ord=2) #  estimate of || f'(x) ^ -1 ||  aka || B || 
+K = lipschitz #lipschitz constant of df, aka J
+r = 1.0 # specify some radius that we want the solution to appear within
+delta = 0.1 # some number between 0 and 1/2
+h0 = beta**2 * K * eta0
+
+print(f"Initial h0: {h0:.4f}, eta0: {eta0:.4f}, beta: {beta:.4f}")
+
+def 
+
