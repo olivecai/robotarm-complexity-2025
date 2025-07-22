@@ -49,12 +49,15 @@ class DenavitHartenbergAnalytic():
         self.dh_params = dh_params
         self.rtb_robot = self.rtb_model()
 
-        print("ee_translation:", self.ee_translation)^
+        self.jointlimits = [(0, np.pi/2)] * self.dof
+
+        print("ee_translation:", self.ee_translation)
         self.F = sp.Matrix(self.ee_translation[:3]) - sp.Matrix(self.cartvars)
         print("F:", self.F)
         
         self.J = self.F.jacobian(self.jntvars[:self.dof])
 
+        variables = self.jntvars[: self.dof] + self.cartvars
         self.fkin_eval = (sp.utilities.lambdify(self.jntvars[:self.dof], self.ee_translation, 'numpy'))
 
     def ret_kantovorich(self, lipschitz, initQ, desP, alpha):
@@ -67,16 +70,18 @@ class DenavitHartenbergAnalytic():
         for i in range(self.dof):
             reps_dof.append((self.jntvars[i], initQ[i]))
 
-        
+        self.alpha = 1
+        print(reps_des)
         F = self.F.subs(reps_des).subs(reps_dof)
 
-        print(F)
+        print("F", F)
 
         J = self.central_differences(initQ)
         print(J)
 
         JI=np.linalg.pinv(J)
-        print(JI)
+        print("JI", JI)
+        
         JI_F = np.array(JI@F, dtype=float).flatten()
         print(np.array(JI_F))
 
@@ -106,7 +111,7 @@ class DenavitHartenbergAnalytic():
         else: # h > 1/2
             p = None
 
-        return p
+        return h, p
 
 
     def transformation_matrix_DH(self, theta_i, alpha_i, r_i, d_i):
@@ -143,7 +148,9 @@ class DenavitHartenbergAnalytic():
         k=1
         Jt = np.zeros((p,d))
         I = np.identity(p)
+    
         for i in range(p):
+     
             forward = self.fkin_eval(*(Q + epsilon * I[i]))
             #print(forward)
             backward = self.fkin_eval(*(Q - epsilon * I[i]))
@@ -153,6 +160,48 @@ class DenavitHartenbergAnalytic():
             Jt[i] = diff / (2*epsilon)
 
         return Jt.T
+    
+    def const_jac_inv_kin(self, desP, initQ):
+        '''
+        Q = initQ
+        
+        '''
+        # self.F = fkin_x - x, fkin_y - y, fkin_z - z
+        currQ = initQ
+        tolerance = 1e-3
+        maxiter= 200
+        
+        J = self.central_differences(currQ)
+
+        ret= -1
+        F = self.F
+        reps_des = []
+        for i in range(len(desP)):
+            reps_des.append((self.cartvars[i], desP[i]))
+        F = F.subs(reps_des)
+
+        for i in range(maxiter):
+
+            reps_dof = []
+            
+            for j in range(self.dof):
+                reps_dof.append((self.jntvars[j], currQ[j]))
+
+            currError = np.array(F.subs(reps_dof).evalf()).astype(np.float64)
+            #print("currError:", currError.flatten())
+
+            if np.linalg.norm(currError) <= tolerance:
+                ret = i
+                break
+
+            #print(i, end=': ')
+            
+            newtonStep = (np.linalg.pinv(J) @ currError).flatten()
+            #print("newtonStep", newtonStep)
+            currQ = currQ - self.alpha * newtonStep
+            #print("currQ:", currQ)
+            
+        return ret
 
     def rtb_model(self):
         '''
@@ -176,7 +225,7 @@ class DenavitHartenbergAnalytic():
         return robot
 
     def plot(self, Q=None):
-        if Q.all()==None:
+        if Q is None:
             print("plotting robot joints zero vector")
             Q = [0.0] * self.dof
         self.rtb_robot.plot(Q, block=True)

@@ -749,7 +749,6 @@ def main():
     #traj1.assign_trajectory_forwards(initQ, desiredP)
     traj1.assign_trajectory_backwards(initQ,desiredP)
 
-
     if 0:
         plan_trajectory_backwards(traj1)
         print("Jacobian updates needed: ",traj1.jacobian_updates)

@@ -1390,3 +1390,21 @@ Okay... so the main purpose is to see if we can get away with using n constant j
 Then we found the Kantorovich guarantee for certain points that a constant jacobian would work (semilocal convergence conditions) but there are two problems:
 - it is really (REALLY) conservative
 - if we don't converge, what should we do to keep going? First push ourselves out of singularity to a certain extent, then keep moving with constant jacobian until... until when? 
+
+
+# July 22
+
+Roadblock:
+- how useful is the Kantorovich guarantee?
+
+What if instead we...
+
+say if h < 1/2, only use that 1 jacobian...
+now we need to see 2 plots:
+- h vs number of iterations to converge successfully (if not successful then do not show)
+- h vs successful
+
+It looks like when the condition number is the lower bound for that region, we don't converge. It is really messy and seems unpredictable, because at a certain point this doesn't hold anymore, and the values still converge despite having a very high h value.
+
+This doesn't have a lot of direction right now.
+
