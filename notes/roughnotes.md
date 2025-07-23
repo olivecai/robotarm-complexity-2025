@@ -1408,3 +1408,18 @@ It looks like when the condition number is the lower bound for that region, we d
 
 This doesn't have a lot of direction right now.
 
+# July 23 
+
+What is the relationship between the lipschitz constant and the condition number?
+
+Based on Kantorovich we can see that a single jacobian is sufficient for some conditions. But based on Dylan's paper we see that the region of convergence is much bigger than Kantorovich's theorem suggests.
+
+Let's compare the scatterplots:
+- KANTOROVICH RADIUS: For all points and the same desired point, compute h. If h <= 1/2, color yellow. If h > 1/2, purple
+- TEST: Compute the actual invkin for all points and see if they converge.
+
+Maybe the first newton step can be multiplied by some factor to encourage a larger radius.
+
+Some things to note for the Kantorovich conditions:
+
+Most of the time, if b is < 1.5 AND the spectral radius is within a factor of 1/2 or 2 of B (so... basically just the two factors that make the conditioin number) then we seem to converge more ofen.

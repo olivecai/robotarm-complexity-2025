@@ -51,14 +51,15 @@ class DenavitHartenbergAnalytic():
 
         self.jointlimits = [(0, np.pi/2)] * self.dof
 
-        print("ee_translation:", self.ee_translation)
+        #print("ee_translation:", self.ee_translation)
         self.F = sp.Matrix(self.ee_translation[:3]) - sp.Matrix(self.cartvars)
-        print("F:", self.F)
+        #print("F:", self.F)
         
         self.J = self.F.jacobian(self.jntvars[:self.dof])
 
         variables = self.jntvars[: self.dof] + self.cartvars
         self.fkin_eval = (sp.utilities.lambdify(self.jntvars[:self.dof], self.ee_translation, 'numpy'))
+        self.errfn_eval= (sp.utilities.lambdify(variables, self.F, 'numpy'))
 
     def ret_kantovorich(self, lipschitz, initQ, desP, alpha):
         
@@ -71,12 +72,12 @@ class DenavitHartenbergAnalytic():
             reps_dof.append((self.jntvars[i], initQ[i]))
 
         self.alpha = 1
-        print(reps_des)
+        #print(reps_des)
         F = self.F.subs(reps_des).subs(reps_dof)
 
-        print("F", F)
+        #print("F", F)
 
-        J = self.central_differences(initQ)
+        J = self.central_differences(initQ, desP)
         print(J)
 
         JI=np.linalg.pinv(J)
@@ -101,7 +102,7 @@ class DenavitHartenbergAnalytic():
 
         print("SPECTRAL NORM:", spectral_norm)
 
-        h = lipschitz * b * B 
+        h = spectral_norm * b * B 
         print("h:", h)
 
         if h == 1/2:
@@ -111,7 +112,7 @@ class DenavitHartenbergAnalytic():
         else: # h > 1/2
             p = None
 
-        return h, p
+        return h, p, b, B
 
 
     def transformation_matrix_DH(self, theta_i, alpha_i, r_i, d_i):
@@ -132,7 +133,7 @@ class DenavitHartenbergAnalytic():
         #print(DH)
         return DH
 
-    def central_differences(self, Q, epsilon=None):
+    def central_differences(self, Q, desP, epsilon=None):
         '''
         Returns the central differences Jacobian and the value of epsilon to perturb by
         '''
@@ -151,9 +152,9 @@ class DenavitHartenbergAnalytic():
     
         for i in range(p):
      
-            forward = self.fkin_eval(*(Q + epsilon * I[i]))
+            forward = self.errfn_eval(*(Q + epsilon * I[i]) , *desP)
             #print(forward)
-            backward = self.fkin_eval(*(Q - epsilon * I[i]))
+            backward = self.errfn_eval(*(Q - epsilon * I[i]) , *desP)
             #print(backward)
             diff = (forward-backward).T
             #print(diff)
@@ -169,9 +170,11 @@ class DenavitHartenbergAnalytic():
         # self.F = fkin_x - x, fkin_y - y, fkin_z - z
         currQ = initQ
         tolerance = 1e-3
-        maxiter= 200
+        maxiter= 50
+
+        traj = [currQ]
         
-        J = self.central_differences(currQ)
+        J = self.central_differences(currQ, desP)
 
         ret= -1
         F = self.F
@@ -200,6 +203,11 @@ class DenavitHartenbergAnalytic():
             #print("newtonStep", newtonStep)
             currQ = currQ - self.alpha * newtonStep
             #print("currQ:", currQ)
+            traj.append(currQ)
+
+        traj=np.array(traj)
+        if 0:
+            self.rtb_robot.plot(traj, block=False)
             
         return ret
 
@@ -251,4 +259,4 @@ if __name__ == '__main__':
 
     #dof2 = DenavitHartenbergAnalytic(dof2_params, P)
     dof3 = DenavitHartenbergAnalytic(dylan_dof3_params, P)
-    print(dof3.central_differences([0.,0.,0.]))
+   

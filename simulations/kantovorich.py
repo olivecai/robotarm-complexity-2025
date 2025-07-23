@@ -113,7 +113,7 @@ kinova_dof7_params = [
 dof2 = dh.DenavitHartenbergAnalytic(dof2_params, P)
 dof3 = dh.DenavitHartenbergAnalytic(dylan_dof3_params, P)
 kinova = dh.DenavitHartenbergAnalytic(kinova_dof7_params, P)
-robot = dof3
+robot = kinova
 
 print(robot.J)
 '''
@@ -141,7 +141,7 @@ def test(q):
     return - fn
 
 
-def empirical_lipschitz(robot: dh.DenavitHartenbergAnalytic):
+def empirical_lipschitz(robot: dh.DenavitHartenbergAnalytic, desP):
     '''
     simple lipschitz algorithm.
 
@@ -165,7 +165,7 @@ def empirical_lipschitz(robot: dh.DenavitHartenbergAnalytic):
     for Q in random_joint_configs:
         i+=1
         # get central differences jacobian
-        jac = robot.central_differences(Q)
+        jac = robot.central_differences(Q, desP)
         inv = np.linalg.pinv(jac)
         
         spectralnorm = np.linalg.norm(jac, ord=2)
@@ -210,29 +210,38 @@ def h_VS_successfuliterationcount(lipschitz, alpha, desP):
     h_vals = []
     ik_vals = []
     cond_vals = []
+    b_vals = []
+    B_vals = []
 
     i=0
     for Q in random_joint_configs:
         i+=1
         print(i, "#######################################")
-        h, p = robot.ret_kantovorich(lipschitz, Q, desP, alpha)
+        print("Q:", Q, "position of Q:", robot.fkin_eval(*Q))
+
+        variables = robot.jntvars[: robot.dof] + robot.cartvars 
+
+        print("error:", robot.errfn_eval(*Q , *desP))
+
+        h, p, b, B = robot.ret_kantovorich(lipschitz, Q, desP, alpha)
         iters = robot.const_jac_inv_kin(desP, Q.tolist())
 
-        jac = robot.central_differences(Q)
+        jac = robot.central_differences(Q, desP)
         inv = np.linalg.pinv(jac)
         spectralnorm = np.linalg.norm(jac, ord=2)
         invnorm = np.linalg.norm(inv, ord=2)
         cond = spectralnorm* invnorm
         
-
         h_vals.append(h)
         ik_vals.append(iters)
         cond_vals.append(cond)
+        b_vals.append(b)
+        B_vals.append(B)
 
         print("h:", h ,"ik_val:", iters, "cond:", cond)
     
      # Sort everything by h
-    h_vals, ik_vals, cond_vals = (list(t) for t in zip(*sorted(zip(h_vals, ik_vals, cond_vals))))
+    h_vals, ik_vals, cond_vals, b_vals, B_vals = (list(t) for t in zip(*sorted(zip(h_vals, ik_vals, cond_vals, b_vals, B_vals))))
     converged_flags = [iters != -1 for iters in ik_vals]  # True if succeeded
 
     # Separate successes and failures
@@ -253,6 +262,7 @@ def h_VS_successfuliterationcount(lipschitz, alpha, desP):
         mode='markers', name='h vs iterations (success)',
         marker=dict(color='blue')
     )
+
     trace_cond = go.Scatter(
         x=h_success, y=cond_success,
         mode='markers', name='h vs condition number (success)',
@@ -264,6 +274,22 @@ def h_VS_successfuliterationcount(lipschitz, alpha, desP):
         marker=dict(color='black', symbol='x')
     )
 
+    trace_b = go.Scatter(
+        x=h_vals, y=b_vals,
+        mode='markers', name='h vs b ',
+        marker=dict(color='blue')
+    )
+    trace_B = go.Scatter(
+        x=h_vals, y=B_vals,
+        mode='markers', name='h vs B',
+        marker=dict(color='red')
+    )
+    trace_i = go.Scatter(
+        x=h_vals, y=ik_vals,
+        mode='markers', name='h vs iterations',
+        marker=dict(color='black')
+    )
+
     layout = go.Layout(
         title='Convergence Radius vs. IK Iteration Count',
         xaxis=dict(title='h (convergence radius)'),
@@ -271,12 +297,12 @@ def h_VS_successfuliterationcount(lipschitz, alpha, desP):
         hovermode='closest'
     )
 
-    fig = go.Figure(data=[trace_h, trace_cond, trace_fail], layout=layout)
+    fig = go.Figure(data=[trace_b, trace_B, trace_i], layout=layout)
     plot(fig)
 
 # Initial guess and bounds
 q0 = np.array([0.1]*robot.dof) #whatever is the maximum 
-bounds = [(0, np.pi/2)]*robot.dof
+bounds = [(0, np.pi)]*robot.dof
 print("BOUNDS")
 print(bounds)
 
@@ -286,24 +312,22 @@ L_estimate = -res.fun
 
 print("\n\nEstimated global Lipschitz constant:", L_estimate)
 print("At joint config:", res.x)
-
-
         
-lipschitz = empirical_lipschitz(robot) * 1.5
-
-#robot.calc_kantorovich_vars()
 
 #################
-desQ = [0.0, 1.5, 1.5]
+desQ = [np.pi/4] * robot.dof
 desP = robot.fkin_eval(*desQ).flatten().tolist()
 print("desQ:", desQ, "\ndesP:\n", desP)
-initQ = [0.0,0.0,0.0]
-alpha=1
+initQ = [0.1] * robot.dof
+    
+alpha=1.0
 # Choose a starting position and the error function to minimize...
 # Let's start with DOF2 first...
 robot.plot(desQ)
 robot.plot(initQ)
-h, p = robot.ret_kantovorich(lipschitz, initQ, desP, alpha)
+
+lipschitz = empirical_lipschitz(robot, desP) 
+h, p, b, B = robot.ret_kantovorich(lipschitz, initQ, desP, alpha)
 print("radius of convergence ball:" , p)
 
 print("constant jacobian newton method:", robot.const_jac_inv_kin(desP, initQ))
