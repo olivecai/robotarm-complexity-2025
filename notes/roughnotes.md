@@ -1423,3 +1423,68 @@ Maybe the first newton step can be multiplied by some factor to encourage a larg
 Some things to note for the Kantorovich conditions:
 
 Most of the time, if b is < 1.5 AND the spectral radius is within a factor of 1/2 or 2 of B (so... basically just the two factors that make the conditioin number) then we seem to converge more ofen.
+
+# July 24
+
+Assume we KNOW bounds for the lipschitz constant, h, b, etc. 
+
+Then we have the inequalities/expressions: 
+*some condition on f or x0* <= *some predetermined constant*
+
+> Why do we need to make these assumptions, when the Kantorovich theorem exists? ANSWER: The Kantorovich theorem is TOO CONSERVATIVE, and for the inverse kinematics problem, the function is generally far smoother than most nonlinear systems of equations in literature, so the lipschitz constant of J is actually never drastically different than the spectral norm of J at any point. 
+
+Then we can make a bit of a sweeping statement: 
+If our x0 and f fulfill *some conditions*, it's highly likely we will converge with 1 jacobian.
+
+If **NOT** fulfill *some conditions*, it's okay:
+First we ask, 
+
+WHICH conditions are unfulfilled?
+
+When we take a look at something like the jacobian... how can we see which joint is responsible for causing the singularity...?
+
+For instance if we have Dylan's 3DOF arm at position q=[0,0,0] then we have jacobian of:
+    j1  j2  j3
+x [[ 0,  0,  0]
+y  [.85, 0,  0]
+z  [0, .85, .3]]
+
+If B is very high, we are likely SINGULAR: look at the jacobian and identify which joint is very singular... so we get the jacobian...  
+And it is OK if we are wrong because if we find we are going in the wrong direction.
+
+ChatGPT's suggestion is the SVD , get the smallest singular value, and then get the corresponding right singular vector in V^T to give a direction in joint space that moves along null space (ie doesnt affect task space motion much) --> thus move orthogonal to the null space by moving in direction of vmin
+
+But im not really sure about singulaerity avoidance so we can save this for later.
+
+FOR NOW:
+Dont start at the singular position, so we only get to the singular position when we are movign through the trajectory.
+
+If b is very high but we aren't singular, then what should we do... How about for now, we just compute the inverse kinematics as usual, and when we find that the error is increasing, we recalibrate? Is it possible to discern how many steps are needed from the beginning, just based on b, B, and the lipschitz constant?
+
+i try to find a lot of avoid singularity, but i think not worth it to dive too deep into it right now, since i have other method to work on... 
+
+
+## SOME QUESTIONS FOR MYSELF TO REFLECT ON....
+
+*Why can't we use the mesh refinement method?*
+
+*Why is it valid to suppose we can even get bounds for the modified kantorovich method we are currently working on?*
+
+*Why are we focusing on this online method and not calibrating beforehand, offline?*
+- If we calibrate beforehand, it is true we can store goal agnostic information: we can store jacobians, joint position, task space position. From this, we can get the true global lipschtiz value.
+- However, if we use and interpolate Jacobian related information, then... we might as well interpolate the closest joint angles that corrwspond to the desired task space position--thus solving the problem by just interpolating points and MOVINg there, instead of actually computing inverse kinematics. 
+- Therefore, it seems more reasonable to focus on online strategies.
+
+This is a difficult problem for sure... If we want to know how many jacobians are needed in general... 
+
+Right now the issues are that we are exceeding the joint limits by a lot. How can we tackle this? By dynamic dampening? I fear we have lost the plot a little...
+
+We know that the greater the task space error, also the more jacobians are needed.
+
+When we get the jacobian, we can get the units for task space.
+
+Maybe we could look at the norm of the error vector.
+
+This is getting a bit bleak.
+
+

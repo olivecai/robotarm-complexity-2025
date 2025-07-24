@@ -113,7 +113,7 @@ kinova_dof7_params = [
 dof2 = dh.DenavitHartenbergAnalytic(dof2_params, P)
 dof3 = dh.DenavitHartenbergAnalytic(dylan_dof3_params, P)
 kinova = dh.DenavitHartenbergAnalytic(kinova_dof7_params, P)
-robot = kinova
+robot = dof3
 
 print(robot.J)
 '''
@@ -332,11 +332,13 @@ print("radius of convergence ball:" , p)
 
 print("constant jacobian newton method:", robot.const_jac_inv_kin(desP, initQ))
 
-h_VS_successfuliterationcount(lipschitz, alpha, desP)
+#h_VS_successfuliterationcount(lipschitz, alpha, desP)
 # generate a bunch of initQ
 # get h and iterations for successful const jac inv for a initQ and desP --> reorder h from least to greatest and reorder the iteration count the same
 
 
 #robot.view_invkin_task(initQ, desP, p)
 #robot.invkin()
+
+print(robot.central_differences([0.]*robot.dof, [x,y,z]))
 

@@ -61,7 +61,7 @@ class DenavitHartenbergAnalytic():
         self.fkin_eval = (sp.utilities.lambdify(self.jntvars[:self.dof], self.ee_translation, 'numpy'))
         self.errfn_eval= (sp.utilities.lambdify(variables, self.F, 'numpy'))
 
-    def ret_kantovorich(self, lipschitz, initQ, desP, alpha):
+    def ret_kantovorich(self, initQ, desP, alpha, lipschitz=None,):
         
         reps_des = []
         reps_dof = []
@@ -71,7 +71,7 @@ class DenavitHartenbergAnalytic():
         for i in range(self.dof):
             reps_dof.append((self.jntvars[i], initQ[i]))
 
-        self.alpha = 1
+        self.alpha = alpha
         #print(reps_des)
         F = self.F.subs(reps_des).subs(reps_dof)
 
@@ -86,7 +86,7 @@ class DenavitHartenbergAnalytic():
         JI_F = np.array(JI@F, dtype=float).flatten()
         print(np.array(JI_F))
 
-        b = np.linalg.norm(alpha * JI_F, ord=2) #norm of newton step, ƞ
+        b = np.linalg.norm(JI_F, ord=2) #norm of newton step, ƞ
         
         B = np.linalg.norm(JI, ord=2) #norm of jacobian inverse to determine if jacobian itself is nonsingular
 
@@ -102,7 +102,11 @@ class DenavitHartenbergAnalytic():
 
         print("SPECTRAL NORM:", spectral_norm)
 
-        h = spectral_norm * b * B 
+        if lipschitz is None:
+            h = spectral_norm * b * B #NOTE: h should be = global_lipschitz * b * B, but since the fkin fn is relatively smooth, this should be okay
+        else:
+            h = lipschitz * b * B
+
         print("h:", h)
 
         if h == 1/2:
