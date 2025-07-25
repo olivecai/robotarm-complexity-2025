@@ -219,6 +219,7 @@ def compute_analytic_jac(cameras):
     joints, EE =denavit_hartenburg_dylan_3dof(u,v,w)
     world_position = ((EE[:,3]))
     x = cameras[0].projectpoint(world_position)
+    print("x:", x)
     for i in range(1, len(cameras)):
         x = x.col_join(cameras[i].projectpoint(world_position))
     dx = x.jacobian([u,v,w]) #get the jacobian of the projected point...
@@ -402,7 +403,7 @@ def main():
     #DO NOT TOUCH THESE CAMERAS they were really onerous to place :-(
     cam1 = camera(0,0,0,[0,0,5], 5,5, 0, 0) #looks down directly at the scene, basically replicates the scene
     cam2 = camera(-sp.pi/2, 0, 0, [0,0,5], 5,5,0,0) #looks at scene from the y axis, world z is cam2 y, world x is cam2 x 
-    cameras=[cam1]
+    cameras=[cam1, cam2]
     
     print("World Pos:")
     print(world_position.subs(reps_cur))
@@ -414,7 +415,7 @@ def main():
     
     analytic_jacobian= compute_analytic_jac(cameras)
     dF = analytic_jacobian.subs(reps_des)
-    #print("dF:\n", dF, "\n")
+    print("dF:\n", dF, "\n")
     
     J = analytic_jacobian.subs(reps_cur)
     #print("J:", J)
@@ -441,7 +442,7 @@ def main():
     print(sr)
 
     jointlimits = [[0,np.pi/2], [-np.pi/2,np.pi/2], [-np.pi/2,np.pi/2]]
-    plot(des, cameras, 8, jointlimits)
+    #plot(des, cameras, 8, jointlimits)
 
     #wireframe(joints.subs(reps_des))
     #print(position.subs(reps_des))

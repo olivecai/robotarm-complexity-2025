@@ -59,7 +59,6 @@ TODO for regions of parameter: "How to improve the domain of parameters for Newt
     From there, notice that the smaller MU is, the bigger our radius of convergence is.
     So, this gives us some happy conclusions that were indicated above... the local Lipschitz evaluation is indeed effective! And, unsurprisingly, the smaller the local Lipschitz value, the better.
 
-    
 NOTE on the global Lipschitz constant in the real robot system:
 - We don't know F, and can't get the global constant without sampling over the joint space.
 - If we overestimate the constant, it's SAFER, but the tradeoff is that the radius of convergence is much smaller.

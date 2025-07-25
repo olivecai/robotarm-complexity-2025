@@ -175,9 +175,7 @@ def f(t1, t2):
     '''
     fkin for the 2dof arm with lengths 1,1
     '''
-    x,y = (1,1) # HARDCODED FOR EXPERIMENTATION
-    return np.array([[cos(t1) + cos(t1 + t2) - x],
-                    [sin(t1) + sin(t1+t2) - y]])
+    
 
 def df(t1, t2):
     '''
@@ -186,7 +184,7 @@ def df(t1, t2):
     return np.array([[-sin(t1) - sin(t1 + t2), -sin(t1 + t2)],
                     [ cos(t1) + cos(t1 + t2),  cos(t1 + t2)]])
 
-x0 = np.array([0.5,0.5])
+x0 = np.array([0.5,0.5]) #some starting position
 f0 = f(x0)
 df0 = df(x0)
 
@@ -199,5 +197,5 @@ h0 = beta**2 * K * eta0
 
 print(f"Initial h0: {h0:.4f}, eta0: {eta0:.4f}, beta: {beta:.4f}")
 
-def 
+
 

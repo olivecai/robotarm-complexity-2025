@@ -22,6 +22,52 @@ class DHSympyParams:
         
     def get_params(self):
         return (self.joint_vars, self.cart_space_vars, self.task_space_vars)
+    
+# for a desired position, what is the analytic Newton's equation?
+
+# u and v <==> theta1 and theta2
+u,v,w = sp.symbols('u:w', real=True)
+
+# l1 and l2 
+l1,l2,l3 = sp.symbols('l(1:4)', positive=True)
+
+#CAMERA 
+fx = sp.Symbol('fx', real=True)
+fy = sp.Symbol('fy', real=True)
+cx = sp.Symbol('cx', real=True)
+cy = sp.Symbol('cy', real=True)
+
+class Camera:
+    '''
+    creates a camera with actual parameters
+    '''
+    def __init__(self, rot_xaxis, rot_yaxis, rot_zaxis, translation, fx, fy, cx, cy):
+        '''
+        rot axis is a radian rotation around a specified axis.
+        '''
+        self.K=sp.Matrix([[fx, 0, cx],[0, fy, cy], [0,0,1]]) #intrinsic matrix
+
+        rx = sp.Matrix([[1,0,0],[0,sp.cos(rot_xaxis), -sp.sin(rot_xaxis)],[0,sp.sin(rot_xaxis), sp.cos(rot_xaxis)]])
+        ry= sp.Matrix([[sp.cos(rot_yaxis), 0, sp.sin(rot_yaxis)],[0,1,0],[-sp.sin(rot_yaxis), 0, sp.cos(rot_yaxis)]])
+        rz = sp.Matrix([[sp.cos(rot_zaxis), -sp.sin(rot_zaxis), 0], [sp.sin(rot_zaxis), sp.cos(rot_zaxis),0],[0,0,1]])
+        
+        R = rx*ry*rz
+        t=sp.Matrix([translation[0],translation[1],translation[2]])
+        
+        E = R.col_insert(3,t)
+
+        self.E = E
+
+        self.P = self.K*self.E
+
+    def projectpoint(self, worldpoint):
+        x = self.P * worldpoint
+        #print("projection point before flatten:")
+        #print(x)
+        x[0]=x[0]/x[2]
+        x[1]=x[1]/x[2]
+        x[2]=1#'''
+        return sp.Matrix([[x[0]],[x[1]]])
 
 class DenavitHartenbergAnalytic():
     '''
@@ -264,3 +310,88 @@ if __name__ == '__main__':
     #dof2 = DenavitHartenbergAnalytic(dof2_params, P)
     dof3 = DenavitHartenbergAnalytic(dylan_dof3_params, P)
    
+class DenavitHartenberg_Cameras_Analytic():
+    '''
+    initialize a denavit hartenberge system plus camera(s) with analytic symbols, using sympy.
+
+    Compare the lipschitz constant of these two systems to see whether cameras majorly affect the complexity (hopefully they do not.)
+    '''
+    # it is important to get the error function F to reduce to 0
+    def __init__(self, cameras: list, dh_robot: DenavitHartenbergAnalytic):
+        '''
+        cameras is a list of Camera objects
+        dh_robot is a DenavitHartenbergAnalytic object
+        '''
+        self.cameras =cameras
+        self.dh_robot = dh_robot
+        self.jntvars, self.cartvars, self.taskvars = dh_robot.jntvars, dh_robot.cartvars, dh_robot.taskvars
+
+        self.F = []# is a factor of 2, since each camera gives two projected points.
+        for camera in cameras:
+            projected_point = camera.projectpoint(self.dh_robot.ee_translation)
+            self.F.append(projected_point)
+
+        variables = self.jntvars[: self.dof] + self.cartvars
+        self.errfn_eval= (sp.utilities.lambdify(variables, self.F, 'numpy'))
+        #now self.F should be the equation of the projection
+
+
+
+    def compute_analytic_jac(self):
+        '''
+        Analytic Jacobian of the projected image.
+
+        Specifically for 3DOF.
+
+        Q : joint vector
+        P : the camera projection matrix :-))
+
+        x=P*X #the projected point = projection matrix @ the real world point, X
+
+        And then get the Jacobian of x, as dx
+        '''
+        world_position = self.dh_robot.ee_translation
+        x = self.cameras[0].projectpoint(world_position)
+        for i in range(1, len(self.cameras)):
+            x = x.col_join(self.cameras[i].projectpoint(world_position))
+        dx = x.jacobian(self.dh_robot.jntvars[:self.dh_robot.dof]) #get the jacobian of the projected point...
+
+        print("\nAnalytic Jacobian:\n")
+        print(dx)
+        return dx
+    
+    def central_differences(self, Q, desP, epsilon=None):
+        '''
+        Returns the central differences Jacobian and the value of epsilon to perturb by
+
+        the matrix J should be (number of cameras * 2) x (dof)
+        '''
+        Q= np.array((Q))
+
+        if epsilon == None:
+            epsilon = 1e-4
+        
+        p= Q.shape[0]
+        d= self.F.shape[0]
+        #print("pxd:", p,"x",d)
+
+        k=1
+        Jt = np.zeros((p,d))
+        I = np.identity(p)
+    
+        for i in range(p):
+     
+            forward = self.errfn_eval(*(Q + epsilon * I[i]) , *desP)
+            #print(forward)
+            backward = self.errfn_eval(*(Q - epsilon * I[i]) , *desP)
+            #print(backward)
+            diff = (forward-backward).T
+            #print(diff)
+            Jt[i] = diff / (2*epsilon)
+
+        return Jt.T
+    
+
+
+
+

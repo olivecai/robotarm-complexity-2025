@@ -1487,4 +1487,153 @@ Maybe we could look at the norm of the error vector.
 
 This is getting a bit bleak.
 
+# July 25
+
+Kantorovich was too good to be true...
+
+What if instead of finding out some way to perform the inverse kinematics, we use multiple methods to try and divvy up the cartesian space into multiple jacobian-update sections for one goal?
+
+For instance, have a desired cartesian position,
+and then run several methods like the 'backwards (aka goal to initial) jacobian/trajectory planning' thing, the kantorovich predictor thing, we can run a mesh refinement... Some of these methods will ASSUME we know the function f, or the solution, etc. This step is simply to run different kinds of visualizations to show.... how many jacobians are REALLY needed? In an actual alborithm where we don't have access to sa lot of data and only bounds, can we get a prediction that is similar to the estimates where we do have a lot of data? 
+
+*But dont forget we then have to deal with singularity avoidance and constraints and this is a whole other issue*
+
+After we get these estimates, we can say something like....
+
+"It should only take maximum X jacobian updates to get to get ANYWHERE!"
+
+And from there, maybe we can use this X as kind of a... upper bound...? For any system, use a few more jacobians at the beginning and then deign to update in the middle and then more at the end 
+
+I've also been avoiding offline pre-calibrating because of the issue where, if we access the joints/task point, we could just interpolate joint that corresponds to task space and GO THERE but we can try this to get a mapping of the joint space complexity...
+
+
+## How can we put together a paper?
+
+**Most of the complexity comes from the forward kinematics, assume we know nothing about the camera calibration**
+
+Lipschitz constant of fkin is probably very similar to the lipschitz const of the entire VS system -can argue based on empirical evidence, show for simple cases --> the complexity is the same, theory holds, supports reasoning for KNOWING forward kin operator even if we dont know camera operator.
+
+DURableVS: Data-efficient Unsupervised Recalibrating Visual
+Servoing via online learning in a structured generative model
+
+Perhaps this breaks when the camera uses different error constraints or when the camera is positioned weirdly, but generally it should be OK!
+
+Units might be screwed
+
+for 'new method and im comparing it to this common technique' papers, compare to ... broyden update method? *insert a commonly used method* ... compare to method that recomputes jacobian after every single step (the best possible method) VS based on my radius bound method --> show that we dont need these jacobians.
+
+then analysis: situations when i need a lot more jacobian updates than this other situation, which is relatively easy... set up weird case with multiple cameras, weird constraints, show that we need a ton of jac updates since this is very complex,
+
+show that the purely theoretical approach is too conservative, so realistic implementation needs us to be a little more.. lenient...
+
+A, B, C
+pure theory, update every step, my method: more realstic (should be BEST)
+
+Assume we know forward kinematics function and that most of the complexity comes from the forward kinematics.
+Then, can we solve the homotopy...?
+
+
+
+In our paper maybe we can go from highly theoretical to empirical and show how we use the theory plus practical tips to make a good working model:
+
+## Paper Idea
+
+### Intro: brief on solving systems of NL E
+This paper posits that very few jacobians are actually required to solve the inverse kinematics problem. 
+
+We develop a practical method, Some Method X, for robot visual servoing, where we have no knowledge of {the solution joint vector(s), good starting positions, the number of solutions present, the camera calibration, the true global lipschitz constant} and where we know {the current joint position, the sampled image projection, the sampled function F}.
+
+We do this by utilizing tools from global convergence theory (lipschitz), semilocal convergence theory (kantorovich), and empirical observations unique to the robot. 
+
+First discuss that this is a specific case study of solving a system of nonlinear equations. In general, systems of NL E is a notoriously difficult problem: to find good starting points when the solution is unknown, and the convergence basins for any starting point can be very unpredictable; relate to that image of fractals for the basins of convergence. Even the tiniest perturbation can cause us to converge to a different solution or none at all. *complicated problem, hard to study, hard to predict* 
+
+### Remark on practicality of existing literature, especially robot trajectory generation and invkin
+
+In addition to the general blurb on nonlinear system, what makes the vis serv invkin problem unique, challenging, different?
+- Most papers in global convergence require us to know lots of information: the function F, the solution, good starting points. At times, it is not practical to calibrate the cameras (which makes F a black box function), and it is also not practical to assume knowledge of the solution or the good starting points.
+
+### Inspiration/starting point for research question
+
+Now...
+DESPITE the terribly sensitive behaviour of the nonlinear system, there still exists a moderately large convergence region in the task space of starting points that only need 1 jacobian to converge to some specified desired point. Using fewer jacobians is a huge benefit to computation time. {CITE Dylan's paper or some Kantorovich newton method paper that refers to needing the constant jacobian}
+
+The questions are:
+- Can we increase this radius?
+- Can we quantify/predict a region as needing X updates?
+- If we cannot necessarily predict HOW MANY updates we will need, can we create a model that MINIMIZES the number of updates needed, almost like a greedy alg or...?
+
+### Provide context of the mathematical equations
+
+Now we get into the math:
+
+... Provides context for what the nonlinear forward kinematics function looks like, and then provides context for the visual servoing forward kinematics function. 
+- Write out the analytic functions and point out that the forward kinematics function is actually relatively smooth (for a system of nonlinear equations, that is) 
+- The Lipschitz constant of the fkin and VS_fkin functions is (hopefully) very similar. {CITE some source and maybe the DurableVS, showing that most of the complexity in vs is from the fkin fn}
+- Since the forward kinematics function is relatively smooth (especially for our revolute robot) we can approximate the lipschitz constant as the spectral norm of any current joint position * r, where r > 1. {CITE sources that try to approximate the lipschitz constant and always try to overestimate instead of underestimate} Point out that it is a huge advantage unique to the robot system that the overall function is relativley smooth so we can get a crude approximation for the lipschitz constant without paying for much at all.
+
+### SHOW FUNCTION LANDSCAPE
+
+For context maybe it would be beneficial simply to show the plots of the 2 and 3 dof joint space vector VS spectral norm (goal agnostic plots) and then maybe show the region of convergence for the constant jacobian...
+
+### SHOW NUMBER OF JACOBIAN UPDATES NEEDED VIA DIFFERENT METHODS
+
+We have a few methods of seeing roughly how many jacobians will be needed. These methods may have access to any information becasue they exist for visualization and our understanding, not for conducting the actual inverse kinematcs...... Compare the methods and make a few notes on what they mean. For instance, near singularities we need way more tiny perturbations, we might notice that for general trajectories the first jacobian encompasses a large region, while the regions get smaller and smaller for later updates. We can also try something like... 'just try to converge but if after 5 iterations the error vector grows, update the jacobian' and see how that is different.
+
+NOTE: Dampening can really affect the success of all the methods. We should keep dampening constant throughout and then introduce dynamic dampening at the very end in our final method (but only after showing our method withou dynamic dampening, first)
+
+### SHOW INVERSE KINEMATICS METHODS
+
+### METHOD 1
+Control method, regular newton step update every step:
+
+Update the jacobian every single newton step. This method should converge quickly and often.
+
+Motivation: Our Method X should converge just as often (if not more) with less jacobians, though we can expect that it will take more iterations.
+
+### METHOD 2
+Highly theoretical method, with kantorovich and HT Kung guarantees:
+
+Assume we have camera calibration and the forward kinematics equation:
+Compute the kantorovich radius, and if we can't find it, then use the HT Kung Homotopy to find a better starting point.
+
+Hypothesis: since the radius is so small, this method will probably converge more often, but the incessantly finding a new starting point will probably result in a lot more computation. So actually this method might be far more expensive.
+
+We need to know the analytic form of the functions solely to conduct the homotopy.
+
+### Diagnose issues to solve in our Method X:
+
+Failure to converge with one jacobian boils down to two main issues: singular position OR too far away.
+
+SOLUTIONS:
+
+Situation:  |   Singular                                        |   Not Singular
+Far Away    | get out of singularity THEN take smallish steps   |   Take smallish steps
+Close       | Get out of singularity, then biggish steps        |   Good Convergence
+
+### METHOD 3
+Our method, assume that we know the bounds for the Kantorovich parameters (show how to obtain the bounds after... if we can)
+
+If we know the forward kinematics function, and we know the projected image point(s) is there a way to compute the homotopy? i'm not so sure about this one...
+
+Should we be trying to predict the number of updates or simply minimize the number of updates? Can we say... step until this certain amount (step until the edge of this RADIUS) and then update? 
+
+I mean, there really isn't any point in predicting the amount of jacobian updates we will need, so just go ahead and attempt it, I'd say. 
+
+### Obtaining the bounds for Method X
+
+### Notes on other papers...
+
+FABRIK: forward and backward reaching inverse kinematics... does not even use jacobian updates...
+
+Okay today... we have outlined what a potential paper could look like which is good, but I don't know how useful or good my ideas are.
+
+- Make the kantorovich and ht kung algorithm to show that it is slow and onerous 
+
+What about like... if the knatorovich variables are very ill then we START off with multiple jacobian updates to get better?
+
+._.
+
+
+
+
 
