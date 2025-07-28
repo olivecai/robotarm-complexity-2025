@@ -7,6 +7,7 @@ This program obtains analytic expressions from the Denavit Hartenberg parameters
 import sympy as sp
 import numpy as np
 import roboticstoolbox as rtb
+from scipy.optimize import minimize
 
 class DHSympyParams:
     '''
@@ -61,6 +62,10 @@ class Camera:
         self.P = self.K*self.E
 
     def projectpoint(self, worldpoint):
+        '''
+        Projects a sympy Matrix object of shape (4, 1)
+        '''
+        worldpoint=sp.Matrix(worldpoint)
         if worldpoint.shape[0] != self.P.shape[1]:
             worldpoint.row_insert(worldpoint[0], sp.Matrix([[1]]))
         x = self.P * worldpoint
@@ -110,15 +115,27 @@ class DenavitHartenbergAnalytic():
         self.fkin_eval = (sp.utilities.lambdify(self.jntvars[:self.dof], self.ee_translation, 'numpy'))
         self.errfn_eval= (sp.utilities.lambdify(variables, self.F, 'numpy'))
 
-    def calc_lipschitz(self):
+    def lipschitz_objective(self, q):
         # Objective: negative spectral norm (so that minimize → maximum)
-        fn = (sp.utilities.lambdify(jntspace[:self.dof], self.J, 'numpy'))
-        
+        fn = (sp.utilities.lambdify(self.jntvars[:self.dof], self.J, 'numpy'))
         J_val = fn(*q)
         norm_val = np.linalg.norm(J_val, ord=2).copy()
         #print("J:\n", J_val)
         #print("q:", q, "→ norm:", norm_val)
         return -norm_val
+    
+    def calc_lipschitz(self):
+        # Initial guess and bounds
+        q0 = np.array([0.1]*self.dof) #whatever is the maximum 
+        bounds = [(0, np.pi)]*self.dof
+        print("BOUNDS")
+        print(bounds)
+
+        res = minimize(self.lipschitz_objective, q0, bounds=bounds)
+        L_estimate = -res.fun
+
+        self.lipschitz = L_estimate
+        return L_estimate
 
     def ret_kantovorich(self, initQ, desP, alpha, lipschitz=None,):
         
