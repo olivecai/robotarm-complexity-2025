@@ -61,6 +61,8 @@ class Camera:
         self.P = self.K*self.E
 
     def projectpoint(self, worldpoint):
+        if worldpoint.shape[0] != self.P.shape[1]:
+            worldpoint.row_insert(worldpoint[0], sp.Matrix([[1]]))
         x = self.P * worldpoint
         #print("projection point before flatten:")
         #print(x)
@@ -78,7 +80,8 @@ class DenavitHartenbergAnalytic():
         self.taskvars = symbolclass.task_space_vars
         self.jntvars = symbolclass.joint_vars
         #dh_params is a double nested list, where each row is one joint.
-        
+
+        self.lipschitz = None
         
         transforms=[]
         for param in dh_params: # for each joint 
@@ -106,6 +109,16 @@ class DenavitHartenbergAnalytic():
         variables = self.jntvars[: self.dof] + self.cartvars
         self.fkin_eval = (sp.utilities.lambdify(self.jntvars[:self.dof], self.ee_translation, 'numpy'))
         self.errfn_eval= (sp.utilities.lambdify(variables, self.F, 'numpy'))
+
+    def calc_lipschitz(self):
+        # Objective: negative spectral norm (so that minimize → maximum)
+        fn = (sp.utilities.lambdify(jntspace[:self.dof], self.J, 'numpy'))
+        
+        J_val = fn(*q)
+        norm_val = np.linalg.norm(J_val, ord=2).copy()
+        #print("J:\n", J_val)
+        #print("q:", q, "→ norm:", norm_val)
+        return -norm_val
 
     def ret_kantovorich(self, initQ, desP, alpha, lipschitz=None,):
         
@@ -312,9 +325,10 @@ if __name__ == '__main__':
    
 class DenavitHartenberg_Cameras_Analytic():
     '''
-    initialize a denavit hartenberge system plus camera(s) with analytic symbols, using sympy.
+    initialize a denavit hartenberg system plus camera(s) with analytic symbols, using sympy.
 
-    Compare the lipschitz constant of these two systems to see whether cameras majorly affect the complexity (hopefully they do not.)
+    Compare the lipschitz constant of with vs without cameras to see whether cameras majorly affect the complexity (hopefully they do not.)
+
     '''
     # it is important to get the error function F to reduce to 0
     def __init__(self, cameras: list, dh_robot: DenavitHartenbergAnalytic):
@@ -322,26 +336,31 @@ class DenavitHartenberg_Cameras_Analytic():
         cameras is a list of Camera objects
         dh_robot is a DenavitHartenbergAnalytic object
         '''
+        if type(cameras) is not list:
+            cameras = list(cameras)
+
         self.cameras =cameras
         self.dh_robot = dh_robot
         self.jntvars, self.cartvars, self.taskvars = dh_robot.jntvars, dh_robot.cartvars, dh_robot.taskvars
 
+
+
         self.F = []# is a factor of 2, since each camera gives two projected points.
         for camera in cameras:
             projected_point = camera.projectpoint(self.dh_robot.ee_translation)
-            self.F.append(projected_point)
+            self.F.append(projected_point)  
+        self.F = sp.Matrix(self.F)
+
+        self.J = self.F.jacobian(self.dh_robot.jntvars[:self.dh_robot.dof])
 
         variables = self.jntvars[: self.dof] + self.cartvars
         self.errfn_eval= (sp.utilities.lambdify(variables, self.F, 'numpy'))
-        #now self.F should be the equation of the projection
-
-
+        self.jacobian_eval = (sp.utilities.lambdify(variables, self.J, 'numpy'))
+        #now self.F should be the equation of the projection, errfn_eval will evaluate F given the params
 
     def compute_analytic_jac(self):
         '''
         Analytic Jacobian of the projected image.
-
-        Specifically for 3DOF.
 
         Q : joint vector
         P : the camera projection matrix :-))
@@ -392,6 +411,14 @@ class DenavitHartenberg_Cameras_Analytic():
         return Jt.T
     
 
+# initialize a system with cameras and see the lipschitz constant
 
+# initialize a system without cameras and see lipschitz constant
 
+# SET UP INVERSE KINEMATICS:
+# desired position, initial position
 
+# for the given inverse kinematics scenario:
+# run newtons method
+# run ht_kung function 
+# run MY method
