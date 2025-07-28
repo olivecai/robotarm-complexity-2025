@@ -67,7 +67,8 @@ class Camera:
         '''
         worldpoint=sp.Matrix(worldpoint)
         if worldpoint.shape[0] != self.P.shape[1]:
-            worldpoint.row_insert(worldpoint[0], sp.Matrix([[1]]))
+            worldpoint = worldpoint.row_insert(worldpoint.shape[0], sp.Matrix([[1]]))
+        print(worldpoint)
         x = self.P * worldpoint
         #print("projection point before flatten:")
         #print(x)
@@ -270,7 +271,7 @@ class DenavitHartenbergAnalytic():
             for j in range(self.dof):
                 reps_dof.append((self.jntvars[j], currQ[j]))
 
-            currError = np.array(F.subs(reps_dof).evalf()).astype(np.float64)
+            currError = np.array(F.subs(reps_dof).evalf()).astype(np.float64) #july 28 im p sure we could jsut do errfn_eval i dont rememebr why i did this to myself
             #print("currError:", currError.flatten())
 
             if np.linalg.norm(currError) <= tolerance:
@@ -361,40 +362,52 @@ class DenavitHartenberg_Cameras_Analytic():
         self.jntvars, self.cartvars, self.taskvars = dh_robot.jntvars, dh_robot.cartvars, dh_robot.taskvars
 
 
-
         self.F = []# is a factor of 2, since each camera gives two projected points.
         for camera in cameras:
-            projected_point = camera.projectpoint(self.dh_robot.ee_translation)
+            projected_point = camera.projectpoint(self.dh_robot.F)
             self.F.append(projected_point)  
         self.F = sp.Matrix(self.F)
 
         self.J = self.F.jacobian(self.dh_robot.jntvars[:self.dh_robot.dof])
 
-        variables = self.jntvars[: self.dof] + self.cartvars
+        variables = dh_robot.jntvars[: dh_robot.dof] + dh_robot.cartvars
         self.errfn_eval= (sp.utilities.lambdify(variables, self.F, 'numpy'))
         self.jacobian_eval = (sp.utilities.lambdify(variables, self.J, 'numpy'))
         #now self.F should be the equation of the projection, errfn_eval will evaluate F given the params
 
-    def compute_analytic_jac(self):
-        '''
-        Analytic Jacobian of the projected image.
+        self.lipschitz=None
 
-        Q : joint vector
-        P : the camera projection matrix :-))
+    def lipschitz_objective(self, q):
+        # Objective: negative spectral norm (so that minimize → maximum)
+        reps=[]
+        for i in range(len(self.dh_robot.cartvars)):
+            reps.append((self.dh_robot.cartvars[i], 10))
 
-        x=P*X #the projected point = projection matrix @ the real world point, X
+        fn = (sp.utilities.lambdify(self.dh_robot.jntvars[:self.dh_robot.dof], self.J.subs(reps), 'numpy'))
+        J_val = fn(*q)
 
-        And then get the Jacobian of x, as dx
-        '''
-        world_position = self.dh_robot.ee_translation
-        x = self.cameras[0].projectpoint(world_position)
-        for i in range(1, len(self.cameras)):
-            x = x.col_join(self.cameras[i].projectpoint(world_position))
-        dx = x.jacobian(self.dh_robot.jntvars[:self.dh_robot.dof]) #get the jacobian of the projected point...
+        print("############", J_val)
 
-        print("\nAnalytic Jacobian:\n")
-        print(dx)
-        return dx
+        norm_val = np.linalg.norm(J_val, ord=2).copy()
+
+        print(norm_val)
+
+        #print("J:\n", J_val)
+        #print("q:", q, "→ norm:", norm_val)
+        return -norm_val
+    
+    def calc_lipschitz(self):
+        # Initial guess and bounds
+        q0 = np.array([0.1]*self.dh_robot.dof) #whatever is the maximum 
+        bounds = [(0, np.pi)]*self.dh_robot.dof
+        print("BOUNDS")
+        print(bounds)
+
+        res = minimize(self.lipschitz_objective, q0, bounds=bounds)
+        L_estimate = -res.fun
+
+        self.lipschitz = L_estimate        
+        return L_estimate
     
     def central_differences(self, Q, desP, epsilon=None):
         '''

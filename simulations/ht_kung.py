@@ -1,40 +1,90 @@
 '''
-July 18
+July 28 2025
 
-This program should be used in conjunction with kantovorich.py and denavit_hartenberg.py.
-
-This program takes a given initial point and tries to find a better point. 
-
-ChatGPT generated code for univariable case:
-
+This program is simply used for testing code.
+'''
+import sympy as sp
 import numpy as np
+import matplotlib.pyplot as plt
+
+import denavit_hartenberg as dh
+
+P = dh.DHSympyParams() #this lowkey has to be global, sorry
+jntspace, cartspace, taskspace = P.get_params()
+t0, t1, t2, t3, t4, t5, t6, t7, t8, t9 = jntspace
+x, y, z = cartspace
+u, v = taskspace
+
+
+dof2_params = [
+                [t0, 0, 1, 0], 
+                [t1, 0, 1, 0]
+                ]
+
+dylan_dof3_params=[
+                [ t0, sp.pi/2, 0 , 0 ],
+                [ t1,  0  ,  0.55, 0 ],
+                [ t2,  0  ,  0.3, 0 ]
+                ]
+
+
+kinova_dof7_params = [
+    [t0,      sp.pi,   0.0,   0.0],
+    [t1,      sp.pi/2, 0.0, -(0.1564 + 0.1284)],
+    [t2 +sp.pi, sp.pi/2, 0.0, -(0.0054 + 0.0064)],
+    [t3 +sp.pi, sp.pi/2, 0.0, -(0.2104 + 0.2104)],
+    [t4 +sp.pi, sp.pi/2, 0.0, -(0.0064 + 0.0064)],
+    [t5 +sp.pi, sp.pi/2, 0.0, -(0.2084 + 0.1059)],
+    [t6 +sp.pi, sp.pi/2, 0.0, 0.0],
+    [t7 +sp.pi,    sp.pi, 0.0, -(0.1059 + 0.0615)],
+]
+
+dof2 = dh.DenavitHartenbergAnalytic(dof2_params, P)
+dof3 = dh.DenavitHartenbergAnalytic(dylan_dof3_params, P)
+kinova = dh.DenavitHartenbergAnalytic(kinova_dof7_params, P)
+robot = dof2
+
+cam1 = dh.Camera(0,0,0,[0,0,5], 5,5, 0, 0) #looks down directly at the scene, basically replicates the scene
+cam2 = dh.Camera(-sp.pi/2, 0, 0, [0,0,5], 5,5,0,0) #looks at scene from the y axis, world z is cam2 y, world x is cam2 x 
+cameras=[cam1, cam2]
+
+vs = dh.DenavitHartenberg_Cameras_Analytic(cameras, robot)
+
+initQ = [0, 2.]
+desP = [1,1,0]
 
 # Original function and its derivative
-def f(x):
-    return x**3 - x - 1
+def f(x: list):
+    return vs.errfn_eval(*x).copy()
 
-def df(x):
-    return 3*x**2 - 1
+def df(x: list):
+    return vs.jacobian_eval(*x).copy()
 
 # Setup constants
-x0 = 0.0
-f0 = f(x0)
-df0 = df(x0)
+vars0 = [*initQ, *desP]
+x0 = initQ
+f0 = f(vars0).copy()
+df0 = df(vars0)
 
-eta0 = np.abs(f0)  # ||f(x0)||
-beta = 1 / np.abs(df0)  # crude estimate of ||f'(x)^-1||
-K = 10.0  # assume Lipschitz constant of f'
+
+eta0 = np.linalg.norm(f0)  # ||f(x0)||
+beta =np.linalg.norm(df0, ord=2)  # crude estimate of ||f'(x)^-1||
+K = vs.calc_lipschitz()  # assume Lipschitz constant of f'
 r = 1.0
 delta = 0.1
 h0 = beta**2 * K * eta0
 
 print(f"Initial h0: {h0:.4f}, eta0: {eta0:.4f}, beta: {beta:.4f}")
 
+print(f0)
+
+print(df0)
 # Build deformed function f_i and apply Newton on it
 def step4_newton_on_fi(x0, f0, eta0, beta, K, r, delta, max_iters=20, tol=1e-8):
     h = beta**2 * K * eta0
     eta = eta0
     x_bar = x0
+    vars = [*x_bar, *desP]
     
     for i in range(max_iters):
         print(f"\n--- Iteration {i} ---")
@@ -47,155 +97,46 @@ def step4_newton_on_fi(x0, f0, eta0, beta, K, r, delta, max_iters=20, tol=1e-8):
         lam = (0.5 - delta) / h
         
         # Define the deformed function f_i and its derivative
-        def f_i(x):
-            return (f(x) - eta * f0 / eta0) + lam * eta * f0 / eta0
+        def f_i(x: list):
+            fx = f(x).flatten()
+            f0_flat = f0.flatten()
+            ret = (fx - eta * f0_flat / eta0) + lam * eta * f0_flat / eta0
+            return ret
 
-        def df_i(x):
+        def df_i(x: list):
             return df(x)  # since f_i is just a linear combo of f, the derivative is still f'
+
+        eta = (1-lam)* eta
 
         # Apply Newton's method on f_i
         x = x_bar
+        
         for j in range(20):
-            fx = f_i(x)
-            dfx = df_i(x)
-            step = fx / dfx
-            x_new = x - step
+            vars = [*x, *desP]
+            fx = f_i(vars)
+            dfx = df_i(vars)
+            step = np.linalg.pinv(dfx) @ fx # this is analagous to Jac inverse @ error fn 
+            x_new = x - step 
 
             # Check the Step 4 conditions
-            cond1 = np.abs(x_new - x) <= r - 2 * beta * eta0
-            cond2 = np.abs(f_i(x_new) / df_i(x_new)) <= min(r/2 - beta * eta, delta / (2 * beta * K))
+            cond1 = np.linalg.norm(x_new - x) <= r - 2 * beta * eta0
+            vars= [*x_new, *desP]
 
-            print(f"  Newton iter {j}: x = {x_new:.6f}, |step| = {np.abs(step):.2e}, cond1 = {cond1}, cond2 = {cond2}")
-            
+            cond2 = np.linalg.norm(np.linalg.pinv(df_i(vars)) @ f_i(vars)) <= min(r/2 - beta * eta, delta / (2 * beta * K))
+
+            print(f"  Newton iter {j}: x = {x_new}, |step| = {np.linalg.norm(step):.2e}, cond1 = {cond1}, cond2 = {cond2}")
+
             if cond1 and cond2:
                 print("  ✅ Step 4 conditions satisfied. Accepting x_new.")
                 x_bar = x_new
                 break
             x = x_new
+            vars = [*x, *desP]
 
-        # Update eta and h for next round
-        eta = (1 - lam) * eta
-        h = beta**2 * K * eta
+        h = beta**2 * K * eta 
 
     return x_bar
 
 # Run it
 x_good = step4_newton_on_fi(x0, f0, eta0, beta, K, r, delta)
-print(f"\nFinal good starting point: x = {x_good:.6f}")
-
-#### SAMPLE OUTPUT ####
-
-Initial h0: 2.5000, eta0: 1.0000, beta: 2.0000
-
---- Iteration 0 ---
-h = 2.5000, eta = 1.0000
-  Newton iter 0: x = 0.666667, |step| = 6.67e-01, cond1 = False, cond2 = False
-  Newton iter 1: x = 0.858889, |step| = 1.92e-01, cond1 = False, cond2 = True
-  Newton iter 2: x = 1.018424, |step| = 1.60e-01, cond1 = True, cond2 = True
-  ✅ Step 4 conditions satisfied. Accepting x_new.
-
---- Iteration 1 ---
-h = 0.6250, eta = 0.2500
-...
-Final good starting point: x = 1.313579
-
-
-### MULTIVARIABLE CASE ### 
-
-def fi(x, f0, eta0, etai, lambdai):
-    const_shift = (lambdai - 1) * etai * f0 / eta0
-    return f(x) + const_shift
-
-def newton_step_fi(x_init, f0, eta0, etai, lambdai, r, beta, K, delta, max_iters=20):
-    x = x_init.copy()
-
-    for i in range(max_iters):
-        fx = fi(x, f0, eta0, etai, lambdai)
-        Jx = J(x)  # Reuse original Jacobian
-        try:
-            dx = np.linalg.solve(Jx, fx)
-        except np.linalg.LinAlgError:
-            print("Jacobian singular!")
-            return None
-
-        x_new = x - dx
-
-        # Check Algorithm 4.2 Step 4 conditions:
-        cond1 = np.linalg.norm(x_new - x) <= r - 2 * beta * eta0
-        cond2 = np.linalg.norm(np.linalg.solve(Jx, fi(x_new, f0, eta0, etai, lambdai))) <= min(
-            r/2 - beta * etai,
-            delta / (2 * beta * K)
-        )
-
-        print(f"Iter {i}: x = {x_new}, |dx| = {np.linalg.norm(dx):.2e}, cond1 = {cond1}, cond2 = {cond2}")
-
-        if cond1 and cond2:
-            print("✅ Both conditions satisfied. Returning new x.")
-            return x_new
-
-        x = x_new
-
-    print("❌ Did not converge within Newton iterations.")
-    return None
-'''
-
-'''
-# beta = operator norm of the Jacobian of F, inverse.
-# eta_0 = vector norm of F(x0) evaluated at that point.
-# K = global lipschitz constant
-# radius of the ball that we hope to find the solution in.
-
-h0 = tolerance beta**2*K*eta_0
-delta = some float between (0, 1/2) exclusive
-
-
-# enter the loop and return the good starting point OR return None if no good starting position was found.
-for i in range max iterations:
-    if tolerance h_i is satisfiable (h_i <= 1/2 - delta), xi a good starting point for approximating alpha:
-        return x_i 
-    if not, 
-        set lamba_i = (1/2 - delta) / h_i
-        f_i(x) = f(x)- eta_i * f(x_0) / eta_0 + lamba_i * eta_i * f(x_0) / eta_0
-        df(x) = we can use the same jacobian the entire time
-
-        eta_i  = (1 - lambda_i) * eta_i #update eta_i
-        
-        RUN NEWTON METHOD ON NEW FUNCTION: 
-            starting from x_i, apply newton steps B * F (where B is the inverse Jacobian of F) repeatedly on x_i, 
-            so that the two conditions are satisfied.
-        if newton's method does not satisfy the function quickly (test around with max_iters) we should repeat newtons method starting from whatever x_i+1 we exited the newton loop at.
-
-'''
-
-import numpy as np
-cos = np.cos
-sin = np.sin
-
-def f(t1, t2):
-    '''
-    fkin for the 2dof arm with lengths 1,1
-    '''
-    
-
-def df(t1, t2):
-    '''
-    jacobian of the 2dof arm with lengths 1,1
-    '''
-    return np.array([[-sin(t1) - sin(t1 + t2), -sin(t1 + t2)],
-                    [ cos(t1) + cos(t1 + t2),  cos(t1 + t2)]])
-
-x0 = np.array([0.5,0.5]) #some starting position
-f0 = f(x0)
-df0 = df(x0)
-
-eta0 = np.linalg.norm(f0) # || f(x0) || --> "how small is the error0, measured from our initial x0? "
-beta = np.linalg.norm(df0, ord=2) #  estimate of || f'(x) ^ -1 ||  aka || B || 
-K = lipschitz #lipschitz constant of df, aka J
-r = 1.0 # specify some radius that we want the solution to appear within
-delta = 0.1 # some number between 0 and 1/2
-h0 = beta**2 * K * eta0
-
-print(f"Initial h0: {h0:.4f}, eta0: {eta0:.4f}, beta: {beta:.4f}")
-
-
-
+print(f"\nFinal good starting point: x = {x_good}")
