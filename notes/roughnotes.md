@@ -1633,7 +1633,193 @@ What about like... if the knatorovich variables are very ill then we START off w
 
 ._.
 
+# July 27
+
+# July 28
+
+Creating our denavit hartenberg objects...
+
+Here, test = denavit_hartenberg.DenavitHartenberg_Cameras_Analytic([cam1], dof2)
+
+where cam1 = Camera(0,0,0,[0,0,5], 5,5, 0, 0)
+
+and dof2_params = [
+                [t0, 0, 1, 0], 
+                [t1, 0, 1, 0]
+                ]
+and
+
+dof2 = dh.DenavitHartenbergAnalytic(dof2_params, DHSympyParams())
+
+#### One Camera on 2DOF (Straight On, Replicate Scene but Add Depth)
+
+##### test.F
+
+Matrix([
+[(-5*x - 5*sin(t0)*sin(t1) + 5*cos(t0)*cos(t1) + 5*cos(t0))/(5 - z)],
+[(-5*y + 5*sin(t0)*cos(t1) + 5*sin(t0) + 5*sin(t1)*cos(t0))/(5 - z)]])
+
+##### test.J
+
+Matrix([
+[(-5*sin(t0)*cos(t1) - 5*sin(t0) - 5*sin(t1)*cos(t0))/(5 - z), (-5*sin(t0)*cos(t1) - 5*sin(t1)*cos(t0))/(5 - z)],
+[(-5*sin(t0)*sin(t1) + 5*cos(t0)*cos(t1) + 5*cos(t0))/(5 - z), (-5*sin(t0)*sin(t1) + 5*cos(t0)*cos(t1))/(5 - z)]])
+
+##### dof2.F
+
+Matrix([
+[-x - sin(t0)*sin(t1) + cos(t0)*cos(t1) + cos(t0)],
+[-y + sin(t0)*cos(t1) + sin(t0) + sin(t1)*cos(t0)],
+[                                              -z]])
+
+##### dof2.J
+
+Matrix([
+[-sin(t0)*cos(t1) - sin(t0) - sin(t1)*cos(t0), -sin(t0)*cos(t1) - sin(t1)*cos(t0)],
+[-sin(t0)*sin(t1) + cos(t0)*cos(t1) + cos(t0), -sin(t0)*sin(t1) + cos(t0)*cos(t1)],
+[                                           0,                                  0]])
+
+So the fucntions and jacobians look about what we expected but the only big discrepeancy is that in the Jacobian of the camera syste, we have the coordinate z still presetn in the denominator.
+
+In the robot, since the task variables disappear, we can undertsand that the lipischitz constant of the foward kineamtics VS the error function are the same; the complexity is very similar.
+
+However, once you add cameras, we can understand that the error function and the forward kinematics become significicantly different (though we don't knowby how much).
+
+This poses problems when calculating the goal agnostic lipschitz constant, since we need to now specify some goal position.... But let's try different values of z and see how things change.
+
+For one camera that is looking straight down on the scene (and if the real world depth z == the focal length, ie there is no zoom effect on the projection, then we recreate the scene.) (for all the values of z, actually the desired point is 1,1,1, but in this case the only value that affects anything is z)
+
+z = 1; L = 2.7950849718747373
+z = 2; L = 3.7267799624996494
+z = 3; L = 5.590169943749474
+z = 4; L = 11.180339887498949
+z = 5; L is not obtainable, divide by zero!!!
+z = 6; L = 11.180339887498949
+z = 7; L = 5.590169943749474
+z = 8; L = 3.726779962499649
+z = 9; L = 2.7950849718747373
+z = 10; L = 2.23606797749979
+z = 11; L = 1.863389981249825
+z = 12; L = 1.5971914124998499
+z = 13; L = 1.3975424859373686
+z = 14; L = 1.2422599874998834
+z = 15; L = 1.118033988749895
+z = 50; L = 0.24845199749997662
+z = 100; L = 0.1176877882894626
+z = 1000; L = 0.011236522499998946
 
 
+So there's a little peak when the camera is singular but then the Lipschitz constant slowly goes to 0 as the focal lenght increases.
+
+When we add 2 cameras and therefore mitigate the singularities, we should be able to see te Lispchitz constant be more stable... Let's see:
+
+2 Cameras System:
+
+#### One Camera on 2 DOF (From y axis)
+
+##### test.F
+
+Matrix([[(-5*x - 5*sin(t0)*sin(t1) + 5*cos(t0)*cos(t1) + 5*cos(t0))/(y - sin(t0)*cos(t1) - sin(t0) - sin(t1)*cos(t0) + 5)], [-5*z/(y - sin(t0)*cos(t1) - sin(t0) - sin(t1)*cos(t0) + 5)]])
+
+##### test.J
+
+Matrix([[(-sin(t0)*sin(t1) + cos(t0)*cos(t1) + cos(t0))*(-5*x - 5*sin(t0)*sin(t1) + 5*cos(t0)*cos(t1) + 5*cos(t0))/(y - sin(t0)*cos(t1) - sin(t0) - sin(t1)*cos(t0) + 5)**2 + (-5*sin(t0)*cos(t1) - 5*sin(t0) - 5*sin(t1)*cos(t0))/(y - sin(t0)*cos(t1) - sin(t0) - sin(t1)*cos(t0) + 5), (-sin(t0)*sin(t1) + cos(t0)*cos(t1))*(-5*x - 5*sin(t0)*sin(t1) + 5*cos(t0)*cos(t1) + 5*cos(t0))/(y - sin(t0)*cos(t1) - sin(t0) - sin(t1)*cos(t0) + 5)**2 + (-5*sin(t0)*cos(t1) - 5*sin(t1)*cos(t0))/(y - sin(t0)*cos(t1) - sin(t0) - sin(t1)*cos(t0) + 5)], [-5*z*(-sin(t0)*sin(t1) + cos(t0)*cos(t1) + cos(t0))/(y - sin(t0)*cos(t1) - sin(t0) - sin(t1)*cos(t0) + 5)**2, -5*z*(-sin(t0)*sin(t1) + cos(t0)*cos(t1))/(y - sin(t0)*cos(t1) - sin(t0) - sin(t1)*cos(t0) + 5)**2]])
+
+z = 1; L = 2.830604414266918
+z = 5; L = 1.5729638830417711
+z = 10; L = 1.0662409548923613
 
 
+#### 2 Camera on 2DOF
+
+##### test.F
+
+Matrix([[(-5*x - 5*sin(t0)*sin(t1) + 5*cos(t0)*cos(t1) + 5*cos(t0))/(5 - z)], [(-5*y + 5*sin(t0)*cos(t1) + 5*sin(t0) + 5*sin(t1)*cos(t0))/(5 - z)], [(-5*x - 5*sin(t0)*sin(t1) + 5*cos(t0)*cos(t1) + 5*cos(t0))/(y - sin(t0)*cos(t1) - sin(t0) - sin(t1)*cos(t0) + 5)], [-5*z/(y - sin(t0)*cos(t1) - sin(t0) - sin(t1)*cos(t0) + 5)]])
+
+##### test.J
+
+Matrix([[(-5*sin(t0)*cos(t1) - 5*sin(t0) - 5*sin(t1)*cos(t0))/(5 - z), (-5*sin(t0)*cos(t1) - 5*sin(t1)*cos(t0))/(5 - z)], 
+        [(-5*sin(t0)*sin(t1) + 5*cos(t0)*cos(t1) + 5*cos(t0))/(5 - z), (-5*sin(t0)*sin(t1) + 5*cos(t0)*cos(t1))/(5 - z)],
+        [(-sin(t0)*sin(t1) + cos(t0)*cos(t1) + cos(t0))*(-5*x - 5*sin(t0)*sin(t1) + 5*cos(t0)*cos(t1) + 5*cos(t0))/(y - sin(t0)*cos(t1) - sin(t0) - sin(t1)*cos(t0) + 5)**2 + (-5*sin(t0)*cos(t1) - 5*sin(t0) - 5*sin(t1)*cos(t0))/(y - sin(t0)*cos(t1) - sin(t0) - sin(t1)*cos(t0) + 5), (-sin(t0)*sin(t1) + cos(t0)*cos(t1))*(-5*x - 5*sin(t0)*sin(t1) + 5*cos(t0)*cos(t1) + 5*cos(t0))/(y - sin(t0)*cos(t1) - sin(t0) - sin(t1)*cos(t0) + 5)**2 + (-5*sin(t0)*cos(t1) - 5*sin(t1)*cos(t0))/(y - sin(t0)*cos(t1) - sin(t0) - sin(t1)*cos(t0) + 5)], 
+        [-5*z*(-sin(t0)*sin(t1) + cos(t0)*cos(t1) + cos(t0))/(y - sin(t0)*cos(t1) - sin(t0) - sin(t1)*cos(t0) + 5)**2, -5*z*(-sin(t0)*sin(t1) + cos(t0)*cos(t1))/(y - sin(t0)*cos(t1) - sin(t0) - sin(t1)*cos(t0) + 5)**2]])
+
+x,y,z = 1,1,1; L = 2.8293817750366363
+x,y,z = 2,2,2; L = 4.39053329062213
+x,y,z = 3,3,3; L = 5.93341126864157
+x,y,z = 4,4,4; L = 11.316792088621161
+x,y,z = 5,5,5; L error div by zero!
+... 6; L = 11.271602007891836
+... 7; L = 5.742977858497596
+... 8; L = 3.9212251447736284
+... 9; L = 3.0176023288536515
+... 10; L = 2.4772706299292033
+... 11; L = 2.1166925685451843
+... 12; L = 1.8579197122984372
+... 50; L = 0.4011282279270726
+... 100; L = 0.20534350861496184
+... 1000; L = 0.021180669193480193
+
+So the lipschitz constant, even when there is another camera, seems to be very very similar.
+
+Let's try this same thing on the 3DOF...
+
+(Now is there a better way to rigorously test this without just... empirically measuring the Lipschitz constant over and over again?)
+But is it reasonable to say that the lipschitz constant of the function itself is 
+
+#### 1 Camera on 3DOF (Straight On)
+
+##### test.F
+
+Matrix([[(-5*x - 1.5*sin(t1)*sin(t2)*cos(t0) + 1.5*cos(t0)*cos(t1)*cos(t2) + 2.75*cos(t0)*cos(t1))/(-z + 0.3*sin(t1)*cos(t2) + 0.55*sin(t1) + 0.3*sin(t2)*cos(t1) + 5)], [(-5*y - 1.5*sin(t0)*sin(t1)*sin(t2) + 1.5*sin(t0)*cos(t1)*cos(t2) + 2.75*sin(t0)*cos(t1))/(-z + 0.3*sin(t1)*cos(t2) + 0.55*sin(t1) + 0.3*sin(t2)*cos(t1) + 5)]])
+
+##### test.J
+
+Matrix([[(1.5*sin(t0)*sin(t1)*sin(t2) - 1.5*sin(t0)*cos(t1)*cos(t2) - 2.75*sin(t0)*cos(t1))/(-z + 0.3*sin(t1)*cos(t2) + 0.55*sin(t1) + 0.3*sin(t2)*cos(t1) + 5), (0.3*sin(t1)*sin(t2) - 0.3*cos(t1)*cos(t2) - 0.55*cos(t1))*(-5*x - 1.5*sin(t1)*sin(t2)*cos(t0) + 1.5*cos(t0)*cos(t1)*cos(t2) + 2.75*cos(t0)*cos(t1))/(-z + 0.3*sin(t1)*cos(t2) + 0.55*sin(t1) + 0.3*sin(t2)*cos(t1) + 5)**2 + (-1.5*sin(t1)*cos(t0)*cos(t2) - 2.75*sin(t1)*cos(t0) - 1.5*sin(t2)*cos(t0)*cos(t1))/(-z + 0.3*sin(t1)*cos(t2) + 0.55*sin(t1) + 0.3*sin(t2)*cos(t1) + 5), (0.3*sin(t1)*sin(t2) - 0.3*cos(t1)*cos(t2))*(-5*x - 1.5*sin(t1)*sin(t2)*cos(t0) + 1.5*cos(t0)*cos(t1)*cos(t2) + 2.75*cos(t0)*cos(t1))/(-z + 0.3*sin(t1)*cos(t2) + 0.55*sin(t1) + 0.3*sin(t2)*cos(t1) + 5)**2 + (-1.5*sin(t1)*cos(t0)*cos(t2) - 1.5*sin(t2)*cos(t0)*cos(t1))/(-z + 0.3*sin(t1)*cos(t2) + 0.55*sin(t1) + 0.3*sin(t2)*cos(t1) + 5)], [(-1.5*sin(t1)*sin(t2)*cos(t0) + 1.5*cos(t0)*cos(t1)*cos(t2) + 2.75*cos(t0)*cos(t1))/(-z + 0.3*sin(t1)*cos(t2) + 0.55*sin(t1) + 0.3*sin(t2)*cos(t1) + 5), (0.3*sin(t1)*sin(t2) - 0.3*cos(t1)*cos(t2) - 0.55*cos(t1))*(-5*y - 1.5*sin(t0)*sin(t1)*sin(t2) + 1.5*sin(t0)*cos(t1)*cos(t2) + 2.75*sin(t0)*cos(t1))/(-z + 0.3*sin(t1)*cos(t2) + 0.55*sin(t1) + 0.3*sin(t2)*cos(t1) + 5)**2 + (-1.5*sin(t0)*sin(t1)*cos(t2) - 2.75*sin(t0)*sin(t1) - 1.5*sin(t0)*sin(t2)*cos(t1))/(-z + 0.3*sin(t1)*cos(t2) + 0.55*sin(t1) + 0.3*sin(t2)*cos(t1) + 5), (0.3*sin(t1)*sin(t2) - 0.3*cos(t1)*cos(t2))*(-5*y - 1.5*sin(t0)*sin(t1)*sin(t2) + 1.5*sin(t0)*cos(t1)*cos(t2) + 2.75*sin(t0)*cos(t1))/(-z + 0.3*sin(t1)*cos(t2) + 0.55*sin(t1) + 0.3*sin(t2)*cos(t1) + 5)**2 + (-1.5*sin(t0)*sin(t1)*cos(t2) - 1.5*sin(t0)*sin(t2)*cos(t1))/(-z + 0.3*sin(t1)*cos(t2) + 0.55*sin(t1) + 0.3*sin(t2)*cos(t1) + 5)]])
+
+Lipschitz val for each (x,y,z) all == 1,2,3... i
+0, 0.8499999994899998
+1, 1.0992585465463924
+2, 1.7688853769066728
+3, 4.529713860855956
+4, 23.19147623312279
+5, cannot calculate! divide by 0
+6, 319.77786877355027
+7, 17.47671127785559
+
+#### 1 Camera on 3DOF (Looks at scene from y axis)
+
+##### test.F
+
+Matrix([[(-5*x - 1.5*sin(t1)*sin(t2)*cos(t0) + 1.5*cos(t0)*cos(t1)*cos(t2) + 2.75*cos(t0)*cos(t1))/(y + 0.3*sin(t0)*sin(t1)*sin(t2) - 0.3*sin(t0)*cos(t1)*cos(t2) - 0.55*sin(t0)*cos(t1) + 5)], [(-5*z + 1.5*sin(t1)*cos(t2) + 2.75*sin(t1) + 1.5*sin(t2)*cos(t1))/(y + 0.3*sin(t0)*sin(t1)*sin(t2) - 0.3*sin(t0)*cos(t1)*cos(t2) - 0.55*sin(t0)*cos(t1) + 5)]])
+
+##### test.J
+
+Matrix([[(1.5*sin(t0)*sin(t1)*sin(t2) - 1.5*sin(t0)*cos(t1)*cos(t2) - 2.75*sin(t0)*cos(t1))/(y + 0.3*sin(t0)*sin(t1)*sin(t2) - 0.3*sin(t0)*cos(t1)*cos(t2) - 0.55*sin(t0)*cos(t1) + 5) + (-0.3*sin(t1)*sin(t2)*cos(t0) + 0.3*cos(t0)*cos(t1)*cos(t2) + 0.55*cos(t0)*cos(t1))*(-5*x - 1.5*sin(t1)*sin(t2)*cos(t0) + 1.5*cos(t0)*cos(t1)*cos(t2) + 2.75*cos(t0)*cos(t1))/(y + 0.3*sin(t0)*sin(t1)*sin(t2) - 0.3*sin(t0)*cos(t1)*cos(t2) - 0.55*sin(t0)*cos(t1) + 5)**2, (-0.3*sin(t0)*sin(t1)*cos(t2) - 0.55*sin(t0)*sin(t1) - 0.3*sin(t0)*sin(t2)*cos(t1))*(-5*x - 1.5*sin(t1)*sin(t2)*cos(t0) + 1.5*cos(t0)*cos(t1)*cos(t2) + 2.75*cos(t0)*cos(t1))/(y + 0.3*sin(t0)*sin(t1)*sin(t2) - 0.3*sin(t0)*cos(t1)*cos(t2) - 0.55*sin(t0)*cos(t1) + 5)**2 + (-1.5*sin(t1)*cos(t0)*cos(t2) - 2.75*sin(t1)*cos(t0) - 1.5*sin(t2)*cos(t0)*cos(t1))/(y + 0.3*sin(t0)*sin(t1)*sin(t2) - 0.3*sin(t0)*cos(t1)*cos(t2) - 0.55*sin(t0)*cos(t1) + 5), (-0.3*sin(t0)*sin(t1)*cos(t2) - 0.3*sin(t0)*sin(t2)*cos(t1))*(-5*x - 1.5*sin(t1)*sin(t2)*cos(t0) + 1.5*cos(t0)*cos(t1)*cos(t2) + 2.75*cos(t0)*cos(t1))/(y + 0.3*sin(t0)*sin(t1)*sin(t2) - 0.3*sin(t0)*cos(t1)*cos(t2) - 0.55*sin(t0)*cos(t1) + 5)**2 + (-1.5*sin(t1)*cos(t0)*cos(t2) - 1.5*sin(t2)*cos(t0)*cos(t1))/(y + 0.3*sin(t0)*sin(t1)*sin(t2) - 0.3*sin(t0)*cos(t1)*cos(t2) - 0.55*sin(t0)*cos(t1) + 5)], [(-0.3*sin(t1)*sin(t2)*cos(t0) + 0.3*cos(t0)*cos(t1)*cos(t2) + 0.55*cos(t0)*cos(t1))*(-5*z + 1.5*sin(t1)*cos(t2) + 2.75*sin(t1) + 1.5*sin(t2)*cos(t1))/(y + 0.3*sin(t0)*sin(t1)*sin(t2) - 0.3*sin(t0)*cos(t1)*cos(t2) - 0.55*sin(t0)*cos(t1) + 5)**2, (-1.5*sin(t1)*sin(t2) + 1.5*cos(t1)*cos(t2) + 2.75*cos(t1))/(y + 0.3*sin(t0)*sin(t1)*sin(t2) - 0.3*sin(t0)*cos(t1)*cos(t2) - 0.55*sin(t0)*cos(t1) + 5) + (-0.3*sin(t0)*sin(t1)*cos(t2) - 0.55*sin(t0)*sin(t1) - 0.3*sin(t0)*sin(t2)*cos(t1))*(-5*z + 1.5*sin(t1)*cos(t2) + 2.75*sin(t1) + 1.5*sin(t2)*cos(t1))/(y + 0.3*sin(t0)*sin(t1)*sin(t2) - 0.3*sin(t0)*cos(t1)*cos(t2) - 0.55*sin(t0)*cos(t1) + 5)**2, (-1.5*sin(t1)*sin(t2) + 1.5*cos(t1)*cos(t2))/(y + 0.3*sin(t0)*sin(t1)*sin(t2) - 0.3*sin(t0)*cos(t1)*cos(t2) - 0.55*sin(t0)*cos(t1) + 5) + (-0.3*sin(t0)*sin(t1)*cos(t2) - 0.3*sin(t0)*sin(t2)*cos(t1))*(-5*z + 1.5*sin(t1)*cos(t2) + 2.75*sin(t1) + 1.5*sin(t2)*cos(t1))/(y + 0.3*sin(t0)*sin(t1)*sin(t2) - 0.3*sin(t0)*cos(t1)*cos(t2) - 0.55*sin(t0)*cos(t1) + 5)**2]])
+
+Lipschitz val for each (x,y,z) all == 1,2,3... i
+0, 1.0860094203204296
+1, 0.888088250379477
+2, 0.7687503013292378
+3, 0.6864290934473053
+
+
+#### 2 Cameras on 3DOF
+
+##### test.F
+
+Matrix([[(-5*x - 1.5*sin(t1)*sin(t2)*cos(t0) + 1.5*cos(t0)*cos(t1)*cos(t2) + 2.75*cos(t0)*cos(t1))/(-z + 0.3*sin(t1)*cos(t2) + 0.55*sin(t1) + 0.3*sin(t2)*cos(t1) + 5)], [(-5*y - 1.5*sin(t0)*sin(t1)*sin(t2) + 1.5*sin(t0)*cos(t1)*cos(t2) + 2.75*sin(t0)*cos(t1))/(-z + 0.3*sin(t1)*cos(t2) + 0.55*sin(t1) + 0.3*sin(t2)*cos(t1) + 5)], [(-5*x - 1.5*sin(t1)*sin(t2)*cos(t0) + 1.5*cos(t0)*cos(t1)*cos(t2) + 2.75*cos(t0)*cos(t1))/(y + 0.3*sin(t0)*sin(t1)*sin(t2) - 0.3*sin(t0)*cos(t1)*cos(t2) - 0.55*sin(t0)*cos(t1) + 5)], [(-5*z + 1.5*sin(t1)*cos(t2) + 2.75*sin(t1) + 1.5*sin(t2)*cos(t1))/(y + 0.3*sin(t0)*sin(t1)*sin(t2) - 0.3*sin(t0)*cos(t1)*cos(t2) - 0.55*sin(t0)*cos(t1) + 5)]])
+
+##### test.J
+
+Matrix([[(1.5*sin(t0)*sin(t1)*sin(t2) - 1.5*sin(t0)*cos(t1)*cos(t2) - 2.75*sin(t0)*cos(t1))/(-z + 0.3*sin(t1)*cos(t2) + 0.55*sin(t1) + 0.3*sin(t2)*cos(t1) + 5), (0.3*sin(t1)*sin(t2) - 0.3*cos(t1)*cos(t2) - 0.55*cos(t1))*(-5*x - 1.5*sin(t1)*sin(t2)*cos(t0) + 1.5*cos(t0)*cos(t1)*cos(t2) + 2.75*cos(t0)*cos(t1))/(-z + 0.3*sin(t1)*cos(t2) + 0.55*sin(t1) + 0.3*sin(t2)*cos(t1) + 5)**2 + (-1.5*sin(t1)*cos(t0)*cos(t2) - 2.75*sin(t1)*cos(t0) - 1.5*sin(t2)*cos(t0)*cos(t1))/(-z + 0.3*sin(t1)*cos(t2) + 0.55*sin(t1) + 0.3*sin(t2)*cos(t1) + 5), (0.3*sin(t1)*sin(t2) - 0.3*cos(t1)*cos(t2))*(-5*x - 1.5*sin(t1)*sin(t2)*cos(t0) + 1.5*cos(t0)*cos(t1)*cos(t2) + 2.75*cos(t0)*cos(t1))/(-z + 0.3*sin(t1)*cos(t2) + 0.55*sin(t1) + 0.3*sin(t2)*cos(t1) + 5)**2 + (-1.5*sin(t1)*cos(t0)*cos(t2) - 1.5*sin(t2)*cos(t0)*cos(t1))/(-z + 0.3*sin(t1)*cos(t2) + 0.55*sin(t1) + 0.3*sin(t2)*cos(t1) + 5)], [(-1.5*sin(t1)*sin(t2)*cos(t0) + 1.5*cos(t0)*cos(t1)*cos(t2) + 2.75*cos(t0)*cos(t1))/(-z + 0.3*sin(t1)*cos(t2) + 0.55*sin(t1) + 0.3*sin(t2)*cos(t1) + 5), (0.3*sin(t1)*sin(t2) - 0.3*cos(t1)*cos(t2) - 0.55*cos(t1))*(-5*y - 1.5*sin(t0)*sin(t1)*sin(t2) + 1.5*sin(t0)*cos(t1)*cos(t2) + 2.75*sin(t0)*cos(t1))/(-z + 0.3*sin(t1)*cos(t2) + 0.55*sin(t1) + 0.3*sin(t2)*cos(t1) + 5)**2 + (-1.5*sin(t0)*sin(t1)*cos(t2) - 2.75*sin(t0)*sin(t1) - 1.5*sin(t0)*sin(t2)*cos(t1))/(-z + 0.3*sin(t1)*cos(t2) + 0.55*sin(t1) + 0.3*sin(t2)*cos(t1) + 5), (0.3*sin(t1)*sin(t2) - 0.3*cos(t1)*cos(t2))*(-5*y - 1.5*sin(t0)*sin(t1)*sin(t2) + 1.5*sin(t0)*cos(t1)*cos(t2) + 2.75*sin(t0)*cos(t1))/(-z + 0.3*sin(t1)*cos(t2) + 0.55*sin(t1) + 0.3*sin(t2)*cos(t1) + 5)**2 + (-1.5*sin(t0)*sin(t1)*cos(t2) - 1.5*sin(t0)*sin(t2)*cos(t1))/(-z + 0.3*sin(t1)*cos(t2) + 0.55*sin(t1) + 0.3*sin(t2)*cos(t1) + 5)], [(1.5*sin(t0)*sin(t1)*sin(t2) - 1.5*sin(t0)*cos(t1)*cos(t2) - 2.75*sin(t0)*cos(t1))/(y + 0.3*sin(t0)*sin(t1)*sin(t2) - 0.3*sin(t0)*cos(t1)*cos(t2) - 0.55*sin(t0)*cos(t1) + 5) + (-0.3*sin(t1)*sin(t2)*cos(t0) + 0.3*cos(t0)*cos(t1)*cos(t2) + 0.55*cos(t0)*cos(t1))*(-5*x - 1.5*sin(t1)*sin(t2)*cos(t0) + 1.5*cos(t0)*cos(t1)*cos(t2) + 2.75*cos(t0)*cos(t1))/(y + 0.3*sin(t0)*sin(t1)*sin(t2) - 0.3*sin(t0)*cos(t1)*cos(t2) - 0.55*sin(t0)*cos(t1) + 5)**2, (-0.3*sin(t0)*sin(t1)*cos(t2) - 0.55*sin(t0)*sin(t1) - 0.3*sin(t0)*sin(t2)*cos(t1))*(-5*x - 1.5*sin(t1)*sin(t2)*cos(t0) + 1.5*cos(t0)*cos(t1)*cos(t2) + 2.75*cos(t0)*cos(t1))/(y + 0.3*sin(t0)*sin(t1)*sin(t2) - 0.3*sin(t0)*cos(t1)*cos(t2) - 0.55*sin(t0)*cos(t1) + 5)**2 + (-1.5*sin(t1)*cos(t0)*cos(t2) - 2.75*sin(t1)*cos(t0) - 1.5*sin(t2)*cos(t0)*cos(t1))/(y + 0.3*sin(t0)*sin(t1)*sin(t2) - 0.3*sin(t0)*cos(t1)*cos(t2) - 0.55*sin(t0)*cos(t1) + 5), (-0.3*sin(t0)*sin(t1)*cos(t2) - 0.3*sin(t0)*sin(t2)*cos(t1))*(-5*x - 1.5*sin(t1)*sin(t2)*cos(t0) + 1.5*cos(t0)*cos(t1)*cos(t2) + 2.75*cos(t0)*cos(t1))/(y + 0.3*sin(t0)*sin(t1)*sin(t2) - 0.3*sin(t0)*cos(t1)*cos(t2) - 0.55*sin(t0)*cos(t1) + 5)**2 + (-1.5*sin(t1)*cos(t0)*cos(t2) - 1.5*sin(t2)*cos(t0)*cos(t1))/(y + 0.3*sin(t0)*sin(t1)*sin(t2) - 0.3*sin(t0)*cos(t1)*cos(t2) - 0.55*sin(t0)*cos(t1) + 5)], [(-0.3*sin(t1)*sin(t2)*cos(t0) + 0.3*cos(t0)*cos(t1)*cos(t2) + 0.55*cos(t0)*cos(t1))*(-5*z + 1.5*sin(t1)*cos(t2) + 2.75*sin(t1) + 1.5*sin(t2)*cos(t1))/(y + 0.3*sin(t0)*sin(t1)*sin(t2) - 0.3*sin(t0)*cos(t1)*cos(t2) - 0.55*sin(t0)*cos(t1) + 5)**2, (-1.5*sin(t1)*sin(t2) + 1.5*cos(t1)*cos(t2) + 2.75*cos(t1))/(y + 0.3*sin(t0)*sin(t1)*sin(t2) - 0.3*sin(t0)*cos(t1)*cos(t2) - 0.55*sin(t0)*cos(t1) + 5) + (-0.3*sin(t0)*sin(t1)*cos(t2) - 0.55*sin(t0)*sin(t1) - 0.3*sin(t0)*sin(t2)*cos(t1))*(-5*z + 1.5*sin(t1)*cos(t2) + 2.75*sin(t1) + 1.5*sin(t2)*cos(t1))/(y + 0.3*sin(t0)*sin(t1)*sin(t2) - 0.3*sin(t0)*cos(t1)*cos(t2) - 0.55*sin(t0)*cos(t1) + 5)**2, (-1.5*sin(t1)*sin(t2) + 1.5*cos(t1)*cos(t2))/(y + 0.3*sin(t0)*sin(t1)*sin(t2) - 0.3*sin(t0)*cos(t1)*cos(t2) - 0.55*sin(t0)*cos(t1) + 5) + (-0.3*sin(t0)*sin(t1)*cos(t2) - 0.3*sin(t0)*sin(t2)*cos(t1))*(-5*z + 1.5*sin(t1)*cos(t2) + 2.75*sin(t1) + 1.5*sin(t2)*cos(t1))/(y + 0.3*sin(t0)*sin(t1)*sin(t2) - 0.3*sin(t0)*cos(t1)*cos(t2) - 0.55*sin(t0)*cos(t1) + 5)**2]])
+
+Lipschitz val for each (x,y,z) all == 1,2,3... i
+0, 1.1857665
+1, 1.1046752270819489
+2, 1.7926908436311708
+3, 4.5508460182696036
+10, 3.0300706859988353
+
+There's more to explore here in regard to link lengths and higher DOF, but for now it's just good to see a little bit. I think it's reasonable to specify that cameras should be set up to avoid singularities, since in real world applications, it's a very doable request. Also, the robot will always be in front of the camera, so there's no need to worry about when any of x,y,z are greater than the depth between the camera and the robot anyway. And in these cases, the lipschitz value is indeed quite representative of the robot's fkin Lipschitz itself.
+
+Now that we have our visual servoing system, let's begin.

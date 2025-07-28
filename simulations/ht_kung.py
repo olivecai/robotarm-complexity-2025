@@ -42,7 +42,7 @@ kinova_dof7_params = [
 dof2 = dh.DenavitHartenbergAnalytic(dof2_params, P)
 dof3 = dh.DenavitHartenbergAnalytic(dylan_dof3_params, P)
 kinova = dh.DenavitHartenbergAnalytic(kinova_dof7_params, P)
-robot = dof2
+robot = kinova
 
 cam1 = dh.Camera(0,0,0,[0,0,5], 5,5, 0, 0) #looks down directly at the scene, basically replicates the scene
 cam2 = dh.Camera(-sp.pi/2, 0, 0, [0,0,5], 5,5,0,0) #looks at scene from the y axis, world z is cam2 y, world x is cam2 x 
@@ -50,8 +50,10 @@ cameras=[cam1, cam2]
 
 vs = dh.DenavitHartenberg_Cameras_Analytic(cameras, robot)
 
-initQ = [0, 2.]
-desP = [1,1,0]
+kinova_angles = np.deg2rad(np.array([-0.1336059570312672, -28.57940673828129, -179.4915313720703, -147.7, 0.06742369383573531, -57.420898437500036, 89.88030242919922, 0.]))
+
+initQ = kinova_angles
+desP = [1.,1.,2.]
 
 # Original function and its derivative
 def f(x: list):
@@ -68,9 +70,9 @@ df0 = df(vars0)
 
 
 eta0 = np.linalg.norm(f0)  # ||f(x0)||
-beta =np.linalg.norm(df0, ord=2)  # crude estimate of ||f'(x)^-1||
-K = vs.calc_lipschitz()  # assume Lipschitz constant of f'
-r = 1.0
+beta =np.linalg.norm(df0, ord=2) # crude estimate of ||f'(x)^-1||
+K = vs.calc_lipschitz(3.971077295699875)  # assume Lipschitz constant of f'
+r = 20. #we want to search the entire space so there's not really much harm in making the radius larger
 delta = 0.1
 h0 = beta**2 * K * eta0
 
@@ -80,7 +82,7 @@ print(f0)
 
 print(df0)
 # Build deformed function f_i and apply Newton on it
-def step4_newton_on_fi(x0, f0, eta0, beta, K, r, delta, max_iters=20, tol=1e-8):
+def step4_newton_on_fi(x0, f0, eta0, beta, K, r, delta, max_iters=200, tol=1e-8):
     h = beta**2 * K * eta0
     eta = eta0
     x_bar = x0
@@ -92,7 +94,9 @@ def step4_newton_on_fi(x0, f0, eta0, beta, K, r, delta, max_iters=20, tol=1e-8):
         
         if h <= 0.5 - delta:
             print(f"Stopping: h = {h} is small enough.")
-            return x_bar
+            print("xbar", x_bar)
+            print("x", x)
+            return x_bar, x
         
         lam = (0.5 - delta) / h
         
@@ -109,9 +113,9 @@ def step4_newton_on_fi(x0, f0, eta0, beta, K, r, delta, max_iters=20, tol=1e-8):
         eta = (1-lam)* eta
 
         # Apply Newton's method on f_i
-        x = x_bar
+        x = x_bar.copy()
         
-        for j in range(20):
+        for j in range(5):
             vars = [*x, *desP]
             fx = f_i(vars)
             dfx = df_i(vars)
@@ -128,15 +132,24 @@ def step4_newton_on_fi(x0, f0, eta0, beta, K, r, delta, max_iters=20, tol=1e-8):
 
             if cond1 and cond2:
                 print("  ✅ Step 4 conditions satisfied. Accepting x_new.")
-                x_bar = x_new
+                x_bar = x_new.copy()
+                
                 break
-            x = x_new
+
+            x = x_new.copy()
             vars = [*x, *desP]
 
         h = beta**2 * K * eta 
 
-    return x_bar
+    return x_bar, x
 
 # Run it
-x_good = step4_newton_on_fi(x0, f0, eta0, beta, K, r, delta)
+x_good, x_ = step4_newton_on_fi(x0, f0, eta0, beta, K, r, delta)
 print(f"\nFinal good starting point: x = {x_good}")
+
+reps=[]
+for i in range(robot.dof):
+    reps.append((robot.jntvars[i], x_[i]))
+
+print( vs.dh_robot.ee_translation.subs(reps))
+vs.dh_robot.plot(x_)

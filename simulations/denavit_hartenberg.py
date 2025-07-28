@@ -386,18 +386,23 @@ class DenavitHartenberg_Cameras_Analytic():
         fn = (sp.utilities.lambdify(self.dh_robot.jntvars[:self.dh_robot.dof], self.J.subs(reps), 'numpy'))
         J_val = fn(*q)
 
-        print("############", J_val)
+        
 
         norm_val = np.linalg.norm(J_val, ord=2).copy()
-
-        print(norm_val)
+        
+       
 
         #print("J:\n", J_val)
         #print("q:", q, "→ norm:", norm_val)
         return -norm_val
     
-    def calc_lipschitz(self):
+    def calc_lipschitz(self, Lipschitz=None):
         # Initial guess and bounds
+
+        if Lipschitz:
+            self.lipschitz = Lipschitz #if we already calculated this and dont want to again...
+            return Lipschitz
+        
         q0 = np.array([0.1]*self.dh_robot.dof) #whatever is the maximum 
         bounds = [(0, np.pi)]*self.dh_robot.dof
         print("BOUNDS")
@@ -406,7 +411,9 @@ class DenavitHartenberg_Cameras_Analytic():
         res = minimize(self.lipschitz_objective, q0, bounds=bounds)
         L_estimate = -res.fun
 
-        self.lipschitz = L_estimate        
+        self.lipschitz = L_estimate       
+        print("Calculated Lipschitz Constant:", L_estimate)
+
         return L_estimate
     
     def central_differences(self, Q, desP, epsilon=None):
