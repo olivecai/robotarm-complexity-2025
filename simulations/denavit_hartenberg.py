@@ -287,7 +287,7 @@ class DenavitHartenbergAnalytic():
             traj.append(currQ)
 
         traj=np.array(traj)
-        if 0:
+        if 1:
             self.rtb_robot.plot(traj, block=False)
             
         return ret

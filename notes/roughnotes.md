@@ -1823,3 +1823,149 @@ Lipschitz val for each (x,y,z) all == 1,2,3... i
 There's more to explore here in regard to link lengths and higher DOF, but for now it's just good to see a little bit. I think it's reasonable to specify that cameras should be set up to avoid singularities, since in real world applications, it's a very doable request. Also, the robot will always be in front of the camera, so there's no need to worry about when any of x,y,z are greater than the depth between the camera and the robot anyway. And in these cases, the lipschitz value is indeed quite representative of the robot's fkin Lipschitz itself.
 
 Now that we have our visual servoing system, let's begin.
+
+# July 29
+
+Yesterday the HT Kung method as written in ht_kung.py really did work which is amazing! 
+
+Given a point that is actually accessible for the robot (choosing a random point that the robot cannot for certain get to usually results in failure) has, thus far (just from me running the simulation repeatedly) worked every single time a valid desired point is chosen.
+
+For the kinova, it took us 54 iterations to find a better starting point. 
+
+Some hyperparameters that promote finding the lipschitz value faster:
+- Our Kinova system with 2 cameras has a Lipschitz value of almost 4, but reducing it to 1 actually reduced the number of total iterations from 54 to 22. It's possible that, since our system is smooth and we will not be jumping around by a lot because we dampen the system, that we do not need such a high lipschitz value.
+- Increasing the radius r is necessary; when r=1, we do not have any success. When r=10, we succeed.
+- We need to discern more about this delta, but it seems that it's best around 0.1 and 0.2 for the kinova, at least. 0.01 and 0.4 take more iterations.
+
+VS Kinova where initQ=radians of [-0.1336059570312672, -28.57940673828129, -179.4915313720703, -147.7, 0.06742369383573531, -57.420898437500036, 89.88030242919922, 0.] and desP = [0.015386190498257565, -0.024681003935884283, 1.1871420644705266], 
+
+the search step of HTKung takes 54 total iterations, even though the Kantorovich Newton chord method (using a constant jacobian) itself only takes 24 iterations, even with alpha=1.
+
+But another thing is that the HTKung algorithm, utilizing the Kantorovich principles, is EXTREMELY conservative in what it considers to be a good guess and the resulting "good starting point" is often
+
+BUT a nuance is that when we add dampening of alpha = 0.3 and 0.1, we can see the chord method diverges.
+We want the speed of local with the surety of global.
+
+We want to accomplish this by exploiting the Kantorovich principles.
+
+The search is actually pretty helpful and maybe we could modify it specifically for the robot inverse kinematics problem to be...
+- far less conservative?
+- adaptive dampening
+
+Doing another read through of HT Kung's paper Complexity of Starting Points...
+
+## The Complexity of Obtaining Starting Points for Solving Operator Equations by Newton's MEthod H. T. Kung
+
+### Introduction
+
+Algs conssit  of SEARCH phase and ITERATION phase. Too many methods deal with only the iteration phase! 
+Search phase is import especially when the starting points are not available.
+
+> The complexities of the two phases are closely related.
+
+Spending too much time in one phase detriments the other --> find the optimal balance.
+
+ASSUMPTION: f satisfies some propertty or conditions, and include the time needed in both the search phase and iteration phas.e
+
+We need to assume that f has a root in the region to be search and rememebr that f(x)=0, so we are always always just searching for roots in f.
+
+> [this paper] does not have the usual assumption that "good initial apporximations are available". 
+
+Techniques for proving lower bounds: evem if we know that:
+ - M >= f'(x) >= m > 0 on interbal [a,b] (the derivative is bounded and nonzero, the derivative exists)
+ - and f(a)f(b) < 0 (f(a) and f(b) are opposite signs, so there must existy a root between them in the obne dimensional case), it is impossible to solve f(x) = 0 by a superlinearly convergent method.
+However, if in addition |f''| is known to be bounded by a constant on [a,b] then the problem can be solved superlinearly. So this means ummm im not really quite sure
+
+TODO second derivative...
+
+### Methodology and a useful lemma for proving Lower Bounds
+
+phi := algorithm
+alpha := root of f(x)=0
+x := approximation to alpha computed by phi
+
+(so the motivation is for x  to be as close to alpha as possible)
+
+delta(phi, f) = operator norm of (x-alpha)
+
+Consider the problem of solving f(x)=9 where the function or operator f satisfies some property...
+Since alfgorithms based ont he proerty cannnot distinguish individual functions in the class F of all functions satisfying the property, we reallyd eal with the CLASS F instead of individual functions in F! Interesting... what does this mean...
+
+Upper bounds are established by algorithms. The following lemma is useful for proving lower bounds on delta i:
+
+Lemma 2.1 if for any alg using i units of time, there exists fns f1 f2 in F st 
+- alg cannot distinguish f1 and f2
+- min dist bn any zero of f1 and any zero of f2 is >= 2* epsilon
+
+THEN delta i >= epsilon
+
+What does this mean? --> It means we can use an easier function f2 to solve f1.
+
+### Some results on real valued functions of one variable
+
+Theorem 3.1:
+
+if f: [a,b] --> R satisfies:
+- f is continuous on [a,b] 
+- f(a) < 0, f(b) > 0
+
+THEN delta i  = (b-a) / 2^(i+1)
+
+Function f1 f2 have to be smoothed (??)
+
+Even in f' is bounded above or bounded below, we still cannot do better than binary search in the worst case sense.
+
+OK I realized I had a bug but this provides some interesting insight...
+
+Beta should be = norm of inverse Jacobian.
+
+But I accidentally had Beta = norm of Jacobian!
+And you know what...
+it WORKED.
+
+And with inverse Jacobian norm, it does not work well.
+
+3DOF:
+
+desQ = 0.1 * robot dof
+
+Beta = NORM OF INVERSE JACOBIAN, all failures
+when all q=1.5, beta = 4.7
+.. q=0.001, beta = 3849 and h is like 8322161 at the end of the htkung algorithm....
+
+Beta = NORM OF JACOBIAN
+q=0.001, beta = 0.887, fail 
+q=1.5, beta = 0.6607, success
+
+Now let's try a better desired position where all q = 1.5:
+Beta = NORM OF JACOBIAN
+q = 0.3, beta = 1.136, success
+q = 0.001, beta = 1.059, success
+
+Beta = NORM OF INVERSE JACOBIAN
+q = 0.1, 0.01, 0.001 ... beta goes from 37 to 300 to exploding! fail.
+q= 2.0, beta = 3.16, success in 43 iters
+
+But when we do q=2.0 for beta = norm of jacobian = 0.614 , we get success in 3 iterations.
+
+It's highly possible that it's not necessarily using the inverse of the jacobian, but that we just need to scale the norm to be much lower and that way if B is higher than a certain value, we can just scale it.
+
+But when we have the incorrect beta with initQ=0.1 * robot dof, we get a good starting point in 35 total iters, 16 outer iters. beta here = 1.07
+
+but with the correct beta with apply natural log =  ln(beta), we still fail, and beta = 3.6.
+When we use log10, it actually works and beta = 1.57
+
+Okay i think the trick is to just log transform beta.
+
+We can still get out of singular positions usin the correct beta, so long as we transform it to speed up the process.
+
+Actually... it seems like a constant beta of 2.0 for the kinova would work. So in other words, don't penalize the singularity of the configuration?!?!
+
+WHAT's NEXT:
+
+Focus on implementing a real way to complete the homotopy/function deformation!!!!! Maybe we can use Broydens update, ummm
+
+See what works and doesnt!
+
+It's coming along, need to get this done so we can test it on the robot!!!!
+

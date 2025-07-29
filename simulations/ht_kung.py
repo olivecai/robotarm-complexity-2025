@@ -1,7 +1,14 @@
 '''
 July 28 2025
 
-This program is simply used for testing code.
+This program implements H.T.Kung's algorithm 4.2 on finding better starting points by assessing the 
+Kantorovich conditions on the initial x and the subsequent x obtained by deforming the function f.
+
+It works quite well, but it requires us to know the function f. 
+
+Using this algorithm as a starting point: can we ddevelop a better algorithm that treats f as a black box function?
+Here is Kung's unmodified algorithm: 
+
 '''
 import sympy as sp
 import numpy as np
@@ -49,11 +56,16 @@ cam2 = dh.Camera(-sp.pi/2, 0, 0, [0,0,5], 5,5,0,0) #looks at scene from the y ax
 cameras=[cam1, cam2]
 
 vs = dh.DenavitHartenberg_Cameras_Analytic(cameras, robot)
+vs.dh_robot.alpha = 0.1
 
 kinova_angles = np.deg2rad(np.array([-0.1336059570312672, -28.57940673828129, -179.4915313720703, -147.7, 0.06742369383573531, -57.420898437500036, 89.88030242919922, 0.]))
 
-initQ = kinova_angles
-desP = [1.,1.,2.]
+initQ = np.array([0.001] * robot.dof)
+desQ = [1.5] * robot.dof
+
+desP = (vs.dh_robot.fkin_eval(*desQ)).flatten().tolist()
+print(desP)
+
 
 # Original function and its derivative
 def f(x: list):
@@ -68,11 +80,18 @@ x0 = initQ
 f0 = f(vars0).copy()
 df0 = df(vars0)
 
+df0_inv = np.linalg.pinv(df0)
 
-eta0 = np.linalg.norm(f0)  # ||f(x0)||
-beta =np.linalg.norm(df0, ord=2) # crude estimate of ||f'(x)^-1||
-K = vs.calc_lipschitz(3.971077295699875)  # assume Lipschitz constant of f'
-r = 20. #we want to search the entire space so there's not really much harm in making the radius larger
+
+eta0 = np.linalg.norm(f0)  # ||f(x0)|| #this is asking, how much error is currently present at the x we specified?
+beta =np.linalg.norm(df0_inv, ord=2) # crude estimate of ||f'(x)^-1||
+
+beta=2.0
+
+print("beta", beta)
+
+K = vs.calc_lipschitz(4.)  # assume Lipschitz constant of f'
+r = 10. #we want to search the entire space so there's not really much harm in making the radius larger
 delta = 0.1
 h0 = beta**2 * K * eta0
 
@@ -81,22 +100,30 @@ print(f"Initial h0: {h0:.4f}, eta0: {eta0:.4f}, beta: {beta:.4f}")
 print(f0)
 
 print(df0)
+
+
 # Build deformed function f_i and apply Newton on it
 def step4_newton_on_fi(x0, f0, eta0, beta, K, r, delta, max_iters=200, tol=1e-8):
+    total_iter_count = 0 
     h = beta**2 * K * eta0
     eta = eta0
     x_bar = x0
     vars = [*x_bar, *desP]
     
     for i in range(max_iters):
+
+
+
         print(f"\n--- Iteration {i} ---")
         print(f"h = {h:.4f}, eta = {eta:.4f}")
         
         if h <= 0.5 - delta:
             print(f"Stopping: h = {h} is small enough.")
             print("xbar", x_bar)
-            print("x", x)
-            return x_bar, x
+        
+            print("total iteration count", total_iter_count)
+
+            return x_bar
         
         lam = (0.5 - delta) / h
         
@@ -105,9 +132,11 @@ def step4_newton_on_fi(x0, f0, eta0, beta, K, r, delta, max_iters=200, tol=1e-8)
             fx = f(x).flatten()
             f0_flat = f0.flatten()
             ret = (fx - eta * f0_flat / eta0) + lam * eta * f0_flat / eta0
+            print("############### ret", ret)
             return ret
 
         def df_i(x: list):
+            print("############# df", df(x))
             return df(x)  # since f_i is just a linear combo of f, the derivative is still f'
 
         eta = (1-lam)* eta
@@ -116,10 +145,11 @@ def step4_newton_on_fi(x0, f0, eta0, beta, K, r, delta, max_iters=200, tol=1e-8)
         x = x_bar.copy()
         
         for j in range(5):
+            total_iter_count+=1
             vars = [*x, *desP]
             fx = f_i(vars)
             dfx = df_i(vars)
-            step = np.linalg.pinv(dfx) @ fx # this is analagous to Jac inverse @ error fn 
+            step = np.linalg.pinv(dfx) @ fx 
             x_new = x - step 
 
             # Check the Step 4 conditions
@@ -141,15 +171,23 @@ def step4_newton_on_fi(x0, f0, eta0, beta, K, r, delta, max_iters=200, tol=1e-8)
 
         h = beta**2 * K * eta 
 
-    return x_bar, x
+    return x_bar
 
 # Run it
-x_good, x_ = step4_newton_on_fi(x0, f0, eta0, beta, K, r, delta)
+x_good = step4_newton_on_fi(x0, f0, eta0, beta, K, r, delta)
 print(f"\nFinal good starting point: x = {x_good}")
 
 reps=[]
 for i in range(robot.dof):
-    reps.append((robot.jntvars[i], x_[i]))
+    reps.append((robot.jntvars[i], x_good[i]))
 
 print( vs.dh_robot.ee_translation.subs(reps))
-vs.dh_robot.plot(x_)
+print("desP:", desP)
+
+print("BETA:", beta)
+
+vs.dh_robot.plot(initQ)
+vs.dh_robot.plot(x_good)
+print(vs.dh_robot.const_jac_inv_kin(desP, x_good))
+print(vs.dh_robot.const_jac_inv_kin(desP, initQ))
+
