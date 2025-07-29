@@ -3,5 +3,237 @@ July 29
 
 Motivation: treat f as black box function, accessible only locally, but still use HTKung's algorithm and Kantorovich principles.
 
+Update this is not working  and I dont want to use Broydens update anyway
 
+ABANDONED, DOES NOT WORK
+
+Use ht_kung.py to see the htkung algorithm 4.2
 '''
+
+import sympy as sp
+import numpy as np
+import matplotlib.pyplot as plt
+
+import denavit_hartenberg as dh
+
+P = dh.DHSympyParams() #this lowkey has to be global, sorry
+jntspace, cartspace, taskspace = P.get_params()
+t0, t1, t2, t3, t4, t5, t6, t7, t8, t9 = jntspace
+x, y, z = cartspace
+u, v = taskspace
+
+
+dof2_params = [
+                [t0, 0, 1, 0], 
+                [t1, 0, 1, 0]
+                ]
+
+dylan_dof3_params=[
+                [ t0, sp.pi/2, 0 , 0 ],
+                [ t1,  0  ,  0.55, 0 ],
+                [ t2,  0  ,  0.3, 0 ]
+                ]
+
+
+kinova_dof7_params = [
+    [t0,      sp.pi,   0.0,   0.0],
+    [t1,      sp.pi/2, 0.0, -(0.1564 + 0.1284)],
+    [t2 +sp.pi, sp.pi/2, 0.0, -(0.0054 + 0.0064)],
+    [t3 +sp.pi, sp.pi/2, 0.0, -(0.2104 + 0.2104)],
+    [t4 +sp.pi, sp.pi/2, 0.0, -(0.0064 + 0.0064)],
+    [t5 +sp.pi, sp.pi/2, 0.0, -(0.2084 + 0.1059)],
+    [t6 +sp.pi, sp.pi/2, 0.0, 0.0],
+    [t7 +sp.pi,    sp.pi, 0.0, -(0.1059 + 0.0615)],
+]
+
+dof2 = dh.DenavitHartenbergAnalytic(dof2_params, P)
+dof3 = dh.DenavitHartenbergAnalytic(dylan_dof3_params, P)
+kinova = dh.DenavitHartenbergAnalytic(kinova_dof7_params, P)
+robot = dof2
+
+cam1 = dh.Camera(0,0,0,[0,0,5], 5,5, 0, 0) #looks down directly at the scene, basically replicates the scene
+cam2 = dh.Camera(-sp.pi/2, 0, 0, [0,0,5], 5,5,0,0) #looks at scene from the y axis, world z is cam2 y, world x is cam2 x 
+cameras=[cam1, cam2]
+
+vs = dh.DenavitHartenberg_Cameras_Analytic(cameras, robot)
+vs.dh_robot.alpha = 0.1
+
+kinova_angles = np.deg2rad(np.array([-0.1336059570312672, -28.57940673828129, -179.4915313720703, -147.7, 0.06742369383573531, -57.420898437500036, 89.88030242919922, 0.]))
+
+initQ = np.array([1.0] * robot.dof)
+desQ = [1.5] * robot.dof
+
+desP = (vs.dh_robot.fkin_eval(*desQ)).flatten().tolist()
+print(desP)
+
+
+# Original function and its derivative
+def f(x: list):
+    return vs.errfn_eval(*x).copy()
+
+def df(x: list):
+    return vs.jacobian_eval(*x).copy()
+
+# Setup constants
+vars0 = [*initQ, *desP]
+x0 = initQ
+f0 = f(vars0).copy()
+df0 = df(vars0)
+
+df0_inv = np.linalg.pinv(df0)
+
+eta0 = np.linalg.norm(f0)  # ||f(x0)|| #this is asking, how much error is currently present at the x we specified?
+beta =np.linalg.norm(df0_inv, ord=2) # crude estimate of ||f'(x)^-1||
+
+beta=np.linalg.norm(df0, ord=2) #TODO: decide if beta should be log transformed or constant
+
+print("beta", beta)
+
+K = vs.calc_lipschitz()  # assume Lipschitz constant of f'
+r = 10. #we want to search the entire space so there's not really much harm in making the radius larger
+delta = 0.1
+h0 = beta**2 * K * eta0
+
+h_tolerance = 0.5
+
+print(f"Initial h0: {h0:.4f}, eta0: {eta0:.4f}, beta: {beta:.4f}")
+
+print(f0)
+
+print(df0)
+
+
+# Build deformed function f_i and apply Newton on it
+def step4_newton_on_fi(x0, f0, eta0, beta, K, r, delta, max_iters=200, tol=1e-8):
+    total_iter_count = 0 
+    h = beta**2 * K * eta0
+    eta = eta0
+    x_bar = x0
+    vars = [*x_bar, *desP]
+    
+    for i in range(max_iters):
+
+        print(f"\n--- Iteration {i} ---")
+        print(f"h = {h:.4f}, eta = {eta:.4f}")
+        
+        if h <= h_tolerance - delta: #h_tolerance should be 1/2 but can we modify it?
+            print(f"Stopping: h = {h} is small enough.")
+            print("xbar", x_bar)
+        
+            print("total iteration count", total_iter_count)
+
+            return x_bar
+        
+        lam = (0.5 - delta) / h
+        
+        # Define the deformed function f_i and its derivative
+        def f_i(x: list):
+            fx = f(x).flatten()
+            f0_flat = f0.flatten()
+            ret = (fx - eta * f0_flat / eta0) + lam * eta * f0_flat / eta0
+            #print("############### ret", ret)
+            return ret
+
+        def df_i(x_new): #: list, x_new: list, e_old: list, e_new: list):
+            '''
+            Broyden Update
+            '''
+            vars = [*x_new, *desP]
+            return df(vars)
+
+            print("x new vs old:")
+            print(x_new)
+            print(x_old)
+
+            alpha = 0.5
+            #print("############# df", df(x))
+            #return df(x)  # since f_i is just a linear combo of f, the derivative is still f'
+            #What if we use a broyden update to update this derivative...
+            x_new = np.array(x_new).reshape(-1,1)
+            x_old = np.array(x_old).reshape(-1,1)
+            e_new = np.array(e_new).reshape(-1,1)
+            e_old = np.array(e_old).reshape(-1,1)
+            print("df0:" , df0)
+            delta_x = np.subtract(x_new, x_old)
+
+            if delta_x.all() == 0:
+                print("DELTA X is ZERO VECTOR")
+                return df0
+
+            delta_e = np.subtract(e_new, e_old)
+            
+            numerator = (np.subtract(delta_e, df0 @ delta_x)) @ delta_x.T
+            denominator = delta_x.T @ delta_x
+
+            update = numerator / denominator
+            
+            print("update:", update)
+            print(df0 + alpha* update)
+            return df0 + alpha* update
+
+        eta = (1-lam)* eta
+
+        # Apply Newton's method on f_i
+        x = x_bar.copy()
+        
+        for j in range(5):
+            #x_new=x.copy()
+
+            total_iter_count+=1
+            vars = [*x, *desP]
+            #varsnew = [*x_new, *desP]
+            fx = f_i(vars)
+            #fxnew = f_i(varsnew)
+
+            print("x", x)
+            #print("xnew", x_new)
+            eold=fx
+            #enew = fxnew
+            print("eold", eold)
+            #print("enew", enew)
+
+            dfx = df_i(x) #, x_new, eold, enew)
+            step = np.linalg.pinv(dfx) @ fx 
+            
+            x_new = x - step 
+
+            # Check the Step 4 conditions
+            cond1 = np.linalg.norm(x_new - x) <= r - 2 * beta * eta0
+            vars= [*x_new, *desP]
+
+            cond2 = np.linalg.norm(np.linalg.pinv(dfx) @ f_i(vars)) <= min(r/2 - beta * eta, delta / (2 * beta * K))
+
+            print(f"  Newton iter {j}: x = {x_new}, |step| = {np.linalg.norm(step):.2e}, cond1 = {cond1}, cond2 = {cond2}")
+
+            if cond1 and cond2:
+                print("  ✅ Step 4 conditions satisfied. Accepting x_new.")
+                x_bar = x_new.copy()
+                
+                break
+
+            x = x_new.copy()
+
+            vars = [*x, *desP]
+
+        h = beta**2 * K * eta 
+
+    return x_bar
+
+# Run it
+x_good = step4_newton_on_fi(x0, f0, eta0, beta, K, r, delta)
+print(f"\nFinal good starting point: x = {x_good}")
+
+reps=[]
+for i in range(robot.dof):
+    reps.append((robot.jntvars[i], x_good[i]))
+
+print( vs.dh_robot.ee_translation.subs(reps))
+print("desP:", desP)
+
+print("BETA:", beta)
+
+vs.dh_robot.plot(initQ)
+vs.dh_robot.plot(x_good)
+print(vs.dh_robot.const_jac_inv_kin(desP, x_good))
+print(vs.dh_robot.const_jac_inv_kin(desP, initQ))
+

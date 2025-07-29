@@ -1961,11 +1961,105 @@ We can still get out of singular positions usin the correct beta, so long as we 
 
 Actually... it seems like a constant beta of 2.0 for the kinova would work. So in other words, don't penalize the singularity of the configuration?!?!
 
-WHAT's NEXT:
+WHAT's NEXT for me:
 
-Focus on implementing a real way to complete the homotopy/function deformation!!!!! Maybe we can use Broydens update, ummm
+Focus on implementing a real way to complete the homotopy/function deformation!!!!! Maybe we can use Broydens update?
 
-See what works and doesnt!
+Let's finish the paper and read more on continuation methods so we can get a good idea on HOW to do homotopy:
 
-It's coming along, need to get this done so we can test it on the robot!!!!
+Choosing a suitable delta will be discussed after alg 4.2
+
+In alg 4.1, it is assumed that the exact zero of xi+1 can be found which is "clearly not the case" --> why?
+So, in alg 4.1, f_i(x) = f(x) - f(x_i) + lambda_i * f(x_i) and 
+since lambda_i worst case (large h value, indicates singularity) is 0, and best case (h is close to 1/2) lambda_i is closer to 1,
+
+in the worst case f_i(x) is similar to f(x)-f(x_i)
+while in the best case f_i(x) = f(x)
+
+So the function in question is... made by adding more function evaluations on it 
+
+
+## Debrief with Cole
+
+Modifying the H T Kung Algorithm 4.2 by using the Broyden update instead of re-evaluating the derivative did not work and I don't have the spirit to try again.
+
+Cole's suggestions:
+- rate at which jacobian becomes wrong by the curvature of the function -- how fast does it change? 
+- how fast does jacobian build up error...
+- take a step back and revisit linear mesh, linear piece wise functions, etc
+
+It's true that my initial focus was based on the mesh, but I abandoned it because the mesh was so dependent on how I sampled it/intiialized it (though it's true I didn't understand the problem very well then and probably I still do not now), it was so dense for 6 DOF, and what good is this very intensive measure that requires so much sampling and then to use the jacobians instead of just interpolating the joint vectors vs task space vectors.
+
+I do think the linear meshing is important but I feel strongly that using semilocal convergence properties to minimize the number of jacobians used in real time is useful and an interesting problem to solve.
+
+How can we travel as far as possible in the radius?
+Create a radius to represent points that we can validly move to? Is this possible?
+
+Right now the error function uses the DESIRED point,
+
+but if we instead ... plugged in points nearby our end effector, almost like a binary search... to see the farthest point we can converge to.... This doesn't require any work on the robot's end, just math to run behind the scenes (is that ok)
+
+wait a second?!!?! WHAT IF we provide h=1/2, and solve for the desired point?
+
+Is this possible?
+
+Well, looking at the equations, h = M * beta * eta, where
+
+M = lipschitz constant
+
+beta = norm of the inverse jacobian (but just from playing around with HTKUNG4.2 we know that it's better to make beta much much smaller)
+
+eta = norm of newton step (norm of: inverse jacobian @ operatorF)
+
+M can be a constant, so it doesnt matter,
+
+for some h, there is a load of possible solutions.... so that.... isnt the best...
+
+Try the binary search in the task space. It's true that it'll be difficult to coordinate the same generated point in two frames, though. Especially if we don't have the camera calibration. 
+
+The SHORTEST line in task space from the desired point to the end effector will always be on the line made by those two points, so it's a relatively simple request in one camera. Of course, there is the added unfortunate nuance of 'what if we put ourselves directly into a singular position' and perhaps we can make our method two-fold: generate better points that satisfy the kantorovich conditions AND if you are in a singular position, move out of there first and then re-evaluate, since being in a singular position makes our radius of convergence extremely teeeny. 
+
+Multiple cameras path planning:
+- difficutl to pick a point in free space that actually corresponds to the same point
+- create constraints that are not physicallty possible to achieve
+- we could do the pixels not the Reals
+
+For the 3DOF, we can luckily SEE that the jacobian is not just linearly scaled despite the points scaling in.
+
+
+>>> vs.central_differences([0.2,0.3,0.4], np.array([2.0,2.0,1.0]))
+array([[-0.17215321, -0.14958841, -0.14122639],
+       [ 0.84925845,  0.28689836,  0.06779335],
+       [-0.20881462, -0.24503935, -0.13310123],
+       [-0.0507859 ,  0.55586302,  0.17011869]])
+>>> np.linalg.norm(vs.central_differences([0.2,0.3,0.4], np.array([2., 2., 1.])))
+1.1584350962064587
+
+>>> vs.central_differences([0.2,0.3,0.4], np.array([1.0,1.0,.5]))
+array([[-0.15442666, -0.31741865, -0.18237922],
+       [ 0.76181063,  0.06328431,  0.00182328],
+       [-0.1563026 , -0.29535379, -0.16043118],
+       [-0.01558666,  0.64668941,  0.19692139]])
+>>> np.linalg.norm(vs.central_differences([0.2,0.3,0.4], np.array([1., 1., 0.5])))
+1.1562260736572605
+
+>>> vs.central_differences([0.2,0.3,0.4], np.array([0.5,0.5,.25]))
+array([[-0.14686533, -0.37620854, -0.19604287],
+       [ 0.7245094 , -0.01854331, -0.02219614],
+       [-0.10916413, -0.32885624, -0.17862914],
+       [ 0.01367375,  0.70419255,  0.21373102]])
+>>> np.linalg.norm(vs.central_differences([0.2,0.3,0.4], np.array([0.5, 0.5, 0.25])))
+1.1920621517548282
+
+
+>>> vs.central_differences([0.2,0.3,0.4], np.array([0.25,0.25,.125]))
+array([[-0.1433557 , -0.40089536, -0.20159439],
+       [ 0.70719587, -0.05376934, -0.03250758],
+       [-0.07736616, -0.34852591, -0.18931337],
+       [ 0.03282475,  0.7369459 ,  0.22324887]])
+>>> np.linalg.norm(vs.central_differences([0.2,0.3,0.4], np.array([0.25,0.25,.125])))
+1.2179015956164727
+
+
+Like they don't change by that much, but it's not SCALED per say. 
 

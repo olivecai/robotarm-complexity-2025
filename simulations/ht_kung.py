@@ -82,15 +82,14 @@ df0 = df(vars0)
 
 df0_inv = np.linalg.pinv(df0)
 
-
 eta0 = np.linalg.norm(f0)  # ||f(x0)|| #this is asking, how much error is currently present at the x we specified?
 beta =np.linalg.norm(df0_inv, ord=2) # crude estimate of ||f'(x)^-1||
 
-beta=2.0
+#NOTE beta should be modified, because it realistically is useless if you dont scale/shrink it
 
 print("beta", beta)
 
-K = vs.calc_lipschitz(4.)  # assume Lipschitz constant of f'
+K = vs.calc_lipschitz()  # assume Lipschitz constant of f'
 r = 10. #we want to search the entire space so there's not really much harm in making the radius larger
 delta = 0.1
 h0 = beta**2 * K * eta0
@@ -132,12 +131,13 @@ def step4_newton_on_fi(x0, f0, eta0, beta, K, r, delta, max_iters=200, tol=1e-8)
             fx = f(x).flatten()
             f0_flat = f0.flatten()
             ret = (fx - eta * f0_flat / eta0) + lam * eta * f0_flat / eta0
-            print("############### ret", ret)
+            #print("############### ret", ret)
             return ret
 
         def df_i(x: list):
-            print("############# df", df(x))
-            return df(x)  # since f_i is just a linear combo of f, the derivative is still f'
+            #print("############# df", df(x))
+            #return df(x)  # since f_i is just a linear combo of f, the derivative is still f'
+            return df0
 
         eta = (1-lam)* eta
 
