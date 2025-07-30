@@ -55,7 +55,7 @@ print("ROBOT:\n",robot.J)
 
 cam1 = dh.Camera(0,0,0,[0,0,5], 5,5, 0, 0) #looks down directly at the scene, basically replicates the scene
 cam2 = dh.Camera(-sp.pi/2, 0, 0, [0,0,5], 5,5,0,0) #looks at scene from the y axis, world z is cam2 y, world x is cam2 x 
-cameras=[cam1, cam2]
+cameras=[cam1]
 
 vs = dh.DenavitHartenberg_Cameras_Analytic(cameras, robot)
 vs.dh_robot.alpha = 0.1
@@ -64,8 +64,8 @@ kinova_angles = np.deg2rad(np.array([-0.1336059570312672, -28.57940673828129, -1
 
 # initialize init Q and des P
 
-initQ = ([0.001] * robot.dof)
-desQ = [1.5] * robot.dof
+initQ = [1.2] * robot.dof
+desQ = [1.4] * robot.dof
 
 desP = (vs.dh_robot.fkin_eval(*desQ)).flatten().tolist()
 print("desired world point:", desP)
@@ -154,9 +154,13 @@ def eval_kantorovich_conditions(F, J, beta_preset: float=0.00, L=None):
     if L == None:
         L = np.linalg.norm(J, ord=2) #apprxomiate L as the spectral norm of J
 
-    h = beta**2 * L * b 
+    print("beta", beta)
+    print("L", L)
+    print("b", b)
+    h = beta * L * b 
+    print("h", h)
 
-    return (True if h <= 5 else False)
+    return (True if h <= 0.5 else False)
 
 
 def method_binarysearch(vs: dh.DenavitHartenberg_Cameras_Analytic, initQ: list, desP: list):
@@ -166,8 +170,20 @@ def method_binarysearch(vs: dh.DenavitHartenberg_Cameras_Analytic, initQ: list, 
     '''
 
     eeP =vs.projected_world_point(vs.dh_robot.fkin_eval(*initQ))
-    desP = vs.projected_world_point(desP)
+    desPP = vs.projected_world_point(desP)
+    J = vs.central_differences_pp(initQ, desPP)
 
+    print(J)
+
+    def close_enough(arr1, arr2, tolerance=1e-2):
+        '''
+        returns true if arr1 and arr2 are essentially the same vector.
+        '''
+        ret = 1
+        for entry in np.abs(np.subtract(arr1, arr2)):
+            if entry > 1e-2:
+                ret = 0
+        return ret
 
     def method_binarysearch_helper(furthest, start, end):
         '''
@@ -179,30 +195,51 @@ def method_binarysearch(vs: dh.DenavitHartenberg_Cameras_Analytic, initQ: list, 
         middle = np.add(end, start) / 2 #get the vector in between
         
         basecase_ret = 1
-        for entry in np.subtract(end, start):
-            if entry > 1e-2:
+        for entry in np.abs(np.subtract(end, start)):
+            if entry > 1e-3:
                 basecase_ret = 0 #if any of the entries have values greater than some_tolerance, shuo ming start he end hai shi you qu bie
         if basecase_ret:
+            print("Basecase, returning...", furthest)
             return furthest
 
-        F = np.subtract(vs.projected_errfn_eval(initQ, middle)
-        semilocal_convergence = middle[0] < 4 #testy test test
+        F = np.subtract(vs.projected_world_point(vs.dh_robot.fkin_eval(*initQ)), middle)
+
+        semilocal_convergence = eval_kantorovich_conditions(F, J, beta_preset=-1, L=4)
         print("middle:", middle)
         print("CONDITION:", semilocal_convergence)
-        #semilocal_convergence = eval_kantorovich_conditions(F, J, beta_preset=-1, L=None)
         if semilocal_convergence: #a successful point has been found. continue the bianry searcht o find an even farther poitn. 
             return method_binarysearch_helper(furthest = middle, start=middle, end=end)
         else: #the middle was not a successful point. search in the half closer to the start.
             return method_binarysearch_helper(furthest=furthest, start=start, end=middle)
 
-    method_binarysearch_helper(None, eeP, desP)
-    '''
-    milestone=None
-    while milestone is not desP:
-        are conditions satisfied for eval kantorovich conds for desP?
-        if not, search:
-        
-    '''
+    milestone = eeP
+    print("END EFFECTOR INITIAL POSITION", eeP)
+    milestones = []
+    milestones.append(milestone)
+
+    milestoneQ = initQ
+    vs.dh_robot.plot(initQ)
+    vs.dh_robot.plot(desQ)
+    while 1:
+        print("CALCULATING MILESTONE")
+        prev_milestone = milestone.copy()
+        milestone = method_binarysearch_helper(furthest=milestone, start=milestone, end=desPP)
+        milestones.append(milestone)
+        print("START FROM", prev_milestone)
+        print("AND GET HERE:", milestone)
+        print("milestone Q to start from:", milestoneQ)
+        iters, milestoneQ = vs.const_jac_inv_kin_pp(milestone, milestoneQ)
+        print("i:", iters)
+        print("milestoneQ:", milestoneQ)
+        print("desPP:", desPP)
+        print("milestone:", milestone)
+        if close_enough(desPP, milestone, 1e-1):
+            break
+
+
+    print("FINSIHED. MILESTONES:\n", np.array(milestones), "fin")
+
+    
 
 # method: if Kantorovich conditions are not satisfied, then binary search desP closer
 # when we find the furthest desP in the line, maybe we can find more nearby, but leave this later. 
@@ -210,9 +247,19 @@ def method_binarysearch(vs: dh.DenavitHartenberg_Cameras_Analytic, initQ: list, 
 #plot_projected_scene(cameras=cameras, eeP=vs.dh_robot.fkin_eval(*initQ), desP=desP)
 print(initQ)
 print(desP)
-
+midP = [-1,0,0]
 
 print(vs.errfn_eval(*initQ, *vs.cartvars))
-#method_binarysearch(vs, initQ, desP)
+method_binarysearch(vs, initQ, desP)
 
 #print(vs.projected_world_point([2,3,4]))
+
+vs.dh_robot.alpha=0.5
+#print(vs.dh_robot.const_jac_inv_kin(midP, initQ))
+
+'''
+desPP = vs.projected_world_point(desP.copy())
+print("desP:", desP)
+print("desPP:", desPP)
+print("cd", vs.central_differences(initQ, desP))
+print("cd pp", vs.central_differences_pp(initQ, desPP))'''

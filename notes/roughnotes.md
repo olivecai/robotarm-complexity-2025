@@ -2077,3 +2077,6 @@ How to deal with selecting a point that exists as a true constraint?
 The Hartley and Zisserman textbook talks about reconstructing scenes, though I'm pretty sure this si about points that we explciitly see and then want to solve for the real world position... Useless...
 
 Let's just try out seelcting the points... 
+
+
+My binary search is broken. It is like there is an invisible barrier stopping it from going further,,,

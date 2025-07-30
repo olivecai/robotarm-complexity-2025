@@ -68,7 +68,10 @@ class Camera:
         worldpoint=sp.Matrix(worldpoint)
         if worldpoint.shape[0] != self.P.shape[1]:
             worldpoint = worldpoint.row_insert(worldpoint.shape[0], sp.Matrix([[1]]))
-        x = self.P * worldpoint
+        try:
+            x = self.P * worldpoint
+        except:
+            print("EXCEPTION:", worldpoint)
         #print("projection point before flatten:")
         #print(x)
         x[0]=x[0]/x[2]
@@ -254,7 +257,7 @@ class DenavitHartenbergAnalytic():
         # self.F = fkin_x - x, fkin_y - y, fkin_z - z
         currQ = initQ
         tolerance = 1e-3
-        maxiter= 50
+        maxiter= 400
 
         traj = [currQ]
         
@@ -370,7 +373,6 @@ class DenavitHartenberg_Cameras_Analytic():
             self.F.append(projected_point)  
         self.F = sp.Matrix(self.F)
 
-
         self.J = self.F.jacobian(self.dh_robot.jntvars[:self.dh_robot.dof])
 
         variables = dh_robot.jntvars[: dh_robot.dof] + dh_robot.cartvars
@@ -380,23 +382,107 @@ class DenavitHartenberg_Cameras_Analytic():
 
         self.lipschitz=None
 
-    def projected_errfn_eval(self, initQ, desP):
+    
+
+    def projected_errfn_eval(self, initQ, desPP):
         #for each camera project the end effector point and subtract the desired point
         errfn = []
-        eeRP = self.dh_robot.fkin_eval(initQ)
+        eeRP = self.dh_robot.fkin_eval(*initQ)
         eePP = self.projected_world_point(eeRP)
-
-        desPP = self.projected_world_point(desP)
 
         errfn = np.subtract(desPP, eePP)
 
         return errfn
+    
+
+    def const_jac_inv_kin_pp(self, desP, initQ):
+        '''
+        desP is a PROJECTED POINT through the camera already!!!!!
+
+        Q = initQ
+        
+        '''
+        # self.F = fkin_x - x, fkin_y - y, fkin_z - z
+        currQ = initQ
+        tolerance = 1e-3
+        maxiter= 100
+
+        traj = [currQ]
+        
+        J = self.central_differences_pp(currQ, desP)
+
+        ret= -1, None
+
+        for i in range(maxiter):
+
+            reps_dof = []
+            
+            for j in range(self.dh_robot.dof):
+                reps_dof.append((self.jntvars[j], currQ[j]))
+
+            currError = self.projected_errfn_eval(initQ, desP)
+            #print("currError:", currError.flatten())
+
+            if np.linalg.norm(currError) <= tolerance:
+                ret = i
+                break
+
+            #print(i, end=': ')
+            
+            newtonStep = (np.linalg.pinv(J) @ currError).flatten()
+            #print("newtonStep", newtonStep)
+            currQ = currQ - self.dh_robot.alpha * newtonStep
+            #print("currQ:", currQ)
+            traj.append(currQ)
+
+        traj=np.array(traj)
+        if 0:
+            self.dh_robot.rtb_robot.plot(traj, block=False)
+            
+        return ret, currQ
+    
+    
+    def central_differences_pp(self, Q, desPP, epsilon=None):
+        '''
+        Pass the PROJECTED POINTS directly, NOT the real point. 
+
+        Returns the central differences Jacobian and the value of epsilon to perturb by
+
+        the matrix J should be (number of cameras * 2) x (dof)
+        '''
+        Q= np.array((Q))
+
+        if epsilon == None:
+            epsilon = 1e-4
+        
+        p= Q.shape[0]
+        d= self.F.shape[0]
+        #print("pxd:", p,"x",d)
+
+        k=1
+        Jt = np.zeros((p,d))
+        I = np.identity(p)
+    
+        for i in range(p):
+            
+            forward = np.subtract(desPP, self.projected_world_point(self.dh_robot.fkin_eval(*(Q + epsilon * I[i]))))
+            
+            backward = np.subtract(desPP, self.projected_world_point(self.dh_robot.fkin_eval(*(Q - epsilon * I[i]))))
+            
+
+            diff = np.array((forward-backward)).T
+            #print(diff)
+            Jt[i] = diff / (2*epsilon)
+
+        return Jt.T
+    
 
 
     def projected_world_point(self, real_world_point):
         '''
         project a real world point and get the image projection in all cameras
         '''
+        #print("@@@@@@@@@@@@@@@@@@@@@@@@\n", real_world_point)
         projected_points =[]
         for camera in self.cameras:
             proj_pnt = camera.projectpoint(real_world_point)
@@ -446,6 +532,7 @@ class DenavitHartenberg_Cameras_Analytic():
     
     def central_differences(self, Q, desP, epsilon=None):
         '''
+        DesP is the REAL WORLD POINT.
         Returns the central differences Jacobian and the value of epsilon to perturb by
 
         the matrix J should be (number of cameras * 2) x (dof)
@@ -466,9 +553,9 @@ class DenavitHartenberg_Cameras_Analytic():
         for i in range(p):
      
             forward = self.errfn_eval(*(Q + epsilon * I[i]) , *desP)
-            #print(forward)
+            print("f", forward)
             backward = self.errfn_eval(*(Q - epsilon * I[i]) , *desP)
-            #print(backward)
+            print("b", backward)
             diff = (forward-backward).T
             #print(diff)
             Jt[i] = diff / (2*epsilon)
