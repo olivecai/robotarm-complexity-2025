@@ -68,7 +68,6 @@ class Camera:
         worldpoint=sp.Matrix(worldpoint)
         if worldpoint.shape[0] != self.P.shape[1]:
             worldpoint = worldpoint.row_insert(worldpoint.shape[0], sp.Matrix([[1]]))
-        print(worldpoint)
         x = self.P * worldpoint
         #print("projection point before flatten:")
         #print(x)
@@ -142,6 +141,8 @@ class DenavitHartenbergAnalytic():
         
         reps_des = []
         reps_dof = []
+
+   
         
         for i in range(len(desP)):
             reps_des.append((self.cartvars[i], desP[i]))
@@ -150,9 +151,9 @@ class DenavitHartenbergAnalytic():
 
         self.alpha = alpha
         #print(reps_des)
-        F = self.F.subs(reps_des).subs(reps_dof)
+        F = np.array(self.F.subs(reps_des).subs(reps_dof), dtype=float).flatten()
 
-        #print("F", F)
+        print("F", F)
 
         J = self.central_differences(initQ, desP)
         print(J)
@@ -164,8 +165,10 @@ class DenavitHartenbergAnalytic():
         print(np.array(JI_F))
 
         b = np.linalg.norm(JI_F, ord=2) #norm of newton step, ƞ
-        
+        b= np.linalg.norm(np.array(F)) #NOTE ht kung uses this as condition
+
         B = np.linalg.norm(JI, ord=2) #norm of jacobian inverse to determine if jacobian itself is nonsingular
+        B = np.log10(B) #it seems that reducing this helps 
 
         print("b:", b, "B:", B)
 
@@ -361,21 +364,46 @@ class DenavitHartenberg_Cameras_Analytic():
         self.dh_robot = dh_robot
         self.jntvars, self.cartvars, self.taskvars = dh_robot.jntvars, dh_robot.cartvars, dh_robot.taskvars
 
-
         self.F = []# is a factor of 2, since each camera gives two projected points.
         for camera in cameras:
             projected_point = camera.projectpoint(self.dh_robot.F)
             self.F.append(projected_point)  
         self.F = sp.Matrix(self.F)
 
+
         self.J = self.F.jacobian(self.dh_robot.jntvars[:self.dh_robot.dof])
 
         variables = dh_robot.jntvars[: dh_robot.dof] + dh_robot.cartvars
-        self.errfn_eval= (sp.utilities.lambdify(variables, self.F, 'numpy'))
-        self.jacobian_eval = (sp.utilities.lambdify(variables, self.J, 'numpy'))
+        self.errfn_eval= (sp.utilities.lambdify(variables, self.F, 'numpy')) #this uses the TRUE desired point... but that's not accessible in real VS, so we should move away from this function
+        self.jacobian_eval = (sp.utilities.lambdify(variables, self.J, 'numpy')) #ah, same goes for this function...
         #now self.F should be the equation of the projection, errfn_eval will evaluate F given the params
 
         self.lipschitz=None
+
+    def projected_errfn_eval(self, initQ, desP):
+        #for each camera project the end effector point and subtract the desired point
+        errfn = []
+        eeRP = self.dh_robot.fkin_eval(initQ)
+        eePP = self.projected_world_point(eeRP)
+
+        desPP = self.projected_world_point(desP)
+
+        errfn = np.subtract(desPP, eePP)
+
+        return errfn
+
+
+    def projected_world_point(self, real_world_point):
+        '''
+        project a real world point and get the image projection in all cameras
+        '''
+        projected_points =[]
+        for camera in self.cameras:
+            proj_pnt = camera.projectpoint(real_world_point)
+            projected_points.append(np.array(proj_pnt, dtype=float).flatten())
+
+        return (np.array(projected_points).flatten())
+    
 
     def lipschitz_objective(self, q):
         # Objective: negative spectral norm (so that minimize → maximum)

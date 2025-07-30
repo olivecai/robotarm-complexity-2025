@@ -317,7 +317,7 @@ print("At joint config:", res.x)
 desQ = [np.pi/4] * robot.dof
 desP = robot.fkin_eval(*desQ).flatten().tolist()
 print("desQ:", desQ, "\ndesP:\n", desP)
-initQ = [0.1] * robot.dof
+initQ = [0.5] * robot.dof
     
 alpha=1.0
 # Choose a starting position and the error function to minimize...
@@ -326,7 +326,7 @@ robot.plot(desQ)
 robot.plot(initQ)
 
 lipschitz = empirical_lipschitz(robot, desP) 
-h, p, b, B = robot.ret_kantovorich(lipschitz, initQ, desP, alpha)
+h, p, b, B = robot.ret_kantovorich(initQ, desP, alpha,lipschitz)
 print("radius of convergence ball:" , p)
 
 print("constant jacobian newton method:", robot.const_jac_inv_kin(desP, initQ))

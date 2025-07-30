@@ -2063,3 +2063,17 @@ array([[-0.1433557 , -0.40089536, -0.20159439],
 
 Like they don't change by that much, but it's not SCALED per say. 
 
+# July 30
+
+Method idea:
+- Given initial conditions, plug in a series of desired point MILESTONES (projected points) that satisfies the Kantorovich conditions.
+- It's possible we will have to modify or provide less conservative bounds to the Kantorovich conditions.
+- The better configured we are, the large the radius can be...
+
+We COULD try the binary search on the line between the desired point and the end effector... It seems a bit rudimentary but we can always change it afterwards.
+
+How to deal with selecting a point that exists as a true constraint? 
+
+The Hartley and Zisserman textbook talks about reconstructing scenes, though I'm pretty sure this si about points that we explciitly see and then want to solve for the real world position... Useless...
+
+Let's just try out seelcting the points... 
