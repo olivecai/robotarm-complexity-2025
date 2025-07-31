@@ -382,7 +382,6 @@ class DenavitHartenberg_Cameras_Analytic():
 
         self.lipschitz=None
 
-    
 
     def projected_errfn_eval(self, initQ, desPP):
         #for each camera project the end effector point and subtract the desired point
@@ -395,48 +394,51 @@ class DenavitHartenberg_Cameras_Analytic():
         return errfn
     
 
-    def const_jac_inv_kin_pp(self, desP, initQ):
+    def const_jac_inv_kin_pp(self, desP, initQ, J=None):
         '''
         desP is a PROJECTED POINT through the camera already!!!!!
 
         Q = initQ
         
         '''
+        print("Newton Method")
+
         # self.F = fkin_x - x, fkin_y - y, fkin_z - z
         currQ = initQ
         tolerance = 1e-3
-        maxiter= 100
+        maxiter= 30
 
         traj = [currQ]
         
-        J = self.central_differences_pp(currQ, desP)
+        if J is None:
+            J = self.central_differences_pp(currQ, desP)
+        print("Jacobian:\n", J)
 
-        ret= -1, None
+        ret= -1
 
         for i in range(maxiter):
-
-            reps_dof = []
-            
-            for j in range(self.dh_robot.dof):
-                reps_dof.append((self.jntvars[j], currQ[j]))
-
-            currError = self.projected_errfn_eval(initQ, desP)
+            print("i:", i)
+            currError = self.projected_errfn_eval(currQ, desP) #first calculate the error
             #print("currError:", currError.flatten())
+            print("current error:\n", currError)
 
-            if np.linalg.norm(currError) <= tolerance:
+            if np.linalg.norm(currError) <= tolerance: #if error is near 0 then we can end the iterations
                 ret = i
                 break
-
-            #print(i, end=': ')
             
-            newtonStep = (np.linalg.pinv(J) @ currError).flatten()
-            #print("newtonStep", newtonStep)
+            Jinv =np.linalg.pinv(J) 
+            print("J inverse:", Jinv)
+            print("Norm of J Inv:", np.linalg.norm(Jinv))
+
+            newtonStep = (Jinv @ currError).flatten()
+            print("newtonStep\n", newtonStep)
             currQ = currQ - self.dh_robot.alpha * newtonStep
-            #print("currQ:", currQ)
+
+            print("currQ:\n", currQ)
             traj.append(currQ)
 
         traj=np.array(traj)
-        if 0:
+        if 1:
             self.dh_robot.rtb_robot.plot(traj, block=False)
             
         return ret, currQ
@@ -453,7 +455,7 @@ class DenavitHartenberg_Cameras_Analytic():
         Q= np.array((Q))
 
         if epsilon == None:
-            epsilon = 1e-4
+            epsilon = 10e-1
         
         p= Q.shape[0]
         d= self.F.shape[0]
@@ -465,16 +467,16 @@ class DenavitHartenberg_Cameras_Analytic():
     
         for i in range(p):
             
-            forward = np.subtract(desPP, self.projected_world_point(self.dh_robot.fkin_eval(*(Q + epsilon * I[i]))))
+            forward = self.projected_world_point(self.dh_robot.fkin_eval(*(Q + epsilon * I[i])))
             
-            backward = np.subtract(desPP, self.projected_world_point(self.dh_robot.fkin_eval(*(Q - epsilon * I[i]))))
+            backward = self.projected_world_point(self.dh_robot.fkin_eval(*(Q - epsilon * I[i])))
             
 
             diff = np.array((forward-backward)).T
             #print(diff)
             Jt[i] = diff / (2*epsilon)
 
-        return Jt.T
+        return -Jt.T
     
 
 
@@ -540,7 +542,7 @@ class DenavitHartenberg_Cameras_Analytic():
         Q= np.array((Q))
 
         if epsilon == None:
-            epsilon = 1e-4
+            epsilon = 1e-1
         
         p= Q.shape[0]
         d= self.F.shape[0]

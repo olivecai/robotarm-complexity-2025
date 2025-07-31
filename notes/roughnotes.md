@@ -2080,3 +2080,123 @@ Let's just try out seelcting the points...
 
 
 My binary search is broken. It is like there is an invisible barrier stopping it from going further,,,
+
+# July 31
+
+All points are as projected in the camera. (NOTE that the camera is straight down looking at the planar 2 DOF, so this hsould represent the real world points anyway.)
+END EFFECTOR INITIAL: -0.37503596  1.60750227
+DESIRED POSITION: 1. 1.
+
+First milestone: 0.00430746 1.43990521.
+- This makes sense since it's in the middle and closer to the initial point. BUT we aren't successfully even iterating there. Is it valid to use the jacobian that was calculated for the first desired position? 
+
+We can get the central differences Jacobian and then just plug in each point.
+
+Goals for today:
+- Initial position is the first 'milestone'. For each milestone, calibrate the Jacobian and be able to plug in any point to re-evaluate the Jacobian's values. In other words, calibrate the image Jacobian and be able to evaluate:
+
+JACOBIAN, where [xp1, yp1] ... [xpn, ypn] are the desired points in each projection
+
+>        j1             j2  ... jn
+
+>    x1  [xp1-dj1/dx1] [xp1-dj2/dx1] ... [xp1-djn/dx1]
+
+>    y1
+
+>    x2
+
+>    y2
+
+>    ...
+
+
+
+
+
+Okay so the binary search method is now working. Here is an example:
+
+initQ = [0.3] * robot.dof
+desQ = [-1.2] * robot.dof
+
+Results:
+
+MILESTONES:
+ [[ 1.78067210e+00  8.60162680e-01]
+ [ 1.68699143e+00  7.52925287e-01]
+ [ 1.61751883e+00  6.73399164e-01]
+ [ 1.49006537e+00  5.27501660e-01]
+ [ 1.27923971e+00  2.86166988e-01]
+ [ 9.21405665e-01 -1.23449946e-01]
+ [ 4.32707943e-01 -6.82868106e-01]
+ [-3.50068080e-04 -1.17859482e+00]
+ [-3.74304153e-01 -1.60666456e+00]] fin
+
+8 jacobian updates were needed!
+
+## Debrief
+
+Actually this works pretty okay. I'm not displeased with how it's going, but it's pretty rudimentary to just say "Okay, follow the straight line between here and there."
+
+Can we instead follow a curve, or sample a hull/semicircle type of shape around the desired position? 
+
+The problem with sampling points in the semicircle is associating the same point as a valid constraint between multiple camera views. 
+
+My method should be the brainchild of my findings on how many jacobians are necessary for one visual servoing task...
+
+If we assume the cameras are well placed, we have seen that the Lipschitz constant should NOT change by much, which indicates that most of the complexity is inherent to the robot system itself.
+
+We have seen that singular positions require a tiny perturbation to simply get out of that ill configured position. Do we want to avoid singularities?
+
+How simple should our method be? If we want to convey a message about the NUMBER OF JACOBIANS NEEDED we cannot muddle it up with things like 
+collision avoidance, broydens update, etc. Maybe we should avoid singularity avoidance? Is that necessarily part of the problem?
+
+I think our method should be more illustrative instead of acting as a genuine method one should reliably use. This is more DIRECT and less of a burden.
+
+So our paper can address the following. Generally, how nonlinear is the function? How does regular differ from inverse kinematics?
+- How nonlinear is the function?
+- Can a number of multi-dimensional hyper planes or simplices be arranged to 'mesh' the space to represent how many jacobians are really needed?
+
+Some notes from methodA.py
+ JACOBIAN: For every milestone, calculate the camera projection jacobian based on the fkin function, NOT the error function.
+
+We need to avoid colliding with ourself, which can be difficult to do if we simply follow the straight line between point A to B.
+It needs to be decided what scenarios are acceptable to not discuss to get our point across with somewhat succinct efficacy... (ie singularity/collision avoidance, broyden updates, etc)
+
+If we do a general region search, there are two main differences:
+- The challenge of choosing a point that can exist as a valid constraint in cameras 1.. n concurrently. But if we use the technique of only having a few iterations per jacobian, we do not need to worry so much about actually attaining a goal... it's like we have an initial hunt. Maybe we could cap the number of jacobian updates in the beginning. Maybe the farther we are, the fewer iterations we allow
+- At least right now, I am not sure if there is an obvious search method we should implement. For instance, do we just linearly sort through each point in each camera? It's linear, not exponential, so I suppose it's not awful. I would like to make a region that encompasses the initial end effector and the desired point and iterate through those points. (Maybe we can intiialize a rectangle, sparsely sample some points, then refine those points to find the lowest h, keeping in mind that multiple low h areas are permitted to coexist.)
+
+Emphasizing that there should be some dynamic change in the number of allowed iterations per Jacobian could be considered a little cheat. Should we allow it? It can be argued it is part of our 'searching for better points' phase, much like in H.T.Kung's algorithm; the iterations needed to deform the function successfully is very very little (less than 5 or 10). After all, in Kung's paper, it is emphasized that too many papers assume the existence or knowledge of 'good starting points' and do not bother with the search phase. Perhaps we do need this trick, since we are tackling a global convergence problem.
+
+The farther we are, the shorter the Jacobian is valid for. Which makes sense. So can the number of iterations per Jacobian be a function of b, the norm of the error fucntion?
+
+(smaller b_i == larger maxiter_i)
+
+In general we don't really ever need more than 300 iterations for an entire trajectory as seen empirically, so we could do something like...
+
+maxiter_i = 200 / max(1, b_i)
+
+The max() exists because 200 should be the maximum amount of iterations possible, and b can be, of course, very close to 0.
+
+This also brings us back to Dylan's paper, which showed that there is a conglomerate region in task space where 1 jacobian is needed.
+And this brings us back to the 'minimum spanning set of jacobian' experiments from last month, where the region with 1 jacobian was very large, 2 jacobians was smaller, 3 was vastly smaller, so on so forth, until at the poles of the singularities, there was simply 1 or 2 points that needed 12 jacobian updates or so; the farther we are, the more jacobians needed increases nonlinearly.
+'''
+
+two goals:
+- analyze the complexity of the function
+- make an algorithm that leverages this information to converge with as few jacobians as possible
+
+just because we add fancy tricks doesnt mean we get closer to the minimum spanning set :-(
+
+Look into trust regions.
+
+The trust region paper motivation is to efficiently solve the problem without apriori knowledge and is basically trying to solve the problem I am also trying to solve but in a much smarter way and I feel that I should have read this paper earlier...
+
+My goal was to prolong the life of the Jacobian... which is done in this paper but I can see now that my approach was very silly because it was all heuristic and had no guarentees.
+
+Maybe we should switch gears and go back to actually quantifying the complexity of the function. Maybe we should go back to the mesh. 
+
+TODO:
+- revisit modelling the complexity of the function
+- look into different kinds of constraints
+- trust regions
