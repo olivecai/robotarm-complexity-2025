@@ -2200,3 +2200,100 @@ TODO:
 - revisit modelling the complexity of the function
 - look into different kinds of constraints
 - trust regions
+
+# August 1
+
+## Visual Servoing using Trust Region Methods and Estimation of the Full Coupled Visual-Motor Jacobian - Martin Jagersand 
+
+uncalibrated visual servoing control- prior work used off linr rdtimation of visual motoro Jacobian, but this paper focuses on how to lean and adapti vely refine a local estimate of a visual motor trNAFER FUNCTION, AND USE THAT ESTIMATE FOR STABLE,    convergent contorl even in diffcult nonlienar cases...
+
+difficulty in the time discrete setting: low sampling frequency imposed by video rate of cameras... with very few samples, control over large portions of the vsual motor transfer function....
+
+Three main contributions:
+1. A trust region method --> give convergence for difficutl visual motor transfer finctions
+2. Broyden type Jacobian estimator --> allows the online estimation of a full coupled visual motoro Jacobian, allowign control both without intiial models or estimates, and over significantly nonlinea rportions of the transfer function.
+3. Visual space trajectory planning and contorl is used to ensure convergence to a global, rather than a local minimum,
+
+Use finite differences to approx Jac and avoid constantly needing to update the JAcobian by estimating the Jacobian simply by observing the process --> no need to introduce extra calibration movements. 
+
+The first order updatring formula in the above hierarchy converges to the Jacobian in n orthogonal moves 
+
+The Control law used in most visual servoing research is y*-y=KJx', where K is a gain matrix, J is the JAcobian presumably, etc etc....
+
+Trust region method --> adapt sht emacimum step length alpha sautomatically by taking as long steps as is possible or desirable, while maintaining convergence.
+
+How is alpha set? 
+
+the norm of delta_k is always less than alpha
+
+norm squared of (position error + Jacobian @ delta_k)
+
+This method uses bounds on d, where d_k = norm (error in current y ie position error)/ norm (Jacobian * some error const or vec????)
+
+Depending on where the value of the norms sizes etc are, we can update alpha
+
+PROS the algorithm is "quite insensitive to their exact values"
+
+Trading accuracy for time
+
+> The trust region methjod is efficient. When far from the goal it takes as long steps as psosible gven the accuracy advalidaty region of the resimtated JAcobian model. When clsoe to the goal the constriant becomes inactive, thus achieving the super linear convergence of the quasi-newton MEthod...
+
+CONS:  While guarenteed to converge to a minimum point, we cannot guarentee that the point we have converged to is the desired global minimum, aka we cannot ensure we actually got to the correct solution.
+
+Another problem is we have no control over which path the controller takes, which is something "of vital importance in robotics, where unlike optimization, the numerical search corresponds to actual movements."
+
+
+*NOTE: this could be somethign to build upon... Maybe we can try to say "Hey look our method converges to the global minimum because ___ or "our method has a predictable path that it takes"*
+
+*Right now another reason why our idea about the dynamic max_iters doesnt work is because it is too heuristic. But what if we could find some theory to back it up?*
+
+*After reading this paper on trust regions, focus back on trying to model the compelxity of the function. It is good to revisit things*
+
+Visual Space Trajecotry Control
+
+> The trust region method developed above in robot joint space also works in visual feature space since they are LOCALLY LINEARLY TRRLATED by change in y = Jacobian @ change in x.
+
+This allows us to control image velocities the same way we controlled joint velocities.
+
+"Working in image feature space allows us to do image space trajectory planning."
+
+Visit citation 11 for more on trajecotry generation in the image.
+
+Citation 17: Homotopy methods, fixed point homotopy methods, adding a parameter t to deform a function from unknown to a known (arbitrarily) chosen function point x0 (the good thing is that is can be arbitrarily chosen!)
+
+Intermediate way points can help us reach the global minimum, because:
+
+> [we can reach the global minimum rather than the local minimum] becasue the sequence of subproblems may very well be convex on each of the now much smaller sub domains, while not being convex over the entire domain needed for solving the overall function dirextly....
+
+^ makes sense: look at the overal function space and say **"where exists the farthest point i can move such that *MY* local minimum of the problem is one of *THE* global solutions"**
+
+## TODO
+
+Pause work on the methods and tricks to converge with few Jacobians.
+
+How much more nonlinear is the function based on:
+- different robot
+- different camera
+
+Can the lipschitz constant answer these kinds of questions? For instance if we get the CENTERED lipschitz constant or the LOCAL lipschitz constant in a tight region (ie an n-dimensional BALL in joint space that is maybe just 0.5 radius all around) and compare how the lipschitz constant changes in that small region for DIFFERENT CAMERA SETUPS and different constraints...
+
+It's not hard to get the lipschitz constant empirically.
+
+Perhaps some new questions I should consider are:
+- How does the nonlinearity change depending on the setup of cameras? Can we measure this accurately through the Lipschitz constant?
+- How does the mathematical function change depending on the number of cameras present? 
+- How do different constraints affect the complexity of the function?
+
+Is there a way to do mesh refinement with a good library?
+
+With different kinds of error constraints my idea is poor because:
+- the idea of 'binary search' no longer holds for line constraints
+
+If we used different kinds of constraints, we would save a cache of the tracked points and then just pass them through the general formula for whatever jacobian we insist on solving, so that in itself isnt so bad...
+
+Ie we would initialize some function "calculate my tailor-made jacobian with these symbols" and then lambdify it into a numpy function and then just evaluate it so that's all good.
+
+Maybe we could ask the question of What is the EASIER problem to solve?
+
+What if we do something similar to HT_Kung and Kantorovich 'what are better starting points' for fixed point iteration but with these MULTIPLE points different constraints? 
+

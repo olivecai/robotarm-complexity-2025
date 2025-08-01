@@ -58,7 +58,7 @@ cam2 = dh.Camera(-sp.pi/2, 0, 0, [0,0,2], 2,2,0,0) #looks at scene from the y ax
 cameras=[cam1, cam2]
 
 vs = dh.DenavitHartenberg_Cameras_Analytic(cameras, robot)
-vs.dh_robot.alpha = 0.5
+vs.dh_robot.alpha = 1.
 
 kinova_angles = np.deg2rad(np.array([-0.1336059570312672, -28.57940673828129, -179.4915313720703, -147.7, 0.06742369383573531, -57.420898437500036, 89.88030242919922, 0.5]))
 kinova_end = np.deg2rad(np.array([25.336059570312672, 50.57940673828129, -179.4915313720703, -90.7, 30.06742369383573531, -57.420898437500036, 30.88030242919922, 0.5]))
@@ -247,7 +247,7 @@ def method_binarysearch(vs: dh.DenavitHartenberg_Cameras_Analytic, initQ: list, 
 
         F = np.subtract(vs.projected_world_point(vs.dh_robot.fkin_eval(*currentQ)), middle)
 
-        semilocal_convergence = eval_kantorovich_conditions(F, J, beta_preset=-1, L=None)
+        semilocal_convergence = eval_kantorovich_conditions(F, J, beta_preset=0, L=None)
         print("middle:", middle)
         print("Middle is Good:", semilocal_convergence)
         if semilocal_convergence: #a successful point has been found. continue the bianry searcht o find an even farther poitn. 
@@ -279,6 +279,7 @@ def method_binarysearch(vs: dh.DenavitHartenberg_Cameras_Analytic, initQ: list, 
         print("currentP:", currentP)
         print("desPP:", desPP)
         print("milestone:", milestone)
+        print("final real position based on final Q:", vs.dh_robot.fkin_eval(*currentQ))
         if close_enough(desPP, vs.projected_world_point(vs.dh_robot.fkin_eval(*currentQ)), 1e-1):
             break
 
@@ -312,13 +313,15 @@ def method_binarysearch(vs: dh.DenavitHartenberg_Cameras_Analytic, initQ: list, 
 print(initQ)
 print(desP)
 
+desPP = vs.projected_world_point(desP.copy())
 
 print(vs.errfn_eval(*initQ, *vs.cartvars))
+
 method_binarysearch(vs, initQ, desP)
 
+#vs.const_jac_inv_kin_pp(desPP, initQ)
 
 '''
-desPP = vs.projected_world_point(desP.copy())
 print("desP:", desP)
 print("desPP:", desPP)
 print("cd", vs.central_differences(initQ, desP))
