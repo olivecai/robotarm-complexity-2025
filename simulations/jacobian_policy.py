@@ -40,34 +40,227 @@ import denavit_hartenberg as dh
 import sympy as sp
 import numpy as np
 
-# TODO make robot.eval_err_function()
-# TODO make robot.cd_jacobian()
 
-def mod_newton_method(robot: dh.DenavitHartenberg_Cameras_Analytic, initQ):
+P = dh.DHSympyParams() 
+jntspace, cartspace, taskspace = P.get_params()
+t0, t1, t2, t3, t4, t5, t6, t7, t8, t9 = jntspace
+x, y, z = cartspace
+u, v = taskspace
+
+
+dof2_params = [
+                [t0, 0, 1, 0], 
+                [t1, 0, 1, 0]
+                ]
+
+dylan_dof3_params=[
+                [ t0, sp.pi/2, 0 , 0 ],
+                [ t1,  0  ,  0.55, 0 ],
+                [ t2,  0  ,  0.3, 0 ]
+                ]
+
+
+kinova_dof7_params = [
+    [t0,      sp.pi,   0.0,   0.0],
+    [t1,      sp.pi/2, 0.0, -(0.1564 + 0.1284)],
+    [t2 +sp.pi, sp.pi/2, 0.0, -(0.0054 + 0.0064)],
+    [t3 +sp.pi, sp.pi/2, 0.0, -(0.2104 + 0.2104)],
+    [t4 +sp.pi, sp.pi/2, 0.0, -(0.0064 + 0.0064)],
+    [t5 +sp.pi, sp.pi/2, 0.0, -(0.2084 + 0.1059)],
+    [t6 +sp.pi, sp.pi/2, 0.0, 0.0],
+    [t7 +sp.pi,    sp.pi, 0.0, -(0.1059 + 0.0615)],
+]
+
+dof2 = dh.DenavitHartenbergAnalytic(dof2_params, P)
+dof3 = dh.DenavitHartenbergAnalytic(dylan_dof3_params, P)
+kinova = dh.DenavitHartenbergAnalytic(kinova_dof7_params, P)
+robot = dof2
+
+cam1 = dh.Camera(0,0,0,[0,0,5], 5,5, 0, 0) #looks down directly at the scene, basically replicates the scene
+cam2 = dh.Camera(-sp.pi/2, 0, 0, [0,0,5], 5,5,0,0) #looks at scene from the y axis, world z is cam2 y, world x is cam2 x 
+cameras=[cam1]
+
+vs = dh.DenavitHartenberg_Cameras_Analytic(cameras, robot)
+
+def mod_newton_method1(robot: dh.DenavitHartenberg_Cameras_Analytic, initQ, desP):
     '''
     error_function has real world desired points and projects them, takes currQ
     '''
     currQ = initQ
     tolerance = 1e-3
-    maxiter=200
+    maxiter=50
 
-    J = robot.cd_jacobian(currQ)      
+    traj = [currQ]
+    errors =[]
+
+    desPP = robot.projected_world_point(desP)
+
+    J = robot.central_differences_pp(currQ, desPP)  
+
+    robot.calc_lipschitz() #calculate the lipschitz constant
     
-    alpha = 0.5 
+    error_order_const = 0.8
 
     for i in range(maxiter):
-        currError = robot.eval_err_function(currQ) #desired-current
+        print("###################### i:", i)
+        currError = robot.projected_errfn_eval(currQ, desPP) #desired-current
+
         if np.linalg.norm(currError) <= tolerance:
             break
 
         Jinv = np.linalg.pinv(J)
 
-        corrQ = Jinv @ currError
+        corrQ = (Jinv @ currError).flatten()
+        print(f"currQ: {currQ}\ncorrQ: {corrQ}\ncurrError: {currError}")
 
-        numerator = 2 * alpha * np.linalg.norm(currError)
-        denominator = Lipschitz * (np.linalg.norm(corrQ) ** 2)
-        step = min(1, np.sqrt(numerator/denominator))
+        numerator = 2 * error_order_const * np.linalg.norm(currError)
+        denominator = robot.lipschitz * (np.linalg.norm(corrQ) ** 2)
+        step = np.sqrt(numerator/denominator) #might have to bound this !!!
+
+        print(f"numerator: {numerator}\ndenominator: {denominator}\nstep: {step}")
+
+        print(f"currQ reg: {currQ-corrQ} VS currQ w step: {currQ-step*corrQ}")
+
+        currQ = currQ - step * corrQ
+
+
+        traj.append(currQ)
+        errors.append(currError)
+
+
+    traj = np.array(traj)
+    if 1: 
+        robot.dh_robot.rtb_robot.plot(traj, block=False)
+
+    return
 
 
 
+def mod_newton_method2(robot: dh.DenavitHartenberg_Cameras_Analytic, initQ, desP):
+    '''
+    TRUST REGIONS
+    '''
+    currQ = initQ
+    tolerance = 1e-3
+    maxiter=50
 
+    traj = [currQ]
+    errors =[]
+
+    desPP = robot.projected_world_point(desP)
+
+    J = robot.central_differences_pp(currQ, desPP)  
+
+    robot.calc_lipschitz() #calculate the lipschitz constant
+    
+    step = 1
+
+    dlower = 0.1
+    dupper=0.7
+
+    for i in range(maxiter):
+        print("###################### i:", i)
+        currError = robot.projected_errfn_eval(currQ, desPP) #desired-current
+
+        if np.linalg.norm(currError) <= tolerance:
+            break
+
+        Jinv = np.linalg.pinv(J)
+
+        corrQ = (Jinv @ currError).flatten()
+        print(f"currQ: {currQ}\ncorrQ: {corrQ}\ncurrError: {currError}")
+
+        d = np.linalg.norm(currError) / np.linalg.norm(corrQ)        
+
+        print(f"d: {d}")
+
+        if d <= dlower:
+            step = step/2
+        elif d > dupper:
+            step = max(2*np.linalg.norm(corrQ), step)
+        #else, step remains the same as the previous iteration.
+
+        print(f"step: {step}")
+
+        print(f"currQ reg: {currQ-corrQ} VS currQ w step: {currQ-step*corrQ}")
+
+        currQ = currQ - step * corrQ
+
+
+        traj.append(currQ)
+        errors.append(currError)
+
+
+    traj = np.array(traj)
+    if 1: 
+        robot.dh_robot.rtb_robot.plot(traj, block=False)
+
+    return
+
+ 
+
+def mod_newton_method1(robot: dh.DenavitHartenberg_Cameras_Analytic, initQ, desP):
+    '''
+    error_function has real world desired points and projects them, takes currQ
+    '''
+    currQ = initQ
+    tolerance = 1e-3
+    maxiter=50
+
+    traj = [currQ]
+    errors =[]
+
+    desPP = robot.projected_world_point(desP)
+
+    J = robot.central_differences_pp(currQ, desPP)  
+
+    robot.calc_lipschitz() #calculate the lipschitz constant
+    
+    error_order_const = 0.8
+
+    for i in range(maxiter):
+        print("###################### i:", i)
+        currError = robot.projected_errfn_eval(currQ, desPP) #desired-current
+
+        if np.linalg.norm(currError) <= tolerance:
+            break
+
+        Jinv = np.linalg.pinv(J)
+
+        corrQ = (Jinv @ currError).flatten()
+        print(f"currQ: {currQ}\ncorrQ: {corrQ}\ncurrError: {currError}")
+
+        leftside = (robot.lipschitz / 2) * (np.linalg.norm(corrQ))**2
+        rightside = error_order_const * np.linalg.norm(currError)
+
+
+        jac_good = leftside <= rightside
+
+        print(f"inequality: {leftside} <= {rightside}. BOOL=={jac_good}")
+
+        numerator = 2 * error_order_const * np.linalg.norm(currError)
+        denominator = robot.lipschitz * (np.linalg.norm(corrQ) ** 2)
+        step = np.sqrt(numerator/denominator) #might have to bound this !!!
+
+        print(f"numerator: {numerator}\ndenominator: {denominator}\nstep: {step}")
+
+        print(f"currQ reg: {currQ-corrQ} VS currQ w step: {currQ-step*corrQ}")
+
+        currQ = currQ - step * corrQ
+
+
+        traj.append(currQ)
+        errors.append(currError)
+
+
+    traj = np.array(traj)
+    if 1: 
+        robot.dh_robot.rtb_robot.plot(traj, block=False)
+
+    return
+
+
+initQ = [0.3, 0.8]
+desP = [1.,1.,0.]
+
+mod_newton_method1(vs, initQ, desP)
