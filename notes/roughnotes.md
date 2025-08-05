@@ -2297,3 +2297,84 @@ Maybe we could ask the question of What is the EASIER problem to solve?
 
 What if we do something similar to HT_Kung and Kantorovich 'what are better starting points' for fixed point iteration but with these MULTIPLE points different constraints? 
 
+# August 3
+
+I should have looked at different kinds of constraints EARLIER because we can no longer think of 'good starting points' because we can't use one single point to start from... there are MULTIPLE points that could be 'good starting points' and relying on something like 'passing the point' is too restrictive.
+
+I spent too long focusing on single point constraints.
+
+But maybe we could spin it to work if the starting points are like one big vector?
+
+For example, if we need three constraint points, we pass all three into the vector? Is this a thing?
+
+I think it could be, but this starts to look spotty for things like line constraints: if we want a line to be perpendicular to the target, the points of the line should not necessarily be 'closer' to the target line each time: but if we can position them such that the error is as close to 0 as possible, following the direction of the derivative, we can get 
+
+
+Maybe I am biting off more than I can chew here and I could compare how different constraints simply change the function landscape.
+
+For instance, what is the lipschitz constant of these different scenarios in a small ballpark?
+
+Maybe I can compare the difficulty of fixed point iteration vs different constraints?
+
+How can I do this comparison?
+
+Because the constraints are different, it is a bit harder to specify equivalent problems, but there do exist several scenarios where different subsets of constraints can be used to solve the same problems.
+
+But something that could be a good example is:
+
+Let's say I want points A and B of my robot to line up with points C and D on the ground.
+
+I could:
+- simply track A to C, B to D (two point to points)
+- track A-C, B-D, plus parallel line of A-B to C-D (two p2p and one line2line)
+- track A-B parallel to C-D, and the middle point of A-B to the middle point of C and D. (one line2line, one p2p) (i can already imagine this particular case would fail but this is just for example and illustory purposes...)
+
+Then, for each equation, see the global lipschitz constant?
+
+I really want to find the minimum number of jacobians. 
+
+Right now there is a gap between the minimum number of jacobian invkin, and the different constraints. I need to find some algorithm to compute the minimum number of jacobians, or some kantorovich conditions, when we use multiple constraints in this way. 
+
+Potentially we can use multiple points stacked as 'one point' but the search for better points is a lot more ambiguous...????
+
+Maybe instead we can compare the number of trust regions that occur when we use different kinds of constraints.
+
+Okay so now the objective, at least for today, is to create a function that stores multiple error constraints and can compute the jacobian like a function...
+
+object Constraints will have method 'compute' to return the error value given x0 (current joint config) and the desired line position.
+
+Put objects Constraints in a list and pass that list to a method that, given points ABC...XYZ... will just compute the function... the sympy symbols need to be reused.
+
+# August 4 
+
+If I want to write a paper, what can it even be about?
+
+Since the Kantorovich fixed point iteration does not translate for other types of constraints, we need to find some other method of 'counting jacobians'
+
+The mesh is really difficult to perform for higher dof.
+
+For the constant jacobian, does the error just decrease every time if it is successful? 
+
+Reading Numerical Methods for Unconstrained Optimization:
+
+pg 24: examine the constant Lipschitz/(2*{lower bound on the Jacobian norm}) as a PARTIALLY SCALE FREE measure, since the Lipschitz itself is 'a scale dependent measure; multiplying f or changing the units of x by a constant will scale f' by that constant without making the function more or less nonlinear.'
+
+If f is linear, then lipschitz == 0.
+
+# August 5 
+
+Try to make an algorithm that simply counts the number of jacobians needed based on the Kantorovich conditions/some Lipschitz condition, don't try to extend its life or modify with any tricks. 
+
+This way, we can use each method as a 'measurement' of how nonlinear the function is.
+
+For instance, in Martin's paper, the trust region adapts the 'maximum step length possible' to move within the region where the 'current Jacobian estimate is valid'.
+
+Can we build off this paper and look at the NUMBER of trust regions needed for different kinds of set-ups?
+
+Maybe for each setup the GOAL could be a certain x units of measurement away from the end effector? That's not really apt though.
+
+**The number of Jacobian regions generated for a trajectory can give us an idea of how nonlinear the function is.**
+
+Dennis 1971 - for bounds 1/2 and 2 on the norm of the derivative
+
+We can use the trust regions to count the number of Jacobians needed for different setups, 

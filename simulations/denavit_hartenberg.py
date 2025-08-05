@@ -382,7 +382,34 @@ class DenavitHartenberg_Cameras_Analytic():
 
         self.lipschitz=None
 
+        self.error_equation = None
+        self.error_equation_eval = None
 
+    def set_error_equation(self, error_equation, variables):
+        self.error_equation = error_equation #already projected through the cameras?
+        '''
+        For instance, for a parallel line to line constraint with two point to point constraints, we might have:
+
+        point A - point a == 0
+        point B - point b == 0
+        Line A-B cross product with line a-b == 0
+
+        And if point A is the end effector and point B is the second last joint, we have 
+
+        projection of end effector - projection of world point a = 0
+        projection of second last jnt - projection of world point b = 0
+        projection of (B-A) X projection of (b-a) = 0 
+
+        But we should specify A and B in terms of variables of the vector Q.
+
+        So, we pass the error equation vector as a sympy object,
+        Variables will be: the joint vector Q, and then after the desired constraint points.
+
+        The question is should we pass real or projected points? I think projected points.
+        '''
+        
+        self.error_equation_eval = (sp.utilities.lambdify(variables, self.error_equation, 'numpy'))
+        
     def projected_errfn_eval(self, initQ, desPP):
         #for each camera project the end effector point and subtract the desired point
         errfn = []
@@ -414,6 +441,8 @@ class DenavitHartenberg_Cameras_Analytic():
             J = self.central_differences_pp(currQ, desP)
         print("Jacobian:\n", J)
 
+        errors=[]
+
         ret= -1
 
         for i in range(maxiter):
@@ -421,6 +450,7 @@ class DenavitHartenberg_Cameras_Analytic():
             currError = self.projected_errfn_eval(currQ, desP) #first calculate the error
             #print("currError:", currError.flatten())
             print("current error:\n", currError)
+            errors.append(currError)
 
             if np.linalg.norm(currError) <= tolerance: #if error is near 0 then we can end the iterations
                 ret = i
@@ -441,6 +471,8 @@ class DenavitHartenberg_Cameras_Analytic():
         if 1:
             self.dh_robot.rtb_robot.plot(traj, block=False)
             
+        
+
         return ret, currQ
     
     
@@ -452,6 +484,7 @@ class DenavitHartenberg_Cameras_Analytic():
 
         the matrix J should be (number of cameras * 2) x (dof)
         '''
+
         Q= np.array((Q))
 
         if epsilon == None:
@@ -478,7 +511,53 @@ class DenavitHartenberg_Cameras_Analytic():
 
         return -Jt.T
     
+    
+    def central_differences_modular_constraints_pp(self, Q, des_points, epsilon=None):
+        '''
+        Pass the PROJECTED POINTS directly, NOT the real point. 
 
+        Returns the central differences Jacobian and the value of epsilon to perturb by
+
+        the matrix J should be (number of cameras * 2) x (dof)
+
+        '''
+
+        Q= np.array((Q))
+
+        if epsilon == None:
+            epsilon = 10e-1
+        
+        p= Q.shape[0]
+        d= self.F.shape[0]
+        #print("pxd:", p,"x",d)
+
+        k=1
+        Jt = np.zeros((p,d))
+        I = np.identity(p)
+
+
+        # project the desired world points into the cameras
+
+        tracked_des_points = []
+        for pnt in des_points:
+            tracked_des_points.append(self.projected_world_point(pnt)) #so desired points will be passed as one huge vector and we should simply pass ALL of these points into the error FUNCTION vector directly
+        
+        for i in range(p):
+            forward_vars = None ##### AAAA
+
+            forward_vars = [*(Q + epsilon * I[i]), *tracked_des_points]
+            forward = self.error_equation_eval(forward_vars) ########
+            forward = self.projected_world_point(self.dh_robot.fkin_eval(*(Q + epsilon * I[i])))
+            
+            backward = self.projected_world_point(self.dh_robot.fkin_eval(*(Q - epsilon * I[i])))
+            
+
+            diff = np.array((forward-backward)).T
+            #print(diff)
+            Jt[i] = diff / (2*epsilon)
+
+        return -Jt.T
+    
 
     def projected_world_point(self, real_world_point):
         '''
@@ -564,6 +643,13 @@ class DenavitHartenberg_Cameras_Analytic():
 
         return Jt.T
     
+    
+
+
+        
+
+
+    
 
 # initialize a system with cameras and see the lipschitz constant
 
@@ -576,3 +662,5 @@ class DenavitHartenberg_Cameras_Analytic():
 # run newtons method
 # run ht_kung function 
 # run MY method
+
+
