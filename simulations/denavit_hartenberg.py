@@ -382,11 +382,13 @@ class DenavitHartenberg_Cameras_Analytic():
 
         self.lipschitz=None
 
-        self.error_equation = None
-        self.error_equation_eval = None
+        self.error_fn_eval = None #
 
-    def set_error_equation(self, error_equation, variables):
-        self.error_equation = error_equation #already projected through the cameras?
+    def set_error_fn(self, error_equation_eval):
+        '''
+        as of aug 5 NOT COMPLETED, think im going to try different constraints directly on kinova instead
+        '''
+        self.err_fn_eval = error_equation_eval #already projected through the cameras?
         '''
         For instance, for a parallel line to line constraint with two point to point constraints, we might have:
 
@@ -407,8 +409,41 @@ class DenavitHartenberg_Cameras_Analytic():
 
         The question is should we pass real or projected points? I think projected points.
         '''
+
+    def central_differences_pp(self, Q, tracked_points, epsilon=None):
+        '''
+        Pass the PROJECTED POINTS directly, NOT the real point. 
+
+        Returns the central differences Jacobian and the value of epsilon to perturb by
+
+        the matrix J should be (number of cameras * 2) x (dof)
+        '''
+
+        Q= np.array((Q))
+
+        if epsilon == None:
+            epsilon = 10e-1
         
-        self.error_equation_eval = (sp.utilities.lambdify(variables, self.error_equation, 'numpy'))
+        p= Q.shape[0]
+        d= self.F.shape[0]
+        #print("pxd:", p,"x",d)
+
+        k=1
+        Jt = np.zeros((p,d))
+        I = np.identity(p)
+    
+        for i in range(p):
+            
+            forward = self.projected_world_point(self.dh_robot.fkin_eval(*(Q + epsilon * I[i])))
+            
+            backward = self.projected_world_point(self.dh_robot.fkin_eval(*(Q - epsilon * I[i])))
+            
+
+            diff = np.array((forward-backward)).T
+            #print(diff)
+            Jt[i] = diff / (2*epsilon)
+
+        return -Jt.T
         
     def projected_errfn_eval(self, initQ, desPP):
         #for each camera project the end effector point and subtract the desired point
@@ -510,54 +545,6 @@ class DenavitHartenberg_Cameras_Analytic():
             Jt[i] = diff / (2*epsilon)
 
         return -Jt.T
-    
-    
-    def central_differences_modular_constraints_pp(self, Q, des_points, epsilon=None):
-        '''
-        Pass the PROJECTED POINTS directly, NOT the real point. 
-
-        Returns the central differences Jacobian and the value of epsilon to perturb by
-
-        the matrix J should be (number of cameras * 2) x (dof)
-
-        '''
-
-        Q= np.array((Q))
-
-        if epsilon == None:
-            epsilon = 10e-1
-        
-        p= Q.shape[0]
-        d= self.F.shape[0]
-        #print("pxd:", p,"x",d)
-
-        k=1
-        Jt = np.zeros((p,d))
-        I = np.identity(p)
-
-
-        # project the desired world points into the cameras
-
-        tracked_des_points = []
-        for pnt in des_points:
-            tracked_des_points.append(self.projected_world_point(pnt)) #so desired points will be passed as one huge vector and we should simply pass ALL of these points into the error FUNCTION vector directly
-        
-        for i in range(p):
-            forward_vars = None ##### AAAA
-
-            forward_vars = [*(Q + epsilon * I[i]), *tracked_des_points]
-            forward = self.error_equation_eval(forward_vars) ########
-            forward = self.projected_world_point(self.dh_robot.fkin_eval(*(Q + epsilon * I[i])))
-            
-            backward = self.projected_world_point(self.dh_robot.fkin_eval(*(Q - epsilon * I[i])))
-            
-
-            diff = np.array((forward-backward)).T
-            #print(diff)
-            Jt[i] = diff / (2*epsilon)
-
-        return -Jt.T
-    
 
     def projected_world_point(self, real_world_point):
         '''
@@ -581,8 +568,6 @@ class DenavitHartenberg_Cameras_Analytic():
         fn = (sp.utilities.lambdify(self.dh_robot.jntvars[:self.dh_robot.dof], self.J.subs(reps), 'numpy'))
         J_val = fn(*q)
 
-        
-
         norm_val = np.linalg.norm(J_val, ord=2).copy()
         
        
@@ -600,8 +585,8 @@ class DenavitHartenberg_Cameras_Analytic():
         
         q0 = np.array([0.1]*self.dh_robot.dof) #whatever is the maximum 
         bounds = [(0, np.pi)]*self.dh_robot.dof
-        print("BOUNDS")
-        print(bounds)
+        #print("BOUNDS")
+        #print(bounds)
 
         res = minimize(self.lipschitz_objective, q0, bounds=bounds)
         L_estimate = -res.fun

@@ -78,7 +78,7 @@ robot = dof2
 
 cam1 = dh.Camera(0,0,0,[0,0,5], 5,5, 0, 0) #looks down directly at the scene, basically replicates the scene
 cam2 = dh.Camera(-sp.pi/2, 0, 0, [0,0,5], 5,5,0,0) #looks at scene from the y axis, world z is cam2 y, world x is cam2 x 
-cameras=[cam1]
+cameras=[cam1, cam2]
 
 vs = dh.DenavitHartenberg_Cameras_Analytic(cameras, robot)
 
@@ -199,7 +199,7 @@ def mod_newton_method2(robot: dh.DenavitHartenberg_Cameras_Analytic, initQ, desP
 
  
 
-def mod_newton_method1(robot: dh.DenavitHartenberg_Cameras_Analytic, initQ, desP):
+def mod_newton_method3(robot: dh.DenavitHartenberg_Cameras_Analytic, initQ, desP):
     '''
     error_function has real world desired points and projects them, takes currQ
     '''
@@ -214,9 +214,11 @@ def mod_newton_method1(robot: dh.DenavitHartenberg_Cameras_Analytic, initQ, desP
 
     J = robot.central_differences_pp(currQ, desPP)  
 
-    robot.calc_lipschitz() #calculate the lipschitz constant
+    robot.calc_lipschitz(3.97) #calculate the lipschitz constant
     
     error_order_const = 0.8
+
+    jac_count = 0
 
     for i in range(maxiter):
         print("###################### i:", i)
@@ -229,38 +231,53 @@ def mod_newton_method1(robot: dh.DenavitHartenberg_Cameras_Analytic, initQ, desP
 
         corrQ = (Jinv @ currError).flatten()
         print(f"currQ: {currQ}\ncorrQ: {corrQ}\ncurrError: {currError}")
-
-        leftside = (robot.lipschitz / 2) * (np.linalg.norm(corrQ))**2
-        rightside = error_order_const * np.linalg.norm(currError)
-
-
-        jac_good = leftside <= rightside
-
-        print(f"inequality: {leftside} <= {rightside}. BOOL=={jac_good}")
-
+        
         numerator = 2 * error_order_const * np.linalg.norm(currError)
         denominator = robot.lipschitz * (np.linalg.norm(corrQ) ** 2)
         step = np.sqrt(numerator/denominator) #might have to bound this !!!
 
         print(f"numerator: {numerator}\ndenominator: {denominator}\nstep: {step}")
 
-        print(f"currQ reg: {currQ-corrQ} VS currQ w step: {currQ-step*corrQ}")
+        leftside = (robot.lipschitz / 2) * (np.linalg.norm(step*corrQ))**2
+        rightside = error_order_const * np.linalg.norm(currError)
 
-        currQ = currQ - step * corrQ
+        jac_good = leftside <= rightside
+        print(f"inequality: {leftside} <= {rightside}. BOOL=={jac_good}")
+
+        if step<1:
+            J = robot.central_differences_pp(currQ, desPP)
+            jac_count+=1
+
+
+        currQ = currQ - step* corrQ
 
 
         traj.append(currQ)
         errors.append(currError)
 
+    
+    print(f"jacobian count: {jac_count}")
+
 
     traj = np.array(traj)
     if 1: 
         robot.dh_robot.rtb_robot.plot(traj, block=False)
-
+        robot.dh_robot.plot(currQ)
     return
 
+kinova_angles = np.deg2rad(np.array([-0.1336059570312672, -28.57940673828129, -179.4915313720703, -147.7, 0.06742369383573531, -57.420898437500036, 89.88030242919922, 0.]))
+initQ = [-3.14, 1.5]
+desP = [0.,0.3,0.]
 
-initQ = [0.3, 0.8]
-desP = [1.,1.,0.]
+robot.plot(initQ)
 
-mod_newton_method1(vs, initQ, desP)
+mod_newton_method3(vs, initQ, desP)
+
+'''
+Notes:
+
+Reducing the step size can only go so far. We have to know when to reduce step size and when to update the Jacobian.
+
+Lipschitz Constants:
+- kinova and 2 cameras: 3.97
+'''

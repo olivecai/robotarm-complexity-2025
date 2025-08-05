@@ -15,13 +15,23 @@ p2 = sp.Matrix([x2, y2, 1])
 p3 = sp.Matrix([x3, y3, 1])
 p4 = sp.Matrix([x4, y4, 1])
 
-p2p_error = p1.cross(p2)[:2, :]
-p2l_error = p1.dot(p2.cross(p3))
-l2l_error = p1.dot(p3.cross(p4)) + p2.dot(p3.cross(p4))
+p2p_error = (p2-p1)[:2, :] #p1 is end effector, p2 is desired
+p2l_error = p1.dot(p2.cross(p3)) # p1 end effector, p2-p3 is desired
+l2l_error = p1.dot(p3.cross(p4)) + p2.dot(p3.cross(p4)) #  p1-p2 end effector, p3-p4 desired
 
 print(p2p_error)
 print(p2l_error)
+print(l2l_error)
 
+variables = x1, y1, x2, y2, x3, y3, x4, y4 
+p2peval = (sp.utilities.lambdify(variables[:4], p2p_error, 'numpy'))
+p2leval = (sp.utilities.lambdify(variables[:6], p2l_error, 'numpy'))
+l2leval = (sp.utilities.lambdify(variables, l2l_error, 'numpy'))
+
+print(p2peval)
+print(p2peval(1,2,1,1))
+print(p2leval(0,1,0,0,0,0.1))
+print(l2leval(3,0,4,3,3,0,3,3))
 # P = dh.DHSympyParams() #this lowkey has to be global, sorry
 # jntspace, cartspace, taskspace = P.get_params()
 # t0, t1, t2, t3, t4, t5, t6, t7, t8, t9 = jntspace
