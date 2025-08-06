@@ -2378,3 +2378,68 @@ Maybe for each setup the GOAL could be a certain x units of measurement away fro
 Dennis 1971 - for bounds 1/2 and 2 on the norm of the derivative
 
 We can use the trust regions to count the number of Jacobians needed for different setups, 
+
+# August 6
+
+include jac err in bounds
+
+upper bound of jac as it worsens?
+
+TODO
+- quantify error of APPROXIMATED REUSED jacobian in some way.
+- more principled verison of alpha * norm (error)
+
+Search for a bound on approximated jacobian....
+How wrong is it?
+
+Can we quantify how much a jacobian can be wrong based on how far we are from its sample point?
+- Can we do this with the Lipschitz constant?
+
+If we can quantify the error of the approximated vs true jacobian, we don't even need to solve for the step size.
+
+What is the error of the approximated Jacobian?
+
+### Notes on Jacobian Central Differences, and Error Bounds
+
+The lipschitz value is the upper bound of the second derivative, so we do not need to calcuate the Hessian.
+
+Focus on bounds and on finding the region that a jacobian is VALID.
+
+Though, it is completely TRUE that we can converge with an inaccurate jacobian 
+
+norm of (f'(x) - [f(x+h)-f(x-h)]/2h) <= h/2 * (norm of f''(xl st xl is within [x-h,x] + f''(xr)) such that xr is in within [x,x+h] ) >
+
+We get thus inequality from Taylor's Theorem that the error is <= h**2 * norm (f''(x)/2)
+
+Kantorovich book section 1.2.1 The Newton Kantorovich Theorem talks a bit about the orders of convergence: if h<1/2, convegence of at least order 2, if h==1/2 then convergence of least least order 1.
+
+The Kantorovich conditions are sayignt yhere is a ball such that the solution is present within that ball..... But I want something a little different:
+
+What is the ball around the Jacobian such that it is still an accurate/valid model of the function? This is ...almost like we are back to the linear regions of the function... 
+
+I found a book called Newton Methods for Nonlienar Problems - Affine Invarianc ena dAdaptive Algorithms by Peter Deuflhard that seems to consider theoretical bounds on the dampening and the regions of validity for the Jacobian.
+
+## Peter Deuflhard Newton Methods
+
+### 3.3 Error Oriented Descent:
+- iterates must satisfy the natural monoticity test that the norm of each correction step ie delta x must DECREASE every iteration
+
+let
+B: inverse Jacobian of F
+J: Jacobian of F
+F: Error function to optimize to 0
+L: lipschitz value
+
+Theorem 3.12:
+
+Norm of [B(x)@(J(y)-J(x))@*y-x)] <= L*norm[y-x]**2
+
+dampening should be (1, 1/hk) where hk is hk=hkcond2(J(xk))
+
+find the local region st the jacobian is valid
+
+CITE [33]  by H.G. Bock, E.A. Kostina, and J.P. Schl¨oder,
+such 2–cycles can be generally avoided, if the theoretical optimal steplength
+λk is restricted such that λhk ≤ η < 1.
+
+TODO investigate the radius as the norm of change in h, as sqrt(2*error/L)

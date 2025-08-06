@@ -214,26 +214,32 @@ def mod_newton_method3(robot: dh.DenavitHartenberg_Cameras_Analytic, initQ, desP
 
     J = robot.central_differences_pp(currQ, desPP)  
 
-    robot.calc_lipschitz(3.97) #calculate the lipschitz constant
+    robot.calc_lipschitz() #calculate the lipschitz constant
     
-    error_order_const = 0.8
+    error_order_const = 0.9
 
     jac_count = 0
 
     for i in range(maxiter):
         print("###################### i:", i)
         currError = robot.projected_errfn_eval(currQ, desPP) #desired-current
+        
+        currerrorNorm = np.linalg.norm(currError)
+        print("Error norm:", currerrorNorm)
+        errors.append(currerrorNorm)
 
         if np.linalg.norm(currError) <= tolerance:
             break
 
         Jinv = np.linalg.pinv(J)
 
+        print("norm of Jinv:", np.linalg.norm(Jinv))
+
         corrQ = (Jinv @ currError).flatten()
         print(f"currQ: {currQ}\ncorrQ: {corrQ}\ncurrError: {currError}")
         
         numerator = 2 * error_order_const * np.linalg.norm(currError)
-        denominator = robot.lipschitz * (np.linalg.norm(corrQ) ** 2)
+        denominator = robot.lipschitz * (np.linalg.norm(corrQ) ** 2) # the bigger the lipschitz (the more nonlinear the func is) and the more ill-conditioned we are (corresponding to a big step) the smaller the step should be 
         step = np.sqrt(numerator/denominator) #might have to bound this !!!
 
         print(f"numerator: {numerator}\ndenominator: {denominator}\nstep: {step}")
@@ -247,16 +253,65 @@ def mod_newton_method3(robot: dh.DenavitHartenberg_Cameras_Analytic, initQ, desP
         if step<1:
             J = robot.central_differences_pp(currQ, desPP)
             jac_count+=1
+            print("********* UPDATED JACOBIAN *********")
 
 
         currQ = currQ - step* corrQ
 
 
         traj.append(currQ)
-        errors.append(currError)
+        errors.append(currerrorNorm)
 
     
     print(f"jacobian count: {jac_count}")
+
+
+
+    print("errors\n:", np.array(errors))
+
+
+    traj = np.array(traj)
+    if 1: 
+        robot.dh_robot.rtb_robot.plot(traj, block=False)
+        robot.dh_robot.plot(currQ)
+    return
+
+
+def chord_newton(robot: dh.DenavitHartenberg_Cameras_Analytic, initQ, desP):
+    '''
+    error_function has real world desired points and projects them, takes currQ
+    '''
+    currQ = initQ
+    tolerance = 1e-3
+    maxiter=50
+
+    traj = [currQ]
+    errors =[]
+
+    desPP = robot.projected_world_point(desP)
+
+    J = robot.central_differences_pp(currQ, desPP)  
+
+    for i in range(maxiter):
+        print("###################### i:", i)
+        currError = robot.projected_errfn_eval(currQ, desPP) #desired-current
+
+        if np.linalg.norm(currError) <= tolerance:
+            break
+
+        Jinv = np.linalg.pinv(J)
+
+        print("norm of Jinv:", np.linalg.norm(Jinv))
+
+        corrQ = (Jinv @ currError).flatten()
+        print(f"currQ: {currQ}\ncorrQ: {corrQ}\ncurrError: {currError}")
+    
+
+        currQ = currQ - corrQ
+
+
+        traj.append(currQ)
+        errors.append(currError)
 
 
     traj = np.array(traj)
@@ -266,17 +321,21 @@ def mod_newton_method3(robot: dh.DenavitHartenberg_Cameras_Analytic, initQ, desP
     return
 
 kinova_angles = np.deg2rad(np.array([-0.1336059570312672, -28.57940673828129, -179.4915313720703, -147.7, 0.06742369383573531, -57.420898437500036, 89.88030242919922, 0.]))
-initQ = [-3.14, 1.5]
-desP = [0.,0.3,0.]
+initQ = [0., 1.3]
+desP = [1.,1.,0]
 
 robot.plot(initQ)
 
 mod_newton_method3(vs, initQ, desP)
 
+chord_newton(vs, initQ, desP)
+
 '''
 Notes:
 
 Reducing the step size can only go so far. We have to know when to reduce step size and when to update the Jacobian.
+
+Instead of 
 
 Lipschitz Constants:
 - kinova and 2 cameras: 3.97
