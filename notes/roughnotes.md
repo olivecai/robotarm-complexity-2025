@@ -2443,3 +2443,18 @@ such 2–cycles can be generally avoided, if the theoretical optimal steplength
 λk is restricted such that λhk ≤ η < 1.
 
 TODO investigate the radius as the norm of change in h, as sqrt(2*error/L)
+
+# August 7
+
+The bound of error on the radius of the ball of how ACCURATE the jacobian is:
+
+First, we have the expression:
+
+norm of (F(x+p) - F(x) - J(x)*p) is less than or equal to (p^2) * lipschitz/2
+
+LHS is essentially input VS output error.
+
+But this error bound holds regardless of WHERE we are which isnt as helpful
+
+# August 8
+
