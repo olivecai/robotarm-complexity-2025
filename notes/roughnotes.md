@@ -2458,3 +2458,17 @@ But this error bound holds regardless of WHERE we are which isnt as helpful
 
 # August 8
 
+The global lipschitz value is the bound of the second derivative, but it is still informative and useful to use the local lipschitz value, where one value stays constant and the rest is iterated over...
+
+The method I want to implement uses the derivative * 1.5 to bound it, suggesting that it will only move a small amount within a certain region. 
+
+# August 11
+
+Earlier I had wanted to multiply the spectral norm of any one of my first derivatives by some number to obtain the lipschitz value. I think it's still OKAY, but sometimes the first derivative might be 0, which is problematic.
+
+Local minima/maxima are less likely the higher and higher dimensional we get, but we still get saddle points, and the first derivatives of saddle points are also still 0.
+
+Algorithm: 
+Monitor the error on the jacobian approximation, and the truncation error.
+We also now have a bound on the approximation error of the Jacobian which is great, since we've found it is extremely small and is probably not a big concern.
+
