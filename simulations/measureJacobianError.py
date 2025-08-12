@@ -70,8 +70,8 @@ kinova_end = np.deg2rad(np.array([25.336059570312672, 50.57940673828129, -179.49
 # initialize init Q and de
 # initialize init Q and des P
 
-initQ = [0.5] * robot.dof
-desQ = [1.5] * robot.dof
+initQ = [1.0] * robot.dof
+desQ = [2.7] * robot.dof
 
 desP =  (vs.dh_robot.fkin_eval(*desQ)).flatten().tolist()
 print("desired world point:", desP)
@@ -180,17 +180,22 @@ def jac_policy(robot: dh.DenavitHartenberg_Cameras_Analytic, initQ, desP):
 
     traj = [currQ]
     errors =[]
+    jac_update_iters =[]
 
     desPP = robot.projected_world_point(desP)
 
     J = robot.central_differences_pp(currQ, desPP)  
-    curr_jacQ = currQ
+    
+    delQ = [0.]*robot.dh_robot.dof
 
-    robot.calc_lipschitz(4.) #calculate the lipschitz constant
+
+    robot.calc_lipschitz(1.) #calculate the lipschitz constant
 
     jac_count=1
 
     epsilon = 0.5 #the amount of error permitted from the jacobian initial estimation and the 
+
+
 
     for i in range(maxiter):
         print("###################### i:", i)
@@ -205,29 +210,40 @@ def jac_policy(robot: dh.DenavitHartenberg_Cameras_Analytic, initQ, desP):
 
         corrQ = (Jinv @ currError).flatten()
         print(f"currQ: {currQ}\ncorrQ: {corrQ}\ncurrError: {currError}")
-    
-        # Add the jacobian policy below!
-        numerator = np.sqrt(2 * epsilon / robot.lipschitz)
-        denominator = np.linalg.norm(corrQ)
-        step = min(1, numerator/denominator) #when alpha is greater than 1, we tend to oscillate
-
-        delQ = curr_jacQ + corrQ
+        
+        delQ+=corrQ
         print("DELQ:", delQ)
         jacobian_approximated_error = robot.lipschitz / 2 * np.linalg.norm(delQ)**2
         
         print("jac approximated err:", jacobian_approximated_error)
+    
+        # Add the jacobian policy below!
+        numerator = np.sqrt(2 * epsilon / robot.lipschitz)
+        denominator = np.linalg.norm(delQ)
+
+        lowerboundstep, updatethreshold, upperboundstep = (0.2, 0.3,  1)
+
+        #when alpha is greater than 1, we tend to oscillate. But the step cannot be so small that it is neglible.
+        step = min(upperboundstep, numerator/denominator)
+
+
+        if step < lowerboundstep:
+            step = lowerboundstep
+
         print("STEP:", step)
 
-        if step < 0.5:
+        if step < updatethreshold:
+            delQ=[0.]*robot.dh_robot.dof
             J = robot.central_differences_pp(currQ, desPP)  
             curr_jacQ = currQ
             jac_count+=1
+            jac_update_iters.append(i)
             
             print("Step too small so. JACOBIAN UPDATE")
     
         currQ = currQ - step*corrQ
         traj.append(currQ)
-        errors.append(currError)
+        errors.append(np.linalg.norm(currError))
 
     print("Total jacobians used:", jac_count)
 
@@ -235,11 +251,28 @@ def jac_policy(robot: dh.DenavitHartenberg_Cameras_Analytic, initQ, desP):
     if 1: 
         robot.dh_robot.rtb_robot.plot(traj, block=False)
         robot.dh_robot.plot(currQ)
+
+    errors=np.array(errors)
+    fig, ax = plt.subplots()
+    ax.plot(range(len(errors)), errors, '-o', markersize=2, label="Error")
+
+    # Mark Jacobian update iterations with big red dots
+    ax.scatter(jac_update_iters, errors[jac_update_iters], 
+            s=50, c='blue', zorder=3, label="Jacobian Update")
+
+    ax.set_xlabel("Iteration")
+    ax.set_ylabel("Error Norm")
+    ax.set_title("Error vs Iteration (Jacobian updates marked)")
+    ax.legend()
+    ax.grid(True)
+
+    plt.show()
+
     return
 
 kinova_angles = np.deg2rad(np.array([-0.1336059570312672, -28.57940673828129, -179.4915313720703, -147.7, 0.06742369383573531, -57.420898437500036, 89.88030242919922, 0.]))
 # initQ = [0., 1.3]
-initQ = kinova_angles
+#initQ = kinova_angles
 # desP = [1.,1.,0]
 
 robot.plot(initQ)
