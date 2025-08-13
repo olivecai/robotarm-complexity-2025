@@ -53,7 +53,7 @@ kinova_dof7_params = [
 dof2 = dh.DenavitHartenbergAnalytic(dof2_params, P)
 dof3 = dh.DenavitHartenbergAnalytic(dylan_dof3_params, P)
 kinova = dh.DenavitHartenbergAnalytic(kinova_dof7_params, P)
-robot = kinova
+robot = dof3
 
 print("ROBOT:\n",robot.J)
 
@@ -71,7 +71,7 @@ kinova_end = np.deg2rad(np.array([25.336059570312672, 50.57940673828129, -179.49
 # initialize init Q and des P
 
 initQ = [1.0] * robot.dof
-desQ = [2.7] * robot.dof
+desQ = [1.5] * robot.dof
 
 desP =  (vs.dh_robot.fkin_eval(*desQ)).flatten().tolist()
 print("desired world point:", desP)
@@ -189,11 +189,11 @@ def jac_policy(robot: dh.DenavitHartenberg_Cameras_Analytic, initQ, desP):
     delQ = [0.]*robot.dh_robot.dof
 
 
-    robot.calc_lipschitz(1.) #calculate the lipschitz constant
+    robot.calc_lipschitz(2.0) #calculate the lipschitz constant
 
     jac_count=1
 
-    epsilon = 0.5 #the amount of error permitted from the jacobian initial estimation and the 
+    epsilon = 0.5 #the amount of error permitted from the amount of distance moved from where we did the jacobian initial estimation 
 
 
 
