@@ -248,7 +248,7 @@ def jac_policy(robot: dh.DenavitHartenberg_Cameras_Analytic, initQ, desP):
     print("Total jacobians used:", jac_count)
 
     traj = np.array(traj)
-    if 1: 
+    if 0: 
         robot.dh_robot.rtb_robot.plot(traj, block=False)
         robot.dh_robot.plot(currQ)
 
