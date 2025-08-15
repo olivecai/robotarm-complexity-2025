@@ -22,7 +22,6 @@ import numpy as np
 import sympy as sp
 import denavit_hartenberg as dh
 import matplotlib.pyplot as plt
-from measureJacobianError import jac_policy
 
 from scipy.spatial import Delaunay
 
@@ -61,8 +60,6 @@ dof3 = dh.DenavitHartenbergAnalytic(dylan_dof3_params, P)
 kinova = dh.DenavitHartenbergAnalytic(kinova_dof7_params, P)
 robot = dof3
 
-print("ROBOT:\n",robot.J)
-
 cam1 = dh.Camera(0,0,0,[0,0,2], 2,2, 0, 0) #looks down directly at the scene, basically replicates the scene
 cam2 = dh.Camera(-sp.pi/2, 0, 0, [0,0,2], 2,2,0,0) #looks at scene from the y axis, world z is cam2 y, world x is cam2 x 
 cameras=[cam1, cam2]
@@ -84,15 +81,15 @@ def generate_mesh_points(vs, desP, jointranges):
         for _ in range(num_init_points)
     ]
 
-    desPP = robot.projected_world_point(desP)
+    desPP = vs.projected_world_point(desP)
 
     for initQ in random_joint_configs:
-        jac_policy(vs, initQ, desPP, mesh_points)
+        jac_policy(vs, initQ, desPP, mesh_points, jointranges)
 
     return mesh_points
 
 
-def jacobian_update(curr_jacQ, meshpoints: list):
+def jacobian_update(curr_jacQ, meshpoints: list, jointranges):
     '''
     Aug 15 2025
 
@@ -100,6 +97,12 @@ def jacobian_update(curr_jacQ, meshpoints: list):
 
     Update meshpoints by adding the current Jacobian Q if there does not already exist a Jacobian Q very similar to 
     '''
+    for i in range(len(curr_jacQ)):
+        if curr_jacQ[i] < jointranges[i][0]:
+            return
+        if curr_jacQ[i] > jointranges[i][1]:
+            return
+
     print(f"Recv {curr_jacQ} as a possible meshpoint. Evaluating...")
     res_tol = 0.3
     for point in meshpoints:
@@ -108,10 +111,10 @@ def jacobian_update(curr_jacQ, meshpoints: list):
             print(f"Rejected potential meshpoint {curr_jacQ}, due to existing mesh point {point}")
             return
     print(f"Adding {curr_jacQ} to the meshpoints list.")
-    meshpoints.append(curr_jacQ)
+    meshpoints.append(curr_jacQ.tolist())
     return
 
-def jac_policy(robot: dh.DenavitHartenberg_Cameras_Analytic, initQ, desPP, meshpoints: list):
+def jac_policy(robot: dh.DenavitHartenberg_Cameras_Analytic, initQ, desPP, meshpoints: list, jointranges):
     '''
     Aug 15 2025
 
@@ -133,11 +136,11 @@ def jac_policy(robot: dh.DenavitHartenberg_Cameras_Analytic, initQ, desPP, meshp
     delQ = [0.]*robot.dh_robot.dof
 
 
-    robot.calc_lipschitz(2.0) #calculate the lipschitz constant
+    robot.calc_lipschitz(4.0) #calculate the lipschitz constant
 
     jac_count=1
 
-    epsilon = 0.5 #the amount of error permitted from the amount of distance moved from where we did the jacobian initial estimation 
+    epsilon = 1.0 #the amount of error permitted from the amount of distance moved from where we did the jacobian initial estimation 
 
 
     for i in range(maxiter):
@@ -164,7 +167,7 @@ def jac_policy(robot: dh.DenavitHartenberg_Cameras_Analytic, initQ, desPP, meshp
         numerator = np.sqrt(2 * epsilon / robot.lipschitz)
         denominator = np.linalg.norm(delQ)
 
-        lowerboundstep, updatethreshold, upperboundstep = (0.2, 0.3,  1)
+        lowerboundstep, updatethreshold, upperboundstep = (0.1, 0.2,  1)
 
         #when alpha is greater than 1, we tend to oscillate. But the step cannot be so small that it is neglible.
         step = min(upperboundstep, numerator/denominator)
@@ -185,7 +188,7 @@ def jac_policy(robot: dh.DenavitHartenberg_Cameras_Analytic, initQ, desPP, meshp
             print("Step too small; JACOBIAN UPDATE")
            
 
-            jacobian_update(curr_jacQ, meshpoints)
+            jacobian_update(curr_jacQ, meshpoints, jointranges)
             
 
     
@@ -201,22 +204,62 @@ def jac_policy(robot: dh.DenavitHartenberg_Cameras_Analytic, initQ, desPP, meshp
         robot.dh_robot.plot(currQ)
 
     errors=np.array(errors)
-    fig, ax = plt.subplots()
-    ax.plot(range(len(errors)), errors, '-o', markersize=2, label="Error")
+    # fig, ax = plt.subplots()
+    # ax.plot(range(len(errors)), errors, '-o', markersize=2, label="Error")
 
-    # Mark Jacobian update iterations with big red dots
-    ax.scatter(jac_update_iters, errors[jac_update_iters], 
-            s=50, c='blue', zorder=3, label="Jacobian Update")
+    # # Mark Jacobian update iterations with big red dots
+    # ax.scatter(jac_update_iters, errors[jac_update_iters], 
+    #         s=50, c='blue', zorder=3, label="Jacobian Update")
 
-    ax.set_xlabel("Iteration")
-    ax.set_ylabel("Error Norm")
-    ax.set_title("Error vs Iteration (Jacobian updates marked)")
-    ax.legend()
-    ax.grid(True)
+    # ax.set_xlabel("Iteration")
+    # ax.set_ylabel("Error Norm")
+    # ax.set_title("Error vs Iteration (Jacobian updates marked)")
+    # ax.legend()
+    # ax.grid(True)
 
-    plt.show()
+    # plt.show()
 
     return
 
-mesh_points = generate_mesh_points
+desQ = [1.5] * robot.dof
+desP =  (vs.dh_robot.fkin_eval(*desQ)).flatten().tolist()
+jointranges = [(0, np.pi)] * vs.dh_robot.dof
+mesh_points = generate_mesh_points(vs, desP, jointranges)
 mesh = Delaunay(mesh_points)
+
+print("mesh points list:", mesh_points)
+
+#given the mesh, use it to perform Newton updates: should we assign each simplex its own Jacobian?
+
+
+
+
+if vs.dh_robot.dof == 2:
+    mesh_points = np.array(mesh_points)
+    plt.figure(figsize=(8,8))
+    plt.triplot(mesh_points[:,0], mesh_points[:,1], mesh.simplices, color='gray')
+    plt.plot(mesh_points[:,0], mesh_points[:,1], 'o', color='blue')
+    plt.title("Delaunay Mesh (2D)")
+    plt.xlabel("Joint 1")
+    plt.ylabel("Joint 2")
+    plt.grid(True)
+    plt.show()
+else:
+    from mpl_toolkits.mplot3d import Axes3D
+
+    fig = plt.figure(figsize=(10,10))
+    ax = fig.add_subplot(111, projection='3d')
+    mesh_points = np.array(mesh_points)
+    ax.scatter(mesh_points[:,0], mesh_points[:,1], mesh_points[:,2], color='blue')
+
+    for simplex in mesh.simplices:
+        for i in range(3):
+            p1 = mesh_points[simplex[i]]
+            p2 = mesh_points[simplex[(i+1)%3]]
+            ax.plot([p1[0], p2[0]], [p1[1], p2[1]], [p1[2], p2[2]], color='gray')
+
+    ax.set_title("Delaunay Mesh (3D)")
+    ax.set_xlabel("Joint 1")
+    ax.set_ylabel("Joint 2")
+    ax.set_zlabel("Joint 3")
+    plt.show()

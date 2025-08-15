@@ -2477,4 +2477,18 @@ We also now have a bound on the approximation error of the Jacobian which is gre
 Paper objective: empirically show that the number of Jacobians needed for the robots is relatively low.
 Back it up with some maths.
 
+Now the question is, should we do this with the function as a black box or not? Should we try to compute this in real time or can this Jacobian collection process be offline?
 
+PROS of online uncalibrated: 
+- focus on jacobian policy and behaviour of that joint
+
+CONS of online uncalibrated:
+- lots of assumptions made that may not be acurate
+
+PROS of offline analytic:
+- more accurate
+
+CONS of offline analytic:
+- the mesh doesnt seem to actually be that good, and it's just a lot of toggling parameters to fix it. Maybe we could use it a bit, but I don't want to focus on it.
+
+Feeling a bit stuck for how to really show something substantial....
