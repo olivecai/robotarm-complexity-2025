@@ -2472,3 +2472,9 @@ Algorithm:
 Monitor the error on the jacobian approximation, and the truncation error.
 We also now have a bound on the approximation error of the Jacobian which is great, since we've found it is extremely small and is probably not a big concern.
 
+# August 15
+
+Paper objective: empirically show that the number of Jacobians needed for the robots is relatively low.
+Back it up with some maths.
+
+
