@@ -8,3 +8,4 @@ What if my analytic mesh looked something like this:
 - First create a sparse grid (random or evenly spread out, either is fine)
 - Get the Jacobian for each point
 '''
+

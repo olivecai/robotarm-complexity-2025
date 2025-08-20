@@ -28,8 +28,8 @@ x, y, z = cartspace
 u, v = taskspace
 
 dof2_params = [
-                [t0, 0, 1, 0], 
-                [t1, 0, 1, 0]
+                [t0, 0, 100, 0], 
+                [t1, 0, 10, 0]
                 ]
 
 dylan_dof3_params=[
@@ -70,7 +70,7 @@ kinova_end = np.deg2rad(np.array([25.336059570312672, 50.57940673828129, -179.49
 # initialize init Q and de
 # initialize init Q and des P
 
-initQ = [1.0] * robot.dof
+initQ = [2.5] * robot.dof
 desQ = [1.5] * robot.dof
 
 desP =  (vs.dh_robot.fkin_eval(*desQ)).flatten().tolist()
@@ -183,8 +183,10 @@ def jac_policy(robot: dh.DenavitHartenberg_Cameras_Analytic, initQ, desP):
     jac_update_iters =[]
 
     desPP = robot.projected_world_point(desP)
+    print("LOG desPP", desPP)
 
     J = robot.central_differences_pp(currQ, desPP)  
+    print("J:\n", J)
     
     delQ = [0.]*robot.dh_robot.dof
 
@@ -193,8 +195,11 @@ def jac_policy(robot: dh.DenavitHartenberg_Cameras_Analytic, initQ, desP):
 
     jac_count=1
 
-    epsilon = 0.5 #the amount of error permitted from the amount of distance moved from where we did the jacobian initial estimation 
+    epsilon = 1.0 #the amount of error permitted from the amount of distance moved from where we did the jacobian initial estimation 
 
+    step=1
+
+    n_consecutive_small_steps=0
 
 
     for i in range(maxiter):
@@ -211,36 +216,97 @@ def jac_policy(robot: dh.DenavitHartenberg_Cameras_Analytic, initQ, desP):
         corrQ = (Jinv @ currError).flatten()
         print(f"currQ: {currQ}\ncorrQ: {corrQ}\ncurrError: {currError}")
         
+        #### BROYDEN UPDATE:
+        broyden_numerator = np.multiply(np.reshape(np.subtract(currError, J@corrQ),(-1,1)), corrQ)
+        broyden_denominator = np.array(corrQ) @ np.array(corrQ)
+        jacobian_learning_rate=1.0
+        J = J + jacobian_learning_rate * (broyden_numerator/broyden_denominator)
+        print("Updated Jacobian:\n", J)
+
+
+
         delQ+=corrQ
         print("DELQ:", delQ)
-        jacobian_approximated_error = robot.lipschitz / 2 * np.linalg.norm(delQ)**2
+        jacobian_approximated_error = (robot.lipschitz / 2) * (np.linalg.norm(delQ))**2
         
         print("jac approximated err:", jacobian_approximated_error)
     
         # Add the jacobian policy below!
         numerator = np.sqrt(2 * epsilon / robot.lipschitz)
         denominator = np.linalg.norm(delQ)
+        #numerator = np.linalg.norm(currError)
+        #denominator = np.linalg.norm(J*corrQ)
 
-        lowerboundstep, updatethreshold, upperboundstep = (0.2, 0.3,  1)
-
-        #when alpha is greater than 1, we tend to oscillate. But the step cannot be so small that it is neglible.
-        step = min(upperboundstep, numerator/denominator)
+        print("numerator", numerator)
+        print("denominator", denominator)
 
 
-        if step < lowerboundstep:
-            step = lowerboundstep
+        martin_trust_regions=0
+        if martin_trust_regions:
+            d_lower = 0.1
+            d_upper = 0.7
 
-        print("STEP:", step)
+            d = numerator/denominator 
+            print("d:", d)
 
-        if step < updatethreshold:
-            delQ=[0.]*robot.dh_robot.dof
-            J = robot.central_differences_pp(currQ, desPP)  
-            curr_jacQ = currQ
-            jac_count+=1
-            jac_update_iters.append(i)
+            alpha = 1.0  # initial trust region radius
+
+            if np.linalg.norm(corrQ) > alpha:
+                corrQ = corrQ * (alpha / np.linalg.norm(corrQ))  # clip step to radius
+
+            # compute agreement ratio
+            d = np.linalg.norm(currError) / np.linalg.norm(J @ corrQ)
+
+            if d < d_lower:
+                alpha = 0.5 * alpha
+            elif d > d_upper:
+                alpha = max(2*alpha, np.linalg.norm(corrQ))
+            # else: alpha unchanged
+
+            print("alpha:", alpha)
+
+            updatethreshold = 0.2
+
+            if step < updatethreshold:
+                if n_consecutive_small_steps == 3:
+                    print("UPDATE JACOBIAN")
+                    n_consecutive_small_steps=0
+                    delQ=[0.]*robot.dh_robot.dof
+                    J = robot.central_differences_pp(currQ, desPP)  
+                    print("J:\n", J)
+                    jac_count+=1
+                    jac_update_iters.append(i)
+
+                n_consecutive_small_steps+=1
             
-            print("Step too small so. JACOBIAN UPDATE")
-    
+
+
+        taylor_truncation = 1
+        if taylor_truncation:
+            lowerboundstep, updatethreshold, upperboundstep = (0.01, 0.2,  1)
+
+            #when alpha is greater than 1, we tend to oscillate. But the step cannot be so small that it is neglible.
+            step = min(upperboundstep, numerator/denominator)
+
+            if step < lowerboundstep:
+                step = lowerboundstep
+
+            print("STEP:", step)
+
+            if step < updatethreshold:
+
+                
+                print("UPDATE JACOBIAN")
+                n_consecutive_small_steps=0
+                delQ=[0.]*robot.dh_robot.dof
+                J = robot.central_differences_pp(currQ, desPP)  
+                print("J:\n", J)
+                jac_count+=1
+                jac_update_iters.append(i)
+
+                
+            
+        
         currQ = currQ - step*corrQ
         traj.append(currQ)
         errors.append(np.linalg.norm(currError))

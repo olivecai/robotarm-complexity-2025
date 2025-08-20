@@ -249,6 +249,12 @@ class DenavitHartenbergAnalytic():
 
         return Jt.T
     
+    def jac_noise(self, Q, desP):
+        p = Q.shape[0]
+        d = self.F.shape[0]
+
+        
+    
     def const_jac_inv_kin(self, desP, initQ):
         '''
         Q = initQ

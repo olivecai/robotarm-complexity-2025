@@ -2492,3 +2492,84 @@ CONS of offline analytic:
 - the mesh doesnt seem to actually be that good, and it's just a lot of toggling parameters to fix it. Maybe we could use it a bit, but I don't want to focus on it.
 
 Feeling a bit stuck for how to really show something substantial....
+
+# August 17 
+
+TODO:
+- create a scatterplot for the kinova task space? 
+
+What is working:
+- jacobian policy for higher dof 
+- show number of jacobians for single trajectory
+
+What is not working:
+- mesh is hard to initialize and doesnt work well 
+- lower dof actually doesnt work well
+- brute force method is not reliable
+
+What can we show?
+- the number of jacobians needed is actually very little
+- a series of randomized jacobians that we use broyden's update on: can we basically not even calibrate, and only use broyden updates?
+- instead of even calibrating can we use this randomized noise jacobian?
+
+# August 18
+
+Randomized noise generation Jacobian thoughts: 
+- Dennis More condition says that the Jacobian Approximation does not have to converge to the Jacobian in order to converge superlinearly: the JAcobian Approximation only needs to be accurate when applied to the step direction. 
+
+This means that we don't have to worry so much about comparing the True vs Approximated Jacobian, maybe?
+
+Good vs Bad Broyden: good minimizes frobenius norm change in B, while bad minimizes the change in the inverse.
+
+Trust Region:
+- Question: for trust regions, we need to minimize the error in the mini region we have created: in the local problem. But can we get stuck in local minimum using scipy minimize? Does it waste time to search the trust region for the step that minimizes error the most?
+
+There is a tradeoff in how we initialize the random noise Jacobian:
+If we initialize values near 0, then the slope is ill conditioned and we need to take very SMALL steps (there is thus a relationship between )
+But if the slope is far from 0, and the true slope is actually the other sign, then it would take quite a lot to turn ourselves around. If we knew that we were surrounded by solutions, this would be okay, but it's 100% possible that we can just project ourselves in the completely opposite direction!
+
+Actually the kinova performs better for most of these trials where we set a constant jacobian, have each joint be set differently, and then try to converge.
+
+It is probably because the error is spread out over this tall jacobian, not really sure...
+
+We tried:
+- Noise Jacobian generated values randomly from a large range from -10 to 10, if the sign of the slope is correct it is good, but if not then it is terrible. 
+- Noise Jacobian with random val from small range -0.5 to 0.5 so that the sign can be easily toggled. Since the jacobian is more singular, we have to take a smaller step. Essentially we would like to take a step with relation to the condition number: larger condition number means a smaller step. HOWEVER the smaller step means we cant quite get out of the singular region very well...
+- Making an online MESH from the online jacobian policy, but well see the jacobian policy itself is not working that well which is making everything not work.
+
+I had wanted the newton method jacobian policy to MEASURE in that trajectory how many jacobians were needed to do chord method, but maybe we should use broyden updates anyway *sigh*
+
+
+
+Currently I am reading through the CDE textbook again, since now the tent functions and the FEM meshing should make more sense or I should have more intuition.
+
+I also looked into the Dennis More theory and that explains why I was seeing that we could converge with only a few jacobians even if the jacobian was wrong and thats why the mesh seems like too many sections: I was seeing that the mesh would create maybe 4 simplices for a region and I would say that the mesh was incorrect because we really only needed 1 or 2 jacobian updates; but it's very possible that the jacobian was able to move us to the solution but the actual function did have multiple nonlinear regions
+
+# August 19
+
+Finite Element Method:
+
+Solve the stiffness matrix @ unknown coeffs = load vector ( nodal forces) , K @ u = F
+
+Discretization with mesh: nodes 
+
+Shapes can be : triangular or quad elements (quad elements perform better but triangles are better for funny shapes)
+
+First order elements: lines etc linear. Second order is quadratic.
+
+For each element we can define a vector u that contAINS ALL THE POSSIBLE DISPLACEMENTS INCLUDING ROTATIONS.
+
+stiffness matrix is about forces applied. For forward kin how can i perform FEM?
+
+Global stiffness matrix: square symmetric matrix. Elements 1 and 2 must be connected at Node 2.
+This matrix is SPARSE
+
+Sometimes a global stiffness matrix needs to be multiplied by a rotatio matirx to bring to global coord system.
+
+In practice, inverting the sparse glboal matrix is inneficient. 
+
+### CDE textbook 8.2.3:
+
+I have analytic access to the vector u directly, since I have my analytic equations... So i don't need to solve the system with K and F
+
+Maybe we can try using femlab in Matlab
