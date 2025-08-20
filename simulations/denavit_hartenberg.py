@@ -112,7 +112,9 @@ class DenavitHartenbergAnalytic():
         self.F = sp.Matrix(self.ee_translation[:3]) - sp.Matrix(self.cartvars)
         #print("F:", self.F)
         
-        self.J = self.F.jacobian(self.jntvars[:self.dof])
+        self.J_analytic = sp.Matrix(self.ee_translation[:3]).jacobian(self.jntvars[:self.dof])
+        self.J = (sp.utilities.lambdify(self.jntvars[:self.dof], self.J_analytic, 'numpy'))
+        
 
         variables = self.jntvars[: self.dof] + self.cartvars
         self.fkin_eval = (sp.utilities.lambdify(self.jntvars[:self.dof], self.ee_translation, 'numpy'))
@@ -249,12 +251,6 @@ class DenavitHartenbergAnalytic():
 
         return Jt.T
     
-    def jac_noise(self, Q, desP):
-        p = Q.shape[0]
-        d = self.F.shape[0]
-
-        
-    
     def const_jac_inv_kin(self, desP, initQ):
         '''
         Q = initQ
@@ -352,6 +348,7 @@ if __name__ == '__main__':
 
     #dof2 = DenavitHartenbergAnalytic(dof2_params, P)
     dof3 = DenavitHartenbergAnalytic(dylan_dof3_params, P)
+
    
 class DenavitHartenberg_Cameras_Analytic():
     '''

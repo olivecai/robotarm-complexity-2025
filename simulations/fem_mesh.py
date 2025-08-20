@@ -58,7 +58,7 @@ kinova_dof7_params = [
 dof2 = dh.DenavitHartenbergAnalytic(dof2_params, P)
 dof3 = dh.DenavitHartenbergAnalytic(dylan_dof3_params, P)
 kinova = dh.DenavitHartenbergAnalytic(kinova_dof7_params, P)
-robot = dof3
+robot = dof2
 
 print("ROBOT:\n",robot.J_analytic)
 
@@ -116,11 +116,11 @@ def calculate_longest_edge(simplex: np.ndarray):
 
 def interpolate_jacobian(point, simplex):
     '''
-    assume point is centroid and is in simplex.
-    total distance between centroid and each vertex = 0
+    assume point is in the simplex.
+    total distance between point and each vertex = 0
     vertex distances = []
     for each vertex in the simplex, 
-        append the distance between centroid and vertex i
+        append the distance between point and vertex i
         add that distance to the total distance
 
     perform the element wise division so that the total distances sum to 1:
@@ -128,6 +128,9 @@ def interpolate_jacobian(point, simplex):
 
     then, the interpolated jacobian is equal to the sum of: each jacobian * element wise multiplication with the scalar weight calculated above from the vertices
 
+    return the interpolated jacobian.
+
+    NOTE that for the centroid, each point is obviously an equal distance from each vertex.
     '''
     vertex_distances = []
     vertex_jacobians=[]
@@ -141,14 +144,16 @@ def interpolate_jacobian(point, simplex):
 
     weights=np.reshape((np.array(vertex_distances)/sum_vertex_distances),(1,-1))
 
+
     print(f"weights: {weights}\nvertex_jacobians: {vertex_jacobians}")
-    vertex_jacobians = np.multiply(weights ,np.array(vertex_jacobians))
+    interpolated_jacobian = sum(w * J for w, J in zip(weights.flatten(), vertex_jacobians))
+
+    print(f"interpolated jac: {interpolated_jacobian}")
+
+    return interpolated_jacobian
 
 
-
-
-
-def refine_further_condition():
+def refine_further_condition(true_value, interpolated_value):
     '''
     used recursively.
     returns True if the mesh should be refined further.
@@ -157,7 +162,12 @@ def refine_further_condition():
     multiple conditions are possible.
     we will consider Jacobian variation first.
     '''
-    pass
+    tol = 1e-1
+    if np.linalg.norm(np.subtract(true_value, interpolated_value)) > tol:
+        print("REFINE TRUE")
+        return True
+    else:
+        return False
 
 def sparse_sample(jointlimits: list, robot: dh.DenavitHartenbergAnalytic, n = 3):
     '''
@@ -244,6 +254,8 @@ def refine(points_mesh, initial_nodes):
         centroid = calculate_centroid(simplex)
         true_value = robot.J(*centroid)
         interpolated_value = interpolate_jacobian(centroid, simplex)
+        print(f"true:\n {true_value}")
+        print(f"interpolated:\n {interpolated_value}")
         if refine_further_condition(true_value, interpolated_value):
             simplex_longest_edge = calculate_longest_edge(simplex)
         
