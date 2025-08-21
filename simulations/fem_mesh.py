@@ -22,6 +22,7 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.graph_objects as go
 from scipy.spatial import Delaunay
+from mpl_toolkits.mplot3d import Axes3D
 
 from common_robot_calculations import *
 
@@ -100,19 +101,23 @@ def calculate_centroid(simplex: np.ndarray):
         centroid[i] /= d
     return centroid 
 
-def calculate_longest_edge(simplex: np.ndarray):
+def calculate_longest_edge_midpoint(simplex: np.ndarray):
     '''
-    Returns the length of the longest edge of the simplex.
+    Returns the midpoint coordinates of the longest edge of the simplex.
     simplex: np.ndarray of shape (n_vertices, n_dimensions)
     '''
     n = simplex.shape[0]
     max_dist = 0.0
+    longest_edge_midpoint = None
     for i in range(n):
         for j in range(i+1, n):
             dist = np.linalg.norm(simplex[i] - simplex[j])
             if dist > max_dist:
+                longest_edge_midpoint = (simplex[i]+simplex[j])/2
                 max_dist = dist
-    return max_dist
+                longest_edge_vertex1 = simplex[i]
+                longest_edge_vertex2 = simplex[j]
+    return longest_edge_midpoint, longest_edge_vertex1, longest_edge_vertex2
 
 def interpolate_jacobian(point, simplex):
     '''
@@ -152,6 +157,28 @@ def interpolate_jacobian(point, simplex):
 
     return interpolated_jacobian
 
+def interpolate_F(point, simplex):
+    vertex_distances = []
+    vertex_Fvals=[]
+    sum_vertex_distances=0
+    for vertex in simplex:
+        vertex_distance = np.linalg.norm(np.subtract(point, simplex))
+        vertex_distances.append(vertex_distance)
+        sum_vertex_distances+=vertex_distance
+
+        vertex_Fvals.append(robot.fkin_eval(*vertex)) #EVALUATE THE JACOBIAN
+
+    weights=np.reshape((np.array(vertex_distances)/sum_vertex_distances),(1,-1))
+
+
+    print(f"weights: {weights}\nvertex_Fvals: {vertex_Fvals}")
+    interpolated_F = sum(w * J for w, J in zip(weights.flatten(), vertex_Fvals))
+
+    print(f"interpolated F: {interpolated_F}")
+
+    return interpolated_F
+
+
 
 def refine_further_condition(true_value, interpolated_value):
     '''
@@ -160,16 +187,16 @@ def refine_further_condition(true_value, interpolated_value):
     returns False if the mesh refinement should halt.
 
     multiple conditions are possible.
-    we will consider Jacobian variation first.
     '''
     tol = 1e-1
     if np.linalg.norm(np.subtract(true_value, interpolated_value)) > tol:
         print("REFINE TRUE")
         return True
     else:
+        print("REFINE FALSE")
         return False
 
-def sparse_sample(jointlimits: list, robot: dh.DenavitHartenbergAnalytic, n = 3):
+def sparse_sample(jointlimits: list, robot: dh.DenavitHartenbergAnalytic, n = 2):
     '''
     create a sparse grid over the space 
     create a delaunay mesh of the sparse grid points.
@@ -229,8 +256,6 @@ def plot_mesh(mesh, mesh_points):
         plt.grid(True)
         plt.show()
     else:
-        from mpl_toolkits.mplot3d import Axes3D
-
         fig = plt.figure(figsize=(10,10))
         ax = fig.add_subplot(111, projection='3d')
         mesh_points = np.array(mesh_points)
@@ -248,6 +273,163 @@ def plot_mesh(mesh, mesh_points):
         ax.set_zlabel("Joint 3")
         plt.show()
 
+def conform_to_neighbour(simplex, edges_bisected: list, midpoint_associated_to_edge_that_was_bisected: list):
+    '''
+    Returns the midpoint (evaluated as True as a bool) if one of the edges in the simplex needs to be conformed to its neighbour.
+    Returns None (evaluated as False as a bool) if there is no edge that needs to be conformed.
+    '''
+    
+    for i in range(len(edges_bisected)):
+        for simplex_edge in simplex:
+            if edges_bisected[i] == simplex_edge: #then, one of the edges in this simplex was bisected before, and we need to subdivide. return the midpoint.
+                return midpoint_associated_to_edge_that_was_bisected[i], simplex_edge
+    return None, None
+
+def mesh_objective(mode, centroid, simplex):
+    if mode == 1: #compare jacobians
+        true_value = robot.J(*centroid)
+        interpolated_value = interpolate_jacobian(centroid, simplex)
+    if mode == 2: #compare function value
+        true_value = robot.fkin_eval(*centroid)
+        interpolated_value = interpolate_F(centroid, simplex)
+    return true_value, interpolated_value
+
+
+def brute_force_rivara_refine(points_mesh: np.ndarray, initial_nodes: np.ndarray, mode: int):
+    '''
+    August 21 2025
+    Brute Force Rivera Refinement: 
+    Iterate through every simplice, create the new point to be refined along the longest edge,
+    Then rebuild the Delaunay Mesh, which now invariably has more simplices.
+    Repeat this process a few times. See how the mesh changes.
+
+    The mesh will never have dangling edges.
+    '''
+    nodes : list = initial_nodes.copy().tolist()
+    mesh_complete = 0 
+    while not mesh_complete:
+        mesh_complete=1
+        prev_nodes = nodes
+            
+        for simplex in points_mesh:
+            centroid = calculate_centroid(simplex)
+            true_value, interpolated_value = mesh_objective(mode, centroid, simplex)
+            print(f"true:\n {true_value}")
+            print(f"interpolated:\n {interpolated_value}")
+
+            if refine_further_condition(true_value, interpolated_value):
+                mesh_complete=0
+                simplex_longest_edge_midpoint, longest_edge_vertex1, longest_edge_vertex2 = calculate_longest_edge_midpoint(simplex)
+                nodes.append(simplex_longest_edge_midpoint)
+
+        nodes = np.unique(np.array(nodes), axis=0)
+        nodes=list(nodes)
+        mesh = Delaunay(nodes)
+
+        #plot_mesh(mesh, nodes)
+        points_mesh = np.array(nodes)[mesh.simplices]
+    
+    plot_mesh(mesh, nodes)
+    return mesh, nodes
+
+
+def rivara_refine(points_mesh: np.ndarray, initial_nodes: np.ndarray):
+    '''
+    Aug 21 2025
+
+    If we need to further refine the mesh, we should look at the longest edge and create another node.
+    For tetrahedrons: multidim rivara algorithm
+    - find the longest edge 
+    - find the midpoint of that longest edge
+    - by definition of tetrahedron, there are two other points in the shape:
+    - remove parent simplex,
+    - and create two new child simplices from the new midpoint and the two other simplices in the shape 
+    '''
+    nodes = np.copy(initial_nodes)
+    simplices_to_check_for_refinement = np.copy(points_mesh).tolist() #first in , first out. index 0 is the start of the list. append things to the back.
+
+    edges_bisected = [] #in the rivara refinement, 
+    # we need to keep track of which edges have been bisected,
+    # so that we retain conformity in the triangles.
+
+    while simplices_to_check_for_refinement:
+        simplex = simplices_to_check_for_refinement[0] #check the first item
+        centroid = calculate_centroid(simplex)
+        true_value = robot.J(*centroid)
+        interpolated_value = interpolate_jacobian(centroid, simplex)
+        print(f"true:\n {true_value}")
+        print(f"interpolated:\n {interpolated_value}")
+        midpoint_of_neighbouring_edge, bisected_neighbouring_edge = conform_to_neighbour(simplex, edges_bisected)
+        if midpoint_of_neighbouring_edge: 
+            '''
+            Aug 21 2025
+
+            It would be smart if we could get each child and recurse and patch up the dangling noncomfortities as we go, but if it doesn't work it will be a nightmare.
+            Idea: can we brute force the mesh by repeatedly finding children and then repairing the Delaunay mesh after every iteration? 
+            This way we avoid recursion and we guarenteed do not have dangling pointers. 
+            We can get the same result, actually, for the mesh, i
+            '''
+            # this indicates that a neighbouring simplex was bisected 
+            # --> a nonconforming edge was created. 
+            # thus we need to make two children out of the current simplex.
+            simplices_to_check_for_refinement.pop(0)
+            # TODO: get the children
+            i+=1
+            continue
+        if refine_further_condition(true_value, interpolated_value):
+            '''
+            If we need to refine further then we need to get rid of the parent simplex.
+            '''
+            # TODO: finish this section
+            simplex_longest_edge_midpoint, longest_edge_vertex1, longest_edge_vertex2 = calculate_longest_edge_midpoint(simplex)
+        
+        i+=1;
+
+def plot_fkin(mesh, mesh_points, world_point_dimension=1):
+    """
+    Plot forward kinematics over a 2DOF mesh. 
+    Z-axis = chosen world dimension.
+    """
+    fig = plt.figure(figsize=(10,10))
+    ax = fig.add_subplot(111, projection='3d')
+    mesh_points = np.array(mesh_points)
+
+    # Evaluate FK for all mesh points
+    world_points = np.array([robot.fkin_eval(*mesh_point) for mesh_point in mesh_points])
+    world_points_specific = (np.array(world_points[:, world_point_dimension]).flatten())
+    print("worldpoints\n", world_points)
+
+    ax.scatter(
+        mesh_points[:,0], 
+        mesh_points[:,1],
+        world_points_specific,
+        color='blue'
+    )
+
+    for simplex in mesh.simplices:
+        
+
+
+        print(simplex)
+        for i in range(3):
+            p1 = mesh_points[simplex[i]]
+            p2 = mesh_points[simplex[(i+1)%3]]
+            print(p1)
+            print(p2)
+            p1_world = robot.fkin_eval(*p1)[world_point_dimension]
+            p2_world = robot.fkin_eval(*p2)[world_point_dimension]
+
+            ax.plot([p1[0], p2[0]], [p1[1], p2[1]], [p1_world[0], p2_world[0]], color='gray')
+
+
+    ax.set_title("Delaunay Mesh mapped through FK (2DOF)")
+    ax.set_xlabel("Joint 1")
+    ax.set_ylabel("Joint 2")
+    ax.set_zlabel(f"World dimension {world_point_dimension}")
+    plt.show()
+
+
+
 def refine(points_mesh, initial_nodes):
     nodes = np.copy(initial_nodes)
     for simplex in points_mesh:
@@ -257,16 +439,56 @@ def refine(points_mesh, initial_nodes):
         print(f"true:\n {true_value}")
         print(f"interpolated:\n {interpolated_value}")
         if refine_further_condition(true_value, interpolated_value):
-            simplex_longest_edge = calculate_longest_edge(simplex)
+            
+            rivara_refine(points_mesh, initial_nodes)
+
+if __name__ == '__main__':
+    jointlimits = [(-np.pi/2, np.pi/2)]*robot.dof
+    initial_mesh, initial_nodes = sparse_sample(jointlimits, robot)
+    points_mesh= initial_nodes[initial_mesh.simplices]
+    print(initial_mesh.simplices)
+    print(points_mesh)
+    plot_mesh(initial_mesh, initial_nodes)
+
+    # mode 1 is for jacobian, mode 2 is for its function value
+    mode = 2
+    mesh, nodes = brute_force_rivara_refine(points_mesh, initial_nodes, mode)
+    plot_fkin(mesh, nodes, mode)
+    
+
+class Mesh():
+    def __init__(self, jointlimits, meshpoints=None):
+        '''
+        either pass precomputed mesh, or if None then calculate mesh from scratch.
+        '''
+        if meshpoints == None:
+                
+            initial_mesh, initial_nodes = sparse_sample(jointlimits, robot)
+            points_mesh= initial_nodes[initial_mesh.simplices]
+            print(initial_mesh.simplices)
+            print(points_mesh)
+            plot_mesh(initial_mesh, initial_nodes)
+
+            # mode 1 is for jacobian, mode 2 is for its function value
+            mode = 2
+            mesh, nodes = brute_force_rivara_refine(points_mesh, initial_nodes, mode)
+            self.mesh = mesh
+            self.meshpoints = np.array(nodes)
+            
+        else:
+            self.mesh = Delaunay(meshpoints)
+            self.meshpoints = np.array(meshpoints)
+
+    def interpolate_jac(self, point):
+        simplex_index = self.mesh.find_simplex(point)
+        simplex_vertex_indices = self.mesh.simplices[simplex_index]
+        simplex = self.meshpoints[simplex_vertex_indices]
+        jacobian = interpolate_jacobian(point, simplex)
+        return jacobian
         
-
-     
-jointlimits = [(-np.pi/2, np.pi/2)]*robot.dof
-initial_mesh, initial_nodes = sparse_sample(jointlimits, robot)
-print(initial_mesh.simplices)
-print(initial_nodes[initial_mesh.simplices])
-plot_mesh(initial_mesh, initial_nodes)
-points_mesh= initial_nodes[initial_mesh.simplices]
-
-refine(points_mesh, initial_nodes)
-
+    def interpolate_f(self, point):
+        simplex_index = self.mesh.find_simplex(point)
+        simplex_vertex_indices = self.mesh.simplices[simplex_index]
+        simplex = self.meshpoints[simplex_vertex_indices]
+        f = interpolate_F(point, simplex)
+        return f
