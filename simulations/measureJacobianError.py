@@ -70,7 +70,7 @@ kinova_end = np.deg2rad(np.array([25.336059570312672, 50.57940673828129, -179.49
 # initialize init Q and de
 # initialize init Q and des P
 
-initQ = [2.5] * robot.dof
+initQ = [1.0] * robot.dof
 desQ = [1.5] * robot.dof
 
 desP =  (vs.dh_robot.fkin_eval(*desQ)).flatten().tolist()
@@ -224,7 +224,6 @@ def jac_policy(robot: dh.DenavitHartenberg_Cameras_Analytic, initQ, desP):
         print("Updated Jacobian:\n", J)
 
 
-
         delQ+=corrQ
         print("DELQ:", delQ)
         jacobian_approximated_error = (robot.lipschitz / 2) * (np.linalg.norm(delQ))**2
@@ -283,19 +282,13 @@ def jac_policy(robot: dh.DenavitHartenberg_Cameras_Analytic, initQ, desP):
 
         taylor_truncation = 1
         if taylor_truncation:
-            lowerboundstep, updatethreshold, upperboundstep = (0.01, 0.2,  1)
-
+            lowerboundstep, updatethreshold, upperboundstep = (0.1, .3,  1)
             #when alpha is greater than 1, we tend to oscillate. But the step cannot be so small that it is neglible.
             step = min(upperboundstep, numerator/denominator)
-
             if step < lowerboundstep:
                 step = lowerboundstep
-
             print("STEP:", step)
-
             if step < updatethreshold:
-
-                
                 print("UPDATE JACOBIAN")
                 n_consecutive_small_steps=0
                 delQ=[0.]*robot.dh_robot.dof
@@ -304,8 +297,30 @@ def jac_policy(robot: dh.DenavitHartenberg_Cameras_Analytic, initQ, desP):
                 jac_count+=1
                 jac_update_iters.append(i)
 
-                
+        kantorovich = 0
+        if kantorovich:
+            # make sure F and J are the right types
+            J = np.array(J, dtype=float)
+
+            B = np.linalg.pinv(J) #B is J inverse
+
+            beta = np.linalg.norm(B, ord=2)
+    
+            b = np.linalg.norm(currError.flatten())
+
+            L=robot.lipschitz
+
+            print("beta", beta)
+            print("L", L)
+            print("b", b)
+            h = beta * L * b 
+            print("h", h)         
+
             
+
+            
+
+
         
         currQ = currQ - step*corrQ
         traj.append(currQ)

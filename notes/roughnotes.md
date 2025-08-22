@@ -2573,3 +2573,261 @@ In practice, inverting the sparse glboal matrix is inneficient.
 I have analytic access to the vector u directly, since I have my analytic equations... So i don't need to solve the system with K and F
 
 Maybe we can try using femlab in Matlab
+
+# August 21
+
+Discussion with Martin, Cole, Dylan, Amir:
+
+minimizing the number of trajectory steps or calibrations
+
+in controls:
+- basic controls talk about the continuous system, where step size is 0
+- finite steps?
+
+amir: not discussion on finite number of steps, but the stability of the system. focus on transient part for convergencce of jacobians.
+
+'what is transient?' amir: apply the jacobian and see the convergence.
+
+martin:
+in going from y0 to y*, init to des, the numerical method might have large spikes going from one point to another..
+transient step and static goal.
+
+the steady state is the y*
+
+numerical methods is not typically concerned with the trajectory; but we want something that is smoother path, or at least within a bounded error of that path.
+
+in order to use numerical methods but still have a smooth trajectory, we can split up the path into multiple goals.
+but then, we have to consider the dynamics
+
+is it a trajectory tracking problem?
+
+trajectory trackign problem vs set point control
+
+acceleration control vs position control
+
+for smooth transition we want velocity control
+
+move from position to position and velocity
+
+for a practical robot, bound accelerations
+
+'adding smooth velocity transition with heuristic ideas was surprisingly challenging'
+
+*what is heuristic ideas*
+
+martin: this is a bit of a tangent from the original target.
+
+image a typical 3dof robot, output space is x,y,z, input space is q1, q2, q3.
+
+solve this inverse kinematics problem:
+- we know that having simple fixed J with governing equation y = J q 
+
+Dylan shows that for a surprisingly large set of x,y,z, we have a specific J1 that can cover a large set of these and still converge.
+
+But, tie it back to the smooth convergence. 
+
+Can we use just a few jacobians? 
+
+Can we precompute the jacobians?
+
+it would be interesting to show that k is some low number.
+
+when so many people use deep learning and assume a big deep network,
+
+this J here defines a high dimensional plane.
+
+delta y = delta J q
+
+so y = f(q) where f is forward kin
+
+equivaletnyl we can ask how to represent f.
+
+when the jacobian is constnant that implies f is a linear constant.
+
+so either we use a constant jacobian or we have a linear function f. They are very very related problems.
+
+How many linear elements do we need in f?
+
+the true f is some sinusoidal product. 
+
+these functions are generally quite smooth compared to other nonlinear equations.
+
+maybe then we can approximate them with just a few linear functions.
+
+but then how is this done? we can represent this function with jacobians and the extent of jacobiains
+
+but another way that is more popular: we have a few BASIS functions that are TENTS.
+
+So, we can describe the function as a linear combination of multiple overlapping tents.
+
+so to say we have 5 jacobians is to have some number of tent functions.
+
+*why use tent functions and not linear segments?*
+- martin: tent functions have compact support and makes things easier. when we design deep networks, some activation fucntions have that property but others do not and im not quite sure if theres any theory in neureal networks. it seems to me that the activation fucntion is mroe heuistic than theoretically chosen. the relu is often used for large networks, while transendental fucntions are betetr for TOY functions. what cmplexity can be represented by neureal netwokrs? they focused on NN. They ssaid a tent function equals one relu upwards and one relu downwards. the result: the complexity of a deep network, shown by a stacked set of tent functions, the number of kinks grows exponentially. we increased the number of parameters linearly, stackign them, see the potential complexity of them increases. montefar 2014 using tent functions to reprsent complexity
+
+in deep learning, we dont even try iterations. reinforcement learnign doesnt try to take the stpe: reinforcement learnign tends to divide up the trajectory.
+
+the way it gets divided up in RL is a consequence of how the action space is chosen. 
+
+dylan: the assumption that the analytic jacobian is correct
+
+cole: if you were to buidlt his piecewise function and argue it is a valid number of jacobians, you need to have a theorectical guarentee that the radius is correct. the radius is too conservative. 
+
+dylan: number of jacobians.
+if you assume the analytic jacoian is the best, then the hessian would give you an idea of how many jacobians you need, since we can just open up the taylor expansion.
+
+how to tap into fem emthods and ahve a robust mesh?
+
+we can only code such a simple mesh.
+
+can we use open source packages to make the mesh for us?
+
+tap into this framework to do the mesh
+
+femlab in matlab
+
+sparse linear algebra
+
+discuss fkin as a pde ??????????????
+
+how to rewrite the 1dof as an ode
+
+instead of newton method use euler method T_T
+
+cole presented on a differential equations formulation --> transform fkin into IVP
+
+what we end up with might be more of a BVP
+
+from any y0 can we get to any y*?
+
+tent functions are very useful for BVP
+
+cde book has many 1d BVP
+
+temporal ode into bounary ode
+
+can we do this in higher dimensions
+
+is the mesh to quantify complexity or as a global method?
+- now we can evluate f and push all of these methods with a pde framework, and can discuss the errors of all points in between, thruogh the sobolev method: error here and on the bound on the derivative. sin and cosines have bounded derivatives. what is the global error not only in the sample points but also in f? what is the global error for the derivatives? 
+
+instead of sampling the jacobian temporally, remember points and find the k nearest points to calculate the jacobian from.
+
+time evolutions of nearly colinear points.
+
+when we want to use a number of sample points, extend that in all dimensions.
+
+robot is in a syste, that lives for more than a single trajectoy, reaosnable assumption to say we have a fair number of samples.
+
+when we use newtons method,
+usejacobian and we have a fast coverging method.
+if eveyrhting analytic, quadratic. in practice not quad but still very fast.
+
+that is better than convergence, since convergence could be arbitartily slow.
+
+we often rely on thinkign of newtons method when we solve it, heuhritsticlaly saying we are clowe neough
+in the pure secant mathod in 1d, in heith: not uadratic but superlinear. instead of 2, it is >1.5
+
+there are multidimensional things like using broyden (superlinear) it is a step that is a newton approximation and that might suggest it will converge for many non=jacobian matrices, but we still want to be fairly clsoe to the matrix. most of the convergenc ematrices wont be superlinea.r but the newton related ones are. 
+
+dely = J delx
+
+if we repeat this del y three times then we can solve for J
+
+J_T = y_T \ x 
+
+broyden is a recent history update while doing over three previous measures is more of an average. 
+
+broyden ADDS a bit to the current jacobian, and only satisfies the MOST RECENT update
+
+while the three updates satisfies all three previous.
+
+so the broyden update can screw things up over time. it is not so easy to intuit. is the information gone bad?
+intuitively it should converge when we have decent information but it is mroe intricate than wwe think.
+
+broyden is attractive in the temporal sense.
+
+but can we create the jacobian from these samples that are in the MESH, they will be sampled from multiple points nearby. we might get a slightly better jacobian... we can take these samples and run a convegrence test and see what happens. 
+
+naive approahc: random point sample, k nearest neighbours, do some nested thigns... just a few points then add some mroe points... 
+
+maybe there is an optimal k for a certain dof. is there a certain number of nodes that would be optimal 
+
+split up space into quadrants per dof, etc etc. intuition can be proven wrong!
+then we reset our thinking
+
+there could be an advantage to a larger delx, to avoid the little complex wiggles: look at the bigger picture average of the function, rather the little nonlinear. QUESTION IS, does this apply to the visual servoing?
+
+what is the purpsoe of the mesh?
+- if minimum numebr of jacobians, then build mesh from randomly sampled points, do a bunch of trajectories work dofr different number of sampled points?
+
+the accuracy of f says something about the accuracy of f'
+
+the maximum error of f 
+
+# August 22 2025
+
+Try the nearest neighbours: sample k random points, get their analytic jacobian, then can we try completing a trajectory continually sampling from the k sample jacobians? Should we interpolate OR should we solve the stacked system of equations?
+
+Thoughts:
+- for the k nearest points, should we also try to use dampening and certain updates/prolonging tricks?
+- it is very possible for certain situations that fewer selectively chosen jacobians are better than the analytic jacobian. 
+
+Paper ideas:
+- show the offline jacobian acquisition or the mesh, to show the complexity. suggest that we do not in reality need very many jacobians.
+
+the idea is:
+"we have seen that certain trajectories only need a few jacobians to converge. show the simulation regions that converge with just one jacobian, show the simulation regions that converge with 1, 2, 3, etc jacobians with the online jacobian policy method. this suggests that there could exist a rather small upper bound on the number of jacobians to learn the global inverse kinematics problem (maybe 300-2000). reinforcement learning uses a huge dataset, but by studying how nonlinear the function is, we can reduce the number of samples in that dataset. "
+
+Treat the k sampled points as a mesh. Can we actually just generate the 
+
+complexity of deep learning:
+- how many samples you need. cole needs 80 000 images !!! thats a LOT!!!! not every model needs an exorbitant amount, but in general you tend to need a LOT of data 
+- the size of your model in terms of layers. tecnicaly in terms of weights but more layers == more weights ==> more complex. the bigger your model, the more data you need basically. 
+
+the argument may be: some piecewise linear fucntion representation doesnt need you to store that much memory, in theory should be a significantly less amount of parametrers for deep elarnign solution to the problem. 
+
+this is suggesting the numebr fo parametres for deep leanrign is actually very ineeffcient for twhat is atualy required.
+
+**maybe if you trained a RL or DP to do visual reacher, it would be the same as the visual motor jacobians.**
+
+when you talk about an RL problem, it will take in a STATE represnetiaont and output the optimal ACITON according to the polciy. So maybe somethign you can show is that that is the rough equivalent of the motion that the image jacobian would have you make. 
+
+but doesnt RL depend on hwo we train it?
+
+for SUPERVISED leanring, when we record demonstrations of the orbot doing the thign, the LFD aglorithm says 'ok based on the dat ive seen im gna learn' WHEREAS for RL you have a reward and tell it to go DO stuff 
+
+for visual reaching: what si the propximity between the robot and the object in 3d spacE? the closer you get, the better the reward. my reward could be if the gripper is in line with the object.
+
+then if you could prove that the RL was similar to the newton method, you could say 
+
+state aggregation: when im in the state, what should i do? you cant see every possible state when you jsut have an image, so you have to extract information. 
+
+What would the RL visual reacher have access to as an input?
+- NOT the jacobian
+- the ERROR at every state
+- can we penalize when singualr positions? how does it know we are in a singular position?
+
+is the RL visual reacher similar to newtons method?
+
+maybe that could be for FUTURE researhc >_<
+
+In general we can probably find a number of examples of RL that uses a huge dataset, so if we can prove that only a few states are needed, that could reduce the computational burden for RL. 
+
+maybe for rise:
+
+newton's classic method with the analytic jacobian and an update at every step: computationally heavy and it can go wrong! in visual servoing, it is a detriment to constantly have to update the jacobian.
+show that there is a large region that converges with just one jacobian, and for failed regions, show that just one or two jacobian updates can improve this.
+offer an ONLINE jacobian policy to check in real time whether we should update the jacobian. 
+run many simulations to see if we can have it work MOST of the time.
+
+Okay to be honest I dont know if the online Jacobian policy will work. I am trying to get it working and man is it BAD.
+
+This is not going super well.
+
+for the two dof, it seems there is a peak: 100 and 1000 samples are actually both pretty BAD
+
+THOUGHTS
+
+even if the complexity is like... some constant ^ dof.... for the entire function, the jacobians needed for a single trajectory is typically much fewer.
+
