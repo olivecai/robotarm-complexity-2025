@@ -2831,3 +2831,58 @@ THOUGHTS
 
 even if the complexity is like... some constant ^ dof.... for the entire function, the jacobians needed for a single trajectory is typically much fewer.
 
+# August 23 2025
+
+Paper reading:
+
+## global visual motor estimation for uncalibrated visual servoing
+
+two methods: 
+1. k nearest negibhourhood regression over jacobian that uses previously estimated local models
+2. second method stores previous movements and computes and esimtate of the jacobian by solving the local least squares problem
+
+both methods provide better globval estimation quality compared to the conventional local estimation method.
+
+*what is the local estimation method?*
+
+i believe it is just the regular central differences at that point.
+
+focus on global planning
+
+QUESTIONS
+- how many global jacobians need to be acquired for a good model? more datapoints means better mesh, but to some extent it won't keep helping: what is that threshhold? 
+
+Local methods:
+- hosada and asada forgetting factor to decay the influence of old data during estimation process
+- jagersand broyden, trust region
+
+local est of jac deteriorates if the motion of the robot is along a straight path in joint space or in a singular config of image features. to do trajectory plannign we may need multiple local jacs
+
+assume static goal
+
+further research:
+- directly estimate the global invere jacobian matrix instead of the global forward matrix
+- develop a system for selecting K
+- incorporate prior knowledge such as smoothness of visual motor jacobian into the estimator
+- implement on real world hardware
+
+IDEA:
+
+if we could get the selective online jacobian update to work:
+
+error normalized over task space VS number of jacobian updates needed to converge. 
+
+motivation:
+- reduces the number of jacobians needed
+
+# August 24 
+
+For RISE x:
+
+choosing K: that depends on the local nonlinearity of the region!
+So, if the hyperplane has large error, we might want to take a much smaller step.
+
+We need to use threading to have the state constantly updated so we stop counting in steps and instead count by sampling intervals.
+
+First sample a bunch of points
+

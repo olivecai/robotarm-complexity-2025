@@ -43,7 +43,7 @@ kinova_dof7_params = [
 dof2 = dh.DenavitHartenbergAnalytic(dof2_params, P)
 dof3 = dh.DenavitHartenbergAnalytic(dylan_dof3_params, P)
 kinova = dh.DenavitHartenbergAnalytic(kinova_dof7_params, P)
-robot = kinova
+robot = dof2
 
 print("ROBOT:\n",robot.J_analytic)
 
@@ -75,7 +75,7 @@ def k_sample_pnts(vs: dh.DenavitHartenberg_Cameras_Analytic, desP, jointranges):
     random=0
     desPP = vs.projected_world_point(desP)
     if random: 
-        num_init_points = 10000
+        num_init_points = 400
 
         joint_configs = [
             np.array([np.random.uniform(low, high) for (low, high) in jointranges])
@@ -244,7 +244,7 @@ def trial(robot: dh.DenavitHartenberg_Cameras_Analytic, stored_joints : list, st
 
 jointlimits = [(-np.pi, np.pi)]*robot.dof
 success_vals = 0
-trials_count = 50
+trials_count = 3
 for _ in range(trials_count):
     stored_joints, stored_jacobians = k_sample_pnts(vs, desP, jointlimits)
     print("STORED JOINTS:", stored_joints)

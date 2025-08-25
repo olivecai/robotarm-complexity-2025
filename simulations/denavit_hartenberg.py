@@ -71,7 +71,7 @@ class Camera:
         try:
             x = self.P * worldpoint
         except:
-            print("EXCEPTION:", worldpoint)
+            print("EXCEPTION:", Exception, worldpoint)
         #print("projection point before flatten:")
         #print(x)
         x[0]=x[0]/x[2]
