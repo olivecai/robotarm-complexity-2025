@@ -76,8 +76,8 @@ robot = kinova
 
 # print("ROBOT:\n",robot.J_analytic)
 
-cam1 = dh.Camera(0,0,0,[0,0,2], 2,2, 0, 0) #looks down directly at the scene, basically replicates the scene
-cam2 = dh.Camera(-sp.pi/2, 0, 0, [0,0,2], 2,2,0,0) #looks at scene from the y axis, world z is cam2 y, world x is cam2 x 
+cam1 = dh.Camera(0.1,0.05,0,[0,0,4], 4,4, 0, 0) 
+cam2 = dh.Camera(-sp.pi/2, 0, 0.5, [0,0,4], 4,4,0,0) #looks at scene from the y axis, world z is cam2 y, world x is cam2 x 
 cameras=[cam1, cam2]
 
 vs = dh.DenavitHartenberg_Cameras_Analytic(cameras, robot)
@@ -85,19 +85,7 @@ vs.dh_robot.alpha = 1.
 
 
 kinova_angles = np.deg2rad(np.array([-0.1336059570312672, -28.57940673828129, -179.4915313720703, -147.7, 0.06742369383573531, -57.420898437500036, 89.88030242919922, 0.5]))
-kinova_end = np.deg2rad(np.array([25.336059570312672, 50.57940673828129, -179.4915313720703, -90.7, 30.06742369383573531, -57.420898437500036, 30.88030242919922, 0.5]))
 
-
-
-jointranges = [(-np.pi/2, np.pi/2)]*robot.dof
-
-initQ = [0.5] * robot.dof
-# desQ = [0.] * robot.dof
-
-# desP =  (vs.dh_robot.fkin_eval(*desQ)).flatten().tolist()
-# desPP = vs.projected_world_point(desP)
-# print("desired world point:", desP)
-# print("initial world point:", vs.dh_robot.fkin_eval(*initQ).flatten().tolist())
 
 
 def generate_random_trajectory(vs: dh.DenavitHartenberg_Cameras_Analytic, jointranges: list, number_of_milestone_points=2, number_of_transition_points=2):
@@ -135,6 +123,7 @@ def n_samples(vs: dh.DenavitHartenberg_Cameras_Analytic, jointranges: list, n: i
             np.array([np.random.uniform(low, high) for (low, high) in jointranges])
             for _ in range(n)
         ]
+    # print("joints gen", joints_generated,"\n joint gen fin")
     for Q in joints_generated:
         real_point = vs.dh_robot.fkin_eval(*Q)
         points_generated.append(vs.projected_world_point(real_point))
@@ -176,12 +165,10 @@ class LLS_VS:
 
      
             dQ = np.vstack([np.subtract(nearby_Q, Q) for nearby_Q in nearest_Q])
-            dQ = np.vstack([w * dq for w, dq in zip(weights, dQ)])
-            
+           
             dY = np.vstack([np.subtract(nearby_pnt, Y) for nearby_pnt in nearest_points])
-            dY = np.vstack([w * dy for w, dy in zip(weights, dY)])
-
-            W = np.diag(weights)
+           
+            # W = np.diag(weights)
 
             # print(f"Q: {Q}")
             # print(f"nearestQ: {nearest_Q}")
@@ -191,11 +178,11 @@ class LLS_VS:
             # print(f"dQ: {dQ}")
             # print(f"dY: {dY}")
 
-            XtX = dQ.T @ W @ dQ
+            XtX = dQ.T @ dQ
 
             # print("XtX", XtX)
             
-            XtY = dQ.T @ W @ dY
+            XtY = dQ.T @ dY
 
             # print("XtY", XtY)
 
@@ -205,10 +192,11 @@ class LLS_VS:
             # Jt, *_ = np.linalg.lstsq(dQ, dY, rcond=None)
             # approxJ = Jt.T  # (m, dof)
 
-            return approxJ
+            return -approxJ #something somewhere got messed up and i think my world coords r inverted, so this needs neg
 
 
     def monitor_true_vs_lls(self, random_trajectory: list, k=None):
+        desPP = np.zeros(2*len(self.vs.cameras))
         '''
         as we move through one randomly generated trajectory, we can sum the error from the true vs approximated jacobian 
         and return the mean amount of jacobian error squared
@@ -233,10 +221,10 @@ class LLS_VS:
             # print(Q)
             
             if self.Lref:
-                true_cdJ  = -self.vs.central_differences_pp(Q, desPP)/self.Lref
+                true_cdJ  = self.vs.central_differences_pp(Q, desPP)/self.Lref
                 approxJ = self.get_approx_jac(Q)/self.Lref
             else:
-                true_cdJ  = -self.vs.central_differences_pp(Q, desPP)
+                true_cdJ  = self.vs.central_differences_pp(Q, desPP)
                 approxJ = self.get_approx_jac(Q)
 
 
@@ -280,6 +268,20 @@ class LLS_VS:
         # plt.title(f"{self.vs.dh_robot.dof} DOF Robot")
         # plt.show()
 
+# Q = [0.,1.5,1.5]
+# jointranges = [(-0.1,0.1),(1.4,1.6),(1.4,1.6)]
+# lls_vs = LLS_VS(vs, jointranges, None, 100)
+# lls_vs.joints_generated, lls_vs.points_generated = n_samples(vs, jointranges, 100)
+# apprx = lls_vs.get_approx_jac(Q)
+# true =-vs.central_differences_pp(Q, vs.projected_world_point(vs.dh_robot.fkin_eval(*Q)))
+# print(apprx,"\n", true)
+# print(np.subtract(apprx, true))
+# print(np.linalg.norm(np.subtract(true, apprx)))
+
+# if 0:
+#     exit(0)
+
+
 def visual_servo_kinova(lls_vs : LLS_VS, n, k, initQ, desP, mode):
     '''
     mode:
@@ -296,7 +298,7 @@ def visual_servo_kinova(lls_vs : LLS_VS, n, k, initQ, desP, mode):
 
     currQ = initQ
     tolerance = 1e-3
-    maxiter=200
+    maxiter=50
 
     traj = [currQ]
     errors =[]
@@ -308,7 +310,7 @@ def visual_servo_kinova(lls_vs : LLS_VS, n, k, initQ, desP, mode):
     else:
         J = lls_vs.get_approx_jac(currQ)
 
-    alpha = 0.3
+    alpha = 0.1
 
     for i in range(maxiter):
         print("###################### i:", i)
@@ -329,21 +331,24 @@ def visual_servo_kinova(lls_vs : LLS_VS, n, k, initQ, desP, mode):
             J = robot.central_differences_pp(currQ, desPP)  
         elif mode >= 2: #skip jac update for 1
             J = lls_vs.get_approx_jac(currQ)
+            print("approx:",J)
+            print("true:", robot.central_differences_pp(currQ, desPP)  )
 
         traj.append(currQ)
         errors.append(np.linalg.norm(currError))
 
     traj = np.array(traj)
     if 1: 
-        robot.dh_robot.rtb_robot.plot(traj, block=False)
+        robot.dh_robot.rtb_robot.plot(traj, block=True)
 
     print(f"n:{n}, k:{k}, initQ: {initQ}, desP: {desP}, mode: {mode}\nerror from goal during visual servoing:\n{errors}")
+    print(f"real world final position (just curious) {(robot.dh_robot.fkin_eval(*currQ))}")
 
     return errors
 
 
 def kinova_vs_N():
-    robot = dof3
+    robot = kinova
 
     cam1 = dh.Camera(0,0,0,[0,0,2], 2,2, 0, 0) #looks down directly at the scene, basically replicates the scene
     cam2 = dh.Camera(-sp.pi/2, 0, 0, [0,0,2], 2,2,0,0) #looks at scene from the y axis, world z is cam2 y, world x is cam2 x 
@@ -369,7 +374,7 @@ def kinova_vs_N():
     errors_at_N = lls_vs.jacobian_estimation_error_as_N_grows(N)
     print("errors at N:", errors_at_N)
 
-    plt.plot(N, errors_at_N, label='dof3', color='blue')
+    plt.plot(N, errors_at_N, label='kinova', color='blue')
     plt.xlabel('N')
     plt.ylabel('Jacobian Estimation Mean Norm Error')
     plt.show()
@@ -436,11 +441,13 @@ def plot_simple():
     plt.ylabel('Jacobian Estimation Mean Norm Error')
     plt.show()
 
+jointranges = [(-np.pi, np.pi)]*robot.dof
 
 # trajectory = generate_random_trajectory(vs, jointranges)
 
 n = None
 k = None
+
 
 if robot == kinova:
     pi=np.pi
@@ -455,42 +462,72 @@ lls_vs = LLS_VS(vs, jointranges, n, k)
 # kinova_vs_N()
 # plot_simple()
 
-N = [n for n in range(200,5100, 200)]
-mode = 0
+N = [n for n in range(100,5100,500)]
+mode = 2 #0 or 2
 errors=[]
 
 
+# desQ = [0.4] * robot.dof
 
-desP = [0.2, 0.1, -0.1]
+# desP =  (vs.dh_robot.fkin_eval(*desQ)).flatten().tolist()
+# desPP = vs.projected_world_point(desP)
+# print("desired world point:", desP)
+# print("initial world point:", vs.dh_robot.fkin_eval(*initQ).flatten().tolist())
+
+initQ = np.deg2rad(np.array([-0.1336059570312672, -28.57940673828129, -179.4915313720703, -147.7, 0.06742369383573531, -57.420898437500036, 89.88030242919922, 0.5]))
+desP = []
+desQ = np.deg2rad(np.array([-0.1336059570312672, -10.57940673828129, -180.4915313720703, -20.7, 50.06742369383573531, -10.420898437500036, 89.88030242919922, 0.5]))
+
+print("WORLD INIT", (robot.fkin_eval(*initQ)))
+print("PROJECTED INIT", vs.projected_world_point(robot.fkin_eval(*initQ)))
+robot.plot(initQ)
+# print("WORLD DES", (robot.fkin_eval(*desQ)))
+# print("PROJECTED DES", vs.projected_world_point(robot.fkin_eval(*desQ)))
+robot.plot(desQ)
+
 if not mode:
-    error = visual_servo_kinova(lls_vs, n, 40, initQ, desP, mode)
+    error = visual_servo_kinova(lls_vs, None, None, initQ, desP, mode)
     errors.append(error)
 # mode+=1
 if mode:
     for n in N:
-        error = visual_servo_kinova(lls_vs, n, 40, initQ, desP, mode)
+        error = visual_servo_kinova(lls_vs, n, 20, initQ, desP, mode)
         errors.append(error)
 
 maxiterscount=0
 for error in errors:
     maxiterscount=max(maxiterscount, (len(error)))
 
-print(maxiterscount)
+print("errors", errors)
+print("#### \nfor error in errors print error")
+for error in errors:
+    print(error)
+
+plt.close('all')
+
+# plt.plot(range(maxiterscount), errors[0], label='kinova', color='red')
+# plt.xlabel("N")
+# plt.ylabel("Jacobian Estimation Mean Norm Error")
+# plt.title("Measure of Jacobian Estimation Error for Robot System VS N")
+
+# plt.show()
 
 
-print(errors[0])
+for i in range(len(errors)):
+    error=errors[i]
+    
+    plt.close('all')
+    plt.plot(range(len(error)), error, label='kinova', color='red')
+    plt.xlabel("N")
+    plt.ylabel("Jacobian Estimation Mean Norm Error")
+    plt.title("Measure of Jacobian Estimation Error for Robot System VS N")
 
-# print("errors from each range:",errors)
-plt.plot(range(maxiterscount), errors[0], label='kinova', color='red')
-# plt.plot(N, errors[1], label='dof2', color='red')
-# plt.plot(N, errors[-1], label='kinova', color='green')
-plt.xlabel("N")
-plt.ylabel("Jacobian Estimation Mean Norm Error")
-plt.title(f"Measure of Jacobian Estimation Error for Robot System VS N")
+    plt.show()
 
-plt.show()
 
-print("HERE")
+
+
+
 
 
 
