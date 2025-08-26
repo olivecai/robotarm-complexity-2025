@@ -83,19 +83,19 @@ cameras=[cam1, cam2]
 vs = dh.DenavitHartenberg_Cameras_Analytic(cameras, robot)
 vs.dh_robot.alpha = 1.
 
+
 kinova_angles = np.deg2rad(np.array([-0.1336059570312672, -28.57940673828129, -179.4915313720703, -147.7, 0.06742369383573531, -57.420898437500036, 89.88030242919922, 0.5]))
 kinova_end = np.deg2rad(np.array([25.336059570312672, 50.57940673828129, -179.4915313720703, -90.7, 30.06742369383573531, -57.420898437500036, 30.88030242919922, 0.5]))
 
-# initialize init Q and de
-# initialize init Q and des P
 
 
 jointranges = [(-np.pi/2, np.pi/2)]*robot.dof
-initQ = [0.5] * robot.dof
-desQ = [0.] * robot.dof
 
-desP =  (vs.dh_robot.fkin_eval(*desQ)).flatten().tolist()
-desPP = vs.projected_world_point(desP)
+initQ = [0.5] * robot.dof
+# desQ = [0.] * robot.dof
+
+# desP =  (vs.dh_robot.fkin_eval(*desQ)).flatten().tolist()
+# desPP = vs.projected_world_point(desP)
 # print("desired world point:", desP)
 # print("initial world point:", vs.dh_robot.fkin_eval(*initQ).flatten().tolist())
 
@@ -289,9 +289,10 @@ def visual_servo_kinova(lls_vs : LLS_VS, n, k, initQ, desP, mode):
     3 == strategic choose k, choose a suitable constant n
     '''
     robot = lls_vs.vs
-    lls_vs.n = n
-    lls_vs.k = k
-    lls_vs.joints_generated, lls_vs.points_generated = n_samples(lls_vs.vs, lls_vs.jointranges, n)
+    if mode:
+        lls_vs.n = n
+        lls_vs.k = k
+        lls_vs.joints_generated, lls_vs.points_generated = n_samples(lls_vs.vs, lls_vs.jointranges, n)
 
     currQ = initQ
     tolerance = 1e-3
@@ -330,23 +331,11 @@ def visual_servo_kinova(lls_vs : LLS_VS, n, k, initQ, desP, mode):
             J = lls_vs.get_approx_jac(currQ)
 
         traj.append(currQ)
-        errors.append(currError)
+        errors.append(np.linalg.norm(currError))
 
     traj = np.array(traj)
     if 1: 
         robot.dh_robot.rtb_robot.plot(traj, block=False)
-
-    errors=np.array(errors)
-    fig, ax = plt.subplots()
-    ax.plot(range(len(errors)), errors, '-o', markersize=2, label="Error")
-
-    ax.set_xlabel("Iteration")
-    ax.set_ylabel("Error Norm")
-    ax.set_title("Error vs Iteration")
-    ax.legend()
-    ax.grid(True)
-
-    plt.show()
 
     print(f"n:{n}, k:{k}, initQ: {initQ}, desP: {desP}, mode: {mode}\nerror from goal during visual servoing:\n{errors}")
 
@@ -354,7 +343,7 @@ def visual_servo_kinova(lls_vs : LLS_VS, n, k, initQ, desP, mode):
 
 
 def kinova_vs_N():
-    robot = kinova
+    robot = dof3
 
     cam1 = dh.Camera(0,0,0,[0,0,2], 2,2, 0, 0) #looks down directly at the scene, basically replicates the scene
     cam2 = dh.Camera(-sp.pi/2, 0, 0, [0,0,2], 2,2,0,0) #looks at scene from the y axis, world z is cam2 y, world x is cam2 x 
@@ -362,7 +351,7 @@ def kinova_vs_N():
 
     N = [i for i in range(200, 5100, 200)]
     
-    print(f"********** KINOVA")
+    print(f"********** DOF3")
 
     vs = dh.DenavitHartenberg_Cameras_Analytic(cameras, robot)
     vs.dh_robot.alpha = 1.
@@ -378,15 +367,13 @@ def kinova_vs_N():
 
     lls_vs = LLS_VS(vs, jointranges, n, k)
     errors_at_N = lls_vs.jacobian_estimation_error_as_N_grows(N)
+    print("errors at N:", errors_at_N)
 
-    
-
-    plt.plot(N, errors_at_N, label='kinova', color='green')
-    plt.xlabel("N")
-    plt.ylabel("Jacobian Estimation Mean Norm Error")
-    plt.title(f"Measure of Jacobian Estimation Error for Robot System VS N")
-    plt.legend()
+    plt.plot(N, errors_at_N, label='dof3', color='blue')
+    plt.xlabel('N')
+    plt.ylabel('Jacobian Estimation Mean Norm Error')
     plt.show()
+    
 
 
 def different_dofs_vs_N():
@@ -435,9 +422,9 @@ def different_dofs_vs_N():
     plt.plot(N, testsystems_N_error_values[0], label='dof1', color='blue')
     plt.plot(N, testsystems_N_error_values[1], label='dof2', color='red')
     plt.plot(N, testsystems_N_error_values[2], label='kinova', color='green')
-    plt.xlabel("N")
+    plt.xlabel("Iteration")
     plt.ylabel("Jacobian Estimation Mean Norm Error")
-    plt.title(f"Measure of Jacobian Estimation Error for Robot System VS N")
+    plt.title("Jacobian Estimation Error vs Iteration Count for Robot System")
     plt.legend()
     plt.show()
 
@@ -455,6 +442,10 @@ def plot_simple():
 n = None
 k = None
 
+if robot == kinova:
+    pi=np.pi
+    jointranges = [(-pi,pi)]*robot.dof
+
 lls_vs = LLS_VS(vs, jointranges, n, k)
 # random_traj = generate_random_trajectory(vs, jointranges)
 # lls_vs.monitor_true_vs_lls(random_traj)
@@ -462,23 +453,45 @@ lls_vs = LLS_VS(vs, jointranges, n, k)
 # different_dofs_vs_N()
 
 # kinova_vs_N()
-plot_simple()
+# plot_simple()
 
-# N = [i for i in range(200,5100, 200)]
-# errors=[]
-# for n in N:
-#     error = visual_servo_kinova(lls_vs, n, 40, initQ, desP, 0)
-#     errors.append(error)
+N = [n for n in range(200,5100, 200)]
+mode = 0
+errors=[]
+
+
+
+desP = [0.2, 0.1, -0.1]
+if not mode:
+    error = visual_servo_kinova(lls_vs, n, 40, initQ, desP, mode)
+    errors.append(error)
+# mode+=1
+if mode:
+    for n in N:
+        error = visual_servo_kinova(lls_vs, n, 40, initQ, desP, mode)
+        errors.append(error)
+
+maxiterscount=0
+for error in errors:
+    maxiterscount=max(maxiterscount, (len(error)))
+
+print(maxiterscount)
+
+
+print(errors[0])
 
 # print("errors from each range:",errors)
-# # plt.plot(, errors[0], label='dof1', color='blue')
-# # plt.plot(N, errors[1], label='dof2', color='red')
-# # plt.plot(N, errors[-1], label='kinova', color='green')
-# # plt.xlabel("N")
-# # plt.ylabel("Jacobian Estimation Mean Norm Error")
-# # plt.title(f"Measure of Jacobian Estimation Error for Robot System VS N")
-# # plt.legend()
-# # plt.show()
+plt.plot(range(maxiterscount), errors[0], label='kinova', color='red')
+# plt.plot(N, errors[1], label='dof2', color='red')
+# plt.plot(N, errors[-1], label='kinova', color='green')
+plt.xlabel("N")
+plt.ylabel("Jacobian Estimation Mean Norm Error")
+plt.title(f"Measure of Jacobian Estimation Error for Robot System VS N")
+
+plt.show()
+
+print("HERE")
+
 
 
 
