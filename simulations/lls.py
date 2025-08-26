@@ -72,7 +72,7 @@ kinova_dof7_params = [
 dof2 = dh.DenavitHartenbergAnalytic(dof2_params, P)
 dof3 = dh.DenavitHartenbergAnalytic(dylan_dof3_params, P)
 kinova = dh.DenavitHartenbergAnalytic(kinova_dof7_params, P)
-robot = dof3
+robot = kinova
 
 # print("ROBOT:\n",robot.J_analytic)
 
@@ -142,12 +142,13 @@ def n_samples(vs: dh.DenavitHartenberg_Cameras_Analytic, jointranges: list, n: i
 
 
 class LLS_VS:
-    def __init__(self, vs: dh.DenavitHartenberg_Cameras_Analytic, jointranges: list, n: int, k: int = None):
+    def __init__(self, vs: dh.DenavitHartenberg_Cameras_Analytic, jointranges: list, n: int = None, k: int = None):
         self.n = n
         self.k = k
         # self.trajectory = generate_random_trajectory(vs, jointranges)
-        
+        self.Lref = None
         self.vs = vs
+        self.joints_generated, self.points_generated = None, None
         self.jointranges=jointranges
 
     def get_approx_jac(self, Q):
@@ -155,7 +156,8 @@ class LLS_VS:
         
             distances = [np.linalg.norm(np.subtract(Q, storedQ)) for storedQ in self.joints_generated]
             # Get indices of the k smallest distances
-            nearest_indices = np.argsort(distances)[:k]
+            print("this is k:", self.k)
+            nearest_indices = np.argsort(distances)[:self.k]
             nearest_Q_distances = np.array(distances)[nearest_indices]
             nearest_points = np.array([self.points_generated[i] for i in nearest_indices])
             nearest_Q = np.array([self.joints_generated[i] for i in nearest_indices])
@@ -197,8 +199,8 @@ class LLS_VS:
 
             # print("XtY", XtY)
 
-            approxJ = (np.linalg.pinv(XtX) @ XtY).T  # shape: (error_dim, dof)
-
+            approxJ = ((np.linalg.pinv(XtX) @ XtY).T) # shape: (error_dim, dof)
+         
             # #2) robust solve via lstsq (J^T is solution)
             # Jt, *_ = np.linalg.lstsq(dQ, dY, rcond=None)
             # approxJ = Jt.T  # (m, dof)
@@ -229,11 +231,16 @@ class LLS_VS:
 
             # print(desPP)
             # print(Q)
-            true_cdJ  = -self.vs.central_differences_pp(Q, desPP)
+            
+            if self.Lref:
+                true_cdJ  = -self.vs.central_differences_pp(Q, desPP)/self.Lref
+                approxJ = self.get_approx_jac(Q)/self.Lref
+            else:
+                true_cdJ  = -self.vs.central_differences_pp(Q, desPP)
+                approxJ = self.get_approx_jac(Q)
 
-            approxJ = self.get_approx_jac(Q)
 
-            #print(f"Jacobian Comparison:\nTrue Jacobian:\n{true_cdJ}\nApprox Jacobian:\n{approxJ}")
+            print(f"Jacobian Comparison:\nTrue Jacobian:\n{true_cdJ}\nApprox Jacobian:\n{approxJ}")
 
             Jerrornorm = np.linalg.norm((np.subtract(approxJ,true_cdJ)))
             #print(f"norm error between true and approx J: {Jerrornorm}")
@@ -254,8 +261,8 @@ class LLS_VS:
         for n in N:
             mean_over_means = 0
             mean_over_means_count = 10
-            num_checkpnts = 25
-            num_transitions = 1
+            num_checkpnts = 10
+            num_transitions = 3
             for _ in range(mean_over_means_count):
                 self.joints_generated, self.points_generated = n_samples(self.vs, self.jointranges, n)
                 self.n=n
@@ -273,6 +280,115 @@ class LLS_VS:
         # plt.title(f"{self.vs.dh_robot.dof} DOF Robot")
         # plt.show()
 
+def visual_servo_kinova(lls_vs : LLS_VS, n, k, initQ, desP, mode):
+    '''
+    mode:
+    0 == update the jacobian at every step (control)
+    1 == just one jacobian (???)
+    2 == different values of n, hold k constant
+    3 == strategic choose k, choose a suitable constant n
+    '''
+    robot = lls_vs.vs
+    lls_vs.n = n
+    lls_vs.k = k
+    lls_vs.joints_generated, lls_vs.points_generated = n_samples(lls_vs.vs, lls_vs.jointranges, n)
+
+    currQ = initQ
+    tolerance = 1e-3
+    maxiter=200
+
+    traj = [currQ]
+    errors =[]
+
+    desPP = robot.projected_world_point(desP)
+
+    if not mode:
+        J = robot.central_differences_pp(currQ, desPP)  
+    else:
+        J = lls_vs.get_approx_jac(currQ)
+
+    alpha = 0.3
+
+    for i in range(maxiter):
+        print("###################### i:", i)
+        currError = robot.projected_errfn_eval(currQ, desPP) #desired-current
+
+        if np.linalg.norm(currError) <= tolerance:
+            break
+
+        Jinv = np.linalg.pinv(J)
+
+        corrQ = (Jinv @ currError).flatten()
+        print(f"currQ: {currQ}\ncorrQ: {corrQ}\ncurrError: {currError}")
+
+
+        currQ = currQ - alpha * corrQ
+
+        if not mode:
+            J = robot.central_differences_pp(currQ, desPP)  
+        elif mode >= 2: #skip jac update for 1
+            J = lls_vs.get_approx_jac(currQ)
+
+        traj.append(currQ)
+        errors.append(currError)
+
+    traj = np.array(traj)
+    if 1: 
+        robot.dh_robot.rtb_robot.plot(traj, block=False)
+
+    errors=np.array(errors)
+    fig, ax = plt.subplots()
+    ax.plot(range(len(errors)), errors, '-o', markersize=2, label="Error")
+
+    ax.set_xlabel("Iteration")
+    ax.set_ylabel("Error Norm")
+    ax.set_title("Error vs Iteration")
+    ax.legend()
+    ax.grid(True)
+
+    plt.show()
+
+    print(f"n:{n}, k:{k}, initQ: {initQ}, desP: {desP}, mode: {mode}\nerror from goal during visual servoing:\n{errors}")
+
+    return errors
+
+
+def kinova_vs_N():
+    robot = kinova
+
+    cam1 = dh.Camera(0,0,0,[0,0,2], 2,2, 0, 0) #looks down directly at the scene, basically replicates the scene
+    cam2 = dh.Camera(-sp.pi/2, 0, 0, [0,0,2], 2,2,0,0) #looks at scene from the y axis, world z is cam2 y, world x is cam2 x 
+    cameras=[cam1, cam2]
+
+    N = [i for i in range(200, 5100, 200)]
+    
+    print(f"********** KINOVA")
+
+    vs = dh.DenavitHartenberg_Cameras_Analytic(cameras, robot)
+    vs.dh_robot.alpha = 1.
+
+    n=None
+    k=40
+
+    desQ = [0.] * robot.dof
+
+    jointranges = [(-np.pi/2, np.pi/2)]*robot.dof
+    desP =  (vs.dh_robot.fkin_eval(*desQ)).flatten().tolist()
+    desPP = vs.projected_world_point(desP)
+
+    lls_vs = LLS_VS(vs, jointranges, n, k)
+    errors_at_N = lls_vs.jacobian_estimation_error_as_N_grows(N)
+
+    
+
+    plt.plot(N, errors_at_N, label='kinova', color='green')
+    plt.xlabel("N")
+    plt.ylabel("Jacobian Estimation Mean Norm Error")
+    plt.title(f"Measure of Jacobian Estimation Error for Robot System VS N")
+    plt.legend()
+    plt.show()
+
+
 def different_dofs_vs_N():
     testsystems = dof2, dof3, kinova
 
@@ -282,17 +398,24 @@ def different_dofs_vs_N():
 
     testsystems_N_error_values = []
 
-    N = [i for i in range(200,5100,200)]
+    N = [i for i in range(200,1300, 200)]
     
     for i in range(len(testsystems)):
+
+
         robot= testsystems[i]
 
+        L_ref = sum(abs(link.a) + abs(link.d) for link in robot.rtb_model().links)
+
+
         print(f"********** ROBOT TEST SYSTEM {i}")
+        print("approximate reach:", L_ref)
+
         vs = dh.DenavitHartenberg_Cameras_Analytic(cameras, robot)
         vs.dh_robot.alpha = 1.
 
         n=None
-        k=50
+        k=40
 
         jointranges = [(-np.pi/2, np.pi/2)]*robot.dof
         desQ = [0.] * robot.dof
@@ -302,8 +425,12 @@ def different_dofs_vs_N():
         desPP = vs.projected_world_point(desP)
 
         lls_vs = LLS_VS(vs, jointranges, n, k)
+        lls_vs.Lref = L_ref
         error_at_N = lls_vs.jacobian_estimation_error_as_N_grows(N)
         testsystems_N_error_values.append(error_at_N)
+
+
+    
     
     plt.plot(N, testsystems_N_error_values[0], label='dof1', color='blue')
     plt.plot(N, testsystems_N_error_values[1], label='dof2', color='red')
@@ -314,14 +441,51 @@ def different_dofs_vs_N():
     plt.legend()
     plt.show()
 
+def plot_simple():
+    N = [200, 400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200, 2400, 2600, 2800, 3000, 3200, 3400, 3600, 3800, 4000, 4200, 4400, 4600, 4800, 5000]
+    errorvals= [0.9155693903296006, 0.7902768927199364, 0.7541904060943748, 0.6849275989709345, 0.7260755849381872, 0.7117420644108934, 0.6868875815966596, 0.6452917772377391, 0.6666451367906865, 0.6487818144914833, 0.6324925152648528, 0.6288904785357227, 0.5981387528273808, 0.6391226044697526, 0.6083390282531584, 0.5913815172534631, 0.5984999910935305, 0.568823224002408, 0.6097930612106808, 0.5694784492173494, 0.56376947210882, 0.5751507704892037, 0.5778280407614825, 0.5741164277025658, 0.5741701981284801]
+    plt.plot(N, errorvals, label='kinova', color='green')
+    plt.xlabel('N')
+    plt.ylabel('Jacobian Estimation Mean Norm Error')
+    plt.show()
+
 
 # trajectory = generate_random_trajectory(vs, jointranges)
 
-n = 1000
-k = 10
+n = None
+k = None
 
 lls_vs = LLS_VS(vs, jointranges, n, k)
 # random_traj = generate_random_trajectory(vs, jointranges)
 # lls_vs.monitor_true_vs_lls(random_traj)
 # lls_vs.jacobian_estimation_error_as_N_grows()
-different_dofs_vs_N()
+# different_dofs_vs_N()
+
+# kinova_vs_N()
+plot_simple()
+
+# N = [i for i in range(200,5100, 200)]
+# errors=[]
+# for n in N:
+#     error = visual_servo_kinova(lls_vs, n, 40, initQ, desP, 0)
+#     errors.append(error)
+
+# print("errors from each range:",errors)
+# # plt.plot(, errors[0], label='dof1', color='blue')
+# # plt.plot(N, errors[1], label='dof2', color='red')
+# # plt.plot(N, errors[-1], label='kinova', color='green')
+# # plt.xlabel("N")
+# # plt.ylabel("Jacobian Estimation Mean Norm Error")
+# # plt.title(f"Measure of Jacobian Estimation Error for Robot System VS N")
+# # plt.legend()
+# # plt.show()
+
+
+
+'''
+Questions:
+- why doesnt the plot work as well for the 2dof arm?
+for adaptive K:
+- check if the 
+- 
+'''

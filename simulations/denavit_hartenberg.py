@@ -316,8 +316,8 @@ class DenavitHartenbergAnalytic():
             links.append(rtb.RevoluteDH(alpha = self.dh_params[i][1], a=self.dh_params[i][2], d=self.dh_params[i][3]))
 
         robot = rtb.DHRobot(links, name=f"robot_{self.dof}dof")
-        print(robot.dhunique())
-        print(robot)
+        # print(robot.dhunique())
+        # print(robot)
 
         return robot
 
