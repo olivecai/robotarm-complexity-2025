@@ -2886,3 +2886,39 @@ We need to use threading to have the state constantly updated so we stop countin
 
 First sample a bunch of points
 
+# August 25
+
+There are many different things we can explore:
+- Size of N and K: MODELLING the function, not so much visual servoing inverse kinematics.
+- Online Jacobian update: would probably be used to supplement research, stating 'look: for these multiple trajectories, this many updates were needed'.
+- For a certain task, regions of number-of-updates-needed-to-converge
+
+Maybe for rise we can simply SHOW some empirical data that the function is not very complicated (??) 
+
+For this we can show that the optimal number of N is quite low when the N points have been sampled uniformly over the space
+
+Introduction:
+it is seen that attempting to converge with one jacobian has good results; the linearity of the function corresponds to the number of jacobians needed to model the forward kinematics. We develop a jacobian policy to use as few jacobians as possible and see that only four or five jacobians are needed for even 7 dof systems like the Kinova.
+
+RL requires many states, we want to suggest much fewer are needed. In LLS, increasing the number of randomly distributed points does not significantly benefit the jacobian approximation, which suggests that it is not a necessary factor: so what is a necessary factor?
+
+maybe the K neighbourhood?
+
+Increasing the number of randomly generated points does not significantly improve the Jacobian prediction.
+
+Compare the average performance of inverse kinematics when N = 300 Vs when N = 5000 for the kinova: since the overall Jacobian estimated error was low, we should expect that they perform relatively similarly.
+
+Conclusion/Discussion:
+
+these empirical findings suggest that the function can be modelled with very few data points, and that these models are useful for visual servoing.
+
+# August 26
+
+Working on getting the LLS method to work.
+
+Things we know:
+
+a hyperplane in a very high dimensional space needs to be constructed from actually quite a number of neighbours, since there are many small pockets of nonlinearity.
+
+so for the kinova we need quite a high k for neighbours. i think the higher the k is better for high dimensions if we do not have an adaptive k.
+
