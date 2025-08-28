@@ -446,7 +446,7 @@ def vs_experiment(Njoints_all, Npoints_all):
     Njoints=[]
     Npoints=[]
 
-    VS_range_count=3
+    VS_range_count=5
     startN, stopN, stepN = 100,4000,100
     N_range=range(startN, stopN, stepN)
     for N in N_range:
