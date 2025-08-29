@@ -1,3 +1,11 @@
+Returns the general denavit hartenberg transformation matrix for one link, i.
+theta_i is the angle about the z(i-1) axis between x(i-1) and x(i).
+alpha_i is the angle about the x(i) axis between z(i-1) and z(i).
+r_i is the distance between the origin of frame i-1 and i along the x(i) direction.
+d_i is the distance from x(i-1) to x(i) along the z(i-1) direction.
+
+alpha, r, theta, d
+
 dof2_params = [
                 [t0, 0, 1, 0], 
                 [t1, 0, 1, 0]
@@ -20,4 +28,20 @@ kinova_dof7_params = [
     [t5 +sp.pi, sp.pi/2, 0.0, -(0.2084 + 0.1059)],
     [t6 +sp.pi, sp.pi/2, 0.0, 0.0],
     [t7 +sp.pi,    sp.pi, 0.0, -(0.1059 + 0.0615)],
+]
+
+puma_dh_params = [
+    [t0, -sp.pi/2, 0.0,     0.0     ], 
+    [t1,     0.0 , 0.4318,  0.0     ],  
+    [t2, -sp.pi/2, 0.0203,  0.15005 ],  
+    [t3,  sp.pi/2, 0.0,     0.4318  ],  
+    [t4, -sp.pi/2, 0.0,     0.0     ],  
+    [t5,     0.0 , 0.0,     0.0     ]  
+]
+
+dof4_params = [
+    [t0,  sp.pi/2,  0.2,  0.0],   # Base rotates, link 1 vertical offset
+    [t1,      0.0,  0.5,  0.0],   # Link 2 extends forward
+    [t2,      0.0,  0.4,  0.0],   # Link 3 extends forward
+    [t3,      0.0,  0.2,  0.0]    # Wrist rotation, small link for gripper
 ]
