@@ -63,23 +63,34 @@ startN, stopN, stepN = 100, 4000, 100
 N_range=range(startN, stopN, stepN)
 
 robot_vs_trials = [ dof2, dof3, jaco, kin]
+robot_vs_errors = [dof2_vs_errors, dof3_vs_errors, jaco_vs_errors, kinova_vs_errors]
 colors = [c2, c3, c6, c7]
 for i in range(len(colors)):
     imean = np.mean(robot_vs_trials[i], axis=0)
     ivar = np.var(robot_vs_trials[i], axis=0)
     istd = np.std(robot_vs_trials[i], axis=0)
+
+
     if robot_vs_trials[i] == dof2:
         label = "2 DOF"
     if robot_vs_trials[i] == dof3:
-    plt.plot(N_range, imean, label='2 DOF Visual Servoing Error', color=c2, lw=LW)
+        label = "3 DOF"
+    if robot_vs_trials[i] == kin:
+        label = "Kinova Gen3"
+    if robot_vs_trials[i] == jaco:
+        label = "Kinova Jaco"
+
+
+    plt.plot(N_range, imean, label=f'{label} Visual Servoing Error', color=colors[i], lw=LW)
+    plt.plot(N_range, dof2_vs_errors, label=f'{label} Visual Servoing Error', color=colors[i], lw=LW)
     plt.fill_between(N_range,
                     imean - istd,
                     imean + istd,
                     color=colors[i], alpha=0.2)
+    plt.rcParams.update({'font.size': 20})
+    
 
 
-plt.rcParams.update({'font.size': 20})
-plt.plot(N_range, dof2_vs_errors, label='2 DOF Visual Servoing Error', color=c2, lw=LW)
 plt.plot(N_range, dof3_vs_errors, label='3 DOF Visual Servoing Error', color=c3, lw=LW)
 plt.plot(N_range, jaco_vs_errors, label='Kinova Jaco Visual Servoing Error', color = c6, lw=LW)
 plt.plot(N_range, kinova_vs_errors, label='Kinova Gen3 Visual Servoing Error', color=c7, lw=LW)
