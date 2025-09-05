@@ -1,0 +1,3 @@
+
+robot: dof2
+generating batch 1
