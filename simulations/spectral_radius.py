@@ -17,7 +17,7 @@ Qn+1 = g(Qn), where Qk is joint parameters at iteration k, and g(...) is the upd
 gn(Qn) = Qn - BF(Qn)
     B  is the J_inverse calculated at the starting position through central differences <==> 
     F  is F(Qn) = current-fkin(Qn) = current-desired, where current is a CONSTANT and fkin(Q*) is in symbols, so upon calculating dF, we obtain what may as well be the Jacobian for the desired position without any scaling.
-In my code I will simply have F be the Jacobian of the forward kinematics of the desired position, since the displacement doesnt create a difference anyway. 
+In my code I will simply have del F be the Jacobian of the forward kinematics of the desired position, since the displacement doesnt create a difference anyway. 
     
 in Newton's method, we have successful convergence when B @ (del F(Qn) / del Qn) == I:
 del gn / del Qn = I - B @ (del F(Qn) / del Qn)
